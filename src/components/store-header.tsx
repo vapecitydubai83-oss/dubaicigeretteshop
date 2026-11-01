@@ -267,7 +267,7 @@ export function StoreHeader({
   searchQuery = "",
   onSearchChange,
 }: StoreHeaderProps) {
-  const { cart, settings, setIsCartOpen } = useStore();
+  const { cart, settings, setIsCartOpen, products } = useStore();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -297,9 +297,39 @@ export function StoreHeader({
     tiktok: "",
   };
 
+  // Mega menu derives its rows from the live catalog — no hardcoded products.
+  const liveCategories = BROWSE_MEGA_CATEGORIES.map((cat) => {
+    const matches = products
+      .filter((p) =>
+        cat.filterType === "category"
+          ? p.category === cat.filterValue
+          : cat.filterType === "brand"
+          ? p.brand === cat.filterValue
+          : true
+      )
+      .filter((p) => p.inStock !== false)
+      .slice(0, 8);
+    return {
+      ...cat,
+      subItems: matches.map((p) => ({
+        label: p.title,
+        priceHint: `AED ${p.cartonPrice}`,
+        filterType: cat.filterType,
+        filterValue: cat.filterValue,
+      })),
+      featuredInfo: matches[0]
+        ? {
+            title: matches[0].title,
+            subtitle: matches[0].description?.slice(0, 90) || cat.label,
+            priceTag: `AED ${matches[0].cartonPrice}`,
+            origin: matches[0].origin || "100% ORIGINAL",
+          }
+        : cat.featuredInfo,
+    };
+  });
+
   const activeMegaCategory =
-    BROWSE_MEGA_CATEGORIES.find((c) => c.id === hoveredMegaId) ||
-    BROWSE_MEGA_CATEGORIES[0];
+    liveCategories.find((c) => c.id === hoveredMegaId) || liveCategories[0];
 
   // Navigate & filter whether user is on Home page or Product Detail page
   const applyFilter = (type: NavMenuItem["filterType"], value: string) => {
