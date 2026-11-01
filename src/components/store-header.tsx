@@ -1004,14 +1004,7 @@ export function StoreHeader({
                 <span>Track Order (/track)</span>
               </Link>
 
-              <Link
-                href="/admin"
-                onClick={() => setMobileDrawerOpen(false)}
-                className="w-full py-2.5 px-4 rounded-xl bg-[#0A2F42] text-white font-bold text-xs flex items-center justify-center gap-2"
-              >
-                <LayoutDashboard className="w-4 h-4 text-[#F4B143]" />
-                <span>Open Admin Panel</span>
-              </Link>
+            {/* Admin reachable at /admin — no visible link */}
             </div>
           </div>
         </div>
@@ -1092,14 +1085,7 @@ export function StoreFooter() {
                   AI / LLM Catalog Index (/llms.txt)
                 </a>
               </li>
-              <li>
-                <Link
-                  href="/admin"
-                  className="text-[#25D366] font-bold hover:underline"
-                >
-                  Website Admin Control Panel (/admin)
-                </Link>
-              </li>
+            {/* Admin panel link removed — reachable at /admin only */}
             </ul>
           </div>
 
