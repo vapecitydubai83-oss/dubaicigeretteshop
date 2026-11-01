@@ -25,6 +25,7 @@ import {
   Upload,
   Users,
   Download,
+  LayoutDashboard,
   Lock,
   LogOut,
   ShieldCheck,
