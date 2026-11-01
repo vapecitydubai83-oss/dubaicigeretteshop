@@ -229,6 +229,12 @@ export const INITIAL_NAV_MENU: NavMenuItem[] = [
   { id: "nav-winston", label: "WINSTON", filterType: "brand", filterValue: "Winston" },
   { id: "nav-camel", label: "CAMEL", filterType: "brand", filterValue: "Camel" },
   { id: "nav-manchester", label: "MANCHESTER", filterType: "brand", filterValue: "Manchester" },
+  { id: "nav-iqos", label: "IQOS & TEREA", filterType: "category", filterValue: "iqos-terea" },
+  { id: "nav-vapes", label: "VAPES", filterType: "category", filterValue: "vapes" },
+  { id: "nav-eliquid", label: "E-LIQUID", filterType: "category", filterValue: "e-liquid" },
+  { id: "nav-pouches", label: "NICOTINE POUCHES", filterType: "category", filterValue: "nicotine-pouches" },
+  { id: "nav-hookah", label: "HOOKAH & SHISHA", filterType: "category", filterValue: "hookah-shisha" },
+  { id: "nav-accessories", label: "ACCESSORIES", filterType: "category", filterValue: "accessories" },
 ];
 
 export const HERO_IMAGE_PRESETS: HeroImagePreset[] = [

@@ -406,13 +406,7 @@ export function StoreHeader({
             >
               Track Order
             </Link>
-            <Link
-              href="/admin"
-              className="px-2.5 py-0.5 rounded-full bg-[#25D366] hover:bg-[#1fb855] text-black font-bold inline-flex items-center gap-1 transition-colors"
-            >
-              <LayoutDashboard className="w-3 h-3" />
-              <span>Admin</span>
-            </Link>
+            {/* Admin is reachable at /admin — no visible link for customers */}
           </div>
         </div>
       </div>
@@ -845,6 +839,8 @@ export function StoreHeader({
 
             {/* RIGHT: Social Media Capsule + Instant WhatsApp Pill */}
             <div className="flex items-center gap-2 shrink-0">
+              {(socials.facebook || socials.twitter || socials.instagram ||
+                socials.youtube || socials.pinterest || socials.tiktok) && (
               <div className="flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-black/10 text-[#061823]">
                 {socials.facebook && (
                   <a
@@ -902,6 +898,7 @@ export function StoreHeader({
                   </a>
                 )}
               </div>
+              )}
 
               <a
                 href={`https://wa.me/${formatWhatsAppNumberForLink(
@@ -945,7 +942,7 @@ export function StoreHeader({
 
               <div className="space-y-1">
                 <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 px-2">
-                  Cigarette Brands &amp; Navigation
+                  Brands &amp; Categories
                 </div>
                 {navItems.map((item) => (
                   <button
@@ -1180,11 +1177,11 @@ export function StoreFooter() {
       </footer>
 
       {/* STICKY MOBILE BOTTOM 1-CLICK WHATSAPP BAR + DESKTOP FLOATING BUTTON */}
-      <div className="fixed bottom-0 inset-x-0 z-40 sm:bottom-5 sm:right-5 sm:left-auto bg-[#071E2B]/95 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none border-t border-white/15 sm:border-none p-2 sm:p-0 flex items-center justify-between sm:justify-end gap-2">
+      <div className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-40 flex items-center gap-2">
         <button
           type="button"
           onClick={() => setIsCartOpen(true)}
-          className="px-3.5 py-2.5 sm:py-3 rounded-xl sm:rounded-full bg-[#0A2F42] text-white border border-[#F4B143]/50 text-xs font-bold flex items-center gap-2 shadow-lg"
+          className="px-3.5 py-2.5 sm:py-3 rounded-full bg-[#0A2F42] text-white border border-[#F4B143]/50 text-xs font-bold flex items-center gap-2 shadow-lg"
         >
           <ShoppingCart className="w-4 h-4 text-[#F4B143]" />
           <span>Cart ({totalCartItems})</span>
@@ -1198,7 +1195,7 @@ export function StoreFooter() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 sm:flex-initial px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-full bg-[#25D366] hover:bg-[#1fb855] text-black font-extrabold text-xs flex items-center justify-center gap-2 shadow-xl transition-transform active:scale-95"
+          className="px-4 py-2.5 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#1fb855] text-black font-extrabold text-xs flex items-center justify-center gap-2 shadow-xl transition-transform active:scale-95"
         >
           <MessageCircle className="w-4 h-4 fill-current" />
           <span>

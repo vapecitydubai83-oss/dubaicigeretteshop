@@ -168,7 +168,7 @@ export function WhatsAppAutomationBot() {
   return (
     <>
       {/* FLOATING AUTOMATED WHATSAPP CONCIERGE LAUNCHER */}
-      <div className="fixed bottom-16 sm:bottom-20 right-4 sm:right-5 z-40">
+      <div className="fixed bottom-[4.5rem] sm:bottom-20 right-3 sm:right-5 z-40">
         <button
           type="button"
           onClick={() => setIsOpen((o) => !o)}
