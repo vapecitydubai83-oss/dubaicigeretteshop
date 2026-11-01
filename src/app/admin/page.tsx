@@ -44,6 +44,7 @@ import {
 } from "@/lib/catalog-data";
 
 type AdminTab =
+  | "dashboard"
   | "whatsapp-social"
   | "hero-theme"
   | "products"
@@ -77,7 +78,7 @@ export default function AdminDashboardPage() {
     deleteAdminUser,
   } = useStore();
 
-  const [activeTab, setActiveTab] = useState<AdminTab>("products");
+  const [activeTab, setActiveTab] = useState<AdminTab>("dashboard");
 
   // Login gate state
   const [loginUsername, setLoginUsername] = useState("");
@@ -201,18 +202,21 @@ export default function AdminDashboardPage() {
     e.target.value = "";
   };
 
-  // Upload Product Image from computer
-  const handleProductImageUpload = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = e.target.files?.[0];
-    if (!file || !editingProduct) return;
+  // Upload Product Image from computer (shared by file input + drag-drop)
+  const applyProductImage = async (file: File) => {
+    if (!file || !editingProduct || !file.type.startsWith("image/")) return;
     showToast("Uploading Product photo...");
     const uploadedUrl = await uploadImageFile(file);
     setEditingProduct((prev) =>
       prev ? { ...prev, customImageUrl: uploadedUrl } : null
     );
     showToast("Product photo uploaded! Click 'Save Product' below.");
+  };
+
+  const handleProductImageUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    await applyProductImage(e.target.files?.[0] as File);
     e.target.value = "";
   };
 
@@ -446,6 +450,11 @@ export default function AdminDashboardPage() {
             {(
               [
                 {
+                  id: "dashboard",
+                  label: "0. Dashboard & Stats",
+                  icon: LayoutDashboard,
+                },
+                {
                   id: "whatsapp-social",
                   label: "1. WhatsApp & Social Links",
                   icon: PhoneCall,
@@ -577,6 +586,7 @@ export default function AdminDashboardPage() {
               LIVE WEBSITE EDITOR (AUTO-SAVES INSTANTLY)
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 mt-1.5">
+              {activeTab === "dashboard" && "0. Dashboard & Business Stats"}
               {activeTab === "whatsapp-social" &&
                 "1. WhatsApp Settings & Social Media Links"}
               {activeTab === "hero-theme" &&
@@ -601,6 +611,96 @@ export default function AdminDashboardPage() {
             <ExternalLink className="w-4 h-4 text-[#F4B143]" />
           </Link>
         </div>
+
+        {/* ===================================================================
+            TAB 0: DASHBOARD & BUSINESS STATS
+           =================================================================== */}
+        {activeTab === "dashboard" && (
+          <div className="space-y-5">
+            {(() => {
+              const delivered = orders.filter((o) => o.status === "Delivered");
+              const revenue = delivered.reduce((s, o) => s + o.total, 0);
+              const pipeline = orders.filter((o) => o.status !== "Delivered" && o.status !== "Cancelled");
+              const lowStock = products.filter((p) => p.stockCount <= 5);
+              const today = new Date().toDateString();
+              const todayOrders = orders.filter((o) => new Date(o.createdAt).toDateString() === today);
+              const topProducts = Object.entries(
+                orders.flatMap((o) => o.items).reduce<Record<string, number>>((acc, i) => {
+                  acc[i.productId] = (acc[i.productId] || 0) + i.quantity;
+                  return acc;
+                }, {})
+              ).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+              const statCards = [
+                { label: "Total Orders", value: orders.length, sub: `${todayOrders.length} today`, color: "bg-[#0A2F42] text-white" },
+                { label: "Revenue (Delivered)", value: `AED ${revenue.toLocaleString()}`, sub: `${delivered.length} delivered`, color: "bg-emerald-600 text-white" },
+                { label: "In Pipeline", value: pipeline.length, sub: "need action", color: "bg-amber-500 text-white" },
+                { label: "Products", value: products.length, sub: `${lowStock.length} low stock`, color: "bg-[#F4B143] text-black" },
+                { label: "Customer Leads", value: leads.length, sub: "auto-collected", color: "bg-violet-600 text-white" },
+              ];
+              return (
+                <>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                    {statCards.map((c) => (
+                      <div key={c.label} className={`rounded-2xl p-4 shadow-sm ${c.color}`}>
+                        <div className="text-[11px] font-bold uppercase tracking-wider opacity-80">{c.label}</div>
+                        <div className="text-2xl sm:text-3xl font-black mt-1">{c.value}</div>
+                        <div className="text-[11px] font-semibold opacity-75 mt-0.5">{c.sub}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    {/* Orders by status */}
+                    <div className="bg-white rounded-2xl border border-zinc-200 p-5 shadow-sm space-y-3">
+                      <h3 className="font-extrabold text-sm uppercase tracking-wider text-zinc-500">Orders by Status</h3>
+                      {(["New WhatsApp Lead", "Confirmed", "Out for Delivery", "Delivered", "Cancelled"] as const).map((st) => {
+                        const n = orders.filter((o) => o.status === st).length;
+                        return (
+                          <div key={st} className="flex items-center justify-between text-sm">
+                            <span className="font-semibold text-zinc-700">{st}</span>
+                            <span className="font-extrabold text-zinc-900 bg-zinc-100 px-2.5 py-0.5 rounded-full text-xs">{n}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Top selling products */}
+                    <div className="bg-white rounded-2xl border border-zinc-200 p-5 shadow-sm space-y-3">
+                      <h3 className="font-extrabold text-sm uppercase tracking-wider text-zinc-500">Top Products (by units sold)</h3>
+                      {topProducts.length === 0 && (
+                        <p className="text-xs text-zinc-400">No orders yet — top products appear here once customers order.</p>
+                      )}
+                      {topProducts.map(([pid, qty]) => {
+                        const p = products.find((x) => x.id === pid);
+                        return (
+                          <div key={pid} className="flex items-center justify-between text-sm">
+                            <span className="font-semibold text-zinc-700 truncate">{p?.title || pid}</span>
+                            <span className="font-extrabold text-[#0A2F42] bg-[#F4B143]/30 px-2.5 py-0.5 rounded-full text-xs">{qty} sold</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Low stock warning */}
+                  {lowStock.length > 0 && (
+                    <div className="bg-rose-50 rounded-2xl border border-rose-200 p-5 space-y-2">
+                      <h3 className="font-extrabold text-sm uppercase tracking-wider text-rose-600">Low Stock — Restock Needed</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {lowStock.map((p) => (
+                          <span key={p.id} className="px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold">
+                            {p.title} ({p.stockCount} left)
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              );
+            })()}
+          </div>
+        )}
 
         {/* ===================================================================
             TAB 1: WHATSAPP SETTINGS & SOCIAL MEDIA LINKS
@@ -1621,10 +1721,26 @@ export default function AdminDashboardPage() {
                     <label className="block font-bold text-zinc-700 mb-1">
                       11. Product Photo (Upload from Computer OR Paste Image URL)
                     </label>
-                    <div className="flex flex-col sm:flex-row gap-2">
+                    <div
+                      className="flex flex-col sm:flex-row gap-2 rounded-xl border-2 border-dashed border-zinc-300 p-3 transition-colors data-[drop=on]:border-[#25D366] data-[drop=on]:bg-emerald-50"
+                      data-drop="off"
+                      onDragOver={(e) => {
+                        e.preventDefault();
+                        e.currentTarget.dataset.drop = "on";
+                      }}
+                      onDragLeave={(e) => {
+                        e.currentTarget.dataset.drop = "off";
+                      }}
+                      onDrop={(e) => {
+                        e.preventDefault();
+                        e.currentTarget.dataset.drop = "off";
+                        const file = e.dataTransfer.files?.[0];
+                        if (file) applyProductImage(file);
+                      }}
+                    >
                       <input
                         type="text"
-                        placeholder="Optional: Paste Product Image Link (https://... or /uploads/...)"
+                        placeholder="Paste Image Link, or drag & drop a photo onto this box"
                         value={editingProduct.customImageUrl || ""}
                         onChange={(e) =>
                           setEditingProduct({
