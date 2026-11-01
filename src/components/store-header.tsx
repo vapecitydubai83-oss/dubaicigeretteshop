@@ -316,6 +316,7 @@ export function StoreHeader({
         priceHint: `AED ${p.cartonPrice}`,
         filterType: cat.filterType,
         filterValue: cat.filterValue,
+        searchHint: p.title.toLowerCase(),
       })),
       featuredInfo: matches[0]
         ? {
