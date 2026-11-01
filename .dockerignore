@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.env*
+*.code-workspace
+*.py
+img-map.json
+wc-imgs.json
+_chk_*
+_mask_*
+_tpl*
+_wmtest2
