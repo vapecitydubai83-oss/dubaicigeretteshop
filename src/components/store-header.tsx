@@ -164,15 +164,7 @@ const BROWSE_MEGA_CATEGORIES: {
       priceTag: "From AED 50.00 / Carton",
       origin: "100% Sealed Original",
     },
-    subItems: [
-      { label: "Marlboro Series (Gold, Red, Vista, Touch)", priceHint: "AED 180-210", filterType: "brand", filterValue: "Marlboro" },
-      { label: "Dunhill Range (Evoke, Switch, Blue, White)", priceHint: "AED 120-185", filterType: "brand", filterValue: "Dunhill" },
-      { label: "Davidoff Selection (Gold, Silver, White)", priceHint: "AED 145-175", filterType: "brand", filterValue: "Davidoff" },
-      { label: "ESSE Super Slims (Change, Black, Gold)", priceHint: "AED 85-105", filterType: "brand", filterValue: "ESSE" },
-      { label: "Parliament Platinum & Aqua Blue", priceHint: "AED 180-190", filterType: "brand", filterValue: "Parliament" },
-      { label: "Winston Blue, Silver & Blender", priceHint: "AED 135-145", filterType: "brand", filterValue: "Winston" },
-      { label: "Vogue Parisian Super Slims", priceHint: "AED 175-190", filterType: "brand", filterValue: "Vogue" },
-    ],
+    subItems: [],
   },
   {
     id: "premium-international",
@@ -186,12 +178,7 @@ const BROWSE_MEGA_CATEGORIES: {
       priceTag: "From AED 130.00",
       origin: "Imported Duty-Free",
     },
-    subItems: [
-      { label: "Camel Blue & Yellow Filters", priceHint: "AED 175", filterType: "brand", filterValue: "Camel" },
-      { label: "American Spirit Yellow & Blue", priceHint: "AED 190", filterType: "brand", filterValue: "American Spirit" },
-      { label: "Benson & Hedges Special Filter", priceHint: "AED 130", filterType: "brand", filterValue: "Benson & Hedges" },
-      { label: "Chesterfield Silver & Purple Remix", priceHint: "AED 165", filterType: "brand", filterValue: "Chesterfield" },
-    ],
+    subItems: [],
   },
   {
     id: "value-brands",
@@ -205,13 +192,7 @@ const BROWSE_MEGA_CATEGORIES: {
       priceTag: "From AED 50.00 / Carton",
       origin: "Duty-Free Value Picks",
     },
-    subItems: [
-      { label: "Manchester Double Drive & Aqua Queen", priceHint: "AED 75-105", filterType: "brand", filterValue: "Manchester" },
-      { label: "L&M Blue & Red Label", priceHint: "AED 165-175", filterType: "brand", filterValue: "L&M" },
-      { label: "West Red, Blue & Silver", priceHint: "AED 175-180", filterType: "brand", filterValue: "West" },
-      { label: "Gold Leaf & Mond Cigarettes", priceHint: "AED 60-165", filterType: "brand", filterValue: "Gold Leaf" },
-      { label: "Platinum Seven Cool", priceHint: "AED 50", filterType: "brand", filterValue: "Platinum Seven" },
-    ],
+    subItems: [],
   },
   {
     id: "cigars",
@@ -224,10 +205,7 @@ const BROWSE_MEGA_CATEGORIES: {
       priceTag: "From AED 200.00",
       origin: "Switzerland / USA",
     },
-    subItems: [
-      { label: "Villiger Premium No. 3 & No. 7 Sumatra", priceHint: "AED 250-320", filterType: "brand", filterValue: "Villiger" },
-      { label: "Captain Black Dark Crema Little Cigars", priceHint: "AED 200", filterType: "brand", filterValue: "Captain Black" },
-    ],
+    subItems: [],
   },
   {
     id: "iqos-terea",
@@ -236,11 +214,7 @@ const BROWSE_MEGA_CATEGORIES: {
     filterType: "category",
     filterValue: "iqos-terea",
     featuredInfo: { title: "IQOS ILUMA Devices & TEREA Sticks", subtitle: "Blade-free induction devices plus Japan, Switzerland & Indonesia TEREA cartons.", priceTag: "From AED 120.00", origin: "PMI Official" },
-    subItems: [
-      { label: "TEREA Sticks (Japan / Swiss / Indonesia)", priceHint: "AED 120-140", filterType: "category", filterValue: "iqos-terea", searchHint: "TEREA" },
-      { label: "IQOS ILUMA / ILUMA Prime / One Devices", priceHint: "AED 240+", filterType: "category", filterValue: "iqos-terea", searchHint: "ILUMA" },
-      { label: "Lambda Heated Devices", priceHint: "AED 180", filterType: "brand", filterValue: "Lambda" },
-    ],
+    subItems: [],
   },
   {
     id: "vapes",
@@ -248,11 +222,7 @@ const BROWSE_MEGA_CATEGORIES: {
     filterType: "category",
     filterValue: "vapes",
     featuredInfo: { title: "Disposables, Pods & Mods", subtitle: "ELFBAR, HQD, Vozol, Tugboat disposables + MYLE, JUUL, RELX, OXVA pod systems.", priceTag: "From AED 40.00", origin: "UAE ESMA Verified" },
-    subItems: [
-      { label: "ELFBAR, HQD & Vozol Disposables", priceHint: "AED 40-75", filterType: "category", filterValue: "vapes", searchHint: "Disposable" },
-      { label: "MYLE, JUUL & RELX Pod Systems", priceHint: "AED 60-120", filterType: "category", filterValue: "vapes", searchHint: "Pod" },
-      { label: "OXVA, VOOPOO & UWELL Kits", priceHint: "AED 90-260", filterType: "category", filterValue: "vapes", searchHint: "Kit" },
-    ],
+    subItems: [],
   },
   {
     id: "e-liquid",
@@ -260,10 +230,7 @@ const BROWSE_MEGA_CATEGORIES: {
     filterType: "category",
     filterValue: "e-liquid",
     featuredInfo: { title: "SaltNic, Freebase & Shortfills", subtitle: "VGOD, Tokyo, Sam's Vape & Nasty premium e-juices in 30ml & 60ml bottles.", priceTag: "From AED 40.00", origin: "USA / UK Original" },
-    subItems: [
-      { label: "Salt Nicotine E-Liquids", priceHint: "AED 40-60", filterType: "category", filterValue: "e-liquid", searchHint: "Salt" },
-      { label: "Freebase & 60ml E-Juice", priceHint: "AED 50-70", filterType: "category", filterValue: "e-liquid", searchHint: "60ml" },
-    ],
+    subItems: [],
   },
   {
     id: "nicotine-pouches",
@@ -271,10 +238,7 @@ const BROWSE_MEGA_CATEGORIES: {
     filterType: "category",
     filterValue: "nicotine-pouches",
     featuredInfo: { title: "All-White Tobacco-Free Pouches", subtitle: "VELO, White Fox, Pablo & Killa extra-strong snus rolls.", priceTag: "AED 45-120", origin: "Sweden / EU" },
-    subItems: [
-      { label: "VELO & White Fox Pouches", priceHint: "AED 45-60", filterType: "brand", filterValue: "VELO & White Fox" },
-      { label: "Pablo, Killa & Rabbit Extra Strong", priceHint: "AED 50-120", filterType: "category", filterValue: "nicotine-pouches" },
-    ],
+    subItems: [],
   },
   {
     id: "accessories",
@@ -282,10 +246,7 @@ const BROWSE_MEGA_CATEGORIES: {
     filterType: "category",
     filterValue: "accessories",
     featuredInfo: { title: "Pods, Coils & Premium Lighters", subtitle: "Replacement pods, mesh coils and Zippo-style lighters.", priceTag: "From AED 25.00", origin: "Official Spare Parts" },
-    subItems: [
-      { label: "Replacement Pods & Coils", priceHint: "AED 25-60", filterType: "category", filterValue: "accessories" },
-      { label: "Premium Lighters", priceHint: "AED 35-120", filterType: "category", filterValue: "accessories", searchHint: "Lighter" },
-    ],
+    subItems: [],
   },
 ];
 
@@ -722,7 +683,8 @@ export function StoreHeader({
                       </div>
                     </div>
 
-                    {/* Col 3: Spotlight Preview Card */}
+                    {/* Col 3: Spotlight Preview Card — hidden while the catalog is empty */}
+                    {activeMegaCategory.subItems.length > 0 && (
                     <div className="col-span-3 bg-[#0A2F42] text-white p-4 flex flex-col justify-between">
                       <div className="space-y-2">
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F4B143]/20 text-[#F4B143] text-[9px] font-mono uppercase tracking-wider">
@@ -756,6 +718,7 @@ export function StoreHeader({
                         </button>
                       </div>
                     </div>
+                    )}
                   </div>
                 </div>
               )}
