@@ -353,7 +353,9 @@ export const INITIAL_SETTINGS: StoreSettings = {
   },
 };
 
-export const INITIAL_PRODUCTS: Product[] = [...IMPORTED_PRODUCTS, ...MORE_PRODUCTS];
+// Catalog starts empty — client adds products via the admin panel.
+// The imported lists stay in the repo for a possible re-import later.
+export const INITIAL_PRODUCTS: Product[] = [];
 
 export const INITIAL_ORDERS: WhatsAppOrder[] = [
   {
