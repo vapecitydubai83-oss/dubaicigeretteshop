@@ -4,6 +4,15 @@ import path from "path";
 
 export async function POST(request: NextRequest) {
   try {
+    // Image uploads are admin-only (same key as the catalog store).
+    const expected = process.env.ADMIN_API_KEY || "";
+    if (
+      !expected ||
+      request.headers.get("x-admin-key") !== expected
+    ) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
 

@@ -59,6 +59,7 @@ export default function AdminDashboardPage() {
   const {
     products,
     catalogServerLinked,
+    adminApiKey,
     orders,
     leads,
     settings,
@@ -152,6 +153,7 @@ export default function AdminDashboardPage() {
       formData.append("file", file);
       const res = await fetch("/api/upload", {
         method: "POST",
+        headers: adminApiKey ? { "x-admin-key": adminApiKey } : undefined,
         body: formData,
       });
       if (res.ok) {

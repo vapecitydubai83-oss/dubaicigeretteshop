@@ -37,7 +37,7 @@ export default function ProductDetailPage() {
   } = useStore();
 
   const product = useMemo(
-    () => products.find((p) => p.id === productId) || products[0],
+    () => products.find((p) => p.id === productId),
     [products, productId]
   );
 
@@ -48,6 +48,13 @@ export default function ProductDetailPage() {
   const [justAdded, setJustAdded] = useState(false);
 
   if (!product) {
+    if (products.length === 0) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] p-6 text-center">
+          <h1 className="text-2xl font-bold text-zinc-400">Loading…</h1>
+        </div>
+      );
+    }
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] p-6 text-center">
         <div className="space-y-4">

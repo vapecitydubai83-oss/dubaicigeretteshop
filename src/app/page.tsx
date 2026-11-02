@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { MapPin, MessageCircle, Zap } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import {
@@ -77,6 +77,17 @@ export default function EmiratesCigaretteStorefront() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<CategoryId>("all");
   const [selectedBrand, setSelectedBrand] = useState<"All" | BrandName>("All");
+
+  // Apply deep-link filters (?category=, ?brand=, ?q=) arriving from other pages
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("category");
+    const brand = params.get("brand");
+    const q = params.get("q");
+    if (cat) setSelectedCategory(cat as CategoryId);
+    if (brand) setSelectedBrand(brand as "All" | BrandName);
+    if (q) setSearchQuery(q);
+  }, []);
 
   // Quick Order Bar state
   const [quickProductId, setQuickProductId] = useState<string>(

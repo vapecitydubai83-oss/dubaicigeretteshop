@@ -34,6 +34,7 @@ export interface CustomerProfile {
 interface StoreContextValue {
   products: Product[];
   catalogServerLinked: boolean;
+  adminApiKey: string;
   orders: WhatsAppOrder[];
   leads: Lead[];
   customerProfile: CustomerProfile;
@@ -568,14 +569,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   };
 
   const toggleProductStock = (id: string) => {
-    setProducts((prev) => {
-      const next = prev.map((p) =>
-        p.id === id ? { ...p, inStock: !p.inStock } : p
-      );
-      const updated = next.find((p) => p.id === id);
-      if (updated) syncCatalog({ action: "upsert", product: updated });
-      return next;
-    });
+    const target = products.find((p) => p.id === id);
+    const updated = target ? { ...target, inStock: !target.inStock } : null;
+    setProducts((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, inStock: !p.inStock } : p))
+    );
+    if (updated) syncCatalog({ action: "upsert", product: updated });
   };
 
   const updateOrderStatus = (orderId: string, status: WhatsAppOrder["status"]) => {
@@ -797,6 +796,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       value={{
         products,
         catalogServerLinked: Boolean(adminApiKey),
+        adminApiKey,
         orders,
         leads,
         customerProfile,
