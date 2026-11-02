@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -8,7 +8,7 @@ import {
   Search,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
-import { formatWhatsAppNumberForLink } from "@/lib/catalog-data";
+import { formatWhatsAppNumberForLink, WhatsAppOrder } from "@/lib/catalog-data";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
 import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
 
@@ -22,13 +22,29 @@ const STEPS = [
 export default function TrackOrderPage() {
   const { orders, settings } = useStore();
   const [queryId, setQueryId] = useState("");
+  const [serverOrder, setServerOrder] = useState<WhatsAppOrder | null>(null);
   const [selectedOrderId, setSelectedOrderId] = useState<string>(
     orders[0]?.id || "EC-8841"
   );
 
+  // Look up the order on the server so status updates made by the admin
+  // appear even if the customer opens /track on another device.
+  useEffect(() => {
+    const clean = queryId.trim().replace(/^#/, "").toUpperCase();
+    const target = clean.startsWith("EC-") ? clean : selectedOrderId;
+    if (!target) return;
+    fetch(`/api/orders?id=${encodeURIComponent(target)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setServerOrder(d?.order || null))
+      .catch(() => {});
+  }, [queryId, selectedOrderId]);
+
   const matchedOrder = useMemo(() => {
     const clean = queryId.trim().replace(/^#/, "").toUpperCase();
     if (clean) {
+      if (serverOrder && serverOrder.id.toUpperCase() === clean) {
+        return serverOrder;
+      }
       return orders.find(
         (o) =>
           o.id.toUpperCase() === clean ||
@@ -36,8 +52,11 @@ export default function TrackOrderPage() {
           o.customerName.toLowerCase().includes(clean.toLowerCase())
       );
     }
+    if (serverOrder && serverOrder.id === selectedOrderId) {
+      return serverOrder;
+    }
     return orders.find((o) => o.id === selectedOrderId) || orders[0];
-  }, [orders, queryId, selectedOrderId]);
+  }, [orders, queryId, selectedOrderId, serverOrder]);
 
   const activeStepIndex = matchedOrder
     ? STEPS.indexOf(

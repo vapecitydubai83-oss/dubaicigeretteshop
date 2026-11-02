@@ -1,5 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createHmac, timingSafeEqual } from "crypto";
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS } from "@/lib/catalog-data";
+
+function verifySignature(rawBody: string, header: string | null): boolean {
+  const secret = process.env.WHATSAPP_APP_SECRET || "";
+  if (!secret) return true; // signature check enabled once WHATSAPP_APP_SECRET is set
+  if (!header || !header.startsWith("sha256=")) return false;
+  const expected =
+    "sha256=" + createHmac("sha256", secret).update(rawBody).digest("hex");
+  const a = Buffer.from(header);
+  const b = Buffer.from(expected);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
 
 /**
  * Official WhatsApp Business Cloud API & Kapso/Twilio Webhook Endpoint
@@ -33,7 +45,11 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    const rawBody = await request.text();
+    if (!verifySignature(rawBody, request.headers.get("x-hub-signature-256"))) {
+      return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+    }
+    const body = JSON.parse(rawBody);
 
     // Extract message text from either Meta WhatsApp Cloud API format or simple JSON format
     const metaMessage =

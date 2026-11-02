@@ -201,6 +201,18 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       .catch(() => {});
   }, []);
 
+  // When an admin key is present, pull the shared orders + leads from the server.
+  useEffect(() => {
+    if (!adminApiKey) return;
+    fetch("/api/orders", { headers: { "x-admin-key": adminApiKey } })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data?.orders && Array.isArray(data.orders)) setOrders(data.orders);
+        if (data?.leads && Array.isArray(data.leads)) setLeads(data.leads);
+      })
+      .catch(() => {});
+  }, [adminApiKey]);
+
   useEffect(() => {
     if (!hydrated) return;
     try {
@@ -398,6 +410,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
     setOrders((prev) => [newOrder, ...prev]);
     recordLead(newOrder);
+    fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "create", order: newOrder }),
+    }).catch(() => {});
 
     const packLabel =
       packTier === "5-cartons"
@@ -481,6 +498,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
     setOrders((prev) => [newOrder, ...prev]);
     recordLead(newOrder);
+    fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "create", order: newOrder }),
+    }).catch(() => {});
 
     // Remember the customer so their next order (even 1-Click) is pre-filled
     if (payload.customerName || payload.customerPhone || payload.deliveryArea) {
@@ -577,10 +599,23 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     if (updated) syncCatalog({ action: "upsert", product: updated });
   };
 
+  const syncOrder = (payload: Record<string, unknown>) => {
+    if (!adminApiKey) return;
+    fetch("/api/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-key": adminApiKey,
+      },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+  };
+
   const updateOrderStatus = (orderId: string, status: WhatsAppOrder["status"]) => {
     setOrders((prev) =>
       prev.map((o) => (o.id === orderId ? { ...o, status } : o))
     );
+    syncOrder({ action: "status", id: orderId, status });
   };
 
   const createManualOrder = (payload: {
@@ -630,15 +665,22 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
     setOrders((prev) => [newOrder, ...prev]);
     recordLead(newOrder);
+    fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "create", order: newOrder }),
+    }).catch(() => {});
     return newOrder;
   };
 
   const deleteOrder = (orderId: string) => {
     setOrders((prev) => prev.filter((o) => o.id !== orderId));
+    syncOrder({ action: "deleteOrder", id: orderId });
   };
 
   const deleteLead = (leadId: string) => {
     setLeads((prev) => prev.filter((l) => l.id !== leadId));
+    syncOrder({ action: "deleteLead", id: leadId });
   };
 
   const updateSettings = (next: Partial<StoreSettings>) => {
@@ -653,6 +695,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setSettings(INITIAL_SETTINGS);
     setCart([]);
     syncCatalog({ action: "reset" });
+    syncOrder({ action: "reset" });
     try {
       localStorage.removeItem(STORAGE_KEYS.PRODUCTS);
       localStorage.removeItem(STORAGE_KEYS.ORDERS);
