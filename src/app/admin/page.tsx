@@ -406,13 +406,6 @@ export default function AdminDashboardPage() {
               {loginBusy ? "Checking..." : "Login to Admin Panel"}
             </button>
           </form>
-
-          <p className="text-center text-[11px] text-zinc-500 mt-6 leading-relaxed">
-            Default first login — user: <b className="text-zinc-300">admin</b> •
-            pass: <b className="text-zinc-300">admin123</b>
-            <br />
-            Change it in "8. Users &amp; Security" after logging in.
-          </p>
         </div>
       </div>
     );

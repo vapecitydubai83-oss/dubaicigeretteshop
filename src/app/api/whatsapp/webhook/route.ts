@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "crypto";
-import { INITIAL_PRODUCTS, INITIAL_SETTINGS } from "@/lib/catalog-data";
+import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
+import { readCatalogStore } from "@/lib/catalog-store";
 
 function verifySignature(rawBody: string, header: string | null): boolean {
   const secret = process.env.WHATSAPP_APP_SECRET || "";
@@ -11,6 +12,19 @@ function verifySignature(rawBody: string, header: string | null): boolean {
   const a = Buffer.from(header);
   const b = Buffer.from(expected);
   return a.length === b.length && timingSafeEqual(a, b);
+}
+
+async function getLiveCatalog() {
+  const store = await readCatalogStore();
+  const overrides = store.products || {};
+  const deleted = new Set(store.deleted || []);
+  const merged = INITIAL_PRODUCTS.filter((p) => !deleted.has(p.id)).map(
+    (p) => overrides[p.id] ?? p
+  );
+  const baseIds = new Set(INITIAL_PRODUCTS.map((p) => p.id));
+  const added: Product[] = Object.values(overrides).filter((p) => !baseIds.has(p.id));
+  const settings = { ...INITIAL_SETTINGS, ...(store.settings || {}) };
+  return { products: [...added.reverse(), ...merged], settings };
 }
 
 /**
@@ -61,9 +75,10 @@ export async function POST(request: NextRequest) {
     const incomingText = (metaMessage || body?.text || "").toString().trim();
 
     const q = incomingText.toLowerCase();
+    const { products: liveProducts, settings: liveSettings } = await getLiveCatalog();
 
-    // Match product in catalog
-    const matchedProduct = INITIAL_PRODUCTS.find(
+    // Match product in live catalog (including admin edits)
+    const matchedProduct = liveProducts.find(
       (p) =>
         q.includes(p.title.toLowerCase()) ||
         q.includes(p.brand.toLowerCase())
@@ -72,8 +87,8 @@ export async function POST(request: NextRequest) {
     let replyMessage = "";
     if (matchedProduct) {
       replyMessage = [
-        `Marhaba from *${INITIAL_SETTINGS.storeName}* (${INITIAL_SETTINGS.supportPhoneDisplay})!`,
-        `✅ *${matchedProduct.title}* is IN STOCK for 45–60 min Dubai delivery.`,
+        `Marhaba from *${liveSettings.storeName}* (${liveSettings.supportPhoneDisplay})!`,
+        `✅ *${matchedProduct.title}* is ${matchedProduct.inStock ? "IN STOCK" : "currently out of stock"} for 45–60 min Dubai delivery.`,
         `• 1 Carton: AED ${matchedProduct.cartonPrice}.00`,
         `• 5 Cartons VIP: AED ${matchedProduct.fiveCartonPrice}.00`,
         `• Specs: ${matchedProduct.tar} Tar / ${matchedProduct.nicotine} Nicotine`,
@@ -82,7 +97,7 @@ export async function POST(request: NextRequest) {
       ].join("\n");
     } else {
       replyMessage = [
-        `Marhaba! Welcome to *${INITIAL_SETTINGS.storeName}* (${INITIAL_SETTINGS.supportPhoneDisplay}) — Dubai's #1 24/7 Online Cigarette Shop.`,
+        `Marhaba! Welcome to *${liveSettings.storeName}* (${liveSettings.supportPhoneDisplay}) — Dubai's #1 24/7 Online Cigarette Shop.`,
         ``,
         `Reply with a brand name to check live carton price & order:`,
         `1️⃣ *Marlboro* (Gold, Red, Vista Double Mix, Ice — AED 190–200)`,

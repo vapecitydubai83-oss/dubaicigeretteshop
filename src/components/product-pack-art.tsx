@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Product } from "@/lib/catalog-data";
 
 export function ProductPackArt({
@@ -10,20 +10,32 @@ export function ProductPackArt({
   product: Product;
   compact?: boolean;
 }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  useEffect(() => {
+    setImgFailed(false);
+  }, [product.customImageUrl]);
+
+  const escapedBrand = (product.brand || "").replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&"
+  );
   // Extract short variant subtitle (e.g. "gold", "red", "silver blue", "touch")
   const variantLabel = product.title
-    .replace(new RegExp(`^${product.brand}\\s*`, "i"), "")
+    .replace(new RegExp(`^${escapedBrand}\\s*`, "i"), "")
     .replace(/original|classic|carton|uae edition|king size/gi, "")
     .trim()
     .toLowerCase();
 
+  const showImg = Boolean(product.customImageUrl) && !imgFailed;
+
   if (compact) {
     return (
       <div className="relative h-24 w-20 rounded-lg bg-[#FDF9EE] border-2 border-[#F5B959] flex flex-col items-center justify-between p-1.5 overflow-hidden select-none shadow-sm">
-        {product.customImageUrl ? (
+        {showImg ? (
           <img
             src={product.customImageUrl}
             alt={product.title}
+            onError={() => setImgFailed(true)}
             className="w-full h-full object-contain"
           />
         ) : (
@@ -74,10 +86,11 @@ export function ProductPackArt({
           backgroundSize: "34px 34px",
         }}
       >
-        {product.customImageUrl ? (
+        {showImg ? (
           <img
             src={product.customImageUrl}
             alt={product.title}
+            onError={() => setImgFailed(true)}
             className="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

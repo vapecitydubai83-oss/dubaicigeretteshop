@@ -190,12 +190,15 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     }
     setHydrated(true);
 
-    // Pull the shared catalog state (admin edits made for all visitors).
+    // Pull the shared catalog state + settings (admin edits made for all visitors).
     fetch("/api/catalog")
       .then((r) => (r.ok ? r.json() : null))
       .then((store) => {
         if (store && typeof store === "object") {
           setProducts(applyCatalogStore(store));
+          if (store.settings && typeof store.settings === "object") {
+            setSettings((prev) => ({ ...prev, ...store.settings }));
+          }
         }
       })
       .catch(() => {});
@@ -267,6 +270,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   const setActiveTheme = (theme: ThemeId) => {
     setSettings((prev) => ({ ...prev, activeTheme: theme }));
+    syncCatalog({ action: "settings", settings: { activeTheme: theme } });
   };
 
   const addToCart = (
@@ -559,9 +563,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   // Push a catalog change to the server store so every visitor sees it.
   // No-op without an admin API key (changes then stay local to this browser).
   const syncCatalog = (payload: {
-    action: "upsert" | "delete" | "reset";
+    action: "upsert" | "delete" | "settings" | "reset";
     product?: Product;
     id?: string;
+    settings?: Partial<StoreSettings>;
   }) => {
     if (!adminApiKey) return;
     fetch("/api/catalog", {
@@ -685,6 +690,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   const updateSettings = (next: Partial<StoreSettings>) => {
     setSettings((prev) => ({ ...prev, ...next }));
+    syncCatalog({ action: "settings", settings: next });
   };
 
   const resetDemoData = () => {
@@ -747,6 +753,16 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           );
         } catch {}
         return { ok: true };
+      }
+      // If the server admin endpoint is configured and rejected the login
+      // (401 / 429), do NOT fall back to the local default account.
+      if (res.status === 401 || res.status === 429) {
+        const errData = await res.json().catch(() => ({}));
+        return {
+          ok: false,
+          error:
+            errData?.error || "Incorrect username or password. Please try again.",
+        };
       }
     } catch {}
 

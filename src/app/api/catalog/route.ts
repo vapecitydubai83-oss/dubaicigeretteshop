@@ -1,50 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
-import { mkdir, readFile, rename, writeFile } from "fs/promises";
-import path from "path";
-import type { Product } from "@/lib/catalog-data";
-
-// Product edits made in the admin panel are stored here, inside the uploads
-// volume, so they survive rebuilds and reach every visitor.
-const DATA_DIR = path.join(process.cwd(), "public", "uploads", "_store");
-const DATA_FILE = path.join(DATA_DIR, "catalog.json");
-
-interface CatalogStore {
-  // Full product objects keyed by id — covers both edits of base-catalog
-  // products and brand-new products added in the admin panel.
-  products: Record<string, Product>;
-  // Base-catalog product ids removed in the admin panel.
-  deleted: string[];
-}
-
-const EMPTY: CatalogStore = { products: {}, deleted: [] };
-
-async function readStore(): Promise<CatalogStore> {
-  try {
-    const raw = await readFile(DATA_FILE, "utf-8");
-    const j = JSON.parse(raw);
-    return {
-      products: j.products && typeof j.products === "object" ? j.products : {},
-      deleted: Array.isArray(j.deleted) ? j.deleted : [],
-    };
-  } catch {
-    return { products: {}, deleted: [] };
-  }
-}
-
-async function writeStore(store: CatalogStore) {
-  await mkdir(DATA_DIR, { recursive: true });
-  const tmp = DATA_FILE + ".tmp";
-  await writeFile(tmp, JSON.stringify(store), "utf-8");
-  await rename(tmp, DATA_FILE);
-}
+import { timingSafeEqual } from "crypto";
+import type { Product, StoreSettings } from "@/lib/catalog-data";
+import { readCatalogStore, writeCatalogStore } from "@/lib/catalog-store";
 
 function authorized(request: NextRequest): boolean {
   const expected = process.env.ADMIN_API_KEY || "";
-  return Boolean(expected) && request.headers.get("x-admin-key") === expected;
+  const provided = request.headers.get("x-admin-key") || "";
+  if (!expected || !provided) return false;
+  const ba = Buffer.from(provided);
+  const bb = Buffer.from(expected);
+  return ba.length === bb.length && timingSafeEqual(ba, bb);
 }
 
-export async function GET() {
-  return NextResponse.json(await readStore());
+export async function GET(request: NextRequest) {
+  const store = await readCatalogStore();
+  // Never expose cloudApiAccessToken or webhookVerifyToken to unauthenticated callers.
+  if (!authorized(request) && store.settings?.whatsappBot) {
+    return NextResponse.json({
+      ...store,
+      settings: {
+        ...store.settings,
+        whatsappBot: {
+          ...store.settings.whatsappBot,
+          cloudApiAccessToken: "",
+          webhookVerifyToken: "",
+        },
+      },
+    });
+  }
+  return NextResponse.json(store);
 }
 
 export async function POST(request: NextRequest) {
@@ -56,6 +40,7 @@ export async function POST(request: NextRequest) {
     action?: string;
     product?: Product;
     id?: string;
+    settings?: Partial<StoreSettings>;
   };
   try {
     body = await request.json();
@@ -63,7 +48,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const store = await readStore();
+  const store = await readCatalogStore();
 
   if (body.action === "upsert" && body.product?.id) {
     const p = body.product;
@@ -72,15 +57,18 @@ export async function POST(request: NextRequest) {
   } else if (body.action === "delete" && body.id) {
     delete store.products[body.id];
     if (!store.deleted.includes(body.id)) store.deleted.push(body.id);
+  } else if (body.action === "settings" && body.settings && typeof body.settings === "object") {
+    store.settings = { ...(store.settings || {}), ...body.settings };
   } else if (body.action === "reset") {
     store.products = {};
     store.deleted = [];
+    delete store.settings;
   } else {
     return NextResponse.json({ error: "Unknown action" }, { status: 400 });
   }
 
   try {
-    await writeStore(store);
+    await writeCatalogStore(store);
   } catch (err) {
     console.error("Catalog store write failed:", err);
     return NextResponse.json(

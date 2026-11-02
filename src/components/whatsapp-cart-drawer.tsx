@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CheckCircle2,
   MapPin,
@@ -33,6 +33,13 @@ export function WhatsAppCartDrawer() {
   const [deliveryArea, setDeliveryArea] = useState(
     customerProfile.area || DUBAI_AREAS[0]
   );
+
+  // Sync saved customer profile once localStorage hydrates
+  useEffect(() => {
+    if (customerProfile.name && !customerName) setCustomerName(customerProfile.name);
+    if (customerProfile.phone && !customerPhone) setCustomerPhone(customerProfile.phone);
+    if (customerProfile.area) setDeliveryArea(customerProfile.area);
+  }, [customerProfile.name, customerProfile.phone, customerProfile.area]);
   const [addressNote, setAddressNote] = useState("");
   const [paymentMethod, setPaymentMethod] =
     useState<WhatsAppOrder["paymentMethod"]>("Cash on Delivery");

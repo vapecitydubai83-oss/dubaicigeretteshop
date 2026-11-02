@@ -190,7 +190,9 @@ export function SeoAeoGeoSection({
       {/* Inject JSON-LD Structured Data for Google & AI Search Engines */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaGraph).replace(/</g, "\\u003c"),
+        }}
       />
 
       {/* ===================================================================

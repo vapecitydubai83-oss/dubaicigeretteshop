@@ -220,7 +220,9 @@ export default function ProductDetailPage() {
       {/* Inject Product Page JSON-LD Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
       {/* Breadcrumb Bar */}

@@ -1,13 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { timingSafeEqual } from "crypto";
 import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
-import { INITIAL_ORDERS, Lead, WhatsAppOrder } from "@/lib/catalog-data";
+import { INITIAL_ORDERS, Lead, OrderItem, WhatsAppOrder } from "@/lib/catalog-data";
 
 // Orders and leads live in the persistent uploads volume so orders placed
 // by customers on any device show up in the admin panel.
 const DATA_DIR = path.join(process.cwd(), "public", "uploads", "_store");
 const DATA_FILE = path.join(DATA_DIR, "orders.json");
 const MAX_ORDERS = 500;
+
+// Per-IP rate limit on public order creation: max 15 orders per 10 minutes.
+const CREATE_WINDOW_MS = 10 * 60 * 1000;
+const CREATE_MAX = 15;
+const createBuckets = new Map<string, { count: number; resetAt: number }>();
 
 interface OrderStore {
   orders: WhatsAppOrder[];
@@ -36,7 +42,15 @@ async function writeStore(store: OrderStore) {
 
 function authorized(request: NextRequest): boolean {
   const expected = process.env.ADMIN_API_KEY || "";
-  return Boolean(expected) && request.headers.get("x-admin-key") === expected;
+  const provided = request.headers.get("x-admin-key") || "";
+  if (!expected || !provided) return false;
+  const ba = Buffer.from(provided);
+  const bb = Buffer.from(expected);
+  return ba.length === bb.length && timingSafeEqual(ba, bb);
+}
+
+function cleanStr(val: unknown, maxLen = 160): string {
+  return typeof val === "string" ? val.trim().slice(0, maxLen) : "";
 }
 
 function mergeLead(leads: Lead[], order: WhatsAppOrder): Lead[] {
@@ -44,7 +58,8 @@ function mergeLead(leads: Lead[], order: WhatsAppOrder): Lead[] {
   const hasRealPhone = digits.length >= 9;
   const productInterest = (order.items || [])
     .map((i) => `${i.title} (${i.brand})`)
-    .join(", ");
+    .join(", ")
+    .slice(0, 300);
 
   const existingIdx = hasRealPhone
     ? leads.findIndex((l) => {
@@ -91,8 +106,6 @@ function mergeLead(leads: Lead[], order: WhatsAppOrder): Lead[] {
 
 export async function GET(request: NextRequest) {
   const store = await readStore();
-  // Admin gets the full list; public callers can only look up a single order
-  // by id for /track (with phone masked).
   if (authorized(request)) {
     return NextResponse.json(store);
   }
@@ -129,17 +142,73 @@ export async function POST(request: NextRequest) {
 
   const store = await readStore();
 
-  // Customer order creation is public; all other mutations require the admin key.
+  // Customer order creation is public (rate-limited & sanitized); all other mutations require the admin key.
   if (body.action === "create" && body.order?.id && Array.isArray(body.order.items)) {
+    if (!authorized(request)) {
+      const ip =
+        request.headers.get("cf-connecting-ip") ||
+        request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+        "unknown";
+      const now = Date.now();
+      const b = createBuckets.get(ip);
+      if (b && b.resetAt > now && b.count >= CREATE_MAX) {
+        return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
+      }
+      createBuckets.set(ip, {
+        count: (b && b.resetAt > now ? b.count : 0) + 1,
+        resetAt: now + CREATE_WINDOW_MS,
+      });
+    }
+
+    const raw = body.order;
+    const items: OrderItem[] = raw.items.slice(0, 30).map((it) => ({
+      productId: cleanStr(it.productId, 80),
+      title: cleanStr(it.title, 140),
+      brand: cleanStr(it.brand, 60),
+      packTier: it.packTier === "5-cartons" ? "5-cartons" : "1-carton",
+      quantity: Math.max(1, Math.min(100, Number(it.quantity) || 1)),
+      unitPrice: Math.max(0, Math.min(100000, Number(it.unitPrice) || 0)),
+    }));
+    if (items.length === 0) {
+      return NextResponse.json({ error: "Empty items" }, { status: 400 });
+    }
+
+    // Never allow public create to overwrite an existing order ID.
+    let orderId = cleanStr(raw.id, 24).toUpperCase() || `EC-${Math.floor(8842 + Math.random() * 1100)}`;
+    if (store.orders.some((o) => o.id.toUpperCase() === orderId)) {
+      orderId = `EC-${Math.floor(1000 + Math.random() * 9000)}-${Date.now().toString().slice(-3)}`;
+    }
+
+    const subtotal = items.reduce((s, i) => s + i.unitPrice * i.quantity, 0);
+    const deliveryFee = Math.max(0, Math.min(500, Number(raw.deliveryFee) || 0));
+
     const order: WhatsAppOrder = {
-      ...body.order,
+      id: orderId,
       createdAt: new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" }),
+      customerName: cleanStr(raw.customerName, 80) || "WhatsApp Express Guest",
+      customerPhone: cleanStr(raw.customerPhone, 40) || "Via WhatsApp Concierge",
+      deliveryArea: cleanStr(raw.deliveryArea, 100) || "Downtown Dubai",
+      addressNote: cleanStr(raw.addressNote, 240) || "Direct WhatsApp Checkout",
+      paymentMethod:
+        raw.paymentMethod === "Card on Delivery" ||
+        raw.paymentMethod === "Apple Pay / Link"
+          ? raw.paymentMethod
+          : "Cash on Delivery",
+      items,
+      subtotal,
+      deliveryFee,
+      total: subtotal + deliveryFee,
+      status: authorized(request) && raw.status ? raw.status : "New WhatsApp Lead",
+      source:
+        raw.source === "Multi-Item Cart" || raw.source === "Hero Quick-Order"
+          ? raw.source
+          : "Express 1-Click",
     };
-    const withoutDup = store.orders.filter((o) => o.id !== order.id);
-    store.orders = [order, ...withoutDup].slice(0, MAX_ORDERS);
+
+    store.orders = [order, ...store.orders].slice(0, MAX_ORDERS);
     store.leads = mergeLead(store.leads, order);
     await writeStore(store);
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, id: order.id });
   }
 
   if (!authorized(request)) {
