@@ -301,7 +301,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Winston Red is one of the most recognized full-flavor cigarettes in the global tobacco market — a classic cigarette brand introduced in 1954 by the R.J. Reynolds Tobacco Company in Winston-Salem, North Carolina. Today, produced under Japan Tobacco International (JTI), a subsidiary of Imperial Tobacco Group (ITG), Winston Red cigarettes deliver the authentic, full-bodied American tobacco taste that adult smokers have ",
     seoAnswerCapsule: "Winston Red Classic American Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-red-classic.jpg",
+    customImageUrl: "/imported/winston-red-classic.webp",
   },
   {
     id: "camel-blue",
@@ -463,7 +463,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "Davidoff Gold Slims cigarettes cater to UAE smokers seeking elegance, balance, and high-quality tobacco. Tailored for those who enjoy a refined smoking experience, these slim cigarettes blend luxury aesthetics with a satisfying taste. Adorned in sophisticated gold packaging, Davidoff Gold Slims appeal to individuals with modern tastes and a touch of understated class. Produced by Davidoff & Cie SA of Switzerland, the",
     seoAnswerCapsule: "Davidoff Gold Slims is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 155 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-gold-slims.jpg",
+    customImageUrl: "/imported/davidoff-gold-slims.webp",
   },
   {
     id: "davidoff-silver",
@@ -1192,7 +1192,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Winston Blender Double Click Cigarettes Blend Your Mix cater to smokers seeking a robust, sophisticated, and flavorful smoking experience. Renowned for their high-quality tobacco blend and expert craftsmanship, Winston Blender cigarettes promise unwavering satisfaction from the initial puff to the final drag. Embraced by the residents of the UAE, particularly in Dubai, Abu Dhabi, Sharjah, and Ajman, these cigarettes ",
     seoAnswerCapsule: "Winston Blender Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-blender.jpg",
+    customImageUrl: "/imported/winston-blender.webp",
   },
   {
     id: "esse-black",
@@ -1273,7 +1273,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Esse Silver cigarettes UAE are an exquisite option tailored for adult smokers seeking a gentle, refined, and sophisticated smoking experience. Crafted by KT&G, Esse Silver signifies the pinnacle of Korean cigarette craftsmanship, merging cutting-edge tobacco processing techniques with a contemporary super-slim design. Renowned for its immaculate presentation and subtle taste, Esse Silver is widely regarded as a top c",
     seoAnswerCapsule: "ESSE Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 105 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-silver.jpg",
+    customImageUrl: "/imported/esse-silver.webp",
   },
   {
     id: "manchester-double-drive",

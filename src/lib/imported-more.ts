@@ -1408,7 +1408,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Specifications Brand: Waka Vape Model: Waka So Pro Puff Capacity: Up to 20000 puffs Nicotine Strength: 5% (50mg) Battery: Rechargeable Coil: Dual Mesh Technology Charging: USB Device Type: Disposable, Rechargeable Vape Flavors: 25+ options Origin: International",
     seoAnswerCapsule: "Waka Sopro 20000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/waka-sopro-20000-puffs-disposable-vape.jpg",
+    customImageUrl: "/imported/waka-sopro-20000-puffs-disposable-vape.webp",
   },
   {
     id: "sams-vape-frozen-berry-crash-saltnic-30ml",
@@ -1460,7 +1460,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "High-Quality Salt Nicotine Blend from Malaysia Intense Cooling Sensation featuring Super Cool Frost Signature Even 50/50 VG/PG Mix for a Seamless MTL Vaping Experience Available in 35mg   50mg Nicotine Strengths Vibrant Fruit Flavors Infused with a Refreshing Ice Element Crafted for Pod Systems   Beginners&#8217; Kits Child-Resistant 30ml Chubby Gorilla Container Refreshing Menthol Underto",
     seoAnswerCapsule: "Nasty Super Cool Saltnic-30Ml Vape Jucie is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/nasty-super-cool-saltnic-30ml-vape-jucie.jpg",
+    customImageUrl: "/imported/nasty-super-cool-saltnic-30ml-vape-jucie.webp",
   },
   {
     id: "velo-nicotine-pouches",
@@ -1486,7 +1486,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Tobacco-free, smoke-free, and spit-free nicotine experience Slim, discreet pouches for comfortable, anytime use Wide range of flavors and strengths (4mg–18mg) to suit your preference Simple to use—just place under your lip and enjoy up to 30 minutes Fast delivery available in Dubai and across the UAE",
     seoAnswerCapsule: "Velo Nicotine Pouches is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 30 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
-    customImageUrl: "/imported/velo-nicotine-pouches.jpg",
+    customImageUrl: "/imported/velo-nicotine-pouches.webp",
   },
   {
     id: "velo-peppermint-storm-10-9mg",
@@ -1512,7 +1512,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Potent 10.9mg nicotine for a robust, gratifying experience Crashing Mint Blizzard flavor with a refreshing menthol finish Sleek, white nicotine pouches – discreet and resistant to stains Free from tobacco and smoke, providing a nicotine alternative Each can contains 20 slender pouches for prolonged daily use 0.75g per pouch ensures a comfortable yet consistent release Catering to enthusiasts of po",
     seoAnswerCapsule: "Velo Peppermint Storm 10.9Mg is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
-    customImageUrl: "/imported/velo-peppermint-storm-10-9mg.jpg",
+    customImageUrl: "/imported/velo-peppermint-storm-10-9mg.webp",
   },
   {
     id: "vape-bar-ghost-pro-3500-puffs-disposable",
@@ -1538,7 +1538,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Provides up to 3500 puffs Contains 20mg of nicotine salt Requires no refills or charging Features a compact and portable design Offers a wide selection of rich flavors Ensures consistent performance Suitable for beginners and experienced vapers alike Guaranteed authenticity with sealed product Highly favored in Dubai and the UAE Dubai offers same-day delivery option",
     seoAnswerCapsule: "Vape Bar Ghost Pro 3500 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vape-bar-ghost-pro-3500-puffs-disposable.jpg",
+    customImageUrl: "/imported/vape-bar-ghost-pro-3500-puffs-disposable.webp",
   },
   {
     id: "hqd-glaze-plus-12000-puffs-disposable-vape",
@@ -1564,7 +1564,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "HQD Glaze Plus 12000 Puffs – Key Features: Dual Oil Chamber: Keeps flavors fresh and prevents burnt taste, even up to the last puff. Ice Boost Button: Instantly adds a cooling sensation—perfect for Dubai’s heat. Smart LED Screen: Real-time battery and e-liquid levels for worry-free vaping. Up to 12,000 Puffs: Long-lasting, convenient, and consistent performance. Perfect choice for vapers in Dubai",
     seoAnswerCapsule: "HQD Glaze Plus 12000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-glaze-plus-12000-puffs-disposable-vape.jpg",
+    customImageUrl: "/imported/hqd-glaze-plus-12000-puffs-disposable-vape.webp",
   },
   {
     id: "iqos-terea-tidal-pearl-kazakhstan",
@@ -1590,7 +1590,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Premium woody and light tea flavor enhanced with a refreshing mint finish Designed exclusively for IQOS ILUMA – bladeless, clean experience Consistent nicotine delivery at 0.5 mg per stick for a smooth, balanced session Approx. 14 puffs per heatstick , ideal for controlled enjoyment Authentic Kazakhstan origin , ensuring genuine TEREA quality 1 carton per box includes 10 packs (200 heatsticks tota",
     seoAnswerCapsule: "IQOS TEREA Tidal Pearl Kazakhstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-tidal-pearl-kazakhstan.jpg",
+    customImageUrl: "/imported/iqos-terea-tidal-pearl-kazakhstan.webp",
   },
   {
     id: "waka-sopro-10000-puffs",
@@ -1850,7 +1850,6 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puffs : Enjoy up to 9000 puffs per pod E-liquid : Contains 13ml of pre-filled e-liquid Nicotine Strength : Packed with 50mg/mL of synthetic nicotine Coil Technology : Features a 1.2 Ohm Mesh Coil for superior flavor Activation : Seamlessly activated by Auto Draw (no buttons needed) Pod Battery : Pod has a 200mAh capacity, providing approximately 200 puffs independently Power Bank Battery : Power B",
     seoAnswerCapsule: "Elf Bar Ew9000 Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elf-bar-ew9000-pod-kit-9000-puffs-prefilled-disposable.webp",
   },
   {
     id: "elf-bar-ew9000-disposable-prefilled-pod-9000-puff",
@@ -2084,7 +2083,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Yuoto Product Name: Yuoto XXL Disposable Vape Puff Capacity: Up to 2500 puffs Nicotine Strength: 50mg/ml (5%) Nicotine Salt Battery Capacity: 1200mAh built-in battery E-liquid Capacity: 7ml pre-filled premium e-liquid Design: Sleek, portable, and lightweight body suitable for daily vaping Features: Utilizes a draw-activated system, provides consistent vapor production, and incorporates a le",
     seoAnswerCapsule: "Yuoto Xxl Disposable Vape (2500 Puffs) is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 25 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/yuoto-xxl-disposable-vape-2500-puffs-in.jpg",
+    customImageUrl: "/imported/yuoto-xxl-disposable-vape-2500-puffs-in.webp",
   },
   {
     id: "hayati-pro-ultra-s-50000-puffs-disposable-vape-in",
@@ -2110,7 +2109,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Hayati Model: Pro Ultra+ S Puffs: 50,000 puff capacity Battery Capacity: High-performance rechargeable battery Charging Port: Type-C for quick charging E-Liquid Capacity: Spacious reservoir to accommodate prolonged use Nicotine Levels: Range of options based on location and user preference Construction: Lightweight and durable design for lasting quality.",
     seoAnswerCapsule: "Hayati Pro Ultra+ S 50000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/hayati-pro-ultra-s-50000-puffs-disposable-vape-in.jpg",
+    customImageUrl: "/imported/hayati-pro-ultra-s-50000-puffs-disposable-vape-in.webp",
   },
   {
     id: "oxbar-triple-tank-control-45k-puffs-disposable-vape",
@@ -2136,7 +2135,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: OXBAR Product: OXBAR Triple Tank Control Disposable Vape (45,000 Puffs) Puff Capacity: Provides up to 45,000 puffs Battery: 850mAh rechargeable with Type-C fast charging E-liquid Capacity: Contains 20ml of pre-filled high-quality e-liquid Nicotine Level: 20mg/ml (2%) Nicotine Salt Design: Features a stylish, ergonomic, and durable body equipped with an advanced airflow system Key Features:",
     seoAnswerCapsule: "Best Oxbar Triple Tank Control 45K Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxbar-triple-tank-control-45k-puffs-disposable-vape.jpg",
+    customImageUrl: "/imported/oxbar-triple-tank-control-45k-puffs-disposable-vape.webp",
   },
   {
     id: "tugboat-royal-pro-40000-puffs-disposable-vape-in",
@@ -2162,7 +2161,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Tugboat Product Name: Tugboat Royal Pro 40000 Puffs Disposable Vape Puff Capacity: Up to 40,000 puffs Battery Capacity: 850mAh rechargeable (Type-C charging) E-liquid Capacity: 18ml pre-filled premium e-liquid Nicotine Strength: 20mg/ml (2%) Nicotine Salt Design: Sleek, ergonomic, and portable design for easy vaping Features: Dual mesh coil system, smart screen display, airflow control Flav",
     seoAnswerCapsule: "Best Tugboat Royal Pro 40000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-royal-pro-40000-puffs-disposable-vape-in.jpg",
+    customImageUrl: "/imported/tugboat-royal-pro-40000-puffs-disposable-vape-in.webp",
   },
   {
     id: "pod-salt-15000-puffs-20mg-disposable-vape",
@@ -2188,7 +2187,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Pod Salt Product Name: Pod Salt 15000 Puffs Disposable Vape Puff Capacity: Up to 15,000 puffs Battery Capacity: 650mAh rechargeable (Type-C charging) E-liquid Capacity: 12ml pre-filled premium e-liquid Nicotine Strength: 20mg/ml (2%) Nicotine Salt Design: Compact, lightweight, and ergonomic for easy handling Features: Advanced mesh coil technology, consistent flavor, smooth draw Flavor Opti",
     seoAnswerCapsule: "Pod Salt 15000 Puffs 20Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pod-salt-15000-puffs-20mg-disposable-vape.jpg",
+    customImageUrl: "/imported/pod-salt-15000-puffs-20mg-disposable-vape.webp",
   },
   {
     id: "geekvape-wenax-sc-pod-system-kit-1100mah-in",
@@ -2214,7 +2213,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Geekvape Model: Wenax SC Pod Kit Battery: Rechargeable built-in 1100mAh battery Output Power: Adjustable across multiple levels Pod Capacity: 2ml Coil Compatibility: Geekvape G Series Coils (coil resistance varies) Charging Port: Type-C for fast charging Activation: Button-operated and draw-activated Size: Slim, lightweight, and pocket-friendly",
     seoAnswerCapsule: "Geekvape Wenax Sc Pod System Kit 1100Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/geekvape-wenax-sc-pod-system-kit-1100mah-in.jpg",
+    customImageUrl: "/imported/geekvape-wenax-sc-pod-system-kit-1100mah-in.webp",
   },
   {
     id: "vishbar-weekly-20000-puffs-50mg-disposable-vape-in",
@@ -2240,7 +2239,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vishbar Model: Vishbar Weekly Disposable Vape Puff Count: Capable of delivering up to 20,000 puffs Nicotine Strength: Contains 50mg (5% Salt Nicotine) Battery Capacity: Rechargeable 650mAh battery E-Liquid Capacity: Approximately 20ml capacity Charging Port: Supports Type-C Fast Charging Activation Mode: Features Auto-draw function (no buttons required) Design: Characterized by a sleek, com",
     seoAnswerCapsule: "Vishbar Weekly 20000 Puffs (50Mg) Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vishbar-weekly-20000-puffs-50mg-disposable-vape-in.jpg",
+    customImageUrl: "/imported/vishbar-weekly-20000-puffs-50mg-disposable-vape-in.webp",
   },
   {
     id: "tugboat-evo-pro",
@@ -2266,7 +2265,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Capacity: Capable of delivering up to 15,000 puffs Battery Type: Features a built-in rechargeable battery Charging Port: Equipped with Type-C fast charging E-liquid Capacity: Comes with a large pre-filled tank for prolonged usage Nicotine Strength: Contains 5% Nicotine Salt (50mg/ml) Activation Mode: Utilizes draw-activation (no buttons needed) Design: Designed with ergonomics in mind, ensuri",
     seoAnswerCapsule: "Tugboat Evo Pro 15000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-evo-pro.jpg",
+    customImageUrl: "/imported/tugboat-evo-pro.webp",
   },
   {
     id: "buy-vaporesso-xros-pro-vape-kit-30w-1200mah",
@@ -2552,7 +2551,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Geek Bar Model: Ice Prince 50000 Puffs Puff Count: Provides up to 50,000 puffs Battery Capacity: Features a rechargeable high-capacity battery Charging Port: Equipped with Type-C Fast Charging E-liquid Capacity: Includes a large pre-filled tank for extended use Nicotine Strength: Contains 5% (50mg) nicotine salt concentration Coil Type: Utilizes Advanced Mesh Coil Technology Activation Mode",
     seoAnswerCapsule: "Geek Bar Ice Prince 50000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 49 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/geek-bar-ice-prince-50000-puffs-in.jpg",
+    customImageUrl: "/imported/geek-bar-ice-prince-50000-puffs-in.webp",
   },
   {
     id: "myle-v5-meta-device",
@@ -6688,7 +6687,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Vozol Vista 20000 Puffs In Dubai,UAE Packages 1Pcs   10Pcs In A Box buy 10 Pcs Get Free Delivery",
     seoAnswerCapsule: "Vozol Vista 20000 Puffs Rechargeable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-vista-20000-puffs-rechargeable-vape.jpg",
+    customImageUrl: "/imported/vozol-vista-20000-puffs-rechargeable-vape.webp",
   },
   {
     id: "hqd-cuvie-plus-2-0-disposable-vape-9000-puffs",
@@ -6714,7 +6713,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "HQD Cuvie Plus 2.0 Disposable Vape – 9000 Puffs Experience smooth, long-lasting vaping with the HQD Cuvie Plus 2.0. Packed with up to 9000 puffs and powered by a reliable 600mAh battery, it offers bold flavor and convenience in a sleek, disposable design.",
     seoAnswerCapsule: "HQD Cuvie Plus 2.0 Disposable Vape 9000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-cuvie-plus-2-0-disposable-vape-9000-puffs.jpg",
+    customImageUrl: "/imported/hqd-cuvie-plus-2-0-disposable-vape-9000-puffs.webp",
   },
   {
     id: "tugboat-vape-4500-puffs-disposable-in",
@@ -7156,7 +7155,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Build-in-Battery: 600 mAh Charging: Type-C (TYPE-C interface, fast charging, to ensure) Coil Mode: Mesh Coil 1 Mode / Mesh Coil 2 mode E-Liquid Capacity: 16ml Puffs: Approx. 20000 Puffs",
     seoAnswerCapsule: "Voom Cobble 20000 Puffs Disposable All Flavors is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voom-cobble-20000-puffs.jpg",
+    customImageUrl: "/imported/voom-cobble-20000-puffs.webp",
   },
   {
     id: "elfbar-e-shisha-luxe-30000-puffs",
@@ -7182,7 +7181,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : ELFBAR Puff Count: Up to 30,000 puffs Battery: Rechargeable 850mAh built-in battery (USB Type-C) Nicotine Strength: 2% (20mg/ml) E-liquid Capacity: 20ml (approx.) Draw Activation: Yes (no buttons needed) Airflow Control: Adjustable airflow system",
     seoAnswerCapsule: "ELFBAR E-Shisha Luxe 30000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elfbar-e-shisha-luxe-30000-puffs.jpg",
+    customImageUrl: "/imported/elfbar-e-shisha-luxe-30000-puffs.webp",
   },
   {
     id: "vaporesso-gtx-replacement-coils",
@@ -7338,7 +7337,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "30ml Bottle Available in 20mg Nicotine Salt 50% VG / 50% PG Made in the UK Tamper evident seal",
     seoAnswerCapsule: "Pod Salt Core Salt Nicotine 30Ml 20Mg E-Juice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/pod-salt-core-salt-nicotine-30ml.jpg",
+    customImageUrl: "/imported/pod-salt-core-salt-nicotine-30ml.webp",
   },
   {
     id: "pod-salt-onyx-4000-puffs",
@@ -7364,7 +7363,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Pod Salt Onyx Nicotine Strength: 20mg/ml Puff count (average): 4000puffs Type: Disposable Vape E-liquid: 8.5ml Battery: 1400mAh",
     seoAnswerCapsule: "Pod Salt Onyx 4000 Puffs 20Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pod-salt-onyx-4000-puffs.jpg",
+    customImageUrl: "/imported/pod-salt-onyx-4000-puffs.webp",
   },
   {
     id: "vaporesso-itank-replacement-glass-tube-5ml",
