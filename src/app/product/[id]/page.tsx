@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
   ArrowLeft,
   Check,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Clock,
   HelpCircle,
@@ -46,6 +47,20 @@ export default function ProductDetailPage() {
   );
   const [deliveryArea, setDeliveryArea] = useState<string>(DUBAI_AREAS[0]);
   const [justAdded, setJustAdded] = useState(false);
+  const [activePhotoIdx, setActivePhotoIdx] = useState(0);
+
+  useEffect(() => {
+    setActivePhotoIdx(0);
+  }, [productId]);
+
+  const allPhotos = useMemo(() => {
+    if (!product) return [];
+    const list = [
+      product.customImageUrl,
+      ...(product.galleryImages || []),
+    ].filter((u): u is string => Boolean(u && u.trim()));
+    return Array.from(new Set(list));
+  }, [product]);
 
   if (!product) {
     if (products.length === 0) {
@@ -136,6 +151,15 @@ export default function ProductDetailPage() {
         sku: product.sku,
         mpn: product.sku,
         description: answerCapsule,
+        ...(allPhotos.length > 0
+          ? {
+              image: allPhotos.map((u) =>
+                u.startsWith("http")
+                  ? u
+                  : `https://dubaicigeretteshop.ae${u.startsWith("/") ? "" : "/"}${u}`
+              ),
+            }
+          : {}),
         brand: {
           "@type": "Brand",
           name: product.brand,
@@ -255,11 +279,71 @@ export default function ProductDetailPage() {
       {/* MAIN PRODUCT DETAIL STAGE (Fits in First Screen with 1-Click WhatsApp!) */}
       <main className="max-w-[1280px] mx-auto px-3 sm:px-4 py-5 sm:py-8 space-y-10">
         <div className="bg-white rounded-2xl border border-zinc-200 p-4 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
-          {/* Left 5 Cols: Gold-Framed VAP DXB Product Carton Artwork */}
+          {/* Left 5 Cols: Gold-Framed VAP DXB Product Carton Artwork + Multi-Photo Gallery */}
           <div className="lg:col-span-5 space-y-3">
-            <div className="max-w-md mx-auto">
-              <ProductPackArt product={product} />
+            <div className="max-w-md mx-auto relative">
+              <ProductPackArt
+                product={
+                  allPhotos.length > 0
+                    ? {
+                        ...product,
+                        customImageUrl:
+                          allPhotos[activePhotoIdx] || product.customImageUrl,
+                      }
+                    : product
+                }
+              />
+              {allPhotos.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    aria-label="Previous photo"
+                    onClick={() =>
+                      setActivePhotoIdx(
+                        (i) => (i - 1 + allPhotos.length) % allPhotos.length
+                      )
+                    }
+                    className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#0A2F42]/85 hover:bg-[#0A2F42] text-white flex items-center justify-center shadow-md"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next photo"
+                    onClick={() =>
+                      setActivePhotoIdx((i) => (i + 1) % allPhotos.length)
+                    }
+                    className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#0A2F42]/85 hover:bg-[#0A2F42] text-white flex items-center justify-center shadow-md"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </>
+              )}
             </div>
+
+            {allPhotos.length > 1 && (
+              <div className="max-w-md mx-auto flex items-center gap-2 overflow-x-auto pb-1">
+                {allPhotos.map((url, idx) => (
+                  <button
+                    key={`${url}-${idx}`}
+                    type="button"
+                    onClick={() => setActivePhotoIdx(idx)}
+                    className={`w-16 h-16 rounded-lg border-2 p-1 bg-white shrink-0 transition-all ${
+                      idx === activePhotoIdx
+                        ? "border-[#0A2F42] ring-2 ring-[#F4B143]"
+                        : "border-zinc-200 opacity-75 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={url}
+                      alt={`${product.title} photo ${idx + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+
             <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-mono">
               <div className="p-2 rounded-lg bg-zinc-50 border border-zinc-200">
                 <span className="text-zinc-400 block">TAR</span>

@@ -98,6 +98,7 @@ export default function AdminDashboardPage() {
   const [nuPassword, setNuPassword] = useState("");
   const [nuRole, setNuRole] = useState<"admin" | "manager">("manager");
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [galleryUrlInput, setGalleryUrlInput] = useState("");
   const editFormRef = useRef<HTMLFormElement | null>(null);
   useEffect(() => {
     if (editingProduct) {
@@ -206,21 +207,51 @@ export default function AdminDashboardPage() {
     e.target.value = "";
   };
 
-  // Upload Product Image from computer (shared by file input + drag-drop)
-  const applyProductImage = async (file: File) => {
-    if (!file || !editingProduct || !file.type.startsWith("image/")) return;
-    showToast("Uploading Product photo...");
-    const uploadedUrl = await uploadImageFile(file);
-    setEditingProduct((prev) =>
-      prev ? { ...prev, customImageUrl: uploadedUrl } : null
+  // Upload one or more Product Images from computer (shared by file input + drag-drop)
+  const applyProductImages = async (files: FileList | File[]) => {
+    const list = Array.from(files || []).filter((f) =>
+      f.type.startsWith("image/")
     );
-    showToast("Product photo uploaded! Click 'Save Product' below.");
+    if (list.length === 0 || !editingProduct) return;
+    showToast(
+      list.length === 1
+        ? "Uploading Product photo..."
+        : `Uploading ${list.length} Product photos...`
+    );
+    const urls: string[] = [];
+    for (const file of list) {
+      const uploadedUrl = await uploadImageFile(file);
+      if (uploadedUrl) urls.push(uploadedUrl);
+    }
+    if (urls.length === 0) return;
+    setEditingProduct((prev) => {
+      if (!prev) return null;
+      const existingCover = (prev.customImageUrl || "").trim();
+      const existingGallery = prev.galleryImages || [];
+      if (!existingCover) {
+        const [first, ...rest] = urls;
+        return {
+          ...prev,
+          customImageUrl: first,
+          galleryImages: [...existingGallery, ...rest],
+        };
+      }
+      return {
+        ...prev,
+        galleryImages: [...existingGallery, ...urls],
+      };
+    });
+    showToast(
+      `${urls.length} photo${urls.length > 1 ? "s" : ""} uploaded! Click 'Save Product' below.`
+    );
   };
 
   const handleProductImageUpload = async (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    await applyProductImage(e.target.files?.[0] as File);
+    if (e.target.files && e.target.files.length > 0) {
+      await applyProductImages(e.target.files);
+    }
     e.target.value = "";
   };
 
@@ -1723,7 +1754,7 @@ export default function AdminDashboardPage() {
 
                   <div className="sm:col-span-2">
                     <label className="block font-bold text-zinc-700 mb-1">
-                      11. Product Photo (Upload from Computer OR Paste Image URL)
+                      11. Product Photos — Cover + Gallery (Upload Multiple OR Paste URLs)
                     </label>
                     <div
                       className="flex flex-col sm:flex-row gap-2 rounded-xl border-2 border-dashed border-zinc-300 p-3 transition-colors data-[drop=on]:border-[#25D366] data-[drop=on]:bg-emerald-50"
@@ -1738,13 +1769,14 @@ export default function AdminDashboardPage() {
                       onDrop={(e) => {
                         e.preventDefault();
                         e.currentTarget.dataset.drop = "off";
-                        const file = e.dataTransfer.files?.[0];
-                        if (file) applyProductImage(file);
+                        if (e.dataTransfer.files?.length) {
+                          applyProductImages(e.dataTransfer.files);
+                        }
                       }}
                     >
                       <input
                         type="text"
-                        placeholder="Paste Image Link, or drag & drop a photo onto this box"
+                        placeholder="Cover Photo URL, or drag & drop one or multiple photos here"
                         value={editingProduct.customImageUrl || ""}
                         onChange={(e) =>
                           setEditingProduct({
@@ -1756,46 +1788,165 @@ export default function AdminDashboardPage() {
                       />
                       <label className="cursor-pointer py-2.5 px-4 rounded-xl bg-[#0A2F42] text-white text-xs font-bold inline-flex items-center justify-center gap-1.5 shrink-0">
                         <Upload className="w-3.5 h-3.5 text-[#F4B143]" />
-                        <span>Upload Photo File</span>
+                        <span>Upload Photo(s)</span>
                         <input
                           type="file"
                           accept="image/*"
+                          multiple
                           onChange={handleProductImageUpload}
                           className="hidden"
                         />
                       </label>
                     </div>
 
-                    {/* Live Product Image Thumbnail Preview */}
-                    {editingProduct.customImageUrl && (
-                      <div className="mt-2.5 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5">
-                          <img
-                            src={editingProduct.customImageUrl}
-                            alt="Product Preview"
-                            className="w-12 h-12 object-contain rounded bg-white border border-zinc-200 p-0.5"
-                          />
-                          <div className="text-xs">
-                            <span className="font-bold text-emerald-800 block">
-                              ✓ Photo Ready to Save
-                            </span>
-                            <span className="text-[10px] font-mono text-zinc-500 truncate block max-w-[220px]">
-                              {editingProduct.customImageUrl}
-                            </span>
-                          </div>
+                    {/* Add Extra Gallery Image by URL */}
+                    <div className="mt-2 flex gap-2">
+                      <input
+                        type="text"
+                        placeholder="Optional: paste an additional gallery photo URL and click + Add to Gallery"
+                        value={galleryUrlInput}
+                        onChange={(e) => setGalleryUrlInput(e.target.value)}
+                        className="flex-1 px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const url = galleryUrlInput.trim();
+                          if (!url) return;
+                          setEditingProduct((prev) => {
+                            if (!prev) return null;
+                            if (!prev.customImageUrl) {
+                              return { ...prev, customImageUrl: url };
+                            }
+                            return {
+                              ...prev,
+                              galleryImages: [
+                                ...(prev.galleryImages || []),
+                                url,
+                              ],
+                            };
+                          });
+                          setGalleryUrlInput("");
+                        }}
+                        className="px-3.5 py-2 rounded-xl bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold shrink-0"
+                      >
+                        + Add to Gallery
+                      </button>
+                    </div>
+
+                    {/* Live Product Photos Strip (Cover + Gallery) */}
+                    {(editingProduct.customImageUrl ||
+                      (editingProduct.galleryImages &&
+                        editingProduct.galleryImages.length > 0)) && (
+                      <div className="mt-2.5 p-3 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-bold text-emerald-900">
+                            ✓ Product Photos (
+                            {(editingProduct.customImageUrl ? 1 : 0) +
+                              (editingProduct.galleryImages?.length || 0)}{" "}
+                            total) — first photo is the main cover
+                          </span>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setEditingProduct({
-                              ...editingProduct,
-                              customImageUrl: "",
-                            })
-                          }
-                          className="px-2.5 py-1 rounded bg-rose-100 text-rose-700 text-[11px] font-bold"
-                        >
-                          Remove Photo
-                        </button>
+                        <div className="flex flex-wrap gap-2.5">
+                          {editingProduct.customImageUrl && (
+                            <div className="relative group flex items-center gap-2 p-2 rounded-lg bg-white border-2 border-[#0A2F42] shadow-sm">
+                              <img
+                                src={editingProduct.customImageUrl}
+                                alt="Cover Preview"
+                                className="w-14 h-14 object-contain rounded bg-zinc-50 p-0.5"
+                              />
+                              <div className="text-[11px]">
+                                <span className="px-1.5 py-0.5 rounded bg-[#0A2F42] text-[#F4B143] font-mono text-[9px] font-bold">
+                                  COVER
+                                </span>
+                                <span className="font-mono text-[10px] text-zinc-500 truncate block max-w-[130px] mt-0.5">
+                                  {editingProduct.customImageUrl}
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    setEditingProduct((prev) => {
+                                      if (!prev) return null;
+                                      const [nextCover, ...rest] =
+                                        prev.galleryImages || [];
+                                      return {
+                                        ...prev,
+                                        customImageUrl: nextCover || "",
+                                        galleryImages: rest,
+                                      };
+                                    })
+                                  }
+                                  className="mt-1 text-[10px] font-bold text-rose-600 hover:underline"
+                                >
+                                  Remove
+                                </button>
+                              </div>
+                            </div>
+                          )}
+
+                          {(editingProduct.galleryImages || []).map(
+                            (gUrl, idx) => (
+                              <div
+                                key={`${gUrl}-${idx}`}
+                                className="flex items-center gap-2 p-2 rounded-lg bg-white border border-zinc-200 shadow-sm"
+                              >
+                                <img
+                                  src={gUrl}
+                                  alt={`Gallery ${idx + 2}`}
+                                  className="w-14 h-14 object-contain rounded bg-zinc-50 p-0.5"
+                                />
+                                <div className="text-[11px] space-y-0.5">
+                                  <span className="px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 font-mono text-[9px] font-bold">
+                                    PHOTO #{idx + 2}
+                                  </span>
+                                  <div className="flex items-center gap-2 pt-1">
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setEditingProduct((prev) => {
+                                          if (!prev) return null;
+                                          const list = [
+                                            ...(prev.galleryImages || []),
+                                          ];
+                                          const chosen = list.splice(idx, 1)[0];
+                                          if (prev.customImageUrl) {
+                                            list.unshift(prev.customImageUrl);
+                                          }
+                                          return {
+                                            ...prev,
+                                            customImageUrl: chosen,
+                                            galleryImages: list,
+                                          };
+                                        })
+                                      }
+                                      className="text-[10px] font-bold text-[#0A2F42] hover:underline"
+                                    >
+                                      Set Cover
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setEditingProduct((prev) =>
+                                          prev
+                                            ? {
+                                                ...prev,
+                                                galleryImages: (
+                                                  prev.galleryImages || []
+                                                ).filter((_, i) => i !== idx),
+                                              }
+                                            : null
+                                        )
+                                      }
+                                      className="text-[10px] font-bold text-rose-600 hover:underline"
+                                    >
+                                      Remove
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          )}
+                        </div>
                       </div>
                     )}
                   </div>

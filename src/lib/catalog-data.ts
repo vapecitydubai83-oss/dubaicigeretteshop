@@ -99,6 +99,7 @@ export interface Product {
   boxSecondaryColor: string;
   description: string;
   customImageUrl?: string;
+  galleryImages?: string[];
   seoAnswerCapsule?: string;
 }
 
