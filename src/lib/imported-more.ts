@@ -6452,6 +6452,8 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Velo Units Per Can: 15 Quantity Per Can: 20 pieces Weight Per Unit: 0.75 grams Nicotine Level: 10 milligrams Flavor: Crispy Peppermint Country Of Origin: Sweden Manufacturer: British American Tobacco Ltd.",
     seoAnswerCapsule: "Velo Crispy Peppermint 10Mg Nicotine Pouches– is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
+    customImageUrl: "/imported/velo-crispy-peppermint-10mg-nicotine-pouches.webp",
+
   },
   {
     id: "velo-mighty-peppermint-10-9mg-nicotine-pouches",
@@ -6503,6 +6505,8 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Velo Strength: – Strong Content Per Can: 15g Pouches Per Can: 20pcs Weight Per Pouch: 0.75g Nicotine Strength: 6 mg Country Of Origin: Sweden Manufacturer: British American Tobacco Ltd",
     seoAnswerCapsule: "Velo Witty Spearmint Nicotine Pouches – 6Mg is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
+    customImageUrl: "/imported/velo-witty-spearmint-nicotine-pouches-6mg.webp",
+
   },
   {
     id: "iqos-iluma-i-standard-violet",

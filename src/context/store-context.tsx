@@ -33,6 +33,7 @@ export interface CustomerProfile {
 
 interface StoreContextValue {
   products: Product[];
+  catalogServerLinked: boolean;
   orders: WhatsAppOrder[];
   leads: Lead[];
   customerProfile: CustomerProfile;
@@ -100,7 +101,24 @@ const STORAGE_KEYS = {
   PROFILE: "ec_dubai_customer_profile_v7",
   USERS: "ec_dubai_admin_users_v1",
   SESSION: "ec_dubai_admin_session_v1",
+  ADMINKEY: "ec_dubai_admin_key_v1",
 };
+
+// Applies the server-side catalog store over the built-in product list:
+// deleted ids removed, edited products swapped in, new products prepended.
+function applyCatalogStore(store: {
+  products?: Record<string, Product>;
+  deleted?: string[];
+}): Product[] {
+  const overrides = store.products || {};
+  const deleted = new Set(store.deleted || []);
+  const merged = INITIAL_PRODUCTS.filter((p) => !deleted.has(p.id)).map(
+    (p) => overrides[p.id] ?? p
+  );
+  const baseIds = new Set(INITIAL_PRODUCTS.map((p) => p.id));
+  const added = Object.values(overrides).filter((p) => !baseIds.has(p.id));
+  return [...added.reverse(), ...merged];
+}
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
@@ -116,6 +134,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);
   const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
+  const [adminApiKey, setAdminApiKey] = useState<string>("");
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -162,10 +181,23 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           ]);
         });
       }
+
+      const savedKey = localStorage.getItem(STORAGE_KEYS.ADMINKEY);
+      if (savedKey) setAdminApiKey(savedKey);
     } catch {
       // Ignore storage errors in private browsing
     }
     setHydrated(true);
+
+    // Pull the shared catalog state (admin edits made for all visitors).
+    fetch("/api/catalog")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((store) => {
+        if (store && typeof store === "object") {
+          setProducts(applyCatalogStore(store));
+        }
+      })
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -501,6 +533,24 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     return newOrder;
   };
 
+  // Push a catalog change to the server store so every visitor sees it.
+  // No-op without an admin API key (changes then stay local to this browser).
+  const syncCatalog = (payload: {
+    action: "upsert" | "delete" | "reset";
+    product?: Product;
+    id?: string;
+  }) => {
+    if (!adminApiKey) return;
+    fetch("/api/catalog", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-key": adminApiKey,
+      },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+  };
+
   const upsertProduct = (product: Product) => {
     setProducts((prev) => {
       const exists = prev.some((p) => p.id === product.id);
@@ -509,16 +559,23 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       }
       return [product, ...prev];
     });
+    syncCatalog({ action: "upsert", product });
   };
 
   const deleteProduct = (id: string) => {
     setProducts((prev) => prev.filter((p) => p.id !== id));
+    syncCatalog({ action: "delete", id });
   };
 
   const toggleProductStock = (id: string) => {
-    setProducts((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, inStock: !p.inStock } : p))
-    );
+    setProducts((prev) => {
+      const next = prev.map((p) =>
+        p.id === id ? { ...p, inStock: !p.inStock } : p
+      );
+      const updated = next.find((p) => p.id === id);
+      if (updated) syncCatalog({ action: "upsert", product: updated });
+      return next;
+    });
   };
 
   const updateOrderStatus = (orderId: string, status: WhatsAppOrder["status"]) => {
@@ -596,6 +653,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setCustomerProfile({ name: "", phone: "", area: "" });
     setSettings(INITIAL_SETTINGS);
     setCart([]);
+    syncCatalog({ action: "reset" });
     try {
       localStorage.removeItem(STORAGE_KEYS.PRODUCTS);
       localStorage.removeItem(STORAGE_KEYS.ORDERS);
@@ -608,6 +666,48 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   // ------- Admin auth & user management -------
   const adminLogin = async (username: string, password: string) => {
+    // Server login first: success returns the shared write key so catalog
+    // changes reach every visitor, not just this browser.
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data?.key) {
+          setAdminApiKey(data.key);
+          try {
+            localStorage.setItem(STORAGE_KEYS.ADMINKEY, data.key);
+          } catch {}
+        }
+        let u = adminUsers.find(
+          (x) => x.username.toLowerCase() === username.trim().toLowerCase()
+        );
+        if (!u) {
+          u = {
+            id: `u-${username.trim().toLowerCase()}`,
+            username: username.trim(),
+            passwordHash: await hashPassword(password),
+            role: "admin",
+            displayName: username.trim(),
+            createdAt: Date.now(),
+          };
+          const created = u;
+          setAdminUsers((prev) => [...prev, created]);
+        }
+        setCurrentUser(u);
+        try {
+          sessionStorage.setItem(
+            STORAGE_KEYS.SESSION,
+            JSON.stringify({ userId: u.id })
+          );
+        } catch {}
+        return { ok: true };
+      }
+    } catch {}
+
     const u = adminUsers.find(
       (x) => x.username.toLowerCase() === username.trim().toLowerCase()
     );
@@ -696,6 +796,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     <StoreContext.Provider
       value={{
         products,
+        catalogServerLinked: Boolean(adminApiKey),
         orders,
         leads,
         customerProfile,

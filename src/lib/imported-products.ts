@@ -790,7 +790,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     customImageUrl: "/imported/dunhill-switch-silver-green-cigarettes.webp",
   },
   {
-    id: "dunhill",
+    id: "dunhill-white",
     sku: "DCS-DUNHILL-30",
     title: "Dunhill White Cigarettes",
     brand: "Dunhill",
@@ -814,7 +814,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "The mildest fine cut cigarette in the Dunhill lineup, an ultra light stick built for smokers who want the smallest possible tar and nicotine while staying within the Dunhill brand. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. The Dunhill white cigarette sits at the very lightest end of the Dunhill range",
     seoAnswerCapsule: "Dunhill White Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 150 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill.webp",
+    customImageUrl: "/imported/dunhill-white.webp",
   },
   {
     id: "marlboro-red",
@@ -1489,6 +1489,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F4E3B2",
     description: "Buy Gold Leaf Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 165. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Gold Leaf Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/gold-leaf.webp",
+
   },
   {
     id: "lm-blue-label",
@@ -1515,6 +1517,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#BFD8F2",
     description: "Buy L&M Blue Label Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 175. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "L&M Blue Label Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/lm-blue-label.webp",
+
   },
   {
     id: "lm-red-label",
@@ -1541,6 +1545,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#BFD8F2",
     description: "Buy L&M Red Label Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 165. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "L&M Red Label Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/lm-red-label.webp",
+
   },
   {
     id: "marlboro-edge-slim",
@@ -1567,6 +1573,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "Buy Marlboro Edge Slim Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 210. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Marlboro Edge Slim Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/marlboro-edge-slim.webp",
+
   },
   {
     id: "platinum-seven-cool",
@@ -1593,6 +1601,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#CBD5E1",
     description: "Buy Platinum Seven Cool Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 50. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Platinum Seven Cool Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/platinum-seven-cool.webp",
+
   },
   {
     id: "vogue-bleue",
@@ -1619,6 +1629,8 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#C9A7E8",
     description: "Buy Vogue Bleue Cigarettes online in Dubai - 100% authentic duty-free sealed stock at AED 185. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Vogue Bleue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
+    customImageUrl: "/imported/vogue-bleue.webp",
+
   },
   {
     id: "vogue-frisson-menthe-superslim",

@@ -359,9 +359,18 @@ export const INITIAL_SETTINGS: StoreSettings = {
   },
 };
 
-// Catalog starts empty — client adds products via the admin panel.
-// The imported lists stay in the repo for a possible re-import later.
-export const INITIAL_PRODUCTS: Product[] = [];
+// Cigarettes are the main focus: all cigarette products first, everything else after.
+// Admin edits are merged on top of this list from the server-side catalog store.
+export const INITIAL_PRODUCTS: Product[] = [
+  ...IMPORTED_PRODUCTS,
+  ...MORE_PRODUCTS,
+].sort((a, b) =>
+  a.category === "cigarettes" && b.category !== "cigarettes"
+    ? -1
+    : a.category !== "cigarettes" && b.category === "cigarettes"
+      ? 1
+      : 0
+);
 
 export const INITIAL_ORDERS: WhatsAppOrder[] = [
   {

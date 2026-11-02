@@ -58,6 +58,7 @@ type AdminTab =
 export default function AdminDashboardPage() {
   const {
     products,
+    catalogServerLinked,
     orders,
     leads,
     settings,
@@ -1343,6 +1344,13 @@ export default function AdminDashboardPage() {
                   or secondary item, or click &quot;Edit&quot; on any product
                   below.
                 </p>
+                {!catalogServerLinked && (
+                  <p className="mt-2 text-[11px] font-bold text-amber-700 bg-amber-50 border border-amber-300 rounded-lg px-3 py-2 inline-block">
+                    Changes are saved on this browser only and will NOT appear
+                    for customers. Log in with the server admin account to
+                    publish edits for everyone.
+                  </p>
+                )}
               </div>
 
               <div className="flex flex-wrap items-center gap-2.5">
