@@ -917,7 +917,7 @@ export default function AdminDashboardPage() {
                       whatsappBot: {
                         ...(settings.whatsappBot || {
                           botName:
-                            "Emirates Cigarette Automated WhatsApp Concierge",
+                            "Dubai Cigarette Shop Automated WhatsApp Concierge",
                           welcomeMessage: "",
                           autoReplyDelayMs: 450,
                           webhookVerifyToken: "vapdxb_uae_verify_2026",
@@ -954,7 +954,7 @@ export default function AdminDashboardPage() {
                     type="text"
                     value={
                       settings.whatsappBot?.botName ||
-                      "Emirates Cigarette Automated WhatsApp Concierge"
+                      "Dubai Cigarette Shop Automated WhatsApp Concierge"
                     }
                     onChange={(e) =>
                       updateSettings({
@@ -1159,7 +1159,7 @@ export default function AdminDashboardPage() {
                     {
                       id: "future-glass",
                       title: "2. Dubai Marina Blue Skyline",
-                      desc: "Cool Emirates Navy & Marina architectural blue theme.",
+                      desc: "Cool Navy & Marina architectural blue theme.",
                     },
                     {
                       id: "royal-sunset",
@@ -2340,7 +2340,7 @@ export default function AdminDashboardPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-bold text-zinc-700 mb-1">
-                      Store Brand Name (Under VAP DXB Logo)
+                      Store Brand Name
                     </label>
                     <input
                       type="text"

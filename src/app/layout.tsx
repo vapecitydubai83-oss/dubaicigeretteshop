@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dubaicigeretteshop.ae"),
   title: {
     default: INITIAL_SETTINGS.seoMetaTitle,
-    template: "%s | VAP DXB • Emirates Cigarette Dubai",
+    template: "%s | Dubai Cigarette Shop",
   },
   description: INITIAL_SETTINGS.seoMetaDescription,
   keywords: INITIAL_SETTINGS.seoKeywords.split(",").map((k) => k.trim()),
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AE",
     url: "https://dubaicigeretteshop.ae/",
-    siteName: "VAP DXB • Emirates Cigarette Dubai",
+    siteName: "DUBAI CIGARETTE SHOP",
     title: INITIAL_SETTINGS.seoMetaTitle,
     description: INITIAL_SETTINGS.seoMetaDescription,
   },

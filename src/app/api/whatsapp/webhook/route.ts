@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     status: "active",
-    service: "Emirates Cigarette Dubai WhatsApp Automation Webhook",
+    service: "Dubai Cigarette Shop WhatsApp Automation Webhook",
     whatsappHotline: INITIAL_SETTINGS.supportPhoneDisplay,
     webhookUrl: "/api/whatsapp/webhook",
     instructions:

@@ -11,12 +11,13 @@ export default function robots(): MetadataRoute.Robots {
           "Bingbot",
           "ChatGPT-User",
           "OAI-SearchBot",
+          "GPTBot",
           "PerplexityBot",
           "Claude-SearchBot",
           "Google-Extended",
         ],
         allow: "/",
-        disallow: ["/admin"],
+        disallow: ["/admin", "/api/", "/uploads/_store"],
       },
       {
         // Block pure dataset scrapers that provide no search visibility

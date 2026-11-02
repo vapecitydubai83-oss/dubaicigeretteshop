@@ -291,7 +291,7 @@ export const INITIAL_FAQS: FaqItem[] = [
   {
     question: "Where can I buy authentic duty-free cigarettes online in Dubai with fast delivery?",
     answer:
-      "You can order 100% authentic, factory-sealed duty-free cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West, and IQOS TEREA) from VAP DXB / Emirates Cigarette with 45 to 60-minute express rider delivery across Downtown Dubai, Burj Khalifa District, Dubai Marina, JBR, Palm Jumeirah, and Business Bay via 24/7 WhatsApp checkout (0553020429 / +971553020429).",
+      "You can order 100% authentic, factory-sealed duty-free cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West, and IQOS TEREA) from Dubai Cigarette Shop with 45 to 60-minute express rider delivery across Downtown Dubai, Burj Khalifa District, Dubai Marina, JBR, Palm Jumeirah, and Business Bay via 24/7 WhatsApp checkout (0553020429 / +971553020429).",
   },
   {
     question: "How much does a carton of Marlboro, Dunhill, or ESSE cigarettes cost in Dubai?",

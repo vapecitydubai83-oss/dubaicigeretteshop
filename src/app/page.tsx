@@ -65,7 +65,7 @@ const HERO_PACKS = [
   },
 ];
 
-export default function EmiratesCigaretteStorefront() {
+export default function DubaiCigaretteStorefront() {
   const {
     products,
     settings,

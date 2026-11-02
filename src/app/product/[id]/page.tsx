@@ -103,7 +103,7 @@ export default function ProductDetailPage() {
   const productFaqs = [
     {
       question: `What is the price of 1 carton of ${product.title} in Dubai?`,
-      answer: `One factory-sealed carton of ${product.title} (${product.format}) costs AED ${product.cartonPrice}.00 at VAP DXB / ${settings.storeName}. Ordering the 5-Carton VIP bundle costs AED ${product.fiveCartonPrice}.00 (saving AED ${fiveCartonSavings}).`,
+      answer: `One factory-sealed carton of ${product.title} (${product.format}) costs AED ${product.cartonPrice}.00 at ${settings.storeName}. Ordering the 5-Carton VIP bundle costs AED ${product.fiveCartonPrice}.00 (saving AED ${fiveCartonSavings}).`,
     },
     {
       question: `What is the tar and nicotine content of ${product.title}?`,
@@ -201,6 +201,9 @@ export default function ProductDetailPage() {
           url: `https://dubaicigeretteshop.ae/product/${product.id}`,
           priceCurrency: "AED",
           price: product.cartonPrice.toFixed(2),
+          seller: {
+            "@id": "https://dubaicigeretteshop.ae/#organization",
+          },
           availability: product.inStock
             ? "https://schema.org/InStock"
             : "https://schema.org/OutOfStock",
@@ -232,6 +235,23 @@ export default function ProductDetailPage() {
             text: f.answer,
           },
         })),
+      },
+      {
+        "@type": ["Organization", "Store", "LocalBusiness"],
+        "@id": "https://dubaicigeretteshop.ae/#organization",
+        name: settings.storeName,
+        url: "https://dubaicigeretteshop.ae",
+        telephone: `+${settings.whatsappNumber}`,
+        email: settings.supportEmail,
+        priceRange: "AED 75 - AED 225",
+        currenciesAccepted: "AED",
+        paymentAccepted: "Cash on Delivery, Card on Delivery, Apple Pay",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Dubai",
+          addressRegion: "Dubai",
+          addressCountry: "AE",
+        },
       },
     ],
   };

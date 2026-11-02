@@ -32,7 +32,7 @@ export function SeoAeoGeoSection({
       {
         "@type": ["Organization", "Store", "LocalBusiness"],
         "@id": "https://dubaicigeretteshop.ae/#organization",
-        name: `${settings.storeName} (VAP DXB Dubai Concierge)`,
+        name: settings.storeName,
         url: "https://dubaicigeretteshop.ae",
         telephone: `+${settings.whatsappNumber}`,
         email: settings.supportEmail,
