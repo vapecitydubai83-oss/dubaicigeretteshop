@@ -7,6 +7,7 @@ import {
   Clock,
   FileCheck2,
   HelpCircle,
+  Mail,
   MapPin,
   MessageCircle,
   ShieldCheck,
@@ -34,6 +35,7 @@ export function SeoAeoGeoSection({
         name: `${settings.storeName} (VAP DXB Dubai Concierge)`,
         url: "https://dubaicigeretteshop.ae",
         telephone: `+${settings.whatsappNumber}`,
+        email: settings.supportEmail,
         priceRange: "AED 75 - AED 225",
         currenciesAccepted: "AED",
         paymentAccepted: "Cash on Delivery, Card on Delivery, Apple Pay",
@@ -57,6 +59,7 @@ export function SeoAeoGeoSection({
         contactPoint: {
           "@type": "ContactPoint",
           telephone: `+${settings.whatsappNumber}`,
+          email: settings.supportEmail,
           contactType: "customer service",
           availableLanguage: ["English", "Arabic", "Russian"],
         },
@@ -499,9 +502,22 @@ export function SeoAeoGeoSection({
           </div>
 
           <div className="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-xs">
-              <ShieldCheck className="w-5 h-5 text-[#F4B143]" />
-              <span>24/7 Support: {settings.supportPhoneDisplay || "055 302 0429"}</span>
+            <div className="flex flex-col gap-1.5 text-xs">
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-[#F4B143]" />
+                <span>
+                  24/7 WhatsApp: {settings.supportPhoneDisplay || "055 302 0429"}
+                </span>
+              </span>
+              {settings.supportEmail && (
+                <a
+                  href={`mailto:${settings.supportEmail}`}
+                  className="flex items-center gap-2 hover:text-[#F4B143] transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-[#F4B143]" />
+                  <span>{settings.supportEmail}</span>
+                </a>
+              )}
             </div>
             <a
               href={`https://wa.me/${formatWhatsAppNumberForLink(

@@ -10,6 +10,7 @@ import {
   Facebook,
   Instagram,
   LayoutDashboard,
+  Mail,
   MapPin,
   Menu,
   MessageCircle,
@@ -1123,6 +1124,15 @@ export function StoreFooter() {
               <PhoneCall className="w-4 h-4" />
               <span>{settings.supportPhoneDisplay || "+971 55 302 0429"}</span>
             </a>
+            {settings.supportEmail && (
+              <a
+                href={`mailto:${settings.supportEmail}`}
+                className="inline-flex items-center gap-2 text-zinc-300 hover:text-[#F4B143] transition-colors break-all"
+              >
+                <Mail className="w-4 h-4 text-[#F4B143] shrink-0" />
+                <span>{settings.supportEmail}</span>
+              </a>
+            )}
 
             <div className="flex items-center gap-2 pt-2">
               {socials.facebook && (

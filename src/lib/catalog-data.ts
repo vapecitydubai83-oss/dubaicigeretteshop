@@ -197,6 +197,7 @@ export interface StoreSettings {
   storeName: string;
   whatsappNumber: string; // e.g. "+971553020429"
   supportPhoneDisplay: string;
+  supportEmail: string;
   activeTheme: ThemeId;
   freeDeliveryThreshold: number;
   standardDeliveryFee: number;
@@ -313,6 +314,7 @@ export const INITIAL_SETTINGS: StoreSettings = {
   storeName: "DUBAI CIGARETTE SHOP",
   whatsappNumber: "+971553020429",
   supportPhoneDisplay: "+971 55 302 0429",
+  supportEmail: "vapecitydubai83@gmail.com",
   activeTheme: "midnight-gold",
   freeDeliveryThreshold: 250,
   standardDeliveryFee: 20,

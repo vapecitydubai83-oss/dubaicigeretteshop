@@ -788,6 +788,21 @@ export default function AdminDashboardPage() {
 
                 <div>
                   <label className="block font-bold text-zinc-700 mb-1">
+                    Support Email (footer + SEO schema)
+                  </label>
+                  <input
+                    type="email"
+                    value={settings.supportEmail || ""}
+                    onChange={(e) =>
+                      updateSettings({ supportEmail: e.target.value })
+                    }
+                    placeholder="sales@dubaicigeretteshop.ae"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-300 font-semibold focus:outline-none focus:border-[#0A2F42]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-bold text-zinc-700 mb-1">
                     Floating Bottom WhatsApp Button Text
                   </label>
                   <input
