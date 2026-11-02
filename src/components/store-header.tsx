@@ -149,8 +149,8 @@ const BROWSE_MEGA_CATEGORIES: {
   badge?: string;
   filterType: NavMenuItem["filterType"];
   filterValue: string;
-  featuredInfo: { title: string; subtitle: string; priceTag: string; origin: string };
-  subItems: { label: string; priceHint: string; filterType: NavMenuItem["filterType"]; filterValue: string; searchHint?: string }[];
+  featuredInfo: { title: string; subtitle: string; priceTag: string; origin: string; id?: string };
+  subItems: { label: string; priceHint: string; filterType: NavMenuItem["filterType"]; filterValue: string; searchHint?: string; id?: string }[];
 }[] = [
   {
     id: "cigarettes",
@@ -317,6 +317,7 @@ export function StoreHeader({
         filterType: cat.filterType,
         filterValue: cat.filterValue,
         searchHint: p.title.toLowerCase(),
+        id: p.id,
       })),
       featuredInfo: matches[0]
         ? {
@@ -324,6 +325,7 @@ export function StoreHeader({
             subtitle: matches[0].description?.slice(0, 90) || cat.label,
             priceTag: `AED ${matches[0].cartonPrice}`,
             origin: matches[0].origin || "100% ORIGINAL",
+            id: matches[0].id,
           }
         : cat.featuredInfo,
     };
@@ -337,9 +339,14 @@ export function StoreHeader({
     setBrowseMenuOpen(false);
     setMobileDrawerOpen(false);
 
+    // Category links have a dedicated page now.
+    if (type === "category") {
+      router.push(`/category/${value}`);
+      return;
+    }
+
     if (pathname !== "/") {
       const params = new URLSearchParams();
-      if (type === "category") params.set("category", value);
       if (type === "brand") params.set("brand", value);
       router.push(`/${params.toString() ? `?${params.toString()}` : ""}`);
       return;
@@ -349,9 +356,6 @@ export function StoreHeader({
       onSelectCategory?.("all");
       onSelectBrand?.("All");
       onSearchChange?.("");
-    } else if (type === "category") {
-      onSelectCategory?.(value as CategoryId);
-      onSelectBrand?.("All");
     } else if (type === "brand") {
       onSelectCategory?.("all");
       onSelectBrand?.(value as "All" | BrandName);
@@ -681,6 +685,12 @@ export function StoreHeader({
                               key={i}
                               type="button"
                               onClick={() => {
+                                setBrowseMenuOpen(false);
+                                setMobileDrawerOpen(false);
+                                if (sub.id) {
+                                  router.push(`/product/${sub.id}`);
+                                  return;
+                                }
                                 applyFilter(sub.filterType, sub.filterValue);
                                 if (sub.searchHint && onSearchChange) {
                                   onSearchChange(sub.searchHint);
@@ -730,12 +740,20 @@ export function StoreHeader({
                         </div>
                         <button
                           type="button"
-                          onClick={() =>
+                          onClick={() => {
+                            if (activeMegaCategory.featuredInfo.id) {
+                              setBrowseMenuOpen(false);
+                              setMobileDrawerOpen(false);
+                              router.push(
+                                `/product/${activeMegaCategory.featuredInfo.id}`
+                              );
+                              return;
+                            }
                             applyFilter(
                               activeMegaCategory.filterType,
                               activeMegaCategory.filterValue
-                            )
-                          }
+                            );
+                          }}
                           className="w-full py-2 px-3 rounded-xl bg-[#25D366] hover:bg-[#1fb855] text-black font-extrabold text-[11px] flex items-center justify-center gap-1"
                         >
                           <span>Explore Now</span>

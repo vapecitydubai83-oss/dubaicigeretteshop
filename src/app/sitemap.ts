@@ -11,6 +11,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const categories = [
+    "cigarettes",
+    "iqos-terea",
+    "vapes",
+    "e-liquid",
+    "nicotine-pouches",
+    "hookah-shisha",
+    "accessories",
+  ];
+  const categoryUrls: MetadataRoute.Sitemap = categories.map((c) => ({
+    url: `${baseUrl}/category/${c}`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 0.85,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -24,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.95,
     },
+    ...categoryUrls,
     ...productUrls,
   ];
 }
