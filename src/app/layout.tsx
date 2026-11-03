@@ -9,6 +9,10 @@ import { StoreProvider } from "@/context/store-context";
 import { INITIAL_SETTINGS } from "@/lib/catalog-data";
 import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 
+// Metadata must be generated per request: the admin catalog store's settings
+// (seoMetaTitle etc., rewritten weekly by the SEO agent) live outside the bundle.
+export const dynamic = "force-dynamic";
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
