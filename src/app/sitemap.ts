@@ -65,12 +65,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "always",
       priority: 1.0,
     },
-    {
-      url: `${baseUrl}/#dubai-cigarette-guide`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.95,
-    },
     ...categoryUrls,
     ...productUrls,
   ];

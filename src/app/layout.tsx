@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import { StoreProvider } from "@/context/store-context";
 import { INITIAL_SETTINGS } from "@/lib/catalog-data";
+import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
@@ -27,51 +28,66 @@ const jetbrains = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://dubaicigeretteshop.ae"),
-  title: {
-    default: INITIAL_SETTINGS.seoMetaTitle,
-    template: "%s | Dubai Cigarette Shop",
-  },
-  description: INITIAL_SETTINGS.seoMetaDescription,
-  keywords: INITIAL_SETTINGS.seoKeywords.split(",").map((k) => k.trim()),
-  alternates: {
-    canonical: "https://dubaicigeretteshop.ae/",
-    languages: {
-      "en-AE": "https://dubaicigeretteshop.ae/",
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings, products } = await readSeoStore();
+  const title = settings.seoMetaTitle?.trim() || INITIAL_SETTINGS.seoMetaTitle;
+  const description = clip(
+    settings.seoMetaDescription || INITIAL_SETTINGS.seoMetaDescription,
+    160
+  );
+  const images = productOgImages(
+    products.find((p) => p.featured) ?? products[0]
+  );
+  return {
+    metadataBase: new URL(SITE_BASE_URL),
+    title: {
+      default: title,
+      template: "%s | Dubai Cigarette Shop",
     },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_AE",
-    url: "https://dubaicigeretteshop.ae/",
-    siteName: "DUBAI CIGARETTE SHOP",
-    title: INITIAL_SETTINGS.seoMetaTitle,
-    description: INITIAL_SETTINGS.seoMetaDescription,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: INITIAL_SETTINGS.seoMetaTitle,
-    description: INITIAL_SETTINGS.seoMetaDescription,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    description,
+    keywords: (settings.seoKeywords || INITIAL_SETTINGS.seoKeywords)
+      .split(",")
+      .map((k) => k.trim()),
+    alternates: {
+      canonical: "/",
+      languages: {
+        "en-AE": "/",
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_AE",
+      url: SITE_BASE_URL + "/",
+      siteName: "DUBAI CIGARETTE SHOP",
+      title,
+      description,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: images.map((i) => i.url),
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
-  },
-  other: {
-    "geo.region": "AE-DU",
-    "geo.placename": "Dubai, United Arab Emirates",
-    "geo.position": "25.1972;55.2744",
-    ICBM: "25.1972, 55.2744",
-  },
-};
+    other: {
+      "geo.region": "AE-DU",
+      "geo.placename": "Dubai, United Arab Emirates",
+      "geo.position": "25.1972;55.2744",
+      ICBM: "25.1972, 55.2744",
+    },
+  };
+}
 
 export default function RootLayout({
   children,
