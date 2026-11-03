@@ -14,7 +14,7 @@ const CATEGORY_META: Record<string, { title: string; blurb: string }> = {
   cigarettes: {
     title: "Duty-Free Cigarettes",
     blurb:
-      "Factory-sealed 10-pack master cartons — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West and more, delivered in 45–60 minutes across Dubai.",
+      "Factory-sealed 10-pack master cartons — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West and more, delivered in 45–75 min across Dubai & Sharjah, courier to all Emirates.",
   },
   "iqos-terea": {
     title: "IQOS & TEREA",
@@ -125,7 +125,7 @@ export default function CategoryPage() {
             </span>
             <span className="inline-flex items-center gap-1">
               <Truck className="w-3.5 h-3.5 text-[#F4B143]" />
-              45–60 Mins Dubai
+              45–75 Min Dubai + Sharjah
             </span>
             <span className="px-2 py-0.5 rounded-full bg-[#0A2F42] text-[#F4B143] font-mono">
               {items.length} items

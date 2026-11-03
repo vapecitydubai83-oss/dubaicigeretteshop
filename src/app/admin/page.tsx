@@ -830,7 +830,7 @@ export default function AdminDashboardPage() {
                         expressDeliveryMinutes: e.target.value,
                       })
                     }
-                    placeholder="45–60 Mins"
+                    placeholder="45–75 Mins"
                     className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-300 font-semibold focus:outline-none focus:border-[#0A2F42]"
                   />
                 </div>

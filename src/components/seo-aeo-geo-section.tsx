@@ -480,12 +480,12 @@ export function SeoAeoGeoSection({
               <span>LOCAL GEO COVERAGE ACROSS DUBAI &amp; UAE</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold">
-              45–60 Min Express Rider Dispatch Zones
+              45–75 Min Express Zones + UAE-Wide Courier
             </h3>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              Our dedicated Dubai riders deliver sealed cartons directly to
-              residential towers, five-star hotel concierges, yacht marinas, and
-              private villas across:
+              Express riders (45–75 min) deliver sealed cartons to towers, hotels
+              and villas across Dubai, Sharjah & Ajman. Abu Dhabi, Al Ain, RAK,
+              Fujairah & UAQ ship next-day by courier:
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">

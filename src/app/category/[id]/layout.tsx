@@ -6,31 +6,31 @@ export const dynamic = "force-dynamic";
 const CATEGORY_SEO: Record<string, { title: string; desc: string }> = {
   cigarettes: {
     title: "Duty-Free Cigarettes in Dubai | Dubai Cigarette Shop",
-    desc: "Marlboro, Dunhill, Davidoff, ESSE, Winston & more — factory-sealed master cartons delivered in 45–60 minutes across Dubai. Order on WhatsApp.",
+    desc: "Marlboro, Dunhill, Davidoff, ESSE, Winston & more — factory-sealed master cartons delivered in 45–75 min across Dubai & Sharjah — courier to all Emirates. Order on WhatsApp.",
   },
   "iqos-terea": {
     title: "IQOS & TEREA Dubai – Prices & Delivery | Dubai Cigarette Shop",
-    desc: "Genuine IQOS ILUMA devices and TEREA sticks — Japan, Kazakhstan, Italy and UAE editions, delivered across Dubai in 45–60 minutes.",
+    desc: "Genuine IQOS ILUMA devices and TEREA sticks — Japan, Kazakhstan, Italy and UAE editions, delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
   vapes: {
     title: "Disposable Vapes Dubai – Prices & Delivery | Dubai Cigarette Shop",
-    desc: "Elf Bar, Vozol, Tugboat, HQD, Fummo, OXVA and more — genuine disposable vapes and pod kits delivered across Dubai in 45–60 minutes.",
+    desc: "Elf Bar, Vozol, Tugboat, HQD, Fummo, OXVA and more — genuine disposable vapes and pod kits delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
   "e-liquid": {
     title: "E-Liquids in Dubai | Dubai Cigarette Shop",
-    desc: "Freebase and salt-nic e-liquids — Nasty, Ruthless, Pod Salt, Tokyo, Dr Vapes and more, delivered across Dubai in 45–60 minutes.",
+    desc: "Freebase and salt-nic e-liquids — Nasty, Ruthless, Pod Salt, Tokyo, Dr Vapes and more, delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
   "nicotine-pouches": {
     title: "Nicotine Pouches Dubai – VELO & More | Dubai Cigarette Shop",
-    desc: "Tobacco-free nicotine pouches — VELO, White Fox, Killa and Pablo in every strength, delivered across Dubai in 45–60 minutes.",
+    desc: "Tobacco-free nicotine pouches — VELO, White Fox, Killa and Pablo in every strength, delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
   "hookah-shisha": {
     title: "Hookah & Shisha Dubai | Dubai Cigarette Shop",
-    desc: "Al Fakher shisha molasses, hookah devices and charcoal — 50g, 250g and 1kg sizes delivered across Dubai in 45–60 minutes.",
+    desc: "Al Fakher shisha molasses, hookah devices and charcoal — 50g, 250g and 1kg sizes delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
   accessories: {
     title: "Vape Accessories & Lighters Dubai | Dubai Cigarette Shop",
-    desc: "Vape batteries, chargers, lighters, coils and spare parts — genuine UAE stock delivered across Dubai in 45–60 minutes.",
+    desc: "Vape batteries, chargers, lighters, coils and spare parts — genuine UAE stock delivered across Dubai & Sharjah in 45–75 min, courier to all Emirates.",
   },
 };
 

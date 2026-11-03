@@ -21,7 +21,7 @@ export async function generateMetadata({
   const description = clip(
     p.seoAnswerCapsule ||
       p.description ||
-      `${p.title} – AED ${p.cartonPrice}, delivered in 45–60 minutes across Dubai. Order instantly on WhatsApp.`,
+      `${p.title} – AED ${p.cartonPrice}, delivered in 45–75 min across Dubai & Sharjah — courier to all Emirates. Order instantly on WhatsApp.`,
     160
   );
   const images = productOgImages(p);

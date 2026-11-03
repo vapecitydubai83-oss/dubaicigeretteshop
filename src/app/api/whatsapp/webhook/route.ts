@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
     if (matchedProduct) {
       replyMessage = [
         `Marhaba from *${liveSettings.storeName}* (${liveSettings.supportPhoneDisplay})!`,
-        `✅ *${matchedProduct.title}* is ${matchedProduct.inStock ? "IN STOCK" : "currently out of stock"} for 45–60 min Dubai delivery.`,
+        `✅ *${matchedProduct.title}* is ${matchedProduct.inStock ? "IN STOCK" : "currently out of stock"} for express Dubai/Sharjah delivery (45–75 min) or next-day UAE courier.`,
         `• 1 Carton: AED ${matchedProduct.cartonPrice}.00`,
         `• 5 Cartons VIP: AED ${matchedProduct.fiveCartonPrice}.00`,
         `• Specs: ${matchedProduct.tar} Tar / ${matchedProduct.nicotine} Nicotine`,

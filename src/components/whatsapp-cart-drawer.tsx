@@ -303,7 +303,7 @@ export function WhatsAppCartDrawer() {
                 <div>
                   <label className="block text-[11px] font-mono text-zinc-400 mb-1">
                     <MapPin className="w-3 h-3 inline mr-1 text-[#D4AF37]" />
-                    Dubai Delivery District (45–60 Min Rider)
+                    Delivery Zone — Express (45–75 min) or Courier (next-day)
                   </label>
                   <select
                     value={deliveryArea}
