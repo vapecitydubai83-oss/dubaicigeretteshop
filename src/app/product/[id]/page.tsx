@@ -19,6 +19,7 @@ import {
   Truck,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
+import { useServerProduct } from "@/context/server-product";
 import { DUBAI_AREAS } from "@/lib/catalog-data";
 import { ProductPackArt } from "@/components/product-pack-art";
 import { ProductCard } from "@/components/product-card";
@@ -37,9 +38,14 @@ export default function ProductDetailPage() {
     triggerSingleClickWhatsApp,
   } = useStore();
 
+  const serverProduct = useServerProduct();
+  // shortcut: the server copy wins until reload, so an admin edit in this tab shows after a refresh.
   const product = useMemo(
-    () => products.find((p) => p.id === productId),
-    [products, productId]
+    () =>
+      serverProduct?.id === productId
+        ? serverProduct
+        : products.find((p) => p.id === productId),
+    [products, productId, serverProduct]
   );
 
   const [packTier, setPackTier] = useState<"1-carton" | "5-cartons">(
