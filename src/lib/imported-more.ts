@@ -505,7 +505,7 @@ export const MORE_PRODUCTS: Product[] = [
     sku: "DCS-ALFAKHER-30",
     title: "Al Fakher Shisha Flavour",
     brand: "Al Fakher Shisha",
-    category: "vapes",
+    category: "hookah-shisha",
     flavor: "Classic Tobacco",
     strength: "Medium",
     format: "1 Unit",
