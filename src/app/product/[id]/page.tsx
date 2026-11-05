@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import { useServerProduct } from "@/context/server-product";
+import { sameProductId } from "@/lib/product-id";
 import { DUBAI_AREAS } from "@/lib/catalog-data";
 import { ProductPackArt } from "@/components/product-pack-art";
 import { ProductCard } from "@/components/product-card";
@@ -42,9 +43,9 @@ export default function ProductDetailPage() {
   // shortcut: the server copy wins until reload, so an admin edit in this tab shows after a refresh.
   const product = useMemo(
     () =>
-      serverProduct?.id === productId
+      serverProduct && sameProductId(serverProduct.id, productId)
         ? serverProduct
-        : products.find((p) => p.id === productId),
+        : products.find((p) => sameProductId(p.id, productId)),
     [products, productId, serverProduct]
   );
 

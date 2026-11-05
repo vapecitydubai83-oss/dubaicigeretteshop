@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 import { ServerProductProvider } from "@/context/server-product";
+import { sameProductId } from "@/lib/product-id";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const { products } = await readSeoStore();
-  const p = products.find((x) => x.id === id);
+  const p = products.find((x) => sameProductId(x.id, id));
   if (!p) {
     return { title: "Product", robots: { index: false, follow: true } };
   }
@@ -55,7 +56,7 @@ export default async function ProductLayout({
 }) {
   const { id } = await params;
   const { products } = await readSeoStore();
-  const product = products.find((x) => x.id === id) ?? null;
+  const product = products.find((x) => sameProductId(x.id, id)) ?? null;
   return (
     <ServerProductProvider product={product}>{children}</ServerProductProvider>
   );
