@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { MapPin, MessageCircle, Zap } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, MapPin, MessageCircle, Zap } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import {
   BrandName,
@@ -164,6 +165,38 @@ export default function DubaiCigaretteStorefront() {
       }))
       .filter((sec) => sec.items.length > 0);
   }, [filteredProducts, products, searchQuery]);
+
+  // Unfiltered home shows a short list per category (client OK 2026-11-06): the whole
+  // catalog (~366 cards) made the page 3 MB+ and buried the category pages.
+  const showShortHome =
+    searchQuery.trim() === "" && selectedBrand === "All" && selectedCategory === "all";
+  const categorySections = useMemo(() => {
+    const cats: { id: Exclude<CategoryId, "all">; heading: string }[] = [
+      { id: "cigarettes", heading: "Duty-Free Cigarettes" },
+      { id: "iqos-terea", heading: "IQOS & TEREA" },
+      { id: "vapes", heading: "Vapes & Disposables" },
+      { id: "e-liquid", heading: "E-Liquids" },
+      { id: "nicotine-pouches", heading: "Nicotine Pouches" },
+      { id: "hookah-shisha", heading: "Hookah & Shisha" },
+      { id: "accessories", heading: "Accessories & Lighters" },
+    ];
+    return cats
+      .map((c) => {
+        // brand lists in the brand-series order, then take one per brand in turn
+        const byBrand = brandSections
+          .map((sec) => sec.items.filter((p) => p.category === c.id))
+          .filter((list) => list.length > 0);
+        const total = byBrand.reduce((n, list) => n + list.length, 0);
+        const picks: Product[] = [];
+        for (let i = 0; picks.length < 8 && byBrand.some((list) => list[i]); i++) {
+          byBrand.forEach((list) => {
+            if (list[i] && picks.length < 8) picks.push(list[i]);
+          });
+        }
+        return { ...c, total, items: picks };
+      })
+      .filter((c) => c.items.length > 0);
+  }, [brandSections]);
 
   // Brand quick-filter pills — computed from the live catalog, cigarette majors first
   const pillBrands: ("All" | BrandName)[] = useMemo(() => {
@@ -380,7 +413,31 @@ export default function DubaiCigaretteStorefront() {
 
           {/* Brand Series Sections (2-Columns on Mobile so products fit immediately, 4-Columns on Desktop) */}
           <div className="space-y-8 sm:space-y-12">
-            {brandSections.length === 0 ? (
+            {showShortHome ? (
+              categorySections.map((section) => (
+                <div key={section.id} className="space-y-3 sm:space-y-5">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-base sm:text-2xl font-extrabold text-zinc-900">
+                      <Link href={`/category/${section.id}`} className="hover:underline">
+                        {section.heading}
+                      </Link>
+                    </h3>
+                    <Link
+                      href={`/category/${section.id}`}
+                      className="shrink-0 inline-flex items-center text-xs sm:text-sm font-bold text-[#0A2F42] hover:text-[#B07A12]"
+                    >
+                      See all {section.total}
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
+                    {section.items.map((product) => (
+                      <ProductCard key={product.id} product={product} isLightTheme={true} />
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : brandSections.length === 0 ? (
               <div className="text-center py-10 bg-white rounded-xl border border-zinc-200">
                 <p className="text-base font-bold text-zinc-700">
                   No products match your current filter.
