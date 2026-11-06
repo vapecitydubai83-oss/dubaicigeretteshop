@@ -40,7 +40,7 @@ export function ProductPackArt({
             loading={priority ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImgFailed(true)}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
         ) : (
           <>
@@ -76,7 +76,7 @@ export function ProductPackArt({
   }
 
   return (
-    <div className="relative w-full aspect-[4/3.6] rounded-md bg-[#F7BA56] p-2.5 select-none overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
+    <div className="relative w-full aspect-square rounded-md bg-[#F7BA56] p-2.5 select-none overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
       {/* Inner Cream Stage with Subtle Diamond Lattice Pattern */}
       <div
         className="relative w-full h-full bg-[#FCF9F0] border border-[#E8D7B4] flex flex-col items-center justify-between pt-3 pb-2 px-3 overflow-hidden"
@@ -97,7 +97,7 @@ export function ProductPackArt({
             loading={priority ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImgFailed(true)}
-            className="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <>

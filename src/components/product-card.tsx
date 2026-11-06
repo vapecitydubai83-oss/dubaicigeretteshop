@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Check, Eye, MessageCircle, Plus, ShoppingCart } from "lucide-react";
+import { Check, MessageCircle, Plus, ShoppingCart } from "lucide-react";
 import { Product } from "@/lib/catalog-data";
 import { useStore } from "@/context/store-context";
 import { ProductPackArt } from "@/components/product-pack-art";
@@ -38,10 +38,6 @@ export function ProductCard({
       {/* Clickable Top Gold-Framed VAP DXB Style Carton Image -> Product Detail Page */}
       <Link href={`/product/${product.id}`} className="block p-2 sm:p-2.5 pb-0 relative">
         <ProductPackArt product={product} />
-        <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute top-4 right-4 px-2 py-1 rounded bg-black/75 text-white text-[10px] font-mono inline-flex items-center gap-1">
-          <Eye className="w-3 h-3 text-[#F4B143]" />
-          <span>Details</span>
-        </span>
       </Link>
 
       {/* Card Body: Clean VAP DXB Centered Info + Instant WhatsApp Action */}
