@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import { DUBAI_AREAS, formatWhatsAppNumberForLink } from "@/lib/catalog-data";
+import { DELIVERY_TIME, RETURN_POLICY } from "@/lib/offer-schema";
 
 export function SeoAeoGeoSection({
   isLightTheme = true,
@@ -156,16 +157,9 @@ export function SeoAeoGeoSection({
                   "@type": "DefinedRegion",
                   addressCountry: "AE",
                 },
+                deliveryTime: DELIVERY_TIME,
               },
-              hasMerchantReturnPolicy: {
-                "@type": "MerchantReturnPolicy",
-                applicableCountry: "AE",
-                returnPolicyCategory:
-                  "https://schema.org/MerchantReturnFiniteReturnWindow",
-                merchantReturnDays: 7,
-                returnMethod: "https://schema.org/ReturnByMail",
-                returnFees: "https://schema.org/FreeReturn",
-              },
+              hasMerchantReturnPolicy: RETURN_POLICY,
             },
           },
         })),

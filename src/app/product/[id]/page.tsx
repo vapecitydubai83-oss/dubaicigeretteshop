@@ -26,6 +26,7 @@ import { ProductPackArt } from "@/components/product-pack-art";
 import { ProductCard } from "@/components/product-card";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
 import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
+import { DELIVERY_TIME, RETURN_POLICY } from "@/lib/offer-schema";
 
 export default function ProductDetailPage() {
   const params = useParams<{ id: string }>();
@@ -229,7 +230,9 @@ export default function ProductDetailPage() {
               "@type": "DefinedRegion",
               addressCountry: "AE",
             },
+            deliveryTime: DELIVERY_TIME,
           },
+          hasMerchantReturnPolicy: RETURN_POLICY,
         },
       },
       {
