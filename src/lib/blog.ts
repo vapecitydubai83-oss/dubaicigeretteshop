@@ -24,8 +24,8 @@ export function sanitize(html: string): string {
       if (tag.startsWith("</")) return `\u0001/${n}\u0002`;
       if (n !== "a") return `\u0001${n}\u0002`;
       const href = /href="([^"]*)"/i.exec(tag)?.[1] ?? "/";
-      // no backslashes: browsers read "/\evil.com" as "//evil.com"
-      const safe = !href.includes("\\") &&
+      // no backslash (browsers read "/\evil.com" as "//evil.com") and no & (an entity can decode to one)
+      const safe = !/[\\&]/.test(href) &&
         (/^\/(?!\/)[^\s<>"]*$/.test(href) || /^https:\/\/(www\.)?dubaicigeretteshop\.ae(\/[^\s<>"]*)?$/.test(href));
       return `\u0001a href="${safe ? href : "/"}"\u0002`;
     })
