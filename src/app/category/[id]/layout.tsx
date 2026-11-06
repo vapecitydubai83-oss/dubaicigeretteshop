@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 const CATEGORY_SEO: Record<string, { title: string; desc: string }> = {
   cigarettes: {
-    title: "Duty-Free Cigarettes in Dubai | Dubai Cigarette Shop",
+    title: "Cigarettes in Dubai | Dubai Cigarette Shop",
     desc: "Marlboro, Dunhill, Davidoff, ESSE, Winston & more — factory-sealed master cartons delivered in 45–75 min across Dubai & Sharjah — courier to all Emirates. Order on WhatsApp.",
   },
   "iqos-terea": {

@@ -47,7 +47,7 @@ export function AgeGateModal() {
           </h2>
 
           <p className="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
-            Welcome to Dubai&apos;s premier duty-free tobacco &amp; carton concierge.
+            Welcome to Dubai&apos;s premier tobacco &amp; carton concierge.
             In accordance with UAE Federal Law No. 15 of 2009 regarding Tobacco Control,
             you must be at least <strong className="text-white">18 years of age</strong> to
             browse or order via WhatsApp.

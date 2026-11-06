@@ -291,9 +291,9 @@ export const DUBAI_AREAS = [
 
 export const INITIAL_FAQS: FaqItem[] = [
   {
-    question: "Where can I buy authentic duty-free cigarettes online in Dubai with fast delivery?",
+    question: "Where can I buy authentic cigarettes online in Dubai with fast delivery?",
     answer:
-      "You can order 100% authentic, factory-sealed duty-free cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West, and IQOS TEREA) from Dubai Cigarette Shop with 45–75 minute express rider delivery across Dubai, Sharjah and Ajman — and next-day courier to Abu Dhabi and all other Emirates — via 24/7 WhatsApp checkout (0553020429 / +971553020429).",
+      "You can order 100% authentic, factory-sealed cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West, and IQOS TEREA) from Dubai Cigarette Shop with 45–75 minute express rider delivery across Dubai, Sharjah and Ajman — and next-day courier to Abu Dhabi and all other Emirates — via 24/7 WhatsApp checkout (0553020429 / +971553020429).",
   },
   {
     question: "How much does a carton of Marlboro, Dunhill, or ESSE cigarettes cost in Dubai?",
@@ -303,7 +303,7 @@ export const INITIAL_FAQS: FaqItem[] = [
   {
     question: "How does WhatsApp cigarette ordering work and what payment methods are accepted?",
     answer:
-      "Simply click 'Order on WhatsApp' on any cigarette carton or build a multi-item invoice in your Carton Tray. No account registration is required. Share your Dubai building name or live WhatsApp location pin, inspect the factory duty-free seal upon rider arrival, and pay via Cash on Delivery (COD), Card on Delivery, or Apple Pay.",
+      "Simply click 'Order on WhatsApp' on any cigarette carton or build a multi-item invoice in your Carton Tray. No account registration is required. Share your Dubai building name or live WhatsApp location pin, inspect the factory seal upon rider arrival, and pay via Cash on Delivery (COD), Card on Delivery, or Apple Pay.",
   },
   {
     question: "Is express delivery free in Dubai?",
@@ -328,11 +328,11 @@ export const INITIAL_SETTINGS: StoreSettings = {
   heroOverlayOpacity: 55,
   showFivePacksRow: true,
   aeoAnswerCapsule:
-    "Dubai Cigarette Shop (dubaicigeretteshop.ae) is Dubai's #1 24/7 online duty-free cigarette, heated tobacco & secondary vape store, delivering factory-sealed cartons of Marlboro (AED 190–200), Dunhill (AED 120–200), Davidoff (AED 145–165), ESSE Super Slims (AED 75–90), IQOS TEREA (AED 135), VELO Nicotine Pouches, and Vapes in 45–75 minutes across Dubai, Sharjah and Ajman (and next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & Umm Al Quwain) via instant WhatsApp ordering (+971 55 302 0429) with Cash or Card on Delivery.",
+    "Dubai Cigarette Shop (dubaicigeretteshop.ae) is Dubai's #1 24/7 online cigarette, heated tobacco & secondary vape store, delivering factory-sealed cartons of Marlboro (AED 190–200), Dunhill (AED 120–200), Davidoff (AED 145–165), ESSE Super Slims (AED 75–90), IQOS TEREA (AED 135), VELO Nicotine Pouches, and Vapes in 45–75 minutes across Dubai, Sharjah and Ajman (and next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & Umm Al Quwain) via instant WhatsApp ordering (+971 55 302 0429) with Cash or Card on Delivery.",
   seoMetaTitle:
     "Dubai Cigarette Shop | Marlboro, Dunhill, ESSE, Davidoff & IQOS Terea (+971 55 302 0429)",
   seoMetaDescription:
-    "dubaicigeretteshop.ae — Dubai's #1 Online Cigarette Shop. Buy 100% authentic duty-free cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue) plus IQOS Terea, VELO & Vapes. Instant WhatsApp order (+971 55 302 0429).",
+    "dubaicigeretteshop.ae — Dubai's #1 Online Cigarette Shop. Buy 100% authentic cigarette cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue) plus IQOS Terea, VELO & Vapes. Instant WhatsApp order (+971 55 302 0429).",
   seoKeywords:
     "dubai cigarette shop, dubaicigeretteshop.ae, cigarettes in dubai, buy cigarettes online dubai, marlboro gold dubai price, dunhill switch dubai, esse change uae, iqos terea dubai delivery, +971553020429",
   faqs: INITIAL_FAQS,
@@ -349,14 +349,14 @@ export const INITIAL_SETTINGS: StoreSettings = {
   },
   navMenuItems: INITIAL_NAV_MENU,
   footerAboutText:
-    "Dubai's #1 24/7 Online Duty-Free Cigarette Carton Store (dubaicigeretteshop.ae — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament) plus Heated Tobacco, Nicotine Pouches & Vapes. 45–75 minute express delivery across Dubai, Sharjah & Ajman — next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & UAQ.",
+    "Dubai's #1 24/7 Online Cigarette Carton Store (dubaicigeretteshop.ae — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament) plus Heated Tobacco, Nicotine Pouches & Vapes. 45–75 minute express delivery across Dubai, Sharjah & Ajman — next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & UAQ.",
   storeAddressText:
     "Downtown Boulevard & Dragon Mart Hub, Dubai, United Arab Emirates",
   whatsappBot: {
     enabled: true,
     botName: "Dubai Cigarette Shop Automated WhatsApp Concierge",
     welcomeMessage:
-      "Marhaba! Welcome to Dubai Cigarette Shop (dubaicigeretteshop.ae • +971 55 302 0429). I can help you order Duty-Free Cigarette Cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston) or secondary items (IQOS Terea, Vapes, E-Liquids, VELO) in 30 seconds!",
+      "Marhaba! Welcome to Dubai Cigarette Shop (dubaicigeretteshop.ae • +971 55 302 0429). I can help you order Cigarette Cartons (Marlboro, Dunhill, Davidoff, ESSE, Winston) or secondary items (IQOS Terea, Vapes, E-Liquids, VELO) in 30 seconds!",
     autoReplyDelayMs: 450,
     webhookVerifyToken: "dubai_cigarette_shop_verify_2026",
     cloudApiAccessToken: "",

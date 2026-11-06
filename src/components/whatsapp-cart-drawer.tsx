@@ -101,7 +101,7 @@ export function WhatsAppCartDrawer() {
                 Dubai WhatsApp Cart
               </h2>
               <p className="text-xs text-zinc-400 font-mono">
-                {settings.expressDeliveryMinutes} Express Dispatch • Duty-Free Sealed
+                {settings.expressDeliveryMinutes} Express Dispatch • Factory Sealed
               </p>
             </div>
           </div>

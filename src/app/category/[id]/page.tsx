@@ -12,7 +12,7 @@ import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
 
 const CATEGORY_META: Record<string, { title: string; blurb: string }> = {
   cigarettes: {
-    title: "Duty-Free Cigarettes",
+    title: "Cigarettes",
     blurb:
       "Factory-sealed 10-pack master cartons — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament, Vogue, West and more, delivered in 45–75 min across Dubai & Sharjah, courier to all Emirates.",
   },
@@ -121,7 +121,7 @@ export default function CategoryPage() {
           <div className="flex items-center gap-3 text-[11px] font-bold text-zinc-500">
             <span className="inline-flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              100% Duty-Free Sealed
+              100% Factory Sealed
             </span>
             <span className="inline-flex items-center gap-1">
               <Truck className="w-3.5 h-3.5 text-[#F4B143]" />

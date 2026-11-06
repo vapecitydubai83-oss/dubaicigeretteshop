@@ -95,7 +95,7 @@ export function SeoAeoGeoSection({
       },
       {
         "@type": "ItemList",
-        name: "Duty-Free Cigarette Cartons & Heated Tobacco in Dubai",
+        name: "Cigarette Cartons & Heated Tobacco in Dubai",
         numberOfItems: products.length,
         itemListElement: products.map((p, idx) => ({
           "@type": "ListItem",
@@ -206,7 +206,7 @@ export function SeoAeoGeoSection({
         <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-current/10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2F42] text-[#F4B143] text-xs font-mono uppercase tracking-wider font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Verified Dubai Duty-Free Tobacco Authority Guide (2026)</span>
+            <span>Verified Dubai Tobacco Guide (2026)</span>
           </div>
           <div className="flex items-center gap-3 text-xs font-mono opacity-70">
             <span className="inline-flex items-center gap-1">
@@ -215,7 +215,7 @@ export function SeoAeoGeoSection({
             </span>
             <span className="inline-flex items-center gap-1">
               <FileCheck2 className="w-3.5 h-3.5 text-[#F4B143]" />
-              UAE ESMA &amp; Duty-Free Verified
+              UAE ESMA Verified
             </span>
           </div>
         </div>
@@ -252,7 +252,7 @@ export function SeoAeoGeoSection({
               10 Packs / 200 Sticks
             </div>
             <p className="text-xs opacity-70 mt-1">
-              Factory-sealed master cartons with official Swiss, German, or Korean duty-free foil locks.
+              Factory-sealed master cartons with official Swiss, German, or Korean factory seals.
             </p>
           </div>
 
@@ -517,7 +517,7 @@ export function SeoAeoGeoSection({
               href={`https://wa.me/${formatWhatsAppNumberForLink(
                 settings.whatsappNumber
               )}?text=${encodeURIComponent(
-                `Hello ${settings.storeName}! Please share today's duty-free cigarette carton menu for my Dubai location.`
+                `Hello ${settings.storeName}! Please share today's cigarette carton menu for my Dubai location.`
               )}`}
               target="_blank"
               rel="noopener noreferrer"

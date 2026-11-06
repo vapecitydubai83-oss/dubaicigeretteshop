@@ -396,7 +396,7 @@ export default function ProductDetailPage() {
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span className="px-2.5 py-0.5 rounded-full bg-[#0A2F42] text-[#F4B143] text-[11px] font-mono uppercase tracking-wider font-bold">
-                  {product.brand} Official Duty-Free
+                  {product.brand} Official Product
                 </span>
                 {product.badge && (
                   <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold">
@@ -415,7 +415,7 @@ export default function ProductDetailPage() {
               <h1 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
                 {product.title}{" "}
                 <span className="text-base sm:text-xl font-normal text-zinc-500 block sm:inline">
-                  — UAE Duty-Free Carton
+                  — UAE Carton
                 </span>
               </h1>
               {product.arabicSubtitle && (
@@ -646,7 +646,7 @@ export default function ProductDetailPage() {
                   ["Quantity / Format", product.format],
                   ["Tar Content", product.tar],
                   ["Nicotine Content", product.nicotine],
-                  ["Duty-Free Origin", product.origin],
+                  ["Origin", product.origin],
                   ["1 Carton Price (Dubai)", `AED ${product.cartonPrice}.00`],
                   [
                     "5 Cartons VIP Price",

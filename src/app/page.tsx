@@ -172,7 +172,7 @@ export default function DubaiCigaretteStorefront() {
     searchQuery.trim() === "" && selectedBrand === "All" && selectedCategory === "all";
   const categorySections = useMemo(() => {
     const cats: { id: Exclude<CategoryId, "all">; heading: string }[] = [
-      { id: "cigarettes", heading: "Duty-Free Cigarettes" },
+      { id: "cigarettes", heading: "Cigarettes" },
       { id: "iqos-terea", heading: "IQOS & TEREA" },
       { id: "vapes", heading: "Vapes & Disposables" },
       { id: "e-liquid", heading: "E-Liquids" },
@@ -306,7 +306,7 @@ export default function DubaiCigaretteStorefront() {
               </span>
             </span>
             <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] text-[11px] font-mono">
-              100% Duty-Free Original Cartons
+              100% Original Factory-Sealed Cartons
             </span>
           </div>
 
@@ -549,7 +549,7 @@ export default function DubaiCigaretteStorefront() {
           </h2>
           <p className="text-xs sm:text-sm text-zinc-600 max-w-3xl mx-auto leading-relaxed">
             Looking for a reliable cigarette shop in Dubai where you can order
-            authentic duty-free cartons quickly and safely? You are in the right
+            authentic factory-sealed cartons quickly and safely? You are in the right
             place. As a trusted online cigarette store in Dubai (with secondary
             IQOS Terea, Nicotine Pouches, Vapes &amp; E-Liquids), we deliver
             factory-sealed cartons across the UAE in{" "}
@@ -557,7 +557,7 @@ export default function DubaiCigaretteStorefront() {
           </p>
           <div className="pt-1 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-bold text-zinc-800">
             <span>• Fast cigarette delivery Dubai</span>
-            <span>• 100% Authentic duty-free cartons</span>
+            <span>• 100% Authentic factory-sealed cartons</span>
             <span>• Simple 1-Click WhatsApp ordering</span>
           </div>
           <div className="pt-3 flex flex-wrap items-center justify-center gap-3">

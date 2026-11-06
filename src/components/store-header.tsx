@@ -155,13 +155,13 @@ const BROWSE_MEGA_CATEGORIES: {
 }[] = [
   {
     id: "cigarettes",
-    label: "Duty-Free Cigarettes",
+    label: "Cigarettes",
     badge: "MAIN FOCUS",
     filterType: "category",
     filterValue: "cigarettes",
     featuredInfo: {
       title: "10-Pack Master Cartons (200 Sticks)",
-      subtitle: "Factory-sealed Swiss, German & Korean duty-free cartons delivered in 45 mins.",
+      subtitle: "Factory-sealed Swiss, German & Korean cartons delivered in 45 mins.",
       priceTag: "From AED 50.00 / Carton",
       origin: "100% Sealed Original",
     },
@@ -177,7 +177,7 @@ const BROWSE_MEGA_CATEGORIES: {
       title: "Camel, American Spirit & Benson & Hedges",
       subtitle: "Rare international blends - JTI Camel, Santa Fe American Spirit, UK Benson & Hedges.",
       priceTag: "From AED 130.00",
-      origin: "Imported Duty-Free",
+      origin: "Imported",
     },
     subItems: [],
   },
@@ -191,7 +191,7 @@ const BROWSE_MEGA_CATEGORIES: {
       title: "Manchester, L&M, Gold Leaf & Mond",
       subtitle: "Best-value sealed cartons in Dubai - Manchester, L&M, Gold Leaf, West, Platinum Seven & Mond.",
       priceTag: "From AED 50.00 / Carton",
-      origin: "Duty-Free Value Picks",
+      origin: "Value Picks",
     },
     subItems: [],
   },
@@ -711,7 +711,7 @@ export function StoreHeader({
                       <div className="pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between px-2 text-[11px] text-zinc-500">
                         <span className="inline-flex items-center gap-1">
                           <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                          100% Duty-Free Sealed
+                          100% Factory Sealed
                         </span>
                         <span className="font-mono text-[#0A2F42] font-bold">
                           {settings.expressDeliveryMinutes} Dubai
@@ -1060,7 +1060,7 @@ export function StoreFooter() {
             </div>
             <p className="text-zinc-300 leading-relaxed max-w-md">
               {settings.footerAboutText ||
-                "Dubai's #1 24/7 Online Duty-Free Cigarette Carton Store (dubaicigeretteshop.ae — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament) plus Heated Tobacco, Nicotine Pouches & Vapes."}
+                "Dubai's #1 24/7 Online Cigarette Carton Store (dubaicigeretteshop.ae — Marlboro, Dunhill, Davidoff, ESSE, Winston, Parliament) plus Heated Tobacco, Nicotine Pouches & Vapes."}
             </p>
             <div className="flex items-center gap-2 text-zinc-300 pt-1">
               <MapPin className="w-4 h-4 text-[#F4B143] shrink-0" />

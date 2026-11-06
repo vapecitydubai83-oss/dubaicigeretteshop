@@ -264,13 +264,13 @@ export default function AdminDashboardPage() {
       arabicSubtitle: "كرتون سجائر فاخر",
       brand: "Marlboro",
       category: "cigarettes",
-      subCategory: "Duty-Free Carton",
+      subCategory: "Carton",
       flavor: "Smooth Gold",
       strength: "Medium",
       format: "1 Carton (10 Packs • 200 Sticks)",
       tar: "6.0 mg",
       nicotine: "0.5 mg",
-      origin: "Switzerland Duty-Free",
+      origin: "Switzerland",
       cartonPrice: 190,
       oldPrice: 220,
       fiveCartonPrice: 900,
@@ -1705,7 +1705,7 @@ export default function AdminDashboardPage() {
 
                   <div>
                     <label className="block font-bold text-zinc-700 mb-1">
-                      9. Duty-Free Origin &amp; Promo Badge
+                      9. Origin &amp; Promo Badge
                     </label>
                     <div className="flex gap-2">
                       <input
@@ -1717,7 +1717,7 @@ export default function AdminDashboardPage() {
                             origin: e.target.value,
                           })
                         }
-                        placeholder="Switzerland Duty-Free"
+                        placeholder="Switzerland"
                         className="w-1/2 px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300"
                       />
                       <input
