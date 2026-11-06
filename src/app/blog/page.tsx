@@ -8,7 +8,7 @@ import { listPosts, postDate } from "@/lib/blog";
 export const revalidate = 900;
 
 export const metadata: Metadata = {
-  title: "Guides & News | Dubai Cigarette Shop",
+  title: "Dubai Buying Guides & News",
   description:
     "Buying guides for cigarettes, IQOS & TEREA, vapes, nicotine pouches and shisha in Dubai: brands, UAE rules, delivery and how to choose.",
   alternates: { canonical: "/blog" },

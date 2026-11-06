@@ -13,9 +13,9 @@ type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(Number((await params).id));
-  if (!post) return { title: "Guide not found | Dubai Cigarette Shop" };
+  if (!post) return { title: "Guide not found" };
   return {
-    title: `${post.title} | Dubai Cigarette Shop`,
+    title: post.title,
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: `/blog/${post.id}` },
