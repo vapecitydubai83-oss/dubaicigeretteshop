@@ -6,9 +6,11 @@ import { Product } from "@/lib/catalog-data";
 export function ProductPackArt({
   product,
   compact = false,
+  priority = false,
 }: {
   product: Product;
   compact?: boolean;
+  priority?: boolean;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
   useEffect(() => {
@@ -35,6 +37,8 @@ export function ProductPackArt({
           <img
             src={product.customImageUrl}
             alt={product.title}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
             onError={() => setImgFailed(true)}
             className="w-full h-full object-contain"
           />
@@ -90,6 +94,8 @@ export function ProductPackArt({
           <img
             src={product.customImageUrl}
             alt={product.title}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
             onError={() => setImgFailed(true)}
             className="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
           />

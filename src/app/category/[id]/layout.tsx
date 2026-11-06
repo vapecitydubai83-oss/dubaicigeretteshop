@@ -68,10 +68,58 @@ export async function generateMetadata({
   };
 }
 
-export default function CategoryLayout({
+export default async function CategoryLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ id: string }>;
 }) {
-  return children;
+  const { id } = await params;
+  const seo = CATEGORY_SEO[id];
+  if (!seo) return children;
+  const { products } = await readSeoStore();
+  const items = products.filter((p) => p.category === id);
+  const url = `${SITE_BASE_URL}/category/${id}`;
+  const name = seo.title.split(" | ")[0];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#page`,
+        url,
+        name,
+        description: seo.desc,
+        isPartOf: { "@id": `${SITE_BASE_URL}/#website` },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: items.length,
+          itemListElement: items.slice(0, 60).map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `${SITE_BASE_URL}/product/${p.id}`,
+            name: p.title,
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_BASE_URL },
+          { "@type": "ListItem", position: 2, name, item: url },
+        ],
+      },
+    ],
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // product titles come from the admin catalog: escape "<" so no tag can close the script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+      {children}
+    </>
+  );
 }

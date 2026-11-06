@@ -313,6 +313,7 @@ export default function ProductDetailPage() {
           <div className="lg:col-span-5 space-y-3">
             <div className="max-w-md mx-auto relative">
               <ProductPackArt
+                priority
                 product={
                   allPhotos.length > 0
                     ? {
