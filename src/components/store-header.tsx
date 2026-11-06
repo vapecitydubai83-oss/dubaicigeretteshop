@@ -1096,6 +1096,11 @@ export function StoreFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" className="hover:text-[#F4B143]">
+                  Guides &amp; News
+                </Link>
+              </li>
+              <li>
                 <a
                   href="/llms.txt"
                   target="_blank"

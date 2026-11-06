@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { readFile } from "fs/promises";
 import path from "path";
 import { INITIAL_PRODUCTS, Product } from "@/lib/catalog-data";
+import { listPosts } from "@/lib/blog";
 
 export const dynamic = "force-dynamic";
 
@@ -66,6 +67,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     ...categoryUrls,
+    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    ...(await listPosts()).map((p) => ({
+      url: `${baseUrl}/blog/${p.id}`,
+      lastModified: new Date(p.published),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     ...productUrls,
   ];
 }
