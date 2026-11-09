@@ -73,6 +73,7 @@ export default function AdminDashboardPage() {
     updateSettings,
     resetDemoData,
     adminUsers,
+    usersReady,
     currentUser,
     adminLogin,
     adminLogout,
@@ -368,9 +369,15 @@ export default function AdminDashboardPage() {
     e.preventDefault();
     setLoginBusy(true);
     setLoginError(null);
-    const res = await adminLogin(loginUsername, loginPassword);
+    try {
+      const res = await adminLogin(loginUsername, loginPassword);
+      if (!res.ok) setLoginError(res.error || "Login failed.");
+    } catch {
+      setLoginError(
+        "Login unavailable — open this page over HTTPS or localhost."
+      );
+    }
     setLoginBusy(false);
-    if (!res.ok) setLoginError(res.error || "Login failed.");
   };
 
   if (!currentUser) {
@@ -431,10 +438,16 @@ export default function AdminDashboardPage() {
 
             <button
               type="submit"
-              disabled={loginBusy || !loginUsername.trim() || !loginPassword}
+              disabled={
+                !usersReady || loginBusy || !loginUsername.trim() || !loginPassword
+              }
               className="w-full py-3.5 rounded-xl bg-[#F4B143] hover:bg-[#ffc95e] disabled:opacity-50 text-[#061B28] font-extrabold text-sm shadow-lg transition-colors"
             >
-              {loginBusy ? "Checking..." : "Login to Admin Panel"}
+              {!usersReady
+                ? "Loading..."
+                : loginBusy
+                  ? "Checking..."
+                  : "Login to Admin Panel"}
             </button>
           </form>
         </div>

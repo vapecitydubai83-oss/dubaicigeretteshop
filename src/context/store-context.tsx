@@ -83,6 +83,7 @@ interface StoreContextValue {
   resetDemoData: () => void;
   // Admin auth & user management
   adminUsers: AdminUser[];
+  usersReady: boolean;
   currentUser: AdminUser | null;
   adminLogin: (username: string, password: string) => Promise<{ ok: boolean; error?: string }>;
   adminLogout: () => void;
@@ -135,6 +136,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);
   const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
+  const [usersReady, setUsersReady] = useState(false);
   const [adminApiKey, setAdminApiKey] = useState<string>("");
   const [hydrated, setHydrated] = useState(false);
 
@@ -168,19 +170,22 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           const u = parsed.find((x) => x.id === sess.userId);
           if (u) setCurrentUser(u);
         }
+        setUsersReady(true);
       } else {
-        hashPassword(ADMIN_SEED.DEFAULT_PASSWORD).then((h) => {
-          setAdminUsers([
-            {
-              id: "u-admin",
-              username: ADMIN_SEED.DEFAULT_USERNAME,
-              passwordHash: h,
-              role: "admin",
-              displayName: "Store Owner",
-              createdAt: Date.now(),
-            },
-          ]);
-        });
+        hashPassword(ADMIN_SEED.DEFAULT_PASSWORD)
+          .then((h) => {
+            setAdminUsers([
+              {
+                id: "u-admin",
+                username: ADMIN_SEED.DEFAULT_USERNAME,
+                passwordHash: h,
+                role: "admin",
+                displayName: "Store Owner",
+                createdAt: Date.now(),
+              },
+            ]);
+          })
+          .finally(() => setUsersReady(true));
       }
 
       const savedKey = localStorage.getItem(STORAGE_KEYS.ADMINKEY);
@@ -716,6 +721,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const adminLogin = async (username: string, password: string) => {
     // Server login first: success returns the shared write key so catalog
     // changes reach every visitor, not just this browser.
+    let serverError: string | null = null;
     try {
       const res = await fetch("/api/admin/login", {
         method: "POST",
@@ -754,25 +760,29 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         } catch {}
         return { ok: true };
       }
-      // If the server admin endpoint is configured and rejected the login
-      // (401 / 429), do NOT fall back to the local default account.
+      // The server owns the seeded admin account ("u-admin"), so its 401/429
+      // rejection must not be bypassed by local default credentials. Staff
+      // accounts are localStorage-only, so they still fall through to the
+      // local check below.
       if (res.status === 401 || res.status === 429) {
         const errData = await res.json().catch(() => ({}));
-        return {
-          ok: false,
-          error:
-            errData?.error || "Incorrect username or password. Please try again.",
-        };
+        serverError =
+          errData?.error || "Incorrect username or password. Please try again.";
       }
     } catch {}
 
     const u = adminUsers.find(
       (x) => x.username.toLowerCase() === username.trim().toLowerCase()
     );
+    if (serverError && (!u || u.id === "u-admin"))
+      return { ok: false, error: serverError };
     if (!u) return { ok: false, error: "No account found with that username." };
     const h = await hashPassword(password);
     if (h !== u.passwordHash)
-      return { ok: false, error: "Incorrect password. Please try again." };
+      return {
+        ok: false,
+        error: serverError || "Incorrect password. Please try again.",
+      };
     setCurrentUser(u);
     try {
       sessionStorage.setItem(
@@ -882,6 +892,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         updateSettings,
         resetDemoData,
         adminUsers,
+        usersReady,
         currentUser,
         adminLogin,
         adminLogout,
