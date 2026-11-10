@@ -161,12 +161,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       if (savedProfile) setCustomerProfile(JSON.parse(savedProfile));
 
       const savedUsers = localStorage.getItem(STORAGE_KEYS.USERS);
+      const session = sessionStorage.getItem(STORAGE_KEYS.SESSION);
+      const sess = session ? JSON.parse(session) : null;
       if (savedUsers) {
         const parsed: AdminUser[] = JSON.parse(savedUsers);
         setAdminUsers(parsed);
-        const session = sessionStorage.getItem(STORAGE_KEYS.SESSION);
-        if (session) {
-          const sess = JSON.parse(session) as { userId: string };
+        if (sess?.userId) {
           const u = parsed.find((x) => x.id === sess.userId);
           if (u) setCurrentUser(u);
         }
@@ -186,6 +186,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
             ]);
           })
           .finally(() => setUsersReady(true));
+      }
+      // Newer sessions store the whole user so they work on any device.
+      if (sess && typeof sess.id === "string" && typeof sess.username === "string") {
+        setCurrentUser({ passwordHash: "", createdAt: 0, ...sess });
       }
 
       const savedKey = localStorage.getItem(STORAGE_KEYS.ADMINKEY);
@@ -209,7 +213,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       .catch(() => {});
   }, []);
 
-  // When an admin key is present, pull the shared orders + leads from the server.
+  // When an admin key is present, pull the shared orders + leads + staff from the server.
   useEffect(() => {
     if (!adminApiKey) return;
     fetch("/api/orders", { headers: { "x-admin-key": adminApiKey } })
@@ -219,6 +223,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         if (data?.leads && Array.isArray(data.leads)) setLeads(data.leads);
       })
       .catch(() => {});
+    void refreshAdminUsers(adminApiKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [adminApiKey]);
 
   useEffect(() => {
@@ -718,6 +724,62 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   };
 
   // ------- Admin auth & user management -------
+  // Staff accounts live on the server so they work from any device. Any
+  // legacy localStorage-only staff are uploaded once (hashes verify
+  // identically server-side) so they keep working everywhere.
+  const refreshAdminUsers = async (key: string) => {
+    try {
+      const res = await fetch("/api/admin/users", {
+        headers: { "x-admin-key": key },
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      const serverUsers: AdminUser[] = (
+        Array.isArray(data?.users) ? data.users : []
+      ).map((u: Omit<AdminUser, "passwordHash">) => ({
+        ...u,
+        passwordHash: "",
+      }));
+      const serverNames = new Set(
+        serverUsers.map((u) => u.username.toLowerCase())
+      );
+      const legacy = adminUsers.filter(
+        (u) => u.id !== "u-admin" && !serverNames.has(u.username.toLowerCase())
+      );
+      for (const u of legacy) {
+        const r = await fetch("/api/admin/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-admin-key": key,
+          },
+          body: JSON.stringify({ action: "upsert", user: u }),
+        });
+        if (r.ok) {
+          const d = await r.json();
+          if (d?.user?.id) serverUsers.push({ ...d.user, passwordHash: "" });
+        }
+      }
+      setAdminUsers((prev) => [
+        ...prev.filter((u) => u.id === "u-admin"),
+        ...serverUsers,
+      ]);
+    } catch {}
+  };
+
+  const saveSession = (u: AdminUser) => {
+    try {
+      const pub = {
+        id: u.id,
+        username: u.username,
+        role: u.role,
+        displayName: u.displayName,
+        createdAt: u.createdAt,
+      };
+      sessionStorage.setItem(STORAGE_KEYS.SESSION, JSON.stringify(pub));
+    } catch {}
+  };
+
   const adminLogin = async (username: string, password: string) => {
     // Server login first: success returns the shared write key so catalog
     // changes reach every visitor, not just this browser.
@@ -736,34 +798,30 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
             localStorage.setItem(STORAGE_KEYS.ADMINKEY, data.key);
           } catch {}
         }
-        let u = adminUsers.find(
-          (x) => x.username.toLowerCase() === username.trim().toLowerCase()
+        const su = data?.user;
+        const u: AdminUser = {
+          id: typeof su?.id === "string" ? su.id : "u-admin",
+          username:
+            typeof su?.username === "string" ? su.username : username.trim(),
+          passwordHash: "",
+          role: su?.role === "admin" ? "admin" : "manager",
+          displayName: su?.displayName || su?.username || username.trim(),
+          createdAt: typeof su?.createdAt === "number" ? su.createdAt : 0,
+        };
+        setAdminUsers((prev) =>
+          prev.some((x) => x.id === u.id)
+            ? prev.map((x) => (x.id === u.id ? { ...x, ...u } : x))
+            : [...prev, u]
         );
-        if (!u) {
-          u = {
-            id: `u-${username.trim().toLowerCase()}`,
-            username: username.trim(),
-            passwordHash: await hashPassword(password),
-            role: "admin",
-            displayName: username.trim(),
-            createdAt: Date.now(),
-          };
-          const created = u;
-          setAdminUsers((prev) => [...prev, created]);
-        }
         setCurrentUser(u);
-        try {
-          sessionStorage.setItem(
-            STORAGE_KEYS.SESSION,
-            JSON.stringify({ userId: u.id })
-          );
-        } catch {}
+        saveSession(u);
+        if (data?.key) void refreshAdminUsers(data.key);
         return { ok: true };
       }
       // The server owns the seeded admin account ("u-admin"), so its 401/429
       // rejection must not be bypassed by local default credentials. Staff
-      // accounts are localStorage-only, so they still fall through to the
-      // local check below.
+      // accounts are server-side too; the local check below only remains as
+      // an offline fallback.
       if (res.status === 401 || res.status === 429) {
         const errData = await res.json().catch(() => ({}));
         serverError =
@@ -784,12 +842,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         error: serverError || "Incorrect password. Please try again.",
       };
     setCurrentUser(u);
-    try {
-      sessionStorage.setItem(
-        STORAGE_KEYS.SESSION,
-        JSON.stringify({ userId: u.id })
-      );
-    } catch {}
+    saveSession(u);
     return { ok: true };
   };
 
@@ -801,6 +854,31 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   };
 
   const changePassword = async (userId: string, currentPw: string, newPw: string) => {
+    if (adminApiKey) {
+      if (userId === "u-admin")
+        return {
+          ok: false,
+          error:
+            "The owner password is set by the ADMIN_PASSWORD environment variable on the server.",
+        };
+      const res = await fetch("/api/admin/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key": adminApiKey,
+        },
+        body: JSON.stringify({
+          action: "changePassword",
+          id: userId,
+          current: currentPw,
+          next: newPw,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok)
+        return { ok: false, error: data?.error || "Password change failed." };
+      return { ok: true };
+    }
     const u = adminUsers.find((x) => x.id === userId);
     if (!u) return { ok: false, error: "User not found." };
     const cur = await hashPassword(currentPw);
@@ -818,6 +896,28 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const upsertAdminUser = async (
     user: Omit<AdminUser, "passwordHash"> & { password?: string }
   ) => {
+    if (adminApiKey) {
+      const res = await fetch("/api/admin/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key": adminApiKey,
+        },
+        body: JSON.stringify({ action: "upsert", user }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok)
+        return { ok: false, error: data?.error || "Could not save account." };
+      if (data?.user?.id) {
+        const saved: AdminUser = { ...data.user, passwordHash: "" };
+        setAdminUsers((prev) =>
+          prev.some((x) => x.id === saved.id)
+            ? prev.map((x) => (x.id === saved.id ? saved : x))
+            : [...prev, saved]
+        );
+      }
+      return { ok: true };
+    }
     const username = user.username.trim().toLowerCase();
     if (!username)
       return { ok: false, error: "Username is required." };
@@ -848,16 +948,30 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   };
 
   const deleteAdminUser = (userId: string) => {
-    setAdminUsers((prev) => {
-      const target = prev.find((x) => x.id === userId);
-      const adminsLeft = prev.filter(
-        (x) => x.role === "admin" && x.id !== userId
-      ).length;
-      // never allow deleting the last admin or the logged-in user
-      if (target?.role === "admin" && adminsLeft === 0) return prev;
-      if (currentUser?.id === userId) return prev;
-      return prev.filter((x) => x.id !== userId);
-    });
+    const target = adminUsers.find((x) => x.id === userId);
+    const adminsLeft = adminUsers.filter(
+      (x) => x.role === "admin" && x.id !== userId
+    ).length;
+    // never allow deleting the last admin or the logged-in user
+    if (target?.role === "admin" && adminsLeft === 0) return;
+    if (currentUser?.id === userId) return;
+    if (adminApiKey) {
+      fetch("/api/admin/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-key": adminApiKey,
+        },
+        body: JSON.stringify({ action: "delete", id: userId }),
+      })
+        .then((r) => {
+          if (r.ok)
+            setAdminUsers((prev) => prev.filter((x) => x.id !== userId));
+        })
+        .catch(() => {});
+      return;
+    }
+    setAdminUsers((prev) => prev.filter((x) => x.id !== userId));
   };
 
   return (
