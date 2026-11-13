@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Check, MessageCircle, Plus, ShoppingCart } from "lucide-react";
-import { Product } from "@/lib/catalog-data";
+import { packWords, Product } from "@/lib/catalog-data";
 import { useStore } from "@/context/store-context";
 import { ProductPackArt } from "@/components/product-pack-art";
 
@@ -97,7 +97,7 @@ export function ProductCard({
                   : "opacity-70 hover:opacity-100"
               }`}
             >
-              1 Carton
+              {packWords(product).one}
             </button>
             <button
               type="button"
@@ -108,8 +108,8 @@ export function ProductCard({
                   : "opacity-70 hover:opacity-100"
               }`}
             >
-              <span className="sm:hidden">5 Cartons</span>
-              <span className="hidden sm:inline">5 Cartons VIP</span>
+              <span className="sm:hidden">{packWords(product).five}</span>
+              <span className="hidden sm:inline">{packWords(product).five} VIP</span>
             </button>
           </div>
 

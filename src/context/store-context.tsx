@@ -11,6 +11,7 @@ import {
   INITIAL_SETTINGS,
   Lead,
   OrderItem,
+  packWords,
   Product,
   StoreSettings,
   ThemeId,
@@ -437,9 +438,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     }).catch(() => {});
 
     const packLabel =
-      packTier === "5-cartons"
-        ? "5 Cartons VIP Bundle (50 Packs / 1,000 Sticks)"
-        : "1 Carton Sealed (10 Packs / 200 Sticks)";
+      packTier === "5-cartons" ? packWords(product).fiveMsg : packWords(product).oneMsg;
 
     const greeting = (
       settings.whatsappGreetingTemplate ||
@@ -452,6 +451,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       ``,
       `• *Product:* ${product.title}${flavor ? ` — ${flavor}` : product.flavorOptions?.length ? " — flavour to confirm" : ""} (${product.brand})`,
       `• *SKU:* ${product.sku}`,
+      `• *Link:* ${typeof window !== "undefined" ? window.location.origin : ""}/product/${product.id}`,
       `• *Pack Option:* ${packLabel}`,
       `• *Item Price:* AED ${unitPrice}`,
       `• *Delivery:* ${deliveryFee === 0 ? "FREE Express Delivery" : `AED ${deliveryFee}`}`,
@@ -538,7 +538,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       .map(
         (entry, idx) =>
           `${idx + 1}. *${entry.product.title}${entry.flavor ? ` — ${entry.flavor}` : entry.product.flavorOptions?.length ? " — flavour to confirm" : ""}* (${
-            entry.packTier === "5-cartons" ? "5 Cartons Bulk" : "1 Carton"
+            entry.packTier === "5-cartons" ? packWords(entry.product).five : packWords(entry.product).one
           }) × ${entry.quantity} — *AED ${entry.unitPrice * entry.quantity}*`
       )
       .join("\n");

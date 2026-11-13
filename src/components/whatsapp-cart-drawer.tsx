@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
-import { DUBAI_AREAS, WhatsAppOrder } from "@/lib/catalog-data";
+import { DUBAI_AREAS, packWords, WhatsAppOrder } from "@/lib/catalog-data";
 
 export function WhatsAppCartDrawer() {
   const {
@@ -208,8 +208,8 @@ export function WhatsAppCartDrawer() {
                         </span>
                         <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-zinc-300">
                           {item.packTier === "5-cartons"
-                            ? "5 Cartons Bundle"
-                            : "1 Carton (10Pk)"}
+                            ? `${packWords(item.product).five} Bundle`
+                            : packWords(item.product).oneLong}
                         </span>
                       </div>
                       <h4 className="font-display text-lg font-medium truncate mt-0.5">

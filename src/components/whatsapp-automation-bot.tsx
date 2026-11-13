@@ -17,6 +17,7 @@ import {
   DUBAI_AREAS,
   formatWhatsAppNumberForLink,
   Product,
+  packWords,
 } from "@/lib/catalog-data";
 
 interface ChatMessage {
@@ -86,7 +87,7 @@ export function WhatsAppAutomationBot() {
 
     if (matchedProduct) {
       return {
-        text: `Yes! *${matchedProduct.title}* is IN STOCK (${matchedProduct.stockCount} available).\n• 1 Carton: AED ${matchedProduct.cartonPrice}\n• 5 Cartons VIP: AED ${matchedProduct.fiveCartonPrice}\n• Spec: ${matchedProduct.tar} Tar / ${matchedProduct.nicotine} Nicotine (${matchedProduct.origin}).\n\nTap the green button below to dispatch it to your Dubai location in ${settings.expressDeliveryMinutes}!`,
+        text: `Yes! *${matchedProduct.title}* is IN STOCK (${matchedProduct.stockCount} available).\n• ${packWords(matchedProduct).one}: AED ${matchedProduct.cartonPrice}\n• ${packWords(matchedProduct).five} VIP: AED ${matchedProduct.fiveCartonPrice}\n• Spec: ${matchedProduct.tar} Tar / ${matchedProduct.nicotine} Nicotine (${matchedProduct.origin}).\n\nTap the green button below to dispatch it to your Dubai location in ${settings.expressDeliveryMinutes}!`,
         product: matchedProduct,
       };
     }
@@ -383,7 +384,7 @@ export function WhatsAppAutomationBot() {
                           : "bg-zinc-50 text-zinc-700 border-zinc-200"
                       }`}
                     >
-                      1 Carton (AED {selectedProduct?.cartonPrice})
+                      {selectedProduct ? packWords(selectedProduct).one : "1 Carton"} (AED {selectedProduct?.cartonPrice})
                     </button>
                     <button
                       type="button"

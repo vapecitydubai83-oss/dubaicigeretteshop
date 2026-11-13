@@ -104,6 +104,26 @@ export interface Product {
   seoAnswerCapsule?: string;
 }
 
+/**
+ * How a product is counted. Only cigarettes and TEREA sticks come in cartons; a vape, bottle, can or
+ * device is a unit, so it must never be labelled "1 Carton (10 Packs / 200 Cigarettes)".
+ */
+export function packWords(p: Pick<Product, "format">) {
+  return /carton/i.test(p.format)
+    ? {
+        one: "1 Carton", five: "5 Cartons", noun: "carton",
+        oneLong: "1 Carton (10 Packs)", oneSub: "200 Cigarettes • Factory Sealed",
+        fiveLong: "5 Cartons VIP Bundle", fiveSub: "1,000 Sticks + FREE Dubai Rider",
+        oneMsg: "1 Carton Sealed (10 Packs / 200 Sticks)", fiveMsg: "5 Cartons VIP Bundle (50 Packs / 1,000 Sticks)",
+      }
+    : {
+        one: "1 Unit", five: "5 Units", noun: "unit",
+        oneLong: "1 Unit", oneSub: p.format,
+        fiveLong: "5 Units VIP Bundle", fiveSub: `5 × ${p.format}`,
+        oneMsg: `1 Unit (${p.format})`, fiveMsg: `5 Units VIP Bundle (5 × ${p.format})`,
+      };
+}
+
 export interface NavMenuItem {
   id: string;
   label: string;

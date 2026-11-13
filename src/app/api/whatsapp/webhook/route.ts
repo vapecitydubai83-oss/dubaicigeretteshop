@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "crypto";
-import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
+import { INITIAL_PRODUCTS, INITIAL_SETTINGS, packWords, Product } from "@/lib/catalog-data";
 import { readCatalogStore } from "@/lib/catalog-store";
 
 function verifySignature(rawBody: string, header: string | null): boolean {
@@ -89,8 +89,8 @@ export async function POST(request: NextRequest) {
       replyMessage = [
         `Marhaba from *${liveSettings.storeName}* (${liveSettings.supportPhoneDisplay})!`,
         `✅ *${matchedProduct.title}* is ${matchedProduct.inStock ? "IN STOCK" : "currently out of stock"} for express Dubai/Sharjah delivery (45–75 min) or next-day UAE courier.`,
-        `• 1 Carton: AED ${matchedProduct.cartonPrice}.00`,
-        `• 5 Cartons VIP: AED ${matchedProduct.fiveCartonPrice}.00`,
+        `• ${packWords(matchedProduct).one}: AED ${matchedProduct.cartonPrice}.00`,
+        `• ${packWords(matchedProduct).five} VIP: AED ${matchedProduct.fiveCartonPrice}.00`,
         `• Specs: ${matchedProduct.tar} Tar / ${matchedProduct.nicotine} Nicotine`,
         ``,
         `Reply with your *Dubai Area / Location Pin* to confirm instant rider dispatch!`,

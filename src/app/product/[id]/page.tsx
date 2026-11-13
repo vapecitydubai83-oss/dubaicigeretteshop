@@ -22,7 +22,7 @@ import {
 import { useStore } from "@/context/store-context";
 import { useServerProduct } from "@/context/server-product";
 import { sameProductId } from "@/lib/product-id";
-import { DUBAI_AREAS } from "@/lib/catalog-data";
+import { DUBAI_AREAS, packWords } from "@/lib/catalog-data";
 import { ProductPackArt } from "@/components/product-pack-art";
 import { ProductCard } from "@/components/product-card";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
@@ -98,6 +98,7 @@ export default function ProductDetailPage() {
     );
   }
 
+  const pw = packWords(product);
   const flavors = product.flavorOptions || [];
   // A flavoured product cannot be ordered until the customer has picked one.
   const flavorOk = () => {
@@ -119,13 +120,13 @@ export default function ProductDetailPage() {
   // Generate Product-Specific AEO Answer Capsule
   const answerCapsule =
     product.seoAnswerCapsule ||
-    `Buy authentic ${product.title} (${product.brand}) online in Dubai for AED ${product.cartonPrice}.00 per factory-sealed carton (${product.format}) or AED ${product.fiveCartonPrice}.00 for a 5-carton VIP bundle. Specifications: ${product.tar} tar, ${product.nicotine} nicotine, ${product.flavor} profile (${product.origin}). Order with 1-Click on WhatsApp (+${settings.whatsappNumber}) for ${settings.expressDeliveryMinutes} express delivery across Downtown Dubai, Dubai Marina, JBR, and Palm Jumeirah with Cash or Card on Delivery.`;
+    `Buy authentic ${product.title} (${product.brand}) online in Dubai for AED ${product.cartonPrice}.00 per factory-sealed ${pw.noun} (${product.format}) or AED ${product.fiveCartonPrice}.00 for a 5-${pw.noun} VIP bundle. Specifications: ${product.tar} tar, ${product.nicotine} nicotine, ${product.flavor} profile (${product.origin}). Order with 1-Click on WhatsApp (+${settings.whatsappNumber}) for ${settings.expressDeliveryMinutes} express delivery across Downtown Dubai, Dubai Marina, JBR, and Palm Jumeirah with Cash or Card on Delivery.`;
 
   // Product-specific FAQs for AEO & GEO
   const productFaqs = [
     {
-      question: `What is the price of 1 carton of ${product.title} in Dubai?`,
-      answer: `One factory-sealed carton of ${product.title} (${product.format}) costs AED ${product.cartonPrice}.00 at ${settings.storeName}. Ordering the 5-Carton VIP bundle costs AED ${product.fiveCartonPrice}.00 (saving AED ${fiveCartonSavings}).`,
+      question: `What is the price of 1 ${pw.noun} of ${product.title} in Dubai?`,
+      answer: `One factory-sealed ${pw.noun} of ${product.title} (${product.format}) costs AED ${product.cartonPrice}.00 at ${settings.storeName}. Ordering the 5-Carton VIP bundle costs AED ${product.fiveCartonPrice}.00 (saving AED ${fiveCartonSavings}).`,
     },
     {
       question: `What is the tar and nicotine content of ${product.title}?`,
@@ -433,7 +434,7 @@ export default function ProductDetailPage() {
               <h1 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
                 {product.title}{" "}
                 <span className="text-base sm:text-xl font-normal text-zinc-500 block sm:inline">
-                  — UAE Carton
+                  — UAE {pw.noun === "carton" ? "Carton" : "Stock"}
                 </span>
               </h1>
               {product.arabicSubtitle && (
@@ -448,7 +449,7 @@ export default function ProductDetailPage() {
               <div>
                 <span className="text-xs font-mono uppercase text-zinc-500 block">
                   {packTier === "5-cartons"
-                    ? "5 Cartons VIP Bulk Bundle (50 Packs • 1,000 Sticks)"
+                    ? pw.fiveMsg
                     : product.format}
                 </span>
                 <div className="flex items-baseline gap-2.5 mt-0.5">
@@ -490,9 +491,9 @@ export default function ProductDetailPage() {
                   }`}
                 >
                   <div>
-                    <div className="font-bold text-sm">1 Carton (10 Packs)</div>
+                    <div className="font-bold text-sm">{pw.oneLong}</div>
                     <div className="text-xs text-zinc-500">
-                      200 Cigarettes • Factory Sealed
+                      {pw.oneSub}
                     </div>
                   </div>
                   <span className="font-mono font-extrabold text-base text-[#0A2F42]">
@@ -511,7 +512,7 @@ export default function ProductDetailPage() {
                 >
                   <div>
                     <div className="font-bold text-sm flex items-center gap-1.5">
-                      <span>5 Cartons VIP Bundle</span>
+                      <span>{pw.fiveLong}</span>
                       {fiveCartonSavings > 0 && (
                         <span className="px-1.5 py-0.5 rounded bg-emerald-600 text-white text-[10px] font-mono">
                           Save AED {fiveCartonSavings}
@@ -519,7 +520,7 @@ export default function ProductDetailPage() {
                       )}
                     </div>
                     <div className="text-xs text-zinc-500">
-                      1,000 Sticks + FREE Dubai Rider
+                      {pw.fiveSub}
                     </div>
                   </div>
                   <span className="font-mono font-extrabold text-base text-[#0A2F42]">
@@ -704,9 +705,9 @@ export default function ProductDetailPage() {
                   ["Tar Content", product.tar],
                   ["Nicotine Content", product.nicotine],
                   ["Origin", product.origin],
-                  ["1 Carton Price (Dubai)", `AED ${product.cartonPrice}.00`],
+                  [`${pw.one} Price (Dubai)`, `AED ${product.cartonPrice}.00`],
                   [
-                    "5 Cartons VIP Price",
+                    `${pw.five} VIP Price`,
                     `AED ${product.fiveCartonPrice}.00 (Save AED ${fiveCartonSavings})`,
                   ],
                 ].map(([label, val], idx) => (
