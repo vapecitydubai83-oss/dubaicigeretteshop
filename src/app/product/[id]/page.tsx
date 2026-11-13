@@ -57,9 +57,13 @@ export default function ProductDetailPage() {
   const [deliveryArea, setDeliveryArea] = useState<string>(DUBAI_AREAS[0]);
   const [justAdded, setJustAdded] = useState(false);
   const [activePhotoIdx, setActivePhotoIdx] = useState(0);
+  const [flavor, setFlavor] = useState("");
+  const [flavorError, setFlavorError] = useState(false);
 
   useEffect(() => {
     setActivePhotoIdx(0);
+    setFlavor("");
+    setFlavorError(false);
   }, [productId]);
 
   const allPhotos = useMemo(() => {
@@ -93,6 +97,15 @@ export default function ProductDetailPage() {
       </div>
     );
   }
+
+  const flavors = product.flavorOptions || [];
+  // A flavoured product cannot be ordered until the customer has picked one.
+  const flavorOk = () => {
+    if (flavors.length === 0 || flavor) return true;
+    setFlavorError(true);
+    document.getElementById("flavor-picker")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    return false;
+  };
 
   const activePrice =
     packTier === "5-cartons" ? product.fiveCartonPrice : product.cartonPrice;
@@ -516,6 +529,42 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
+            {/* Flavour picker: only for products that list flavours */}
+            {flavors.length > 0 && (
+              <div id="flavor-picker" className="space-y-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700">
+                  Choose Your Flavour{flavor ? `: ${flavor}` : ""}
+                </label>
+                <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="Flavour">
+                  {flavors.map((f, i) => (
+                    <button
+                      key={f}
+                      type="button"
+                      role="radio"
+                      aria-checked={flavor === f}
+                      onClick={() => {
+                        setFlavor(f);
+                        setFlavorError(false);
+                        if (i < allPhotos.length) setActivePhotoIdx(i);
+                      }}
+                      className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-colors ${
+                        flavor === f
+                          ? "bg-[#0A2F42] border-[#0A2F42] text-white"
+                          : "bg-white border-zinc-300 text-zinc-800 hover:border-[#0A2F42]"
+                      }`}
+                    >
+                      {f}
+                    </button>
+                  ))}
+                </div>
+                {flavorError && (
+                  <p role="alert" className="text-xs font-bold text-red-600">
+                    Please choose a flavour first.
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Select Dubai Delivery District for Instant WhatsApp Message */}
             <div className="space-y-1.5">
               <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700">
@@ -541,11 +590,13 @@ export default function ProductDetailPage() {
                 type="button"
                 disabled={!product.inStock}
                 onClick={() =>
+                  flavorOk() &&
                   triggerSingleClickWhatsApp(
                     product,
                     packTier,
                     deliveryArea,
-                    "Express 1-Click"
+                    "Express 1-Click",
+                    flavor || undefined
                   )
                 }
                 className="flex-1 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#1fb855] text-black font-black text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-[0_12px_30px_rgba(37,211,102,0.35)] transition-transform active:scale-[0.98]"
@@ -560,7 +611,8 @@ export default function ProductDetailPage() {
                 type="button"
                 disabled={!product.inStock}
                 onClick={() => {
-                  addToCart(product, packTier, 1);
+                  if (!flavorOk()) return;
+                  addToCart(product, packTier, 1, flavor || undefined);
                   setJustAdded(true);
                   setTimeout(() => setJustAdded(false), 1400);
                 }}
@@ -712,11 +764,13 @@ export default function ProductDetailPage() {
               <button
                 type="button"
                 onClick={() =>
+                  flavorOk() &&
                   triggerSingleClickWhatsApp(
                     product,
                     packTier,
                     deliveryArea,
-                    "Express 1-Click"
+                    "Express 1-Click",
+                    flavor || undefined
                   )
                 }
                 className="w-full py-3 rounded-lg bg-[#25D366] text-black font-extrabold text-xs flex items-center justify-center gap-1.5"

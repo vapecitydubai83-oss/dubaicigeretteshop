@@ -23,6 +23,7 @@ export interface CartEntry {
   packTier: "1-carton" | "5-cartons";
   quantity: number;
   unitPrice: number;
+  flavor?: string;
 }
 
 export interface CustomerProfile {
@@ -45,7 +46,7 @@ interface StoreContextValue {
   setIsCartOpen: (open: boolean) => void;
   activeTheme: ThemeId;
   setActiveTheme: (theme: ThemeId) => void;
-  addToCart: (product: Product, packTier: "1-carton" | "5-cartons", qty?: number) => void;
+  addToCart: (product: Product, packTier: "1-carton" | "5-cartons", qty?: number, flavor?: string) => void;
   updateCartQty: (key: string, delta: number) => void;
   removeFromCart: (key: string) => void;
   clearCart: () => void;
@@ -53,7 +54,8 @@ interface StoreContextValue {
     product: Product,
     packTier: "1-carton" | "5-cartons",
     deliveryArea?: string,
-    source?: WhatsAppOrder["source"]
+    source?: WhatsAppOrder["source"],
+    flavor?: string
   ) => WhatsAppOrder;
   submitCartToWhatsApp: (payload: {
     customerName: string;
@@ -287,9 +289,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const addToCart = (
     product: Product,
     packTier: "1-carton" | "5-cartons",
-    qty: number = 1
+    qty: number = 1,
+    flavor?: string
   ) => {
-    const key = `${product.id}__${packTier}`;
+    const key = `${product.id}__${packTier}${flavor ? `__${flavor}` : ""}`;
     const unitPrice =
       packTier === "5-cartons" ? product.fiveCartonPrice : product.cartonPrice;
 
@@ -300,7 +303,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           item.key === key ? { ...item, quantity: item.quantity + qty } : item
         );
       }
-      return [...prev, { key, product, packTier, quantity: qty, unitPrice }];
+      return [...prev, { key, product, packTier, quantity: qty, unitPrice, flavor }];
     });
   };
 
@@ -389,7 +392,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     product: Product,
     packTier: "1-carton" | "5-cartons",
     deliveryArea: string = "Downtown Dubai & Burj Khalifa District",
-    source: WhatsAppOrder["source"] = "Express 1-Click"
+    source: WhatsAppOrder["source"] = "Express 1-Click",
+    flavor?: string
   ): WhatsAppOrder => {
     const unitPrice =
       packTier === "5-cartons" ? product.fiveCartonPrice : product.cartonPrice;
@@ -414,6 +418,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           packTier,
           quantity: 1,
           unitPrice,
+          ...(flavor ? { flavor } : {}),
         },
       ],
       subtotal: unitPrice,
@@ -445,7 +450,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       greeting,
       `Order Reference: *#${orderId}*`,
       ``,
-      `• *Product:* ${product.title} (${product.brand})`,
+      `• *Product:* ${product.title}${flavor ? ` — ${flavor}` : product.flavorOptions?.length ? " — flavour to confirm" : ""} (${product.brand})`,
       `• *SKU:* ${product.sku}`,
       `• *Pack Option:* ${packLabel}`,
       `• *Item Price:* AED ${unitPrice}`,
@@ -493,6 +498,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       packTier: entry.packTier,
       quantity: entry.quantity,
       unitPrice: entry.unitPrice,
+      ...(entry.flavor ? { flavor: entry.flavor } : {}),
     }));
 
     const newOrder: WhatsAppOrder = {
@@ -531,7 +537,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     const itemLines = cart
       .map(
         (entry, idx) =>
-          `${idx + 1}. *${entry.product.title}* (${
+          `${idx + 1}. *${entry.product.title}${entry.flavor ? ` — ${entry.flavor}` : entry.product.flavorOptions?.length ? " — flavour to confirm" : ""}* (${
             entry.packTier === "5-cartons" ? "5 Cartons Bulk" : "1 Carton"
           }) × ${entry.quantity} — *AED ${entry.unitPrice * entry.quantity}*`
       )

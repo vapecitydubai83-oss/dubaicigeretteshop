@@ -168,6 +168,7 @@ export async function POST(request: NextRequest) {
       packTier: it.packTier === "5-cartons" ? "5-cartons" : "1-carton",
       quantity: Math.max(1, Math.min(100, Number(it.quantity) || 1)),
       unitPrice: Math.max(0, Math.min(100000, Number(it.unitPrice) || 0)),
+      ...(cleanStr(it.flavor, 60) ? { flavor: cleanStr(it.flavor, 60) } : {}),
     }));
     if (items.length === 0) {
       return NextResponse.json({ error: "Empty items" }, { status: 400 });

@@ -214,6 +214,7 @@ export function WhatsAppCartDrawer() {
                       </div>
                       <h4 className="font-display text-lg font-medium truncate mt-0.5">
                         {item.product.title}
+                        {item.flavor ? ` — ${item.flavor}` : ""}
                       </h4>
                       <div className="text-xs font-mono text-zinc-400">
                         AED {item.unitPrice} × {item.quantity} ={" "}

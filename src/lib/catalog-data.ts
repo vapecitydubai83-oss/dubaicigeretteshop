@@ -100,6 +100,7 @@ export interface Product {
   description: string;
   customImageUrl?: string;
   galleryImages?: string[];
+  flavorOptions?: string[]; // flavours the customer picks from; photo i (main, then gallery) shows flavour i
   seoAnswerCapsule?: string;
 }
 
@@ -127,6 +128,7 @@ export interface OrderItem {
   packTier: "1-carton" | "5-cartons";
   quantity: number;
   unitPrice: number;
+  flavor?: string;
 }
 
 export interface WhatsAppOrder {
