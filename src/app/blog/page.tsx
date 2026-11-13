@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
 import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
-import { listPosts, postDate } from "@/lib/blog";
+import { listPosts, postDate, postPath } from "@/lib/blog";
 
 export const revalidate = 900;
 
@@ -40,7 +40,7 @@ export default async function BlogPage() {
             {posts.map((p) => (
               <Link
                 key={p.id}
-                href={`/blog/${p.id}`}
+                href={postPath(p)}
                 className="group block rounded-2xl bg-white border border-zinc-200 p-5 hover:border-[#0A2F42]/40 transition-colors"
               >
                 <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-[#B7791F]">

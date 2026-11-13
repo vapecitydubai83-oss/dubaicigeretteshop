@@ -7,6 +7,7 @@ import { ArrowLeft, ChevronRight, ShieldCheck, Truck } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import { CategoryId } from "@/lib/catalog-data";
 import { ProductCard } from "@/components/product-card";
+import { brandSlug, hasBrandPage } from "@/lib/brands";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
 import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
 
@@ -112,7 +113,7 @@ export default function CategoryPage() {
         <div className="flex flex-wrap items-end justify-between gap-3 mb-5">
           <div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0A2F42] tracking-tight">
-              {meta.title}
+              {meta.title} in Dubai
             </h1>
             <p className="text-xs sm:text-sm text-zinc-500 mt-1 max-w-2xl leading-relaxed">
               {meta.blurb}
@@ -136,7 +137,11 @@ export default function CategoryPage() {
         {brandSections.map((sec) => (
           <div key={sec.brand} className="mb-8">
             <h2 className="text-sm sm:text-base font-extrabold text-[#0A2F42] border-b-2 border-[#F4B143] inline-block pb-1 mb-3">
-              {sec.brand}
+              {hasBrandPage(sec.brand) ? (
+                <Link href={`/brand/${brandSlug(sec.brand)}`} className="hover:underline">{sec.brand}</Link>
+              ) : (
+                sec.brand
+              )}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2.5 sm:gap-3">
               {sec.list.map((p) => (

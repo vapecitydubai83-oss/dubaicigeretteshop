@@ -52,5 +52,7 @@ export async function getPost(id: number): Promise<BlogPost | null> {
   return p ? { ...p, html: p.html ? sanitize(p.html) : undefined } : null;
 }
 
+export const postPath = (p: Pick<BlogPost, "id" | "slug">) => `/blog/${p.id}-${p.slug}`;
+
 export const postDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });

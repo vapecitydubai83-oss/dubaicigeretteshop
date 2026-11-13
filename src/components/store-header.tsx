@@ -1091,6 +1091,21 @@ export function StoreFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/cigarette-prices-dubai" className="hover:text-[#F4B143]">
+                  Cigarette Prices in Dubai
+                </Link>
+              </li>
+              <li>
+                <Link href="/delivery" className="hover:text-[#F4B143]">
+                  Delivery Areas &amp; Times
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#F4B143]">
+                  About &amp; Contact
+                </Link>
+              </li>
+              <li>
                 <Link href="/track" className="hover:text-[#F4B143] font-bold">
                   Track Your Order (/track)
                 </Link>

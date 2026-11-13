@@ -67,6 +67,11 @@ ${sections.join("\n\n")}
 
 ## Key Site Pages
 - Homepage: https://dubaicigeretteshop.ae/
+- Cigarette prices in Dubai (live carton price list): https://dubaicigeretteshop.ae/cigarette-prices-dubai
+- Delivery areas, times and fees: https://dubaicigeretteshop.ae/delivery
+- About and contact: https://dubaicigeretteshop.ae/about
+- Buying guides: https://dubaicigeretteshop.ae/blog
+- Brand pages (prices per brand): https://dubaicigeretteshop.ae/brand/marlboro , /brand/dunhill , /brand/esse , /brand/davidoff , /brand/iqos-terea
 - Order Tracking: https://dubaicigeretteshop.ae/track
 - Sitemap: https://dubaicigeretteshop.ae/sitemap.xml
 `;

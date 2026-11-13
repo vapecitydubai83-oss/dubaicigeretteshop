@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
 import { WhatsAppCartDrawer } from "@/components/whatsapp-cart-drawer";
-import { getPost, postDate } from "@/lib/blog";
-import { SITE_BASE_URL } from "@/lib/seo-meta";
+import { getPost, postDate, postPath } from "@/lib/blog";
+import { productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 
 export const revalidate = 900;
 
 type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPost(Number((await params).id));
+  const post = await getPost(parseInt((await params).id, 10));
   if (!post) return { title: "Guide not found" };
+  const { products } = await readSeoStore();
+  const images = productOgImages(products.find((p) => p.featured) ?? products[0]);
   return {
     title: post.title,
     description: post.description,
     keywords: post.keywords,
-    alternates: { canonical: `/blog/${post.id}` },
-    openGraph: { type: "article", title: post.title, description: post.description, url: `/blog/${post.id}` },
+    alternates: { canonical: postPath(post) },
+    openGraph: { type: "article", title: post.title, description: post.description, url: postPath(post), images },
   };
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const post = await getPost(Number((await params).id));
+  const { id } = await params;
+  const post = await getPost(parseInt(id, 10));
   if (!post) notFound();
+  if (`/blog/${id}` !== postPath(post)) permanentRedirect(postPath(post)); // one URL per guide, with its words in it
 
-  const url = `${SITE_BASE_URL}/blog/${post.id}`;
+  const url = SITE_BASE_URL + postPath(post);
   const jsonLd = [
     {
       "@context": "https://schema.org",

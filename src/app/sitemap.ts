@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 import { readFile } from "fs/promises";
 import path from "path";
 import { INITIAL_PRODUCTS, Product } from "@/lib/catalog-data";
-import { listPosts } from "@/lib/blog";
+import { listPosts, postPath } from "@/lib/blog";
+import { brandGroups } from "@/lib/brands";
+import { readSeoStore } from "@/lib/seo-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -67,9 +69,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     ...categoryUrls,
+    ...["/cigarette-prices-dubai", "/delivery", "/about"].map((p) => ({
+      url: baseUrl + p,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    })),
+    ...brandGroups((await readSeoStore()).products).map((b) => ({
+      url: `${baseUrl}/brand/${b.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.85,
+    })),
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     ...(await listPosts()).map((p) => ({
-      url: `${baseUrl}/blog/${p.id}`,
+      url: baseUrl + postPath(p),
       lastModified: new Date(p.published),
       changeFrequency: "monthly" as const,
       priority: 0.6,

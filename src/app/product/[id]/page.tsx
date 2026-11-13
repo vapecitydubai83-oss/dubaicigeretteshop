@@ -1,5 +1,6 @@
 "use client";
 
+import { brandSlug, hasBrandPage } from "@/lib/brands";
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -291,9 +292,13 @@ export default function ProductDetailPage() {
               <span>All Cigarettes</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 opacity-50 shrink-0" />
-            <span className="font-semibold text-[#0A2F42]">
-              {product.brand}
-            </span>
+            {hasBrandPage(product.brand) ? (
+              <Link href={`/brand/${brandSlug(product.brand)}`} className="font-semibold text-[#0A2F42] hover:underline">
+                {product.brand}
+              </Link>
+            ) : (
+              <span className="font-semibold text-[#0A2F42]">{product.brand}</span>
+            )}
             <ChevronRight className="w-3.5 h-3.5 opacity-50 shrink-0" />
             <span className="truncate text-zinc-900 font-bold">
               {product.title}
