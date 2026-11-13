@@ -46,6 +46,7 @@ export default async function BrandPage({ params }: Props) {
   const name = fullName(brand.name, brand.category);
   const isCig = brand.category === "cigarettes";
   const unit = isCig ? "carton" : "item";
+  const plural = name !== brand.name; // "Marlboro Cigarettes cost", "IQOS TEREA costs"
   const list = brand.products;
   const inStock = list.filter((p) => p.inStock);
   const cheapest = list[0];
@@ -55,11 +56,11 @@ export default async function BrandPage({ params }: Props) {
 
   const faqs: Faq[] = [
     {
-      q: `How much is ${name} in Dubai?`,
+      q: `How much ${plural ? "are" : "is"} ${name} in Dubai?`,
       a:
         list.length === 1
           ? `${cheapest.title} costs ${aed(cheapest.cartonPrice)} per ${unit} at Dubai Cigarette Shop.`
-          : `${name} costs ${priceRange(brand.min, brand.max)} per ${unit} at Dubai Cigarette Shop. The lowest priced is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
+          : `${name} ${plural ? "cost" : "costs"} ${priceRange(brand.min, brand.max)} per ${unit} at Dubai Cigarette Shop. The lowest priced is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
     },
     {
       q: `Which ${name} products can I order in Dubai?`,
