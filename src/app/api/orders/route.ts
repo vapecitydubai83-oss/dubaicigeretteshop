@@ -19,15 +19,21 @@ const MAX_ORDERS = 500;
 const flat = (s: string) => s.replace(/[\x00-\x1f\x7f\u2028\u2029]+/g, " ").replace(/[*_~`]/g, "");
 // Global cap, independent of the (spoofable) client IP: at most 30 alerts per 10 minutes.
 const alertTimes: number[] = [];
+let capNoticeSent = false;
 
 function notifyShop(order: WhatsAppOrder) {
   const { WA_NOTIFY_URL: url, WA_NOTIFY_KEY: key, WA_NOTIFY_SESSION: session, WA_NOTIFY_TO: to } = process.env;
   if (!url || !key || !session || !to) return;
   const now = Date.now();
   while (alertTimes.length && alertTimes[0] < now - 10 * 60 * 1000) alertTimes.shift();
-  if (alertTimes.length >= 30) return console.error("Order alert skipped (rate cap):", order.id);
+  const capped = alertTimes.length >= 30;
+  if (capped && capNoticeSent) return console.error("Order alert skipped (rate cap):", order.id);
+  capNoticeSent = capped;
   alertTimes.push(now);
-  const text = [
+  // Over the cap the shop still hears once that orders are arriving, so a flood cannot hide them silently.
+  const text = capped
+    ? `⚠️ *Many orders in the last 10 minutes* (possible spam). Alerts are paused until it slows down — check the admin panel for new orders.`
+    : [
     `🛒 *New order #${flat(order.id)}* (${order.source})`,
     ...order.items.map(
       (i) => `• ${i.quantity} × ${flat(i.title)}${i.flavor ? ` — ${flat(i.flavor)}` : ""} (${i.packTier === "5-cartons" ? "5-bundle price" : "single price"}) — AED ${i.unitPrice * i.quantity}`
