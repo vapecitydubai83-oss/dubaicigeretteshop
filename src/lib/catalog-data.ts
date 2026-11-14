@@ -124,6 +124,30 @@ export function packWords(p: Pick<Product, "format">) {
       };
 }
 
+// Shop-window order (owner 2026-11-13: cigarettes are the main focus). Categories in this order, the
+// best-known cigarette brands first, and in-stock products ahead of sold-out ones.
+const CATEGORY_ORDER = ["cigarettes", "iqos-terea", "vapes", "e-liquid", "nicotine-pouches", "accessories", "hookah-shisha"];
+export const BRAND_ORDER = [
+  "Marlboro", "Dunhill", "Davidoff", "Parliament", "Winston", "ESSE", "L&M", "Camel", "Vogue", "West",
+  "Manchester", "Chesterfield", "American Spirit", "Benson & Hedges", "Gold Leaf", "Platinum Seven", "Mond",
+  "Captain Black", "Villiger",
+];
+const rank = (list: string[], v: string) => (list.indexOf(v) + 1 || list.length + 1);
+export const brandRank = (brand: string) => rank(BRAND_ORDER, brand);
+
+export function sortForDisplay<T extends Pick<Product, "category" | "brand" | "inStock">>(products: T[]): T[] {
+  return products
+    .map((p, i) => ({ p, i }))
+    .sort(
+      (a, b) =>
+        rank(CATEGORY_ORDER, a.p.category) - rank(CATEGORY_ORDER, b.p.category) ||
+        brandRank(a.p.brand) - brandRank(b.p.brand) ||
+        Number(b.p.inStock) - Number(a.p.inStock) ||
+        a.i - b.i // otherwise keep the catalog's own order
+    )
+    .map((x) => x.p);
+}
+
 export interface NavMenuItem {
   id: string;
   label: string;

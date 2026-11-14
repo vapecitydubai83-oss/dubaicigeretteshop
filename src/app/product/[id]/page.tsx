@@ -14,6 +14,8 @@ import {
   HelpCircle,
   MapPin,
   MessageCircle,
+  Phone,
+  PhoneCall,
   ShoppingCart,
   Sparkles,
   Star,
@@ -22,7 +24,7 @@ import {
 import { useStore } from "@/context/store-context";
 import { useServerProduct } from "@/context/server-product";
 import { sameProductId } from "@/lib/product-id";
-import { DUBAI_AREAS, packWords } from "@/lib/catalog-data";
+import { DUBAI_AREAS, formatWhatsAppNumberForLink, packWords } from "@/lib/catalog-data";
 import { ProductPackArt } from "@/components/product-pack-art";
 import { ProductCard } from "@/components/product-card";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
@@ -638,12 +640,35 @@ export default function ProductDetailPage() {
               </button>
             </div>
 
+            {/* Talk to the shop: a normal phone call, or ask to be called back on WhatsApp
+                (a web link can open a WhatsApp chat but cannot start a WhatsApp call). */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <a
+                href={`tel:${settings.whatsappNumber.replace(/[^+\d]/g, "")}`}
+                className="py-2.5 px-4 rounded-xl border border-zinc-300 bg-white hover:border-[#0A2F42] text-[#0A2F42] font-bold text-xs flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call Us • {settings.supportPhoneDisplay}</span>
+              </a>
+              <a
+                href={`https://wa.me/${formatWhatsAppNumberForLink(settings.whatsappNumber)}?text=${encodeURIComponent(
+                  `Hello ${settings.storeName}! Please call me back on WhatsApp about ${product.title}${flavor ? ` (${flavor})` : ""}.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2.5 px-4 rounded-xl border border-[#25D366] bg-white hover:bg-[#25D366]/10 text-[#128C7E] font-bold text-xs flex items-center justify-center gap-2"
+              >
+                <PhoneCall className="w-4 h-4" />
+                <span>Request a WhatsApp Call Back</span>
+              </a>
+            </div>
+
             {/* Trust Bullet Points (matching VAP DXB ESSE product page structure) */}
             <div className="pt-4 border-t border-zinc-200 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-zinc-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#25D366] shrink-0" />
                 <span>
-                  <strong>Tobacco Blend:</strong> Premium {product.flavor}
+                  <strong>{pw.noun === "carton" ? "Tobacco Blend" : "Flavour"}:</strong> Premium {product.flavor}
                 </span>
               </div>
               <div className="flex items-center gap-2">

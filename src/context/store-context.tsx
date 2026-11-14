@@ -13,6 +13,7 @@ import {
   OrderItem,
   packWords,
   Product,
+  sortForDisplay,
   StoreSettings,
   ThemeId,
   WhatsAppOrder,
@@ -122,11 +123,11 @@ function applyCatalogStore(store: {
   );
   const baseIds = new Set(INITIAL_PRODUCTS.map((p) => p.id));
   const added = Object.values(overrides).filter((p) => !baseIds.has(p.id));
-  return [...added.reverse(), ...merged];
+  return sortForDisplay([...added.reverse(), ...merged]);
 }
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
-  const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>(() => sortForDisplay(INITIAL_PRODUCTS));
   const [orders, setOrders] = useState<WhatsAppOrder[]>(INITIAL_ORDERS);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [customerProfile, setCustomerProfile] = useState<CustomerProfile>({
@@ -539,7 +540,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         (entry, idx) =>
           `${idx + 1}. *${entry.product.title}${entry.flavor ? ` — ${entry.flavor}` : entry.product.flavorOptions?.length ? " — flavour to confirm" : ""}* (${
             entry.packTier === "5-cartons" ? packWords(entry.product).five : packWords(entry.product).one
-          }) × ${entry.quantity} — *AED ${entry.unitPrice * entry.quantity}*`
+          }) × ${entry.quantity} — *AED ${entry.unitPrice * entry.quantity}*
+   ${typeof window !== "undefined" ? window.location.origin : ""}/product/${entry.product.id}`
       )
       .join("\n");
 

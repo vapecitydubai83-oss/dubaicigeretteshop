@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft, ChevronRight, ShieldCheck, Truck } from "lucide-react";
 import { useStore } from "@/context/store-context";
-import { CategoryId } from "@/lib/catalog-data";
+import { brandRank, CategoryId } from "@/lib/catalog-data";
 import { ProductCard } from "@/components/product-card";
 import { brandSlug, hasBrandPage } from "@/lib/brands";
 import { StoreFooter, StoreHeader } from "@/components/store-header";
@@ -69,7 +69,7 @@ export default function CategoryPage() {
       byBrand.set(p.brand, arr);
     }
     return [...byBrand.entries()]
-      .sort((a, b) => b[1].length - a[1].length)
+      .sort((a, b) => brandRank(a[0]) - brandRank(b[0]) || b[1].length - a[1].length)
       .map(([brand, list]) => ({ brand, list }));
   }, [items]);
 

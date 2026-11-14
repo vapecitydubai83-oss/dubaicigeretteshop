@@ -6,9 +6,11 @@ import { ChevronRight, MapPin, MessageCircle, Zap } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import {
   BrandName,
+  brandRank,
   CategoryId,
   DUBAI_AREAS,
   formatWhatsAppNumberForLink,
+  packWords,
   Product,
 } from "@/lib/catalog-data";
 import { DubaiSkylineArt } from "@/components/dubai-skyline-art";
@@ -99,6 +101,8 @@ export default function DubaiCigaretteStorefront() {
   );
   const [quickArea, setQuickArea] = useState<string>(DUBAI_AREAS[0]);
 
+  const quickWords = packWords(products.find((p) => p.id === quickProductId) || { format: "1 Carton" });
+
   // Filter products when searching or filtering by category/brand
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
@@ -152,7 +156,7 @@ export default function DubaiCigaretteStorefront() {
       .filter((b) => !knownBrands.has(b))
       .map((b) => ({ brand: b, heading: `${b} Collection` }));
 
-    return [...definitions, ...extras]
+    return [...definitions.sort((a, b) => brandRank(a.brand) - brandRank(b.brand)), ...extras]
       .map((def) => ({
         ...def,
         items: filteredProducts.filter(
@@ -504,7 +508,7 @@ export default function DubaiCigaretteStorefront() {
             >
               {products.map((p) => (
                 <option key={p.id} value={p.id}>
-                  {p.title} — د.إ{p.cartonPrice}.00 (1 Carton)
+                  {p.title} — د.إ{p.cartonPrice}.00 ({packWords(p).one})
                 </option>
               ))}
             </select>
@@ -516,8 +520,8 @@ export default function DubaiCigaretteStorefront() {
               }
               className="px-3 py-2 rounded bg-white text-zinc-900 text-xs font-semibold focus:outline-none"
             >
-              <option value="1-carton">1 Carton (10 Packs)</option>
-              <option value="5-cartons">5 Cartons VIP Bulk</option>
+              <option value="1-carton">{quickWords.oneLong}</option>
+              <option value="5-cartons">{quickWords.five} VIP Bulk</option>
             </select>
 
             <select

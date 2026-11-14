@@ -10,6 +10,37 @@ const DATA_DIR = path.join(process.cwd(), "public", "uploads", "_store");
 const DATA_FILE = path.join(DATA_DIR, "orders.json");
 const MAX_ORDERS = 500;
 
+// New-order alert to the shop's own WhatsApp, sent through the WhatsApp gateway (WA-AKG:
+// POST /api/messages/{session}/{jid}/send). Off until all three env vars are set:
+//   WA_NOTIFY_URL (gateway base URL), WA_NOTIFY_KEY (tenant API key), WA_NOTIFY_SESSION (linked sender session).
+// WA_NOTIFY_TO = receiving number(s), comma-separated, digits with country code.
+// An alert that fails must never fail the customer's order, so errors are only logged.
+function notifyShop(order: WhatsAppOrder) {
+  const { WA_NOTIFY_URL: url, WA_NOTIFY_KEY: key, WA_NOTIFY_SESSION: session, WA_NOTIFY_TO: to } = process.env;
+  if (!url || !key || !session || !to) return;
+  const text = [
+    `🛒 *New order #${order.id}* (${order.source})`,
+    ...order.items.map(
+      (i) => `• ${i.quantity} × ${i.title}${i.flavor ? ` — ${i.flavor}` : ""} (${i.packTier === "5-cartons" ? "5-bundle price" : "single price"}) — AED ${i.unitPrice * i.quantity}`
+    ),
+    `Total: *AED ${order.total}* (delivery AED ${order.deliveryFee})`,
+    `Customer: ${order.customerName} · ${order.customerPhone}`,
+    `Area: ${order.deliveryArea}`,
+    `Note: ${order.addressNote}`,
+    `Payment: ${order.paymentMethod}`,
+  ].join("\n");
+  for (const n of to.split(",").map((x) => x.replace(/\D/g, "")).filter((x) => x.length >= 9)) {
+    fetch(`${url.replace(/\/$/, "")}/api/messages/${encodeURIComponent(session)}/${encodeURIComponent(`${n}@s.whatsapp.net`)}/send`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-API-Key": key },
+      body: JSON.stringify({ message: { text } }),
+      signal: AbortSignal.timeout(8000),
+    })
+      .then((r) => { if (!r.ok) console.error("Order alert not sent:", r.status); })
+      .catch((e) => console.error("Order alert failed:", e?.message || e));
+  }
+}
+
 // Per-IP rate limit on public order creation: max 15 orders per 10 minutes.
 const CREATE_WINDOW_MS = 10 * 60 * 1000;
 const CREATE_MAX = 15;
@@ -209,6 +240,7 @@ export async function POST(request: NextRequest) {
     store.orders = [order, ...store.orders].slice(0, MAX_ORDERS);
     store.leads = mergeLead(store.leads, order);
     await writeStore(store);
+    notifyShop(order);
     return NextResponse.json({ success: true, id: order.id });
   }
 
