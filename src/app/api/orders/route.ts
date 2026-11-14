@@ -15,18 +15,27 @@ const MAX_ORDERS = 500;
 //   WA_NOTIFY_URL (gateway base URL), WA_NOTIFY_KEY (tenant API key), WA_NOTIFY_SESSION (linked sender session).
 // WA_NOTIFY_TO = receiving number(s), comma-separated, digits with country code.
 // An alert that fails must never fail the customer's order, so errors are only logged.
+// Customer-typed text: one line, no WhatsApp formatting, so it cannot fake extra lines of the alert.
+const flat = (s: string) => s.replace(/[\x00-\x1f\x7f\u2028\u2029]+/g, " ").replace(/[*_~`]/g, "");
+// Global cap, independent of the (spoofable) client IP: at most 30 alerts per 10 minutes.
+const alertTimes: number[] = [];
+
 function notifyShop(order: WhatsAppOrder) {
   const { WA_NOTIFY_URL: url, WA_NOTIFY_KEY: key, WA_NOTIFY_SESSION: session, WA_NOTIFY_TO: to } = process.env;
   if (!url || !key || !session || !to) return;
+  const now = Date.now();
+  while (alertTimes.length && alertTimes[0] < now - 10 * 60 * 1000) alertTimes.shift();
+  if (alertTimes.length >= 30) return console.error("Order alert skipped (rate cap):", order.id);
+  alertTimes.push(now);
   const text = [
-    `🛒 *New order #${order.id}* (${order.source})`,
+    `🛒 *New order #${flat(order.id)}* (${order.source})`,
     ...order.items.map(
-      (i) => `• ${i.quantity} × ${i.title}${i.flavor ? ` — ${i.flavor}` : ""} (${i.packTier === "5-cartons" ? "5-bundle price" : "single price"}) — AED ${i.unitPrice * i.quantity}`
+      (i) => `• ${i.quantity} × ${flat(i.title)}${i.flavor ? ` — ${flat(i.flavor)}` : ""} (${i.packTier === "5-cartons" ? "5-bundle price" : "single price"}) — AED ${i.unitPrice * i.quantity}`
     ),
-    `Total: *AED ${order.total}* (delivery AED ${order.deliveryFee})`,
-    `Customer: ${order.customerName} · ${order.customerPhone}`,
-    `Area: ${order.deliveryArea}`,
-    `Note: ${order.addressNote}`,
+    `Total: *AED ${order.total}* (delivery AED ${order.deliveryFee}) — prices as sent by the customer's browser, check before confirming`,
+    `Customer: ${flat(order.customerName)} · ${flat(order.customerPhone)}`,
+    `Area: ${flat(order.deliveryArea)}`,
+    `Note: ${flat(order.addressNote)}`,
     `Payment: ${order.paymentMethod}`,
   ].join("\n");
   for (const n of to.split(",").map((x) => x.replace(/\D/g, "")).filter((x) => x.length >= 9)) {
