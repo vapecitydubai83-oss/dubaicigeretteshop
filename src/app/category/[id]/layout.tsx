@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 
 export const dynamic = "force-dynamic";
@@ -77,7 +78,7 @@ export default async function CategoryLayout({
 }) {
   const { id } = await params;
   const seo = CATEGORY_SEO[id];
-  if (!seo) return children;
+  if (!seo) notFound(); // unknown category = real 404, not a soft 404
   const { products } = await readSeoStore();
   const items = products.filter((p) => p.category === id);
   const url = `${SITE_BASE_URL}/category/${id}`;

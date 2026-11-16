@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 import { ServerProductProvider } from "@/context/server-product";
 import { sameProductId } from "@/lib/product-id";
@@ -57,6 +58,7 @@ export default async function ProductLayout({
   const { id } = await params;
   const { products } = await readSeoStore();
   const product = products.find((x) => sameProductId(x.id, id)) ?? null;
+  if (!product) notFound(); // deleted/unknown product = real 404 (Google: soft 404)
   return (
     <ServerProductProvider product={product}>{children}</ServerProductProvider>
   );
