@@ -6,8 +6,9 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/context/store-context";
-import { INITIAL_SETTINGS } from "@/lib/catalog-data";
-import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
+import { INITIAL_PRODUCTS, INITIAL_SETTINGS, type Product } from "@/lib/catalog-data";
+import { clip, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
+import { readCatalogStore } from "@/lib/catalog-store";
 
 // Metadata must be generated per request: the admin catalog store's settings
 // (seoMetaTitle etc., rewritten weekly by the SEO agent) live outside the bundle.
@@ -33,15 +34,14 @@ const jetbrains = JetBrains_Mono({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { settings, products } = await readSeoStore();
+  const { settings } = await readSeoStore();
   const title = settings.seoMetaTitle?.trim() || INITIAL_SETTINGS.seoMetaTitle;
   const description = clip(
     settings.seoMetaDescription || INITIAL_SETTINGS.seoMetaDescription,
     160
   );
-  const images = productOgImages(
-    products.find((p) => p.featured) ?? products[0]
-  );
+  // the homepage's own cigarette picture, so shares and Google show cigarettes
+  const images = [{ url: `${SITE_BASE_URL}/hero-cigarettes.webp`, width: 1200, height: 630 }];
   return {
     metadataBase: new URL(SITE_BASE_URL),
     title: {
@@ -93,7 +93,23 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+// Only the fields the admin changed travel in the page: the built-in list is already in the JS bundle.
+async function slimStore() {
+  const store = await readCatalogStore();
+  const base = new Map(INITIAL_PRODUCTS.map((p) => [p.id, p]));
+  const products: Record<string, Product> = {};
+  for (const [id, p] of Object.entries(store.products ?? {})) {
+    const b = base.get(id) as Record<string, unknown> | undefined;
+    if (!b) { products[id] = p; continue; }
+    const diff = Object.fromEntries(
+      Object.entries(p).filter(([k, v]) => JSON.stringify(v) !== JSON.stringify(b[k]))
+    );
+    if (Object.keys(diff).length) products[id] = { ...diff, id } as Product; // id marks it as an edit, not a new product
+  }
+  return { ...store, products };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -103,7 +119,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${jakarta.variable} ${jetbrains.variable} font-sans antialiased selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]`}
       >
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider initialStore={await slimStore()}>{children}</StoreProvider>
       </body>
     </html>
   );

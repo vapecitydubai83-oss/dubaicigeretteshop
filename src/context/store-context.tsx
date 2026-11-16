@@ -119,15 +119,24 @@ function applyCatalogStore(store: {
   const overrides = store.products || {};
   const deleted = new Set(store.deleted || []);
   const merged = INITIAL_PRODUCTS.filter((p) => !deleted.has(p.id)).map(
-    (p) => overrides[p.id] ?? p
+    (p) => (overrides[p.id] ? ({ ...p, ...overrides[p.id] } as Product) : p) // overrides may be partial (server sends only changed fields)
   );
   const baseIds = new Set(INITIAL_PRODUCTS.map((p) => p.id));
   const added = Object.values(overrides).filter((p) => !baseIds.has(p.id));
   return sortForDisplay([...added.reverse(), ...merged]);
 }
 
-export function StoreProvider({ children }: { children: React.ReactNode }) {
-  const [products, setProducts] = useState<Product[]>(() => sortForDisplay(INITIAL_PRODUCTS));
+export function StoreProvider({
+  children,
+  initialStore,
+}: {
+  children: React.ReactNode;
+  initialStore?: { products?: Record<string, Product>; deleted?: string[]; settings?: Partial<StoreSettings> };
+}) {
+  // the server passes the saved catalog so the first HTML (what Google reads) shows admin edits and photos
+  const [products, setProducts] = useState<Product[]>(() =>
+    initialStore ? applyCatalogStore(initialStore) : sortForDisplay(INITIAL_PRODUCTS)
+  );
   const [orders, setOrders] = useState<WhatsAppOrder[]>(INITIAL_ORDERS);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [customerProfile, setCustomerProfile] = useState<CustomerProfile>({
@@ -135,7 +144,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     phone: "",
     area: "",
   });
-  const [settings, setSettings] = useState<StoreSettings>(INITIAL_SETTINGS);
+  const [settings, setSettings] = useState<StoreSettings>(() => ({ ...INITIAL_SETTINGS, ...(initialStore?.settings ?? {}) }));
   const [cart, setCart] = useState<CartEntry[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);

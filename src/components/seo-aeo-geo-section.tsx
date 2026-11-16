@@ -128,13 +128,10 @@ export function SeoAeoGeoSection({
                 value: p.origin,
               },
             ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: p.rating.toString(),
-              reviewCount: p.reviewsCount.toString(),
-              bestRating: "5",
-              worstRating: "1",
-            },
+            image: [p.customImageUrl, ...(p.galleryImages ?? [])]
+              .filter((u): u is string => !!u && !!u.trim())
+              .slice(0, 3)
+              .map((u) => (u.startsWith("http") ? u : `https://dubaicigeretteshop.ae${u.startsWith("/") ? u : `/${u}`}`)),
             offers: {
               "@type": "Offer",
               priceCurrency: "AED",

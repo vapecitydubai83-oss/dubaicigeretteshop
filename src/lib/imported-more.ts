@@ -30,7 +30,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Brand Amber Leaf (Japan Tobacco International) Type Hand-rolling tobacco, RYO Blend Finest Virginia Cut Fine cut Strength Regular to medium, smooth Pouch Size 50g Box 5 pouches (250g total) Included Rolling papers and filter tips Price AED 230 per box Dubai Delivery 1 to 2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12 Hour Delivery in Abu Dhabi, Al Ain, UAQ &am",
     seoAnswerCapsule: "Amber Leaf Rolling Tobacco 50G is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 230 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Rolling Tobacco",
-    customImageUrl: "/imported/amber-leaf-rolling-tobacco-50g.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-silver-little",
@@ -82,7 +82,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Sweet peach flavour, infused through the tobacco blend Wrapper Sheet wrapper Nicotine | Tar 1.2 mg | 14 mg Pack Size 20 little cigars per pack Price AED 170/Box Character Mellow, aromatic, tropical, smooth draw Dubai Delivery 1 to 2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Peach Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-peach-little.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-mango-little",
@@ -108,7 +108,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Juicy mango flavour, infused through mellow tobacco Wrapper Natural tobacco leaf Nicotine | Tar 1.2mg | 14 Pack Size 20 little cigars per pack Price AED 170/Box Character Tropical, aromatic, smooth, consistent stick after stick Dubai Delivery 1–2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Mango Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-mango-little.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-grape-little",
@@ -134,7 +134,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Sweet grape flavour, blended through a Cavendish-based tobacco Wrapper Natural tobacco leaf Nicotine | Tar 1.2 mg | 14 Pack Size 20 little cigars per pack Price AED 170/Box Character Light, aromatic, fruit-forward, smooth draw Dubai Delivery 1–2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Grape Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-grape-little.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-dark-little",
@@ -160,7 +160,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Rich, full-bodied tobacco character Wrapper Natural tobacco leaf Nicotine | Tar 1.2 mg | 14 Pack Size 20 little cigars per pack Price AED 170/Box Character Deeper draw, fuller intensity, signature smooth finish Dubai Delivery 1–2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Dark Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-dark-little.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-classic-little",
@@ -186,7 +186,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Bold, earthy, traditional tobacco — no added sweetness Wrapper Natural tobacco leaf Nicotine | Tar 1.2 mg | 14 Pack Size 20 little cigars per pack Price AED 170/ BOX Character Medium strength, rustic finish, cigar-style draw Dubai Delivery 1–2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Classic Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-classic-little.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-cherise-little",
@@ -212,7 +212,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "PRODUCT SPECIFICATIONS Flavor Sweet cherry flavor infused through the tobacco blend Wrapper Natural tobacco leaf Nicotine | Tar 1.2 Mg per Stick Pack Size 20 little cigars per pack Price AED 170/Box Character Smooth, consistent taste, easy draw Dubai Delivery 1–2 Hour Delivery in Dubai, Ajman   Sharjah UAE Delivery 12-Hour Delivery in Abu Dhabi, Al Ain, UAQ   RAK",
     seoAnswerCapsule: "Captain Black Cherise Little Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Premium Cigars",
-    customImageUrl: "/imported/captain-black-cherise-little.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-iqos-terea-turquoise-tajikistan",
@@ -238,7 +238,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Classic menthol heated tobacco stick for IQOS Iluma. Smooth tobacco base with a crisp, refreshing menthol layer — cooling on every puff, no fruit notes. SmartCore induction — IQOS Iluma only, not older blade-based models Carton contains 10 packs · 20 sticks per pack · 200 sticks total Tajikistan edition · Contains nicotine · Adults 18+ only Delivery: 1–2 hours in Dubai, Ajman, Sharjah · 12 hours i",
     seoAnswerCapsule: "IQOS TEREA Turquoise Tajikistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/buy-iqos-terea-turquoise-tajikistan.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-iqos-terea-silver-tajikistan",
@@ -264,7 +264,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Light, smooth heated tobacco stick for IQOS Iluma. The lightest tobacco variant in the Tajikistan edition — delicate body, subtle natural sweetness, no menthol. SmartCore induction — IQOS Iluma only, not older blade-based models Carton contains 10 packs · 20 sticks per pack · 200 sticks total Tajikistan edition · Contains nicotine · Adults 18+ only Delivery: 1–2 hours in Dubai, Ajman, Sharjah · 12",
     seoAnswerCapsule: "IQOS TEREA Silver Tajikistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/buy-iqos-terea-silver-tajikistan.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-iqos-terea-amber-tajikistan",
@@ -290,7 +290,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Smooth, full-bodied heated tobacco stick for IQOS Iluma. Straight tobacco profile with light natural sweetness — no menthol, no fruit. SmartCore induction — IQOS Iluma only, not older blade-based models Carton contains 10 packs · 20 sticks per pack · 200 sticks total Tajikistan edition · Contains nicotine · Adults 18+ only Delivery: 1–2 hours in Dubai, Ajman, Sharjah · 12 hours in Abu Dhabi, Al Ai",
     seoAnswerCapsule: "IQOS TEREA Amber Tajikistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/buy-iqos-terea-amber-tajikistan.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-terea-purple-wave-tajikistan",
@@ -316,7 +316,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Menthol and dark forest fruit heated tobacco stick for IQOS Iluma. Layered flavor: smooth tobacco base, crisp menthol cooling, subtle zesty aroma. SmartCore induction — IQOS Iluma only, not older blade-based models The carton contains 10 packs · 20 sticks per pack · 200 sticks total Tajikistan edition • Contains nicotine · Adults 18+ only Delivery: 1–2 hours in Dubai, Ajman, Sharjah · 12 hours in",
     seoAnswerCapsule: "TEREA Purple Wave Tajikistan. IQOS Iluma is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/buy-terea-purple-wave-tajikistan.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-purple-wave-menthol-italy",
@@ -342,7 +342,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Cool menthol with soft, fruity berry notes over a smooth classic tobacco base—a fresh, balanced finish that lingers without overwhelming. Compatibility: Designed exclusively for IQOS Iluma, Iluma One, and Iluma Prime devices, using the SmartCore induction heating system. Type: Heat-not-burn tobacco sticks — no ash, less harshness. Not compatible with older Heets-style IQOS devices. Pack: 2",
     seoAnswerCapsule: "TEREA Purple Wave Menthol is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-purple-wave-menthol-italy.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-japan-shine-pearl",
@@ -368,7 +368,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "IQOS Terea Japan Shine Pearl — AED 210 per pack of 200 sticks. A lightly heated tobacco stick for IQOS ILUMA, pairing cool menthol with a crushable Shine Muscat (green grape) bead burst. Heated, not burned, so no smoke or ash. 0.5 mg nicotine per stick, up to 14 puffs. Fast UAE delivery. Adults 18+.",
     seoAnswerCapsule: "IQOS TEREA Japan Shine Pearl is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-japan-shine-pearl.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-japan-ruby-regular",
@@ -394,7 +394,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "IQOS Terea Japan Ruby Regular — AED 210 per pack of 200 Sticks. A smooth, medium-bodied tobacco stick with a soft red berry note, Made in Japan for IQOS ILUMA devices. Heated, not burned, so no smoke or ash. 0.5 mg nicotine per stick, up to 14 puffs. Fast UAE delivery. Adults 18+.",
     seoAnswerCapsule: "IQOS TEREA Japan Ruby Regular is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-japan-ruby-regular.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-japan-bright-menthol",
@@ -420,7 +420,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Menthol + green fruit (apple, pear) Strength: Medium, smooth, and refreshing Origin: Japan Works with IQOS ILUMA, ILUMA Prime, ILUMA One, ILUMA i models only Not for: IQOS 3 DUO or older blade devices Pack: 20 sticks Price: AED 210 Why Buy From Us Authentic, sealed, fresh stock Fast delivery — 1–2 hrs in Dubai, Ajman, Sharjah; 12 hrs in Abu Dhabi, Al Ain, UAQ, RAK Pay on delivery, card acc",
     seoAnswerCapsule: "IQOS TEREA Japan Bright Menthol is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-japan-bright-menthol.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-japan-black-purple-menthol",
@@ -446,7 +446,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Menthol + dark forest fruit (blackberry, purple grape) Strength: Strong menthol with berry sweetness Origin: Japan Works with IQOS ILUMA, ILUMA Prime, ILUMA One, ILUMA i models only Not for: IQOS 3 DUO or older blade devices Pack: 20 sticks Price: AED 210 Why Buy From Us Authentic, sealed, fresh stock Fast delivery — 1–2 hrs in Dubai, Ajman, Sharjah; 12 hrs in Abu Dhabi, Al Ain, UAQ, RAK P",
     seoAnswerCapsule: "IQOS TEREA Japan Black Purple Menthol is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-japan-black-purple-menthol.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-japan-black-menthol",
@@ -472,7 +472,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Intense menthol — the coldest in the Terea menthol family Origin: Japan Works with IQOS ILUMA, ILUMA Prime, ILUMA One, and ILUMA i models only Not for: IQOS 3 DUO or older blade devices Pack: 20 sticks Carton : 10 Packs (200 Sticks) Price: 210 Why Buy From Us Authentic, sealed, fresh stock Fast delivery — 1–2 hrs in Dubai, Ajman, Sharjah; 12 hrs in Abu Dhabi, Al Ain, UAQ, RAK Pay on delive",
     seoAnswerCapsule: "IQOS TEREA Japan Black Menthol is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-japan-black-menthol.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-prime-remix-limited-edition",
@@ -498,7 +498,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Part of the IQOS ILUMA i series, the IQOS ILUMA i PRIME REMIX captures the rhythm of the season with an iridescent design that transforms light into movement—glowing turquoise meets sunrise reflections in a dynamic, luminous gradient. Key Features Interactive touch screen with smart features IQOS app connectivity Holder battery with Eco Mode Performance Mode, Eco Mode   Pause Mode Tobacco heat",
     seoAnswerCapsule: "IQOS Iluma I Prime Remix Limited Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 1050 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-prime-remix-limited-edition.webp",
+    customImageUrl: "",
   },
   {
     id: "al-fakher-shisha-flavour",
@@ -524,7 +524,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Al Fakher Type: Shisha/hookah tobacco (molasses-based) Sizes: 50g, 250g, 1kg Price AED 190 / kg Nicotine: Contains nicotine (18+) Delivery: 1–2 hours: Dubai, Ajman, Sharjah Within 12 hours: Abu Dhabi, Al Ain, Umm Al Quwain, Ras Al Khaimah",
     seoAnswerCapsule: "Al Fakher Shisha Flavour is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/al-fakher-shisha-flavour.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-miracle-8000-puffs-zero-nicotine-vape",
@@ -550,7 +550,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Capacity: Up to 8000 puffs Nicotine Level: 0% nicotine (nicotine-free vapor) Technology: Dual mesh coil for enhanced flavor Battery: Rechargeable with smart LED display Display Features: Shows battery life   e-liquid level Performance: Long-lasting with consistent flavor Availability: Fast delivery across Dubai   UAE Quality: Authentic HQD device at the best price",
     seoAnswerCapsule: "HQD Miracle 8000 Puffs Zero Nicotine Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 42 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-miracle-8000-puffs-zero-nicotine-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "loaded-vape-juice-120ml-e-liquid",
@@ -576,7 +576,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Loaded Vape Juice 120ml E-Liquid in Dubai offers top-notch dessert flavors crafted in the USA, featuring a velvety 70/30 VG/PG mix designed for sub-ohm vaping. This e-liquid is accessible in 3mg and 6mg nicotine concentrations, providing dense vapor clouds and intense flavors. Purchase genuine Loaded e-liquid online in the UAE for consistent quality, delightful flavors, and overall satisfaction ev",
     seoAnswerCapsule: "Loaded Vape Juice 120Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/loaded-vape-juice-120ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-electric-purple",
@@ -602,7 +602,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Experience cutting-edge technology with IQOS ILUMA i Electric Purple, a next-level heated tobacco system utilizing Smartcore induction heating for a seamless, blade-free experience. Specifically crafted for TEREA sticks, this device boasts innovative FlexPuff technology, Pause Mode functionality, intuitive touchscreen controls, and a sleek Electric Dreams exterior. Immerse yourself in flawless, un",
     seoAnswerCapsule: "IQOS Iluma I Electric Purple is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 280 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-electric-purple.webp",
+    customImageUrl: "",
   },
   {
     id: "elf-bar-bc10000-puffs-disposable-vape",
@@ -628,7 +628,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Elf Bar BC10000 Disposable Vape (10,000 Puffs) ✅ Brand: Elf Bar ✅ Puffs: Up to 10,000 ✅ Battery: 650 mAh (Rechargeable) ✅ Nicotine Strength: 2 0mg   50mg Key Highlights Premium disposable vape with rich, smooth flavors Wide variety of flavors available Designed for long-lasting performance",
     seoAnswerCapsule: "Elf Bar Bc10000 Puffs Disposable Vape (20Mg &#038; 50 Mg) &#8211; is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elf-bar-bc10000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "vozol-gear-hookah-40000-puffs",
@@ -654,7 +654,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Delivering an unparalleled hookah-style DTL experience, the VOZOL Gear Hookah 40000 Puffs Disposable Vape boasts massive clouds, rich flavors, and a luxurious design. Equipped with a dual mesh coil, eco/power modes, adjustable airflow, audio interaction, and a durable 1000mAh rechargeable battery, it is an ideal choice for vapers in Dubai and the UAE. Up to 40,000 Inhales 1000mAh Rechargeable Batt",
     seoAnswerCapsule: "Vozol Gear Hookah 40000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-gear-hookah-40000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-shisha-20000-puffs-disposable-vape",
@@ -680,7 +680,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "The HQD Shisha 20K Disposable Vape offers a robust hookah-style vaping affair providing up to 20,000 puffs , impressive vapor production, and delightful flavor. It comes equipped with an 850mAh rechargeable battery , Type-C charging , and a generous 18ml e-liquid capacity for enduring performance. Featuring a mesh coil , adjustable airflow , and an LED screen display , this vape is an excellent op",
     seoAnswerCapsule: "HQD Shisha 20000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-shisha-20000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "fummo-nova-50000-puffs-disposable-vape",
@@ -706,7 +706,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "The Fummo Nova 50000 Puffs Disposable Vape offers extensive performance with a capacity of up to 50,000 puffs , 21ml of prefilled e-liquid , and 2% (20mg) nicotine salt content. It is equipped with an 800mAh Type-C rechargeable battery and includes a 1.0Ω mesh coil for enhanced flavor and vapor production. With a built-in smart display, users can easily monitor battery and e-liquid levels . Up to",
     seoAnswerCapsule: "Fummo Nova 50000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/fummo-nova-50000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-3-ultra-pod-kit-30w",
@@ -732,7 +732,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Unleash the power of the OXVA Xlim 3 Ultra Pod Kit! With a mighty 30W output, a robust 1500mAh battery, a sleek touch display, and customizable airflow settings, you can easily switch between smooth MTL to RDL vaping experiences. Designed to be paired with Xlim V3 pods, this kit guarantees top-tier flavor, rapid Type-C charging, and unwavering reliability—making it the ultimate choice for vapers t",
     seoAnswerCapsule: "OXVA Xlim 3 Ultra Pod Kit 30W is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/oxva-xlim-3-ultra-pod-kit-30w.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-iqos-terea-smooth-regular-japan",
@@ -758,7 +758,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Origin: Japan Flavor Group: Mild Tobacco / Aromatic Strength: 3/5 Compatibility: Exclusively for IQOS Iluma Devices (Smartcore).",
     seoAnswerCapsule: "IQOS TEREA Smooth Regular Japan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/buy-iqos-terea-smooth-regular-japan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-rich-regular-japan",
@@ -784,7 +784,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Origin: Japan Flavor Notes: Malt, Dark Roast Tobacco Intensity: 5/5 (Very High) Box Contains: 20 Sticks",
     seoAnswerCapsule: "IQOS TEREA Rich Regular Japan For IQOS Iluma is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-rich-regular-japan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-mint-japan",
@@ -810,7 +810,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Origin: Japan Cooling Level: 2/5 (Mild) Scent: Light Mint   Vanilla Compatibility: Exclusively for Smartcore Induction Devices (Iluma).",
     seoAnswerCapsule: "IQOS TEREA Mint Japan – A Refreshing Experience is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-mint-japan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-menthol-japan",
@@ -836,7 +836,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Origin: Made in Japan Cooling Level: 4/5 (Strong) Compatible Device: IQOS Iluma Series Only Best For: Former smokers of Marlboro Ice Blast or heavy menthol cigarettes.",
     seoAnswerCapsule: "IQOS TEREA Menthol Japan – Premium Menthol Flavor is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-menthol-japan.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-iqos-terea-balanced-regular-japan",
@@ -888,7 +888,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Introducing IQOS Terea Sun Pearl Japan &#8211; offering a balanced blend of medium tobacco intensity complemented by fruity hints and a refreshing touch of menthol. Crafted for IQOS aficionados in search of a seamless, smoke-free experience. Now accessible in Dubai, guaranteeing swift delivery and unparalleled authenticity for adult enthusiasts of heat-not-burn technology. Fruity menthol infused i",
     seoAnswerCapsule: "IQOS TEREA Sun Pearl Japan – is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-sun-pearl-japan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-oasis-pearl",
@@ -914,7 +914,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Introducing TEREA Oasis Pearl by IQOS ILUMA, an exquisite Japanese experience. Enjoy the seamless blend of refreshing menthol with a burstable tropical fruit capsule, allowing for personalized flavor. Crafted specifically for UAE preferences, this product provides a fresh, harmonious, and luxurious heated tobacco experience. Swift delivery service available throughout Dubai and the UAE. TEREA stic",
     seoAnswerCapsule: "IQOS TEREA Oasis Pearl is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 225 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-oasis-pearl.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-sienna-indonesian-for-iqos",
@@ -940,7 +940,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Introducing TEREA Sienna Indonesian sticks—a sophisticated blend of tobacco flavor complemented by delicate hints of tea and wood. Tailored specifically for IQOS ILUMA devices, these high-end heated tobacco sticks provide a harmonious and refined experience, showcasing consistent taste and genuine Indonesian artistry. TEREA Sienna – Indonesia Tobacco taste with hints of tea and wood 0.5 mg of nico",
     seoAnswerCapsule: "TEREA Sienna Indonesian For IQOS is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-sienna-indonesian-for-iqos.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-switzerland",
@@ -966,7 +966,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Experience the luxury of IQOS Terea Swiss &#8211; exquisite heat-not-burn tobacco sticks crafted for IQOS ILUMA devices. Indulge in pristine, ash-free tobacco infused with a diverse selection of elegant flavors. Immerse yourself in the essence of Swiss excellence, delivered swiftly to your doorstep in Dubai and the UAE. Crafted specifically for IQOS ILUMA devices No ash, no smoke: enjoy heat-not-b",
     seoAnswerCapsule: "IQOS TEREA Switzerland is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 150 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-switzerland.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-teak-switzerland",
@@ -992,7 +992,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "IQOS ILUMA brings you a refined, gentle tobacco experience carefully made in Switzerland. With a harmonious mix of mellow, earthy flavors and creamy nutty undertones, every pack guarantees superior quality, reliable taste, and enjoyable performance for adult smokers in their daily routine. High-quality TEREA heated tobacco manufactured in Switzerland Delicate, velvety tobacco taste Specifically cr",
     seoAnswerCapsule: "IQOS TEREA Teak Switzerland is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 150 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-teak-switzerland.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-riviera-pearl",
@@ -1018,7 +1018,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "IQOS TEREA Riviera Pearl provides a luxurious heated tobacco experience featuring a gentle, invigorating menthol pod and sophisticated tobacco flavor. Tailored specifically for use with IQOS ILUMA devices, these authentic TEREA sticks promise a pure, smoke-free satisfaction. Specifically designed for use with IQOS ILUMA device only Menthol capsule provides customizable freshness High-quality heate",
     seoAnswerCapsule: "IQOS TEREA Riviera Pearl is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 130 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-riviera-pearl.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-pnp-x-pod-cartridges",
@@ -1044,7 +1044,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "VOOPOO PnP X Pod Cartridges are high-quality refillable vaping pods crafted for excellent leak-proof performance and precise airflow regulation. These pods boast a generous 5.0ml e-liquid capacity, a top airflow configuration, and a side-fill design, ensuring compatibility with all PnP-X coils for versatile MTL and DTL vaping experiences. Constructed with sturdy PCTG material and featuring a secur",
     seoAnswerCapsule: "Voopoo Pnp X Pod Cartridges is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voopoo-pnp-x-pod-cartridges.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-argus-pro-2-vape-kit",
@@ -1070,7 +1070,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "VOOPOO Argus Pro 2 Vape Kit provides robust performance featuring an 80W power output, a 3000mAh internal battery, and the innovative PnP X platform. Tailored for DTL, RDTL, and MTL vaping experiences, it ensures a flavorful, dense vapor production alongside high-quality construction. Battery capacity of 3000mAh Power adjustable up to 80W Compatible with PnP X pods   coils Features Smart, RBA",
     seoAnswerCapsule: "Voopoo Argus Pro 2 Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 125 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/voopoo-argus-pro-2-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-elf-bar-trio-40000-puffs-disposable-vape-in",
@@ -1096,7 +1096,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "ELF Bar Trio 40000 Puffs – The Ultimate 3-in-1 Disposable Vape Discover the massive ELF Bar Trio 40000 , the most advanced disposable vape in UAE . Featuring a groundbreaking 4 Mesh Coil system and an 850mAh rechargeable battery , this device delivers up to 40,000 puffs of rich vapor . Customize your session with three unique settings: Sweet, Icy, and Sour . Pre-filled with 20ml of 50mg nicotine e",
     seoAnswerCapsule: "Elf Bar Trio 40000 Puffs Disposable Vape In is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/buy-elf-bar-trio-40000-puffs-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "al-fakher-crown-bar-mega-max-disposable-vape",
@@ -1122,7 +1122,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Ultra-Long-Lasting: Up to 40,000 puffs for unmatched vaping longevity. Rechargeable DTL Device: Equipped with an 850mAh battery for continuous use. Large E-Liquid Capacity: 30mL of premium Al Fakher e-liquid for lasting flavor. Diverse Flavor Selection: Choose from over 20 unique and exquisite flavors. Ideal for Dubai Vapers: One of the best disposable vapes available for fast delivery in Dubai. S",
     seoAnswerCapsule: "Al Fakher Crown Bar Mega Max Disposable Vape &#8211; High Puff Count is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/al-fakher-crown-bar-mega-max-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-galaxy-blue-limited-edition-premium-hnb-device",
@@ -1148,7 +1148,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Experience a refined tobacco ritual with the IQOS ILUMA in Galaxy Blue Limited Edition. This sleek device boasts bladeless Smartcore Induction heating for a pristine, smoke-free indulgence. Featuring smart gestures, a convenient pause mode, and an elegant metallic design, it&#8217;s the ultimate sophisticated heat-not-burn companion for Terea sticks. Restricted Galaxy Blue exclusive coating Intell",
     seoAnswerCapsule: "IQOS Iluma I Galaxy Blue Limited Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 295 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-galaxy-blue-limited-edition-premium-hnb-device.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-dimensions-yugen-indonesia",
@@ -1174,7 +1174,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Purchase genuine TEREA Dimensions Yugen from Indonesia for IQOS ILUMA in the UAE. Savor a complex blend of authentic Indonesian tobacco infused with pear, lavender, and jasmine tea undertones. Receive premium heated tobacco sticks swiftly delivered in Dubai. Specifically crafted for IQOS ILUMA devices Originating from Indonesia, TEREA Dimensions Multi-faceted flavor combination Contains rich tobac",
     seoAnswerCapsule: "TEREA Dimensions Yugen (Indonesia) is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-dimensions-yugen-indonesia.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-waka-pa-25000-puffs-disposable-vape",
@@ -1200,7 +1200,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Looking to buy Waka PA 25000 disposable vape online in Dubai ? This device is ideal for anyone who values performance, flavor consistency, and extended puff count in one stylish package. ✅ Authentic products ✅ Fast delivery across Dubai ✅ Competitive pricing",
     seoAnswerCapsule: "Waka Pa 25000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/buy-waka-pa-25000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-cuvie-slick-pro-15000-puffs-disposable",
@@ -1226,7 +1226,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "The HQD Cuvie Slick Pro 15000 Puffs Disposable Vape provides a high-quality, convenient vaping experience, offering up to 15,000 rich and smooth puffs. Featuring a robust 1800mAh dual-battery system and a 10ml pre-filled e-liquid capacity, this vape utilizes advanced mesh coil technology, a modern ergonomic design, and a digital display for effortless monitoring—perfect for vapers seeking lasting",
     seoAnswerCapsule: "HQD Cuvie Slick Pro 15000 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-cuvie-slick-pro-15000-puffs-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-grape-xtrem-e-liquid-30ml-60ml-120ml",
@@ -1278,7 +1278,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Specifications Brand: Waka Vape Model: Waka So Pro Puff Capacity: Up to 20000 puffs Nicotine Strength: 5% (50mg) Battery: Rechargeable Coil: Dual Mesh Technology Charging: USB Device Type: Disposable, Rechargeable Vape Flavors: 25+ options Origin: International",
     seoAnswerCapsule: "Waka Sopro 20000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/waka-sopro-20000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-frozen-berry-crash-saltnic-30ml",
@@ -1304,7 +1304,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Frozen Berry Crash Saltnic 30ML by Sam Vapes offers a vibrant fusion of assorted berries paired with a powerful icy conclusion, designed for vapers seeking a revitalizing taste experience alongside a gentle nicotine kick. Every inhalation merges delectable blueberries, succulent berry hints, and a refreshing frostiness that satisfies effortlessly—cool, tasty, and gentle on the throat. Manufacturer",
     seoAnswerCapsule: "Sams Vape Frozen Berry Crash Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/sams-vape-frozen-berry-crash-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "nasty-super-cool-saltnic-30ml-vape-jucie",
@@ -1330,7 +1330,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "High-Quality Salt Nicotine Blend from Malaysia Intense Cooling Sensation featuring Super Cool Frost Signature Even 50/50 VG/PG Mix for a Seamless MTL Vaping Experience Available in 35mg   50mg Nicotine Strengths Vibrant Fruit Flavors Infused with a Refreshing Ice Element Crafted for Pod Systems   Beginners&#8217; Kits Child-Resistant 30ml Chubby Gorilla Container Refreshing Menthol Underto",
     seoAnswerCapsule: "Nasty Super Cool Saltnic-30Ml Vape Jucie is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/nasty-super-cool-saltnic-30ml-vape-jucie.webp",
+    customImageUrl: "",
   },
   {
     id: "velo-nicotine-pouches",
@@ -1356,7 +1356,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Tobacco-free, smoke-free, and spit-free nicotine experience Slim, discreet pouches for comfortable, anytime use Wide range of flavors and strengths (4mg–18mg) to suit your preference Simple to use—just place under your lip and enjoy up to 30 minutes Fast delivery available in Dubai and across the UAE",
     seoAnswerCapsule: "Velo Nicotine Pouches is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 30 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
-    customImageUrl: "/imported/velo-nicotine-pouches.webp",
+    customImageUrl: "",
   },
   {
     id: "velo-peppermint-storm-10-9mg",
@@ -1408,7 +1408,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Provides up to 3500 puffs Contains 20mg of nicotine salt Requires no refills or charging Features a compact and portable design Offers a wide selection of rich flavors Ensures consistent performance Suitable for beginners and experienced vapers alike Guaranteed authenticity with sealed product Highly favored in Dubai and the UAE Dubai offers same-day delivery option",
     seoAnswerCapsule: "Vape Bar Ghost Pro 3500 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vape-bar-ghost-pro-3500-puffs-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-glaze-plus-12000-puffs-disposable-vape",
@@ -1434,7 +1434,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "HQD Glaze Plus 12000 Puffs – Key Features: Dual Oil Chamber: Keeps flavors fresh and prevents burnt taste, even up to the last puff. Ice Boost Button: Instantly adds a cooling sensation—perfect for Dubai’s heat. Smart LED Screen: Real-time battery and e-liquid levels for worry-free vaping. Up to 12,000 Puffs: Long-lasting, convenient, and consistent performance. Perfect choice for vapers in Dubai",
     seoAnswerCapsule: "HQD Glaze Plus 12000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-glaze-plus-12000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-tidal-pearl-kazakhstan",
@@ -1460,7 +1460,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Premium woody and light tea flavor enhanced with a refreshing mint finish Designed exclusively for IQOS ILUMA – bladeless, clean experience Consistent nicotine delivery at 0.5 mg per stick for a smooth, balanced session Approx. 14 puffs per heatstick , ideal for controlled enjoyment Authentic Kazakhstan origin , ensuring genuine TEREA quality 1 carton per box includes 10 packs (200 heatsticks tota",
     seoAnswerCapsule: "IQOS TEREA Tidal Pearl Kazakhstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-tidal-pearl-kazakhstan.webp",
+    customImageUrl: "",
   },
   {
     id: "waka-sopro-10000-puffs",
@@ -1486,7 +1486,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Enjoy up to 10,000 puffs for lasting usage Experience enhanced flavor and smoother clouds with the Dual Mesh Atomizer Get a strong and satisfying hit with 5% (50mg) nicotine strength Large 18ml e-liquid capacity Long-lasting 850mAh rechargeable battery Customize your power and vapor output with Normal Mode (10.8W)   Boost Mode (2×10.8W)",
     seoAnswerCapsule: "Waka Sopro 10000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/waka-sopro-10000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-one",
@@ -1512,7 +1512,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Smartcore technology for induction heating Exclusively heats TEREA™ sticks, requiring no cleaning Approximately 20 uses on a full charge Lightweight and highly portable at around 16.4 mm thick and approximately 68.5 g in weight USB-C fast charging (full in about 90 minutes) Session lasts around 6 minutes or yields about 14 puffs Utilizes only induction heating, eliminating the need for frequent cl",
     seoAnswerCapsule: "IQOS Iluma I One is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-one.webp",
+    customImageUrl: "",
   },
   {
     id: "vapetasia-killer-kustard-e-liquid-100ml-30ml",
@@ -1538,7 +1538,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Velvety, decadent vanilla custard dessert flavor Available Sizes: 30mL (Salts)   100mL (Freebase) Nicotine Strengths: 30mL Salt: 24mg / 48mg | 100mL Freebase: 3mg VG/PG Ratio: 30mL Salts: 50VG / 50PG (harmonious flavor   gentle throat hit) 100mL Freebase: 70VG / 30PG (dense vapor   velvety taste) Origin: USA – Crafted with premium quality Packaging: Child-resistant squee",
     seoAnswerCapsule: "Vapetasia Killer Kustard E-Liquid – 100Ml/30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vapetasia-killer-kustard-e-liquid-100ml-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-drag-5-vape-kit",
@@ -1564,7 +1564,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Impressive Performance – Delivers up to 177W for robust and thick vapor clouds. Dual 18650 Batteries – Provides long-lasting power (batteries sold separately). GENE TT 2.0 Chipset – Ensures rapid firing, consistent output, and intelligent safety features. Versatile Mode Selection – Smart / RBA / TC / ECO for personalized vaping control. U-Force X Tank – Engineered for optimal RDL   DTL airflow",
     seoAnswerCapsule: "Voopoo Drag 5 Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/voopoo-drag-5-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "beco-soft-max-12000-puffs-disposable-vape",
@@ -1590,7 +1590,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "BECO Soft Max Vape (12000 Puffs) The disposable vape market is booming, especially in the UAE, where users prefer long-lasting performance, consistent flavor, and sleek portability. The BECO Soft Max 12000 Puffs Vape is one of the latest devices winning attention. With its massive puff count, smooth nicotine delivery, adjustable airflow, and wide flavor selection, it promises both longevity and sa",
     seoAnswerCapsule: "Beco Soft Max 12000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/beco-soft-max-12000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "isgo-vape-e-juice-120ml-in",
@@ -1668,7 +1668,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Sam Vapes Flavor: Blend of Watermelons, Pomegranate, Strawberries, with a hint of Ice VG/PG: Balanced at 50% Vegetable Glycerin and 50% Propylene Glycol Available in 30mg and 50mg strengths.",
     seoAnswerCapsule: "Sams Vapes Frozen Mello Melon Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/sams-vapes-frozen-mello-melon-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "frozen-minty-breez-by-sams-vapes30ml-saltnic",
@@ -1694,7 +1694,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Sams Vapes Flavor Profile: Icy mint fusion with a revitalizing coolness Nicotine Strengths: 30mg   50mg Salt Nicotine Bottle Size: 30ml VG/PG: 50%/50%.",
     seoAnswerCapsule: "Frozen Minty Breez By Sams Vapes30Ml Saltnic is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/frozen-minty-breez-by-sams-vapes30ml-saltnic.webp",
+    customImageUrl: "",
   },
   {
     id: "elf-bar-ew9000-pod-kit-9000-puffs-prefilled-disposable",
@@ -1745,7 +1745,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Big Puff Capacity: Enjoy up to 9,000 puffs for long-lasting vaping pleasure Pre-Loaded with E-Liquid: Holds 13mL of liquid for rich, consistent flavor delivery Extra-Strength Nicotine: Contains 50mg (5%) nicotine salts for a strong and satisfying hit Advanced Mesh Coil Technology: Ensures smoother draws and enhanced flavor production Handy Battery: Comes with a built-in 200mAh battery and support",
     seoAnswerCapsule: "Elf Bar Ew9000 Disposable Prefilled Pod 9000 Puff is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 30 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elf-bar-ew9000-disposable-prefilled-pod-9000-puff.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-tugboat-pulse-x-50k-puffs-in-uae-at-smok",
@@ -1771,7 +1771,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puffs: Up to 50,000 puffs per device Coil Type: Dual mesh coil for rich flavor Battery Type: USB-C rechargeable 1000mAh battery E-liquid Capacity: 25–30ml premium e-liquid.",
     seoAnswerCapsule: "Tugboat Pulse X 50K Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/buy-tugboat-pulse-x-50k-puffs-in-uae-at-smok.webp",
+    customImageUrl: "",
   },
   {
     id: "tesiyi-micro-pod-system-kit-500mah",
@@ -1797,7 +1797,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "li style=&#8221;font-weight: 400;&#8221; aria-le vel=&#8221;1&#8243;  500mAh Rechargeable Battery 5.0ml Liquid Capacity  span style=&#8221;font-weight: 400;&#8221; Replaceable 1.2Ω Mesh Coil LED Battery Indicator Rubber Paint Grip  /li  ria-level=&#8221;1&#8243;  amp;lt;span style=&#8221;font-weight: 400;&#8221; Type-C Fast Charging Microprocessor-Controlled Performanc",
     seoAnswerCapsule: "Tesiyi Micro Pod System Kit 500Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/tesiyi-micro-pod-system-kit-500mah.webp",
+    customImageUrl: "",
   },
   {
     id: "authentic-al-fakher-ultra-25000-puffs-5mg-disposable-vape",
@@ -1823,7 +1823,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: AL FAKHER Product Type: Disposable Vape Device Model: Ultra 25000 Puff Count: Up to 25,000 Puffs Nicotine Strength: 5mg Salt Nicotine E-liquid Capacity: 18 ml Battery Capacity: 600mAh Rechargeable Charging Port: Type-C Fast Charging",
     seoAnswerCapsule: "Al Fakher Ultra 25000 Puffs 5Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/authentic-al-fakher-ultra-25000-puffs-5mg-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-e%e2%80%91liquid-60ml-in",
@@ -1849,7 +1849,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Bottles Size: 60ml Nicotine Strength: 3mg Bottles Type: Squeeze Unicorn Bottles VG/PG: 70/30 Made by USA",
     seoAnswerCapsule: "VGOD Premium E-Liquid 60Ml – Best Vape Juice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vgod-e%e2%80%91liquid-60ml-in.webp",
+    customImageUrl: "",
   },
   {
     id: "pod-salt-35000-puffs-20mg-disposable-vape",
@@ -1875,7 +1875,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Pod Salt Product Name: Pod Salt 35000 Puffs Disposable Vape Puff Capacity: Up to 35,000 puffs Nicotine Strength: 20mg/ml (2%) Nicotine Salt Battery Capacity: 850mAh rechargeable (Type-C fast charging) E-liquid Capacity: 18ml pre-filled premium e-liquid Design: Sleek, modern, and ergonomic body suitable for daily vaping Features: Incorporates dual mesh coil technology, adjustable airflow, an",
     seoAnswerCapsule: "Order Pod Salt 35000 Puffs 20Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pod-salt-35000-puffs-20mg-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-ss-pods-2ml-top-fill-cartridge",
@@ -1901,7 +1901,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "2ml Refillable Pod – Easily top up your pod with an emphasis on user-friendly functionality. Top-Filling System – Effortlessly replenish your pod with no mess or fuss. MTL   RDTL Vaping – Suited for both Mouth-To-Lung and Restricted Direct-To-Lung vaping styles. Multiple Coil Resistances – Select from a range of resistance levels tailored to your vaping preferences. Durable Stainless Steel Des",
     seoAnswerCapsule: "Best OXVA Xlim Ss Pods 2Ml Top Fill Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/oxva-xlim-ss-pods-2ml-top-fill-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "hayati-solix-30000-puffs-disposable-vape-golden-edition-in",
@@ -1927,7 +1927,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Hayati Product Name: Hayati Solix 30000 Puffs Disposable Vape – Golden Edition Puff Capacity: Up to 30,000 puffs Nicotine Strength: Available in 20mg/ml (2%) or 50mg/ml (5%) Nicotine Salt options Battery Capacity: 850mAh rechargeable battery with Type-C fast charging E-liquid Capacity: Pre-filled with 18ml of premium e-liquid Design: Features a luxurious Golden Edition finish with an ergono",
     seoAnswerCapsule: "Latest Hayati Solix 30000 Puffs Disposable Vape Golden Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/hayati-solix-30000-puffs-disposable-vape-golden-edition-in.webp",
+    customImageUrl: "",
   },
   {
     id: "yuoto-xxl-disposable-vape-2500-puffs-in",
@@ -1953,7 +1953,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Yuoto Product Name: Yuoto XXL Disposable Vape Puff Capacity: Up to 2500 puffs Nicotine Strength: 50mg/ml (5%) Nicotine Salt Battery Capacity: 1200mAh built-in battery E-liquid Capacity: 7ml pre-filled premium e-liquid Design: Sleek, portable, and lightweight body suitable for daily vaping Features: Utilizes a draw-activated system, provides consistent vapor production, and incorporates a le",
     seoAnswerCapsule: "Yuoto Xxl Disposable Vape (2500 Puffs) is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 25 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/yuoto-xxl-disposable-vape-2500-puffs-in.webp",
+    customImageUrl: "",
   },
   {
     id: "hayati-pro-ultra-s-50000-puffs-disposable-vape-in",
@@ -1979,7 +1979,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Hayati Model: Pro Ultra+ S Puffs: 50,000 puff capacity Battery Capacity: High-performance rechargeable battery Charging Port: Type-C for quick charging E-Liquid Capacity: Spacious reservoir to accommodate prolonged use Nicotine Levels: Range of options based on location and user preference Construction: Lightweight and durable design for lasting quality.",
     seoAnswerCapsule: "Hayati Pro Ultra+ S 50000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/hayati-pro-ultra-s-50000-puffs-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "oxbar-triple-tank-control-45k-puffs-disposable-vape",
@@ -2005,7 +2005,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: OXBAR Product: OXBAR Triple Tank Control Disposable Vape (45,000 Puffs) Puff Capacity: Provides up to 45,000 puffs Battery: 850mAh rechargeable with Type-C fast charging E-liquid Capacity: Contains 20ml of pre-filled high-quality e-liquid Nicotine Level: 20mg/ml (2%) Nicotine Salt Design: Features a stylish, ergonomic, and durable body equipped with an advanced airflow system Key Features:",
     seoAnswerCapsule: "Best Oxbar Triple Tank Control 45K Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxbar-triple-tank-control-45k-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "tugboat-royal-pro-40000-puffs-disposable-vape-in",
@@ -2031,7 +2031,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Tugboat Product Name: Tugboat Royal Pro 40000 Puffs Disposable Vape Puff Capacity: Up to 40,000 puffs Battery Capacity: 850mAh rechargeable (Type-C charging) E-liquid Capacity: 18ml pre-filled premium e-liquid Nicotine Strength: 20mg/ml (2%) Nicotine Salt Design: Sleek, ergonomic, and portable design for easy vaping Features: Dual mesh coil system, smart screen display, airflow control Flav",
     seoAnswerCapsule: "Best Tugboat Royal Pro 40000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-royal-pro-40000-puffs-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "pod-salt-15000-puffs-20mg-disposable-vape",
@@ -2057,7 +2057,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Pod Salt Product Name: Pod Salt 15000 Puffs Disposable Vape Puff Capacity: Up to 15,000 puffs Battery Capacity: 650mAh rechargeable (Type-C charging) E-liquid Capacity: 12ml pre-filled premium e-liquid Nicotine Strength: 20mg/ml (2%) Nicotine Salt Design: Compact, lightweight, and ergonomic for easy handling Features: Advanced mesh coil technology, consistent flavor, smooth draw Flavor Opti",
     seoAnswerCapsule: "Pod Salt 15000 Puffs 20Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pod-salt-15000-puffs-20mg-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "geekvape-wenax-sc-pod-system-kit-1100mah-in",
@@ -2083,7 +2083,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Geekvape Model: Wenax SC Pod Kit Battery: Rechargeable built-in 1100mAh battery Output Power: Adjustable across multiple levels Pod Capacity: 2ml Coil Compatibility: Geekvape G Series Coils (coil resistance varies) Charging Port: Type-C for fast charging Activation: Button-operated and draw-activated Size: Slim, lightweight, and pocket-friendly",
     seoAnswerCapsule: "Geekvape Wenax Sc Pod System Kit 1100Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/geekvape-wenax-sc-pod-system-kit-1100mah-in.webp",
+    customImageUrl: "",
   },
   {
     id: "vishbar-weekly-20000-puffs-50mg-disposable-vape-in",
@@ -2109,7 +2109,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vishbar Model: Vishbar Weekly Disposable Vape Puff Count: Capable of delivering up to 20,000 puffs Nicotine Strength: Contains 50mg (5% Salt Nicotine) Battery Capacity: Rechargeable 650mAh battery E-Liquid Capacity: Approximately 20ml capacity Charging Port: Supports Type-C Fast Charging Activation Mode: Features Auto-draw function (no buttons required) Design: Characterized by a sleek, com",
     seoAnswerCapsule: "Vishbar Weekly 20000 Puffs (50Mg) Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vishbar-weekly-20000-puffs-50mg-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "tugboat-evo-pro",
@@ -2135,7 +2135,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Capacity: Capable of delivering up to 15,000 puffs Battery Type: Features a built-in rechargeable battery Charging Port: Equipped with Type-C fast charging E-liquid Capacity: Comes with a large pre-filled tank for prolonged usage Nicotine Strength: Contains 5% Nicotine Salt (50mg/ml) Activation Mode: Utilizes draw-activation (no buttons needed) Design: Designed with ergonomics in mind, ensuri",
     seoAnswerCapsule: "Tugboat Evo Pro 15000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-evo-pro.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-vaporesso-xros-pro-vape-kit-30w-1200mah",
@@ -2161,7 +2161,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Company: Vaporesso Model: XROS Pro Vape Kit Max Power: Up to 30 watts Battery Size: 1200mAh (Rechargeable) Charging Type: Type-C for Rapid Charging Pod Style: Refillable Pods with Adjustable Airflow Activation: Auto-draw   Button Firing Style: Sleek, Compact, Pocket-Friendly Design Delivery: Free Shipping Nationwide in the UAE.",
     seoAnswerCapsule: "Vaporesso Xros Pro Vape Kit 30W 1200Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/buy-vaporesso-xros-pro-vape-kit-30w-1200mah.webp",
+    customImageUrl: "",
   },
   {
     id: "myle-sweet-tobacco",
@@ -2187,7 +2187,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Exclusive Bundle Deal – Get 25 Myle Sweet Tobacco Pods + Receive a complimentary Myle V5 Device Authentic Flavor Experience – Indulge in a smooth, sweet tobacco taste Extended Pod Durability – Enjoy consistent flavor throughout each use Instant Vaping Gratification – Easily pop in a pod and start vaping immediately Free Delivery in UAE – Quick shipping to Dubai, Abu Dhabi, Sharjah, and nationwide",
     seoAnswerCapsule: "25 Pack MYLE Sweet Tobacco Get Free MYLE V5 Device &#038; Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-sweet-tobacco.webp",
+    customImageUrl: "",
   },
   {
     id: "strawberry-slushy",
@@ -2213,7 +2213,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: MYLE Package Contains: MYLE V5 device model Pod Quantity: 25 Pods Pod Capacity: 0.9ml per pod Nicotine Strength: 5% Nicotine (50mg) Puffs per Pod: Approximately 240 puffs Activation Mode: Automatic draw (No button design) Charging Port: Type-C Fast Charging Material: Lightweight, durable device body Delivery: Free within the UAE.",
     seoAnswerCapsule: "Strawberry Slushy Pods 25 Pack With Free Device &#038; Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/strawberry-slushy.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-red-apple-pods-get-myle-v5-device",
@@ -2239,7 +2239,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Myle Model: Myle V5 (Complimentary) Number of Pod Packs: 25 Packs Pod Capacity: 0.9ml per pod Nicotine Level: 5% Salt Nicotine (50mg/ml) Puffs per Pod: Approximately 240 puffs Activation Method: Auto-draw (no buttons necessary) Charging Port: Type-C Fast Charging Shipping: 100% Free throughout the UAE.",
     seoAnswerCapsule: "25 Pack Red Apple Pods Get Free MYLE V5 Device + Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/buy-red-apple-pods-get-myle-v5-device.webp",
+    customImageUrl: "",
   },
   {
     id: "lambda-dual-hnb-device",
@@ -2265,7 +2265,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Advanced OLED Display: Delivers precise and user-friendly information, displaying the current temperature. Customizable Temperature Settings: Adjusting the 200°C and 300°C (392°F and 572°F) Flexible Heating Duration: each heating cycle, typically ranging from 3 to 6 minutes. High-Capacity Battery: 3200mAh battery capacity, it offers (approximately 35-40 sticks) on a single charge. Auto-Cleaning Fe",
     seoAnswerCapsule: "Lambda Dual Hnb Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 180 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/lambda-dual-hnb-device.webp",
+    customImageUrl: "",
   },
   {
     id: "pink-lemonade",
@@ -2291,7 +2291,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Quantity of Pods: 25 Packs Pod Capacity: 0.9 ml per pod Nicotine Strength: 5% (50mg/ml) Nicotine Salt Compatibility: Myle V5 Device Type of Device: Rechargeable pod system (included for free) Flavor Profile: Pink Lemonade – sweet, tangy, and refreshing Shipping: Free delivery in Dubai   UAE.",
     seoAnswerCapsule: "25 Pack Pink Lemonade Get Free MYLE V5 Device &#038; Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pink-lemonade.webp",
+    customImageUrl: "",
   },
   {
     id: "peach-mango-watermelon-pods",
@@ -2317,7 +2317,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Myle Model: Myle V5 (Comes with a free device) Pack Count: 25 packs Pod Capacity: 0.9ml per pod Nicotine Level: 5% Salt Nicotine (50mg/ml) Puffs per Pod: Around 240 puffs Activation: Auto-draw (No buttons) Charging: Type-C Fast Charging Body Material: Lightweight and durable Shipping: Free delivery within the UAE.",
     seoAnswerCapsule: "25 Pack Peach Mango Watermelon Pods Get Free MYLE V5 Device &#038; Delivery Free is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/peach-mango-watermelon-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "mega-melon-pods",
@@ -2343,7 +2343,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Myle Pod Flavor: Mega Melon Pod Capacity: 0.9mL per pod Nicotine Strength: 5% (50mg) Nicotine Salt Pod Count: 25 Pods (Bulk Pack) Device Compatibility: Myle V5 Device (included free in this offer) Battery Capacity: 380mAh rechargeable battery (for Myle V5) Charging Port: USB Type-C fast charging Puff Count: Approx. 240–260 puffs per pod Delivery: Free across UAE.",
     seoAnswerCapsule: "25 Pack Mega Melon Pods Get Free MYLE V5 Device &#038; Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/mega-melon-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn",
@@ -2369,7 +2369,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Uwell Product Name: Caliburn G4 Pro Pod Kit Battery Capacity: 900mAh (Rechargeable) Charging Port: Type-C Fast Charging Power Output: 5W – 25W Pod Capacity: 2ml (Refillable) Coil Compatibility: Works with Uwell Caliburn G series coils Available Colors: Various stylish finishes to choose from.",
     seoAnswerCapsule: "Uwell Caliburn G4 Pro Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 130 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/uwell-caliburn.webp",
+    customImageUrl: "",
   },
   {
     id: "fumo-king-6000-puffs-disposable-vape",
@@ -2395,7 +2395,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Count: Around 6000 puffs Battery: Rechargeable internal battery with 650mAh capacity (charged via Type-C) E-liquid Capacity: 13ml of pre-filled liquid Nicotine Strength: Generally 20mg/ml (2%) or 50mg/ml (5%) synthetic nicotine, depending on location. Coil: Built-in mesh coil with 1.1ohm resistance Activation: Firing mechanism activated by drawing Additional Features: Some versions may includ",
     seoAnswerCapsule: "Fumo King 6000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/fumo-king-6000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "geek-bar-ice-prince-50000-puffs-in",
@@ -2421,7 +2421,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Geek Bar Model: Ice Prince 50000 Puffs Puff Count: Provides up to 50,000 puffs Battery Capacity: Features a rechargeable high-capacity battery Charging Port: Equipped with Type-C Fast Charging E-liquid Capacity: Includes a large pre-filled tank for extended use Nicotine Strength: Contains 5% (50mg) nicotine salt concentration Coil Type: Utilizes Advanced Mesh Coil Technology Activation Mode",
     seoAnswerCapsule: "Geek Bar Ice Prince 50000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 49 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/geek-bar-ice-prince-50000-puffs-in.webp",
+    customImageUrl: "",
   },
   {
     id: "myle-v5-meta-device",
@@ -2447,7 +2447,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "25-Pack of Malaysian Mango Pods &#8211; Delight in the sweet, juicy essence of tropical mango Complimentary Myle V5 Device &#8211; Compact, stylish, and effortless to operate Extended Pod Lifespan &#8211; Savor a consistently rich taste until your very last draw Rapid Type-C Charging &#8211; Swiftly power up your device for continuous vaping Prepared for Immediate Use &#8211; Simply insert a pod a",
     seoAnswerCapsule: "25 Pack Malaysian Mango Free MYLE V5 Device &#038; Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-v5-meta-device.webp",
+    customImageUrl: "",
   },
   {
     id: "25-pack-lush-ice-with-free-myle-v5-device",
@@ -2473,7 +2473,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "25-Pack of Lush Ice Pods: Enjoy a refreshing watermelon flavor paired with a cool menthol finish Complimentary Myle V5 Device: Experience a sleek, lightweight, and user-friendly device Pods with Long-Lasting Flavor: Consistently smooth taste until your last puff Rapid Type-C Charging: Quickly recharge your device for uninterrupted use Convenient Ready-to-Use Design: Simply insert a pod and indulge",
     seoAnswerCapsule: "Order 25 Pack Lush Ice With Free MYLE V5 Device And Enjoy Free Delivery Now is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/25-pack-lush-ice-with-free-myle-v5-device.webp",
+    customImageUrl: "",
   },
   {
     id: "vozol-gear-10000-puffs-disposable-vape-in",
@@ -2499,7 +2499,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Battery: Rechargeable 500mAh battery featuring rapid USB Type-C charging for a full charge in 45 minutes Puffs: Approximately 10,000 puffs per device Nicotine Strength: 5% (50mg) to deliver a powerful hit E-liquid Capacity: 20ml of pre-filled e-liquid for extended usage Operation: Activated by drawing without the need for buttons",
     seoAnswerCapsule: "Vozol Gear 10000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-gear-10000-puffs-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "25-pack-iced-tropical-fruit-get-a-free-myle-v5-device",
@@ -2525,7 +2525,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Iced Mint Myle Pods 25-Pack – Enjoy a consistently refreshing icy flavor in every puff Complimentary Myle V5 Device – Stylishly designed for reliable performance High-Capacity Battery – Experience extended vaping sessions with quick Type-C charging Enhanced Draw Technology – Indulge in flavorful vapor with each inhalation Free Shipping within UAE – Servicing Dubai, Abu Dhabi, Sharjah   beyond.",
     seoAnswerCapsule: "25 Pack Iced Tropical Fruit Get A Free MYLE V5 Device + Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/25-pack-iced-tropical-fruit-get-a-free-myle-v5-device.webp",
+    customImageUrl: "",
   },
   {
     id: "myle-v5-device",
@@ -2551,7 +2551,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "25 Pack of Iced Mint Myle Pods – Experience a consistently refreshing icy flavor with every puff Complimentary Myle V5 Device – Modern design coupled with dependable performance High-Performance Battery – Enjoy extended vaping sessions with Type-C fast charging capability Enhanced Draw Technology – Indulge in the full-bodied flavor with each inhale Free Delivery within UAE – Servicing Dubai, Abu D",
     seoAnswerCapsule: "Get A Free MYLE V5 Device With 25 Pack Iced Mint – Free Delivery Now is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-v5-device.webp",
+    customImageUrl: "",
   },
   {
     id: "25-pack-georgia-peach",
@@ -2577,7 +2577,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste: Georgia Peach flavor – ripe, sugary, and delightfully velvety Amount: 25 pods – a plentiful stock for daily vaping Device Included: FREE MYLE V5 device – sleek, chic, and user-friendly Compatibility: Specifically designed for use with MYLE V5 pods only Shipping: Quick, complimentary delivery to any location in the UAE Vaping Experience: Uniform, full-bodied, and rich vapor pulls.",
     seoAnswerCapsule: "25 Pack Georgia Peach Free MYLE V5 Devices With Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/25-pack-georgia-peach.webp",
+    customImageUrl: "",
   },
   {
     id: "25-pack-blueberry-lemon",
@@ -2603,7 +2603,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste: Blueberry Lemon flavor &#8211; sugary, fruity, and tangy Amount: 25 pods &#8211; ensures consistent supply for prolonged vaping Included Device: COMPLIMENTARY MYLE V5 device &#8211; compact, trendy, and easy to use Suitability: Specifically designed for use with MYLE V5 pods Shipping: Free, rapid delivery to all locations in the UAE Vaping Experience: Enjoy smooth, rich hits with each inhal",
     seoAnswerCapsule: "25 Pack Blueberry Lemon Free MYLE V5 Devices – Free Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 975 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/25-pack-blueberry-lemon.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-5-mini-pod-vape-kit",
@@ -2629,7 +2629,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: XROS 5 Mini Pod Vape Kit Battery: Includes a high-capacity built-in battery for extended usage Charging: Supports fast charging via USB Type-C Pod Capacity: Features a 2ml refillable pod Pod Compatibility: Designed to work with Vaporesso XROS series pods Operation: Utilizes draw-activated firing mechanism (no buttons required) Design: Compact, lightweight, and stylish aesth",
     seoAnswerCapsule: "Vaporesso Xros 5 Mini Pod Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-xros-5-mini-pod-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-4-pod-vape-kit",
@@ -2655,7 +2655,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: XROS 4 Pod Vape Kit Battery Capacity: 1500mAh built-in battery Charging: Fast Type-C charging Output Power: Adjustable for MTL and RDL vaping preferences Pod Capacity: 4ml refillable pod Pod Compatibility: Compatible with all XROS series pods Airflow: Customizable airflow for tailored vaping experience Operation: User-friendly draw-activated firing, no buttons required Desi",
     seoAnswerCapsule: "Vaporesso Xros 4 Pod Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-xros-4-pod-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-3-nano-kit-in",
@@ -2681,7 +2681,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: XROS 3 Nano Kit Battery Capacity: Internal 1000mAh Charging: Type-C, rapid charging Output Power: Tailored for MTL (Mouth-to-Lung) and RDL (Restricted Direct Lung) vaping Pod Capacity: 2ml refillable pod Pod Compatibility: Compatible with all Vaporesso XROS series pods Airflow: Adjustable airflow system Operation: Activated by inhaling – no buttons required Design: Small, e",
     seoAnswerCapsule: "Vaporesso Xros 3 Nano Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-xros-3-nano-kit-in.webp",
+    customImageUrl: "",
   },
   {
     id: "fummo-power-15000-puffs-disposable-vape",
@@ -2707,7 +2707,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: FUMMO Maximum Puffs: Up to 15,000 puffs Liquid Capacity: 10ml of pre-filled e-liquid Nicotine Concentration: 20mg (2%) Nicotine Salt for a refined throat sensation Power Source: Potent 1850mAh built-in battery (non-rechargeable) Recharging: Unnecessary – operational immediately upon unboxing Coil Design: 1.2Ω Mesh Coil ensuring uniform flavor and vapor generation",
     seoAnswerCapsule: "Fummo Power 15000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/fummo-power-15000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-q2-se-pod-kit-25w-in",
@@ -2733,7 +2733,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: VAPORESSO Product: Luxe Q2 SE Pod Kit Maximum Output: Up to 25W for top-tier performance and rich flavor delivery Battery: 1000mAh internal battery for prolonged usage Charging: Utilizes USB Type-C port for fast charging (Takes approximately 30 to 45 minutes for full charge) Pod Type: Luxe Q Pods – Available in 0.8Ω MESH and 1.0Ω MESH varieties Pod Capacity: 2ml Pod equipped with SSS",
     seoAnswerCapsule: "Vaporesso Luxe Q2 Se Pod Kit 25W is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-luxe-q2-se-pod-kit-25w-in.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-itank-2-best-tank-for-dtl-vaping",
@@ -2759,7 +2759,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: VAPORESSO Capacity: Holds up to 8ml of e-liquid for longer vaping sessions Refill System: Features a top-fill design with a dependable spring-loaded locking mechanism Construction: Made of stainless steel with durable reinforced glass Coil Options: Compatible with GTi Mesh Coils for richer flavor and thicker vapor production Heating System: Utilizes COREX Technology™ for quick and consisten",
     seoAnswerCapsule: "Vaporesso Itank 2 is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vaporesso-itank-2-best-tank-for-dtl-vaping.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-3-pod-kit-1000mah-in",
@@ -2785,7 +2785,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Vaporesso Product Name: XROS 3 Pod Kit Built-in Battery Capacity: 1000mAh Charging Type: Type-C with 1A Fast Charging Power Output: 11W–16W Activation Modes: Auto-draw   Button-activated Compatible Pods: XROS Series Pods (0.6Ω, 0.8Ω, 1.0Ω, 1.2Ω) Pod Capacity: 2ml. Explore Now: Best Vaporesso VIBE Pod Kit in UAE",
     seoAnswerCapsule: "Vaporesso Xros 3 Pod Kit 1000Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-xros-3-pod-kit-1000mah-in.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-vmate-v2-cartridge",
@@ -2811,7 +2811,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "E-liquid capacity of 3ml Dual coil choices: 0.7Ω for DL vaping, 1.2Ω for MTL vaping Side filling system for reduced leakage risk Supports Vmate Kit Infinity Edition, Vmate E Kit, and V.THRU Pro Kit Ideal for MTL and DL vaping fans.",
     seoAnswerCapsule: "Voopoo Vmate V2 Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voopoo-vmate-v2-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "best-vaporesso-vibe-pod-kit-in",
@@ -2837,7 +2837,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Vaporesso Product Name: VIBE Pod Kit Battery: 1000mAh built-in rechargeable battery Charging: Type-C rapid charging Power Output: Up to 20W Pod Capacity: Refillable 2ml pod Coil Compatibility: Utilizes Integrated Mesh Coil Design: Slim, lightweight, and pocket-sized. Explore Now: Vaporesso Armour G Vape Pod Kit 80W",
     seoAnswerCapsule: "Best Vaporesso Vibe Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/best-vaporesso-vibe-pod-kit-in.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-pod-pro-s-pod-kit",
@@ -2863,7 +2863,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "BATTERY CAPACITY: 650mAh OUTPUT VOLTAGE: 3.7v ACTIVATED BY DRAW USB C QUICK CHARGING SUPPORTS PASSTHROUGH CHARGING 3 STAGE CHARGING INDICATOR DISCHARGE INDICATION: GREEN – YELLOW – RED.",
     seoAnswerCapsule: "Best VGOD Pod Pro S Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 80 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vgod-pod-pro-s-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "silvaper-35000-puffs-disposable-vape",
@@ -2889,7 +2889,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Limit: Enjoy up to 35,000 flavorful draws E-Juice Volume: 30ml capacity | Nicotine Potency: 20mg (2% strength) Power Source: Rechargeable 1000mAh battery | Heating Element: Dual Mesh Coil Charge Connection: Type-C port | Visuals: Small screen battery life indicator.",
     seoAnswerCapsule: "Silvaper 35000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/silvaper-35000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-armour-g-vape-pod-kit-80w",
@@ -2915,7 +2915,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: Armour G Pod Kit Battery: Requires a single 18650 cell (not included) Power Output: Ranges from 5 to 80 Watts Charging: Uses Type-C charging with 5V/2A rapid charging Chipset: Features AXON Chip Technology Screen: 0.42-Inch OLED Display Pod Cartridge: Armour Pod Cartridge (Refillable from the top, leak-resistant) Coil Compatibility: Works with GTX Coils (0.2Ω, 0.4Ω, and mor",
     seoAnswerCapsule: "Vaporesso Armour G Vape Pod Kit 80W is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 140 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-armour-g-vape-pod-kit-80w.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-xr-max-2-vape-kit",
@@ -2941,7 +2941,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Vaporesso Product Name: LUXE XR Max 2 Pod Kit Battery Capacity: 2800mAh (Internal) Charging Port: Type-C, 5V/2A Rapid Charging Max Output Power: Up to 80W Screen Type: OLED Display Pod Type: Compatible with LUXE X Pods (Featuring Leak-Resistant Design) Coil Type: Compatible with GTX Coils (0.2Ω, 0.4Ω, and more)",
     seoAnswerCapsule: "Vaporesso Luxe Xr Max 2 Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-luxe-xr-max-2-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-xr-max-best-vape-kit-2800mah-built-in-battery",
@@ -2967,7 +2967,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: Luxe XR Max Pod Kit Battery: 2800mAh Built-in Charging: Type-C, 5V/2A Fast Charging Output Power: Up to 80W Display: 0.54″ OLED Screen Pod Compatibility: Luxe X Pods Coil type/ohm: GTX Coils (0.2Ω, 0.4Ω, etc.) Technology: COREX Heating Technology Size: Compact   Pocket-Friendly.",
     seoAnswerCapsule: "Vaporesso Luxe Xr Max Best Vape Kit 2800Mah Built-In Battery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-luxe-xr-max-best-vape-kit-2800mah-built-in-battery.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-armour-s-vape-kit",
@@ -2993,7 +2993,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: Vaporesso Model: Armour S Mod Kit with iTank 2 Size: 90mm x 45mm x 38mm Battery Type: Single 21700 / 18650 (with adapter) Charging Port: Type-C, 5V/2A Power Output: 5W – 100W Screen: 0.96″ TFT Color Display Tank Capacity: iTank 2 (8ml) Compatible Coils: GTi Mesh Coils (0.2Ω / 0.4Ω) Refill Method: Top-Fill with Leak-Resistant Design.",
     seoAnswerCapsule: "Vaporesso Armour S Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 230 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-armour-s-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-gen-se-mod-kit-with-itank",
@@ -3019,7 +3019,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Vaporesso Model : GEN SE Mod Kit with iTank Size : 90mm x 35.1mm x 29.1mm Battery : Integrated 2500mAh battery Charging : Type-C, 5V/2A Power Output : 5W – 80W Chipset : AXON Chip Screen : 0.91″ OLED Display Tank : iTank Tank (5ml capacity) Coils : Compatible with GTi Mesh Coils (0.2Ω / 0.4Ω).",
     seoAnswerCapsule: "Vaporesso Gen Se Mod Kit With Itank is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vaporesso-gen-se-mod-kit-with-itank.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-gen-max-mod-kit-with-itank",
@@ -3045,7 +3045,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: Gen MAX Mod Kit with iTank Dimensions: 93.5mm x 53mm x 30mm Battery Compatibility: Dual 21700 / 18650 (with adapter) Charging: Type-C, 5V/2A Output Power: 5W – 220W Chipset: AXON Chip Display: 0.96″ TFT Color Screen Tank Compatibility: iTank (8ml capacity) Coil Compatibility: GTi Mesh Coils (0.2Ω / 0.4Ω)",
     seoAnswerCapsule: "Vaporesso Gen Max Mod Kit With Itank is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 240 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-gen-max-mod-kit-with-itank.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-armour-max-vape-kit",
@@ -3071,7 +3071,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vaporesso Model: Armour MAX Vape Kit Dimensions: 96mm x 56.5mm x 34mm Battery Compatibility: Dual 21700 / 18650 (with adapter) Charging: Type-C, 5V/2A Output Power: 5W – 220W Chipset: AXON Chip Display: 0.96&#8243; TFT Color Screen Tank Compatibility: iTank 2 Coil Compatibility: GTi Mesh Coils (0.2Ω / 0.4Ω)",
     seoAnswerCapsule: "Vaporesso Armour Max Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 220 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/vaporesso-armour-max-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-60ml-e-liquid",
@@ -3097,7 +3097,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Branding : Sams Vape Size : 60ml per bottle Nicotine Levels : Available in 3mg and 12mg Category : Freebase Nicotine E-Liquid Vaping Compatibility : Ideal for sub-ohm and low-wattage MTL (12mg) VG/PG Blend (Standard) 70% VG / 30% PG for 3mg – crafted for producing voluminous clouds 50% VG / 50% PG for 12mg – offers an optimal balance for MTL devices.",
     seoAnswerCapsule: "Sams Vape 60Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/sams-vape-60ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-vinci-v2-pod-cartridge-improved-drag-nano-2-pods",
@@ -3123,7 +3123,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Pod Capacity : 2mL of e-liquid. Built-in Antibacterial Design : Ensures a sanitary vaping experience Connection Type : Effortless Magnetic connection for quick and secure pod attachment Filling Method : Top Fill System featuring Dual Fill Ports for mess-free refills Incorporated Mesh Coils : Includes 0.8Ω Mesh Coil and 1.2Ω Mesh Coil Compatible with the following Voopoo devices: Vinci Pod, Vinci Q",
     seoAnswerCapsule: "Voopoo Vinci V2 Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voopoo-vinci-v2-pod-cartridge-improved-drag-nano-2-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "umivape-u-bar-18000-puffs-disposable-vape",
@@ -3149,7 +3149,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: UMIVAPE Puff Capacity: Approximately 18,000 puffs E-Liquid Volume: 20-22 ml Nicotine Strength: Around 5 mg/ml (0.5%) Battery Capacity: 800-850 mAh, rechargeable via USB-C Coil Resistance: Approximately 0.6 Ohm mesh coil Activation Mode: Draw-activated Flavor Options: Around 11-15 available",
     seoAnswerCapsule: "Umivape U Bar 18000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/umivape-u-bar-18000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "vnsn-quake-ultra-30000-puffs-disposable",
@@ -3175,7 +3175,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name : VNSN Model : Quake Ultra Puffs : Enjoy up to 30000 puffs! Battery : Features an internal 850mAh battery that is easily rechargeable via USB‑C E-Liquid Capacity : Comes with a spacious built-in reservoir holding around 18mL of e-liquid Coil type : Equipped with a dual mesh coil designed to produce thick vapor and enhanced flavor Airflow : Customize your vaping experience by adjusting a",
     seoAnswerCapsule: "Vnsn Quake Ultra 30000 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vnsn-quake-ultra-30000-puffs-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "veiik-airo-vape-pod-system-kit",
@@ -3201,7 +3201,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name : VEIIK Pod Capacity : 2 mL (refillable, side-fill) Battery : Built-in 360 mAh (some variants offer 500 mAh) Output Power : 10–15 W max Coil Resistance : 1.2 Ω mesh coil (organic cotton wick) Airflow : Bottom air-driven, draw-activated (no buttons) Indicators : Triple-stage LED battery level at bottom Size : ~100.5 × 25.5 × 12.5 mm Material : Zinc alloy body with PU/leather-style panels",
     seoAnswerCapsule: "Veiik Airo Vape Pod System Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/veiik-airo-vape-pod-system-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "freemax-rexa-pro-pod-kit",
@@ -3227,7 +3227,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name : FREEMAX Pod Capacity : 2 mL (Refillable, Side-Fill) Battery : 1200 mAh (USB‑C Fast Charging) Output Power : Up to 30 W Coil Type : Compatible with DUOMAX, FIRELUKE, and M Pro Coils Airflow : Adjustable MTL / RDL via Sliding Control Activation : Button-Activated Size : ~110 × 24 × 15 mm Nicotine Compatibility : Freebase   Nicotine Salt",
     seoAnswerCapsule: "Freemax Rexa Pro Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/freemax-rexa-pro-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-pnp-x-replacement-coil",
@@ -3253,7 +3253,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Cutting-Edge PnP-X Platform Technology to elevate taste and vapor thickness Advanced Mesh Heating Structure for speedy heating and intensified flavor Innovative Leak-Proof 4-Layer Construction to prevent condensation and spills Reliable Thermo-Stable Cotton for enduring performance and extended coil lifespan Versatile Resistance Options: 0.15Ω / 0.2Ω / 0.3Ω / 0.6Ω Supports Multiple Vaping Styles:",
     seoAnswerCapsule: "Voopoo Pnp X Replacement Coil is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voopoo-pnp-x-replacement-coil.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-pro-2-dna-pod-kit",
@@ -3279,7 +3279,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Battery Capacity: Built-in battery with a capacity of 1300mAh Power Output Range: Adjustable from 5W to 30W Chipset: Features EVOLV DNA chipset equipped with Smart Replay Technology Activation Modes: Supports both Button Fire and Auto-Draw activation Airflow Control: Utilizes an Adjustable Slider System for airflow adjustments Charging Method: Equipped with USB-C port for 2A Fast Charging Compatib",
     seoAnswerCapsule: "OXVA Xlim Pro 2 Dna Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 130 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/oxva-xlim-pro-2-dna-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "freemax-rexa-pod-cartridge-3pc-pack",
@@ -3305,7 +3305,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Liquid Capacity: 3ml Variety of Resistances: 0.4Ω (24-28W) | 0.6Ω (18-23W) | 0.8Ω (12-15W) | 1.2Ω (8-10W) Pack Size: Contains 3 Cartridges per pack Effortless Side/Bottom Refilling: Crafted to make e-liquid refills a breeze without the mess.",
     seoAnswerCapsule: "Freemax Rexa Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/freemax-rexa-pod-cartridge-3pc-pack.webp",
+    customImageUrl: "",
   },
   {
     id: "freemax-rexa-smart-pod-kit",
@@ -3331,7 +3331,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Battery Capacity: 1600mAh (Integrated) Maximum Output: 30W Pod Compatibility: Compatible with Freemax Duamax   Rexa Replacement Pods E-liquid Capacity: 3ml (Pre-filled) Screen: 2.01&#8243; Touch Display Connectivity: Bluetooth App Management",
     seoAnswerCapsule: "Freemax Rexa Smart Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 125 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/freemax-rexa-smart-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "freemax-rexa-lite-pod-kit",
@@ -3357,7 +3357,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Sleek   Portable Design – Ideal for vaping on the move with a stylish and lightweight construction. Long-Lasting 1000mAh Battery – Ensures extended battery life to support vaping throughout the day. Generous 3ml E-liquid Capacity – Larger pod capacity reduces the frequency of refills. Rapid USB Type-C Charging – Swift and effective charging to minimize downtime. Innovative FM SaltCoilTech 4.0",
     seoAnswerCapsule: "Freemax Rexa Lite Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 105 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/freemax-rexa-lite-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-argus-g2-pod-kit",
@@ -3383,7 +3383,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "1000mAh Integrated Battery with Fast Charging: Enjoy prolonged vaping sessions lasting up to 3-4 days on a single charge and rapid USB-C charging in approximately 30 minutes. Up to 30W Power Output: Delivers a versatile power range suitable for both Mouth-to-Lung (MTL) and Restricted Direct-to-Lung (RDL) vaping styles. 0.96-inch TFT Color Screen with Sensory Interaction: Experience a vivid display",
     seoAnswerCapsule: "Voopoo Argus G2 Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 90 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/voopoo-argus-g2-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-4-mini-pod-kit",
@@ -3435,7 +3435,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Sleek and compact design Magnetic pod attachment for effortless swapping Pre-filled MYLE Meta pods available in various flavors Rechargeable 380mAh battery Fast USB Type-C charging Illuminating LED battery level indicator Quick Link: Myle V5 Meta Pods",
     seoAnswerCapsule: "MYLE V5 Meta Pod Device New is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-v5-meta-pod-device-new.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-stig-disposable-pod-device",
@@ -3461,7 +3461,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "SaltNic E-Liquid Ready – Delivering smooth nicotine hits at 6% (60mg) potency Instant Vaping Sensation – Simply draw to vape, no buttons or adjustments needed Sleek   Featherlight – Designed for portability and convenience Generous 1.2ml E-Liquid Capacity – Offers 270–300 puffs per device Hassle-Free Experience – No need to charge or refill, ready to use right away Leak-Proof Performance – Enj",
     seoAnswerCapsule: "VGOD Stig Disposable Pod Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vgod-stig-disposable-pod-device.webp",
+    customImageUrl: "",
   },
   {
     id: "silvaper-salt-nic-3oml-e-liquid",
@@ -3487,7 +3487,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Nicotine Levels: Offered in 20mg and 30mg variants Bottle Capacity: 30ml Flavor Selection: Range of fruity, minty, and classic blends available Delivers a smooth throat hit with rapid nicotine absorption Ideal for MTL vaping and pod systems .",
     seoAnswerCapsule: "Silvaper Salt Nic 3Oml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/silvaper-salt-nic-3oml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-one-minera-limited-edition",
@@ -3513,7 +3513,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Device Name: IQOS ILUMA i ONE Version: MINERA LIMITED EDITION Appearance: Sleek, contemporary, and fashionable Connector: USB-C Recharge Time: Approximately 90 minutes (timing may slightly vary) Heating Duration: Approximately 15–20 seconds for swift usage.",
     seoAnswerCapsule: "IQOS Iluma I One Minera Limited Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 280 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-one-minera-limited-edition.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-stig-mix-disposable-pod-device",
@@ -3539,7 +3539,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: VGOD, SaltNic Labs (e-liquid) Nicotine: 6.0% (by volume) | E-Liquid Capacity: 1.2ml Coil Resistance: 2.5 ohm | Activation: Auto Draw Battery: Pre-charged, Low Power | Portability: Super Compact, Lightweight 1 pack contains 3 disposable devices | 1 Box includes 10 packs of Disposable Devices.",
     seoAnswerCapsule: "VGOD Stig Mix Disposable Pod Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 450 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vgod-stig-mix-disposable-pod-device.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-amber-kyrgyzstan",
@@ -3565,7 +3565,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Origin: Kyrgyzstan is commonly recognized as the primary source country for this particular variant. Flavor Profile: TEREA Amber offers a consistent profile of a luxurious, velvety, and harmonious tobacco taste. This blend caters to connoisseurs who enjoy a traditional, robust tobacco sensation. Puffs per Stick: Each stick is designed to provide an average of 14 puffs. Nicotine Strength: Contains",
     seoAnswerCapsule: "IQOS TEREA Amber Kyrgyzstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-amber-kyrgyzstan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-yellow-kyrgyzstan",
@@ -3591,7 +3591,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Most commonly referred to as a gentle and smooth tobacco blend featuring lively or subtle, spicy scents. Some descriptions note a delicate sweetness or hints of citrus. It is generally regarded as a well-balanced choice, neither overly strong nor too mild. Nicotine Level: Contains nicotine, a substance that can lead to addiction. Device Compatibility: Specifically crafted for use wi",
     seoAnswerCapsule: "IQOS TEREA Yellow Kyrgyzstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-yellow-kyrgyzstan.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-silver-kyrgyzstan",
@@ -3617,7 +3617,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Source: Kyrgyzstan Taste: Mild, well-balanced with hints of toasted tobacco, subtle herbal/spicy undertones, occasional fruity or menthol accents. Suitability: Specifically designed for IQOS ILUMA devices. Nicotine Content: Low (around 0.5 MG/stick). Puff Count: 14 puffs per stick. Packaging: Each pack contains 20 sticks, and each carton holds 200 sticks. Shipping: Swift delivery, typically within",
     seoAnswerCapsule: "TEREA Silver Kyrgyzstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/terea-silver-kyrgyzstan.webp",
+    customImageUrl: "",
   },
   {
     id: "nerd-crystal-5500-puffs-disposable-vape",
@@ -3643,7 +3643,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: NERD CRYSTAL | Pod Capacity: 14ml Coil Technology: Quad MESH Coil Technology | Puffs: up to 5500 Nicotine: 2% | Battery Capacity: 1000mAh.",
     seoAnswerCapsule: "Nerd Crystal 5500 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/nerd-crystal-5500-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-basic-device-myle-v4-compatible",
@@ -3669,7 +3669,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: SPARK Batter Capacity – 250mAh for extended usage Type-C Charging Port Advanced Anti-Leak Technology QUICK LINK: Sprk Vapor v4 Pod",
     seoAnswerCapsule: "Sprk Vapor Basic Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-basic-device-myle-v4-compatible.webp",
+    customImageUrl: "",
   },
   {
     id: "elf-bar-moon-night-40000-puffs",
@@ -3695,7 +3695,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Elf Bar | Model : Moonlight 40000 Puffs Dimensions : Approximately 90mm x 45mm x 20mm Battery Capacity : 850mAh (Rechargeable) | Charging : Type-C, 5V/1A E-liquid Capacity : 18ml | Puff Count : Up to 40,000 Puffs Display : LED Screen (Battery   E-liquid Indicator) Coil Type : Dual Mesh Coil | Nicotine Strength : 5% (50mg/ml) Activation : Draw-activated.",
     seoAnswerCapsule: "ELFBAR Moonlight 40000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elf-bar-moon-night-40000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-nexlim-pod-kit",
@@ -3721,7 +3721,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Dual Mesh Technology Boost and Eco Modes 5-40W Power Range 4mL Top Fill, Leak-Proof Pod Design Adjustable Airflow 5V/2A Super-Fast Charge Compatibility: Buy OXVA NeXlim Pods Cartridge ( Click Here )",
     seoAnswerCapsule: "OXVA Nexlim Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/oxva-nexlim-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-pro-2-pod-kit",
@@ -3747,7 +3747,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Material: Zinc Alloy and Artificial Leather/IML/PCTG Dimension: 25.0 x 15.0 x 114.5mm Refill: Top Refill Cartridge Capacity: 2ml Cartridge Options: 0.4Ω / 0.6Ω / 0.8Ω / 1.2Ω Battery: 1300mAh, Type-C, 5V/2A Output Power: 5-30W. Available Color: Dream Purple | Blue Python | Silver Carbon | Brown Python | Platinum Gray | Coral Pink | Green Python | Black Carbon Quick Link: OXVA Xlim V3 Cartridges ( C",
     seoAnswerCapsule: "OXVA Xlim Pro 2 Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/oxva-xlim-pro-2-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-ez-duz-it-on-ice-e-juice-120ml",
@@ -3773,7 +3773,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Bernd: Ruthless Vapor Taste: Strawberry, Watermelon, Menthol Container Size : 120ml. Nicotine Level: 3mg Blend: Freebase VG/PG Ratio: 85/15",
     seoAnswerCapsule: "Ruthless Ez Duz It On Ice E-Juice 120Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-ez-duz-it-on-ice-e-juice-120ml.webp",
+    customImageUrl: "",
   },
   {
     id: "vozol-gear-shisha-25000-puffs-disposable-vape-in",
@@ -3799,7 +3799,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Item Name: Vozol Gear Shisha Disposable Vape Puff Capacity: Up to 25,000 puffs Battery: 3500 mAh Non-rechargeable E‑Liquid Capacity: 50 ml Nicotine Level: 5% (50 mg) Nic Salt Heating Mechanism: Mesh coil for abundant vapor production Airflow: Engineered for smooth, dense clouds Design: Stylish vape pen design with comfortable mouthpiece Available Flavors: Range of shisha-inspired and fruit-infused",
     seoAnswerCapsule: "Vozol Gear Shisha 25000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-gear-shisha-25000-puffs-disposable-vape-in.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-turquoise-kyrgyzstan",
@@ -3825,7 +3825,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: Experience a refreshing menthol mint flavor harmonized with subtle toasted tobacco undertones. Users commonly describe it as a cool, zesty, and invigorating sensation. Compatibility: TEREA sticks, such as Turquoise, are specially crafted for IQOS ILUMA devices, leveraging the Smartcore Induction System. This cutting-edge heating technology warms the tobacco from the inside, elimina",
     seoAnswerCapsule: "IQOS TEREA Turquoise Kyrgyzstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-turquoise-kyrgyzstan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-purple-wave-kyrgyzstan",
@@ -3851,7 +3851,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste: Silky Tobacco with a Hint of Fruit Source: Kyrgyzstan Total Puffs: 14 puffs Nicotine Strength: 0.5 MG Size: 162 x 75 x 47 mm Weight: 240 grams Includes: 1 Carton (10 Packs / 200 Heatsticks) For Use With: IQOS ILUMA and Iluma I device.",
     seoAnswerCapsule: "IQOS TEREA Purple Wave Kyrgyzstan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/iqos-terea-purple-wave-kyrgyzstan.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-oasis-pearl-indonesia",
@@ -3877,7 +3877,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Crisp and herbal with a touch of mint Nicotine Level: 0.5 mg per stick Net Weight: 240 grams Pack Size: 200 sticks per pack Origin: Exclusively crafted for the Indonesian market Compatibility: Specifically designed for IQOS ILUMA devices Harmonious Flavor: Mellow tobacco fusion with refreshing feel Bladeless Technology: Neat usage with Smartcore™ induction system Stick Quantity: 20",
     seoAnswerCapsule: "IQOS TEREA Oasis Pearl Indonesia is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-oasis-pearl-indonesia.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-sun-pearl-indonesia",
@@ -3903,7 +3903,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Delightful green fruity flavor complemented by subtle floral and nutty undertones Gentle nicotine strength (0.5 mg/stick)—ideal for novices and those who prefer milder options Compatible with all IQOS ILUMA devices : ILUMA I Prime, ILUMA I One, and ILUMA I Standard Crafted in Indonesia , renowned for its mellow, fragrant tobacco blends 200 sticks per pack —long-lasting and budget-friendly Engineer",
     seoAnswerCapsule: "IQOS TEREA Sun Pearl Indonesia is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-sun-pearl-indonesia.webp",
+    customImageUrl: "",
   },
   {
     id: "dr-vapes-the-frozen-series-120ml",
@@ -3929,7 +3929,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Dr. Vapes The Frozen Series Container Size: 120ml Nicotine Level: 3mg (0.3%) Ratio of VG to PG: High VG blend for smooth, dense clouds Refreshing Sensation: Strong menthol chill Flavor Description: Combination of fruity flavors with a touch of ice Recommended for use with: Sub-ohm devices Origin: Crafted in the UK using premium ingredients Child-Safe Cap: Ensuring safety Leak-Proof Des",
     seoAnswerCapsule: "Dr Vapes The Frozen Series 120Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/dr-vapes-the-frozen-series-120ml.webp",
+    customImageUrl: "",
   },
   {
     id: "vct-ripe-vapes-saltnic-30ml-rich-vanilla-custard-flavor",
@@ -3981,7 +3981,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Ripe Vapes &#8211; VCT Flavor Profile: Vanilla, Custard, and Tobacco (VCT) &#8211; Enjoy a luxurious and velvety blend of premium tobacco, designed to satisfy both newcomers and seasoned smokers alike. VG/PG Ratio: 75%/25% Nicotine Options: 3mg, 6mg, 12mg,   18mg Bottle Size: 60ml",
     seoAnswerCapsule: "Vct Ripe Vapes 60Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vct-ripe-vapes-60ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "ripe-vapes-vct-e-liquid-120ml-vanilla-custard-tobacco-in",
@@ -4007,7 +4007,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Traditional Vanilla, Custard, and Tobacco fusion Silky, indulgent, and harmoniously blended taste profile Offered in nicotine levels of 3mg, 6mg, 12mg, and 18mg Suited for both MTL (mouth-to-lung) and DL (direct-lung) vaping techniques Premium VG/PG ratio ensuring optimal vapor production and flavor intensity.",
     seoAnswerCapsule: "Ripe Vapes Vct E-Liquid 120Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ripe-vapes-vct-e-liquid-120ml-vanilla-custard-tobacco-in.webp",
+    customImageUrl: "",
   },
   {
     id: "the-pink-panther-series-by-dr-vapes-120ml-e-liquid",
@@ -4033,7 +4033,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Dr. Vapes High-quality e-liquid crafted in the UK 120ml bottle for shortfill | Nicotine Level : 3mg | Nozzle: Squeezer Rich and bold fruit flavors with a unique touch Offers a smooth inhale and produces dense vapor clouds Blend of 78% VG and 22% PG, ideal for sub-ohm vaping",
     seoAnswerCapsule: "The Pink Panther Series By Dr Vapes 120Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/the-pink-panther-series-by-dr-vapes-120ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "the-panther-series-by-dr-vape-e-liquid-120ml",
@@ -4059,7 +4059,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Capacity: 120ml | Nicotine Level: 3mg (0.3%) PG/VG Blend: 22% PG / 78% VG | Category: Shortfill E-Liquid (suitable for sub-ohm vaping) Variety: Offers a range of dessert, fruit, and menthol-inspired flavors Compatible Devices: Designed for sub-ohm vape kits Made: Produced in the UK | Container Type: Convenient easy-squeeze bottle featuring a childproof cap.",
     seoAnswerCapsule: "The Panther Series By Dr Vape E-Liquid 120Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/the-panther-series-by-dr-vape-e-liquid-120ml.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-g3-lite-koko-25w-pod-kit",
@@ -4085,7 +4085,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: Uwell Caliburn G3 Lite KOKO 25W Pod Kit Brand: Uwell Battery Capacity: 950mAh (USB Type-C Rechargeable) E-liquid Capacity: 2.5ml Max Output Power: 25W Design: Lightweight, compact, and button-free Coil Compatibility: G3 Series Mesh Pods (MTL   RDL) Filling System: Side-fill Nicotine Compatibility: Suitable for both Nic Salt   Freebase",
     seoAnswerCapsule: "Uwell-Caliburn-G3-Lite-Koko-25W-Pod-Kit-In is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 85 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/uwell-caliburn-g3-lite-koko-25w-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-g3-pro-pod-kit",
@@ -4111,7 +4111,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Large OLED Display: Enjoy a full-screen dynamic UI for easy visibility of vaping details. Customizable Wattage: Adjust the wattage up to 35W for a personalized vaping experience. 1000mAh Long-Lasting Battery: Features a built-in battery with lasting power. Wide Pod Compatibility: Compatible with all Caliburn G3 cartridges, offering 0.4Ω, 0.6Ω, and 0.9Ω options for various vaping styles (MTL, RDL).",
     seoAnswerCapsule: "Uwell Caliburn G3 Pro Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/uwell-caliburn-g3-pro-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-g3-pod-cartridge",
@@ -4137,7 +4137,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Coil Variants   Pod Capacity:(0.6ohm, 0.9ohm, 1.2ohm for 2.5ml pods) | ( 0.4ohm for 3ml pods) Refilling Method: Side-filling system Material Used: Sturdy PCTG Design Features: Transparent pod with magnetic attachment Coil Installation: Built-in Coil (Magnetic) Packaged in a set of four (4).",
     seoAnswerCapsule: "Uwell Caliburn G3 Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/uwell-caliburn-g3-pod-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "nerd-fire-10000-puffs",
@@ -4163,7 +4163,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Nerd Fire Puff Count: Up to 10,000 puffs Battery Capacity: 650mAh (Rechargeable via USB Type-C) E-liquid Capacity: 14ml Nicotine Strength: 2% (20mg/ml) Quantity: 5 PCS Box",
     seoAnswerCapsule: "Nerd Fire 10000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/nerd-fire-10000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-minera-limited-edition",
@@ -4189,7 +4189,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Supported Brands: TEREA. | Connection Port: USB-C Category: Holder   Pocket Charger Size: 121.5 × 47 × 23.4 mm Mass: 147g | Power Bank Capacity: 2380 mAh Warm-Up Time: ~15 seconds Single Use Duration: Up to 6 minutes or 14 draws Recharge Time: Approx. 2 hours Heating Degree: 350°C (660°F)",
     seoAnswerCapsule: "IQOS Iluma I Minera Limited Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 295 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-minera-limited-edition.webp",
+    customImageUrl: "",
   },
   {
     id: "geekvape-z-zeus-sub-ohm-tank-5ml",
@@ -4215,7 +4215,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Leak-Resistant Top Airflow Design – Bid farewell to messy leaks. Experience smoother, more even airflow thanks to full coil coverage from top to bottom. Robust Coil Selection – Comes equipped with a 0.2Ω Mesh Z2 KA1 coil (70–80W) for high-performance at higher wattages, along with an additional 0.4Ω Mesh Z1 KA1 coil (60–70W) for versatile vaping. Ample E-Liquid Capacity – Enjoy longer vaping sessi",
     seoAnswerCapsule: "Geekvape Z Zeus Sub Ohm Tank 5Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/geekvape-z-zeus-sub-ohm-tank-5ml.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-itank-t-6ml",
@@ -4241,7 +4241,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Optimized for Peak Performance: Crafted to deliver exceptional flavor and vapor production. GTi Coil Versatility: Compatible with GTi mesh coils (0.22Ω   0.42Ω) for rich vapor and intense flavor. Innovative Airflow System: Engineered for smoother draws and minimized leaks. Sturdy Construction: Constructed from high-quality materials for lasting durability. Effortless Refilling: Convenient top-",
     seoAnswerCapsule: "Vaporesso Itank T 6Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 105 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-itank-t-6ml.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-prime-oasis-limited-edition",
@@ -4267,7 +4267,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Color of the device: Orange Type of charging port: USB-C Weight: 171 grams / 6 ounces Capacity of the battery: 2380 mAh Number of consecutive uses: 2 Time required for charging: 2 hours and 15 minutes Type of sticks: Terea.",
     seoAnswerCapsule: "IQOS Iluma Prime Oasis Limited Edition is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 420 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-prime-oasis-limited-edition.webp",
+    customImageUrl: "",
   },
   {
     id: "classic-tobacco-i-love-salts-by-mad-hatter-vape-juice-30ml",
@@ -4293,7 +4293,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: Bold natural tobacco flavor complemented by nutty and earthy notes Nicotine Strengths: Available in 25mg and 50mg salt nicotine options VG/PG Ratio: Balanced 50/50 ratio for a smooth throat hit and well-rounded vapor production Bottle Size: 30ml capacity Formulated For: Ideal for use with low-wattage pod systems Taste Notes: Experience a nutty, grainy, and earthy inhale followed by",
     seoAnswerCapsule: "Classic Tobacco I Love Salts By Mad Hatter Vape Juice 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/classic-tobacco-i-love-salts-by-mad-hatter-vape-juice-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-super-cool-saltnic-30ml-vape-juice",
@@ -4345,7 +4345,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Rejo Model : TS40 Heating Device Vibrant TFT High Definition screen featuring real-time temperature adjustment Customizable heating spectrum: 280–350°C Rapid preheat time – operational in just 15 seconds Capable of accommodating up to 40 sticks on a single full charge Equipped with a robust 3350mAh battery Effortless maintenance – prevents accumulation of tobacco residues USB Type-C port f",
     seoAnswerCapsule: "Rejo Ts40 Heating Device For TEREA is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 160 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/rejo-ts40-heating-device-for-terea.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-watermelon-e-liquid-60ml",
@@ -4371,7 +4371,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Unique Brand: Tokyo Fusion Exciting Blend: Refreshing Watermelon and Ice Fusion Capacity: 60 ml Nicotine Levels: 3mg Cash on Delivery accepted in Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah .",
     seoAnswerCapsule: "Tokyo Iced Watermelon E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-watermelon-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-strawberry-mango-e-liquid-60ml",
@@ -4397,7 +4397,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: A refreshing fusion of ripe strawberries and succulent mango, finished off with a chilled twist. Capacity: 60ml Nicotine Strength: 3mg (Nic Salt) VG/PG Blend: 70/30 Category: Regular E-Liquid Designed For: Ultra-low resistance sub-ohm devices",
     seoAnswerCapsule: "Tokyo Iced Strawberry Mango E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-strawberry-mango-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-cuvie-plus-black-ice-1200-puffs",
@@ -4423,7 +4423,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: HQD Cuvie Plus Flavor: Black Ice Puff: Enjoy up to 1200 puffs of joy. Nicotine Intensity: 50mg/ml (5% Nic Salt) Battery Capacity: 950mAh (not rechargeable) &#8211; It&#8217;s super long-lasting! Weight: 45 grams Input Voltage: 3.7 volts E-liquid Volume: 5.0ml Ohm Level: 1.8Ω.",
     seoAnswerCapsule: "HQD Cuvie Plus Black Ice 1200 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-cuvie-plus-black-ice-1200-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "voom-burst-ultra-30000-puffs-disposable",
@@ -4449,7 +4449,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Count: Enjoy up to 30,000 flavorful draws Nicotine Strength: Contains 20mg (2%) Nicotine Salt for a satisfying experience Battery: Features a 700mAh Type-C rechargeable battery for extended usage E-liquid Capacity: Equipped with a high-capacity prefilled system for convenience Draw-Activated: No buttons, simply inhale for effortless use | Compact and pocket-friendly design for on-the-go vapin",
     seoAnswerCapsule: "Voom Burst Ultra 30000 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voom-burst-ultra-30000-puffs-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "voom-burst-15000-puffs-disposable",
@@ -4475,7 +4475,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Voom | Number of Puffs: 15000 Battery Capacity: 650mAh | Coil Type: Dual Mesh Coil (10W/20W) E-liquid Capacity: 16mL | Activation: Manual Button Nicotine: 5% Salt | Charging Port: Type C 5 pieces of a box. Box Price : 160AED",
     seoAnswerCapsule: "Voom Burst 15000 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voom-burst-15000-puffs-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-peach-melon-e-liquid-60ml",
@@ -4501,7 +4501,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: A delightful combination of ripe peach and sugary melon with a chilled icy undertone Bottle Size: 60ml Nicotine Strength: 3mg (nicotine-free base with added nicotine shot) Type: Shortfill (nicotine-free e-liquid with room for nicotine shots) VG/PG Ratio: Primarily high VG for silky vapor and intense flavor (typically 70VG/30PG) Usage: Compatible with sub-ohm vaping devices  amp",
     seoAnswerCapsule: "Tokyo Iced Peach Melon E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-peach-melon-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-passionfruit-e-liquid-60ml",
@@ -4527,7 +4527,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste: Iced Passionfruit Capacity: 60 milliliters Nicotine Level: 3mg VG/PG Blend: 70% Vegetable Glycerin, 30% Propylene Glycol (perfect for sub-ohm vaping) Silky inhale followed by a frosty exhale.",
     seoAnswerCapsule: "Tokyo Iced Passionfruit E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-passionfruit-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "rejo-hs40-heating-device",
@@ -4553,7 +4553,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "High-Quality Construction : Sleek aluminum alloy casing comes in three stylish colors. Extended Battery Life : Robust 3350mAh battery allows for up to 40 Heets use on a single charge. Personalized Settings : Four heat settings can be adjusted to customize flavor and intensity. Intelligent Design : Compact and ergonomic design features a user-friendly multifunction button. Cutting-Edge Technology :",
     seoAnswerCapsule: "Rejo Hs40 Heating Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 150 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/rejo-hs40-heating-device.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-vibe-replacement-pods",
@@ -4579,7 +4579,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Compatible with Vaporesso Vibe / Vibe SE/ Vibe Nano Pro Pod Kit Pod Capacity: 4.5ml (refillable) Includes Built-in Dual Mesh Coils Product Type: Replacement Pod Cartridge Material: Made of food-grade PCTG plastic Coils: Comes with two built-in coil options: 1.0Ω (ideal for mouth-to-lung vaping) | 0.8Ω (perfect for restricted direct-lung vaping) Explore Now: Vaporesso VIBE Pod Kit",
     seoAnswerCapsule: "Vaporesso Vibe Replacement Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-vibe-replacement-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-vibe-pod-kit",
@@ -4605,7 +4605,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "1100mAh Battery – Fuel your all-day vaping with long-lasting power Adjustable Power (14W–24W) – Customize your vape experience to suit your style 4.5ml Refillable Pod – Spacious pod with a user-friendly top-fill feature Built-In Dual Mesh Coil – Indulge in rich flavors and a velvety MTL draw Ideal for Nic Salts   50/50 E-Liquid – Find the perfect harmony between throat hit and vapor production",
     seoAnswerCapsule: "Vaporesso Vibe Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/vaporesso-vibe-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-mango-peach-e-liquid-60ml",
@@ -4631,7 +4631,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "By: Tokyo Featuring: A delightful fusion of Mango and Peach, culminating in a refreshing icy sensation Size: 60ml bottle Nicotine Levels: Commonly found in 3mg (subject to regional availability) VG/PG Blend: Crafted with a 70/30 VG/PG ratio Category: Freebase Nicotine Formula Ideal for: Sub-ohm vape setups Origin: Hailing from Malaysia Presented in: Securely sealed bottle with a child-proof cap St",
     seoAnswerCapsule: "Tokyo Iced Mango Peach E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-mango-peach-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-litchi-e-liquid-60ml",
@@ -4657,7 +4657,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Sweet Lychee blended with Cool Menthol Capacity: 60ml Nicotine Level: 3mg VG/PG Blend: 70/30 to produce velvety clouds Designed for Sub-Ohm Vaping Devices",
     seoAnswerCapsule: "Tokyo Iced Litchi E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-litchi-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-hami-melon-e-liquid-60ml",
@@ -4683,7 +4683,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Chilled Honeydew Melon Capacity: 60 milliliters Nicotine Level: 3 milligrams VG/PG Blend: 70% VG, 30% PG (for a harmonious mix of clouds and flavor) Cooling Sensation: Present Perfect for sub-ohm vaping.",
     seoAnswerCapsule: "Tokyo Iced Hami Melon E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-hami-melon-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-red-apple",
@@ -4709,7 +4709,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: Delightfully crisp and succulent Red Apple essence Pod Type: Convenient pre-filled disposable pod Pod Capacity: Typically 0.9 mL (varies depending on region) Nicotine Strength: Usually offered in 5% (50mg) nicotine salt concentration Compatibility: Designed specifically for compatibility with SPRK V4 devices and the Myle V4 Kit. Draw Activation: Effortlessly activate by inhaling, n",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Red Apple is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-red-apple.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-peach",
@@ -4735,7 +4735,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile : Succulent and sugary peach Pod Style : Preloaded, one-time use pod Nicotine Concentration : 50mg (5%) Nicotine Salt Pod Capacity : 0.9ml of e-liquid per pod Puff Capacity : Around 600 puffs Device Compatibility : Designed exclusively for Sprk/Myle Vapor V4 devices Activation Method : Effortless inhale-triggered, no buttons required Leak-Proof Construction : Promotes clean and depen",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Peach is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-peach.webp",
+    customImageUrl: "",
   },
   {
     id: "justfog-myfit-replacement-pod-cartridge-2ml",
@@ -4761,7 +4761,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Pod Model: JUSTFOG Myfit Pods Pod Capacity: 2.0ml Filling Design: Side Fill Coil Resistance: 0.9ohm Pod Material: PCTG Pod Connection: Magnetic 3 x JUSTFOG Myfit Replacement Pod Cartridge.",
     seoAnswerCapsule: "Justfog Myfit Replacement Pod Cartridge 2Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/justfog-myfit-replacement-pod-cartridge-2ml.webp",
+    customImageUrl: "",
   },
   {
     id: "justfog-myfit-pod-kit",
@@ -4787,7 +4787,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "800mAh Built-in Battery – Provides long-lasting power for continuous vaping. Compact   Lightweight Design – Conveniently portable and fits easily in your pocket. Draw-Activated Firing System – No buttons required; simply inhale to begin vaping. 2ml Refillable Pod Capacity – Features an easy side-fill design for hassle-free refills. Mesh Coil Technology – 0.9ohm Produces smooth flavor and relia",
     seoAnswerCapsule: "Justfog Myfit Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 80 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/justfog-myfit-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-mighty-mint",
@@ -4813,7 +4813,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile : Indulge in a refreshing blast of icy mint flavor, delivering a crisp and enduring cool sensation with each draw. Pod Capacity : Each pod is packed with 0.9ml of premium salt nicotine e-liquid for your vaping pleasure. Nicotine Strength : Satisfyingly robust, this pod boasts a 5% (50mg) nicotine concentration to cater to those craving a bold throat hit. Puff Count : Enjoy up to 240",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Mighty Mint is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-mighty-mint.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-lush-ice",
@@ -4839,7 +4839,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: Enjoy a blend of juicy watermelon and cool menthol for a revitalizing vaping experience that is balanced and not overwhelming. Nicotine Strength: 5% (50mg) salt nicotine ensures a smooth hit on the throat. Pod Capacity: Each pod contains 0.9mL of e-liquid, providing up to 240 puffs. Design: This device is lightweight and portable, featuring a magnetic connector for convenient charg",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Lush Ice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-lush-ice.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pods-lemon-mint",
@@ -4865,7 +4865,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Elegant Flavor: Lemon Mint &#8211; a refreshing combination of zesty citrus notes followed by a soothing minty touch Pod Capacity: 0.9mL (pre-filled) Nicotine Strength: Typically offered in 5% (50mg) nicotine salt Compatibility: Specifically crafted for Sprk Vapor v4 devices Puff Count: Achieves up to 600 puffs per pod (approx.) Leak-Resistant Design: Crafted to ensure pristine and dependable perf",
     seoAnswerCapsule: "Sprk Vapor V4 Pods Lemon Mint is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pods-lemon-mint.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-iced-quad-berry",
@@ -4891,7 +4891,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile : An invigorating blend of four assorted berries with a refreshing icy undertone Nicotine Strength : Gentle throat hit accompanied by a gratifying nicotine release Puff Count: Approximately 600–800 puffs Pod Capacity : 0.9ml Pod Capacity Packaging: Contains 4 Pods per Pack | 5 Packs per Box Compatibility : Specifically crafted for use with SPRK V4 devices and Myle V4 Kit Convenience",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Iced Quad Berry is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-iced-quad-berry.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-xr-empty-pod-5ml",
@@ -4917,7 +4917,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Vaporesso Pod Volume: 5.0ml Refill Method: Bottom Refill. Items in the Package: 2 Vaporesso LUXE XR Replacement Pods. Interoperability: Luxe XR Vape Kit manufactured by Vaporesso | GTX Replacement Coils created by Vaporesso",
     seoAnswerCapsule: "Vaporesso Luxe Xr Empty Pod 5Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-luxe-xr-empty-pod-5ml.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-iced-coffee",
@@ -4943,7 +4943,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Silky and robust iced coffee with a hint of natural sweetness Pod Compatibility: Specifically crafted for use with SPRK V4 devices and Myle V4 Kit Nicotine Levels: Various strength options available (refer to packaging for details) Pod Capacity: 0.9ml Pod Capacity Puff Count: Approximately 600–800 puffs Coil Type: Features an integrated mesh coil ensuring even vapor production and r",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Iced Coffee is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-iced-coffee.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-fruit-bomb-e-liquid-60ml",
@@ -4969,7 +4969,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Name: Frosty Tokyo Fruit Explosion E-Juice Nicotine Level: 3mg Size: 60ml Flavor: A vibrant fusion of various tropical fruits infused with a chilling menthol breeze VG/PG Ratio: 70% VG / 30% PG for velvety clouds and rich flavor Style: Nicotine-enriched Shortfill E-Juice Best Suited For: Sub-ohm vape devices Packaging Features: Safeguarded with a child-resistant cap and tamper-proof seal Origin: O",
     seoAnswerCapsule: "Tokyo Iced Fruit Bomb E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-fruit-bomb-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-iced-apple-mango",
@@ -4995,7 +4995,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Type: Pre-filled Disposable Pod Flavor Profile: Chilled Iced Apple Mango with a refreshing menthol twist Nicotine Strength: 5% (50mg/mL) Nicotine Salt E-liquid Capacity: 0.9mL per pod Estimated Puffs: Approximately 220–240 per pod Compatible with: Sprk | Myle Vapor V4 Device Inhale Style: Mouth-to-Lung (MTL), Auto-Draw Cooling Sensation: Enhanced with Menthol/Ice Packaging: 4 Pods per Pack",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Iced Apple Mango is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-iced-apple-mango.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-cubano",
@@ -5021,7 +5021,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Luxurious Cuban cigar accompanied by a subtle touch of sweetness Nicotine Level: 50mg/ml Designed for Use with: Sprk/Myle Vapor v4 Device Pod Size: 0.9ml Pod Capacity Pre-loaded and set for immediate enjoyment. Packaging: 4 Pods per Pack | 5 Packs per Box. Get your items zipping across Dubai, Sharjah and Ajman within just 2 – 3 hours with our lightning-fast Same Day Delivery service",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Cubano is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-cubano.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-sweet-tobacco",
@@ -5047,7 +5047,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: SprkMagic Flavor Profile : Experience a delightful blend of smooth, smoky, sweet, creamy, rich, mellow, and satisfying notes. (Compatible with MYLÉ V4) Nicotine Strength : Available in a 5% (50mg) nicotine concentration – subject to local regulations and stock availability. Puff Count : Enjoy approximately 220–240 puffs per pod Pod Capacity : Each magnetic pod holds 0.9mL of e-liquid. Packa",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Sweet Tobacco is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-sweet-tobacco.webp",
+    customImageUrl: "",
   },
   {
     id: "sprk-vapor-v4-pod-sweet-mango",
@@ -5073,7 +5073,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Sprk Flavor Profile : Experience the luscious sweetness of tropical mango with a juicy, refreshing finish. (Compatible with MYLÉ V4) Nicotine Strength : Offered in a nicotine level of 5% (50mg) – subject to regional availability and regulations. Puff Count : Approximately 220–240 puffs per pod Pod Capacity : 0.9mL magnetic pod. Packaging: 4 Pods per Pack | 5 Packs per Box. Guaranteed 2-3 Ho",
     seoAnswerCapsule: "Sprk Vapor V4 Pod Sweet Mango is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/sprk-vapor-v4-pod-sweet-mango.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-cranberry-raspberry-e-liquid-60ml",
@@ -5099,7 +5099,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Name: Tokyo Frosty Berry Blast E-Juice Size: 60ml Taste Profile: Cranberry and Raspberry combined with a crisp menthol chill Nicotine Level: Available in 3mg / 6mg (may vary by location) VG/PG Blend: 70/30 (Vegetable Glycerin/Propylene Glycol) – perfect for sub-ohm vaping Category: Freebase Nicotine Vape Juice Container: Chubby Gorilla bottle with child-resistant cap Perfect Match For: Direct-To-L",
     seoAnswerCapsule: "Tokyo Iced Cranberry Raspberry E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-cranberry-raspberry-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-cappuccino-e-liquid-60ml",
@@ -5151,7 +5151,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Options: Blueberry, Watermelon, Ice Bottle Capacity: 60ml Nicotine Levels: Various options (3mg available) VG/PG Blend: 70/30 for enhanced flavor and dense vapor production Designed for sub-ohm vaping.",
     seoAnswerCapsule: "Tokyo Iced Blueberry Watermelon E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-blueberry-watermelon-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-blueberry-e-liquid-60ml",
@@ -5177,7 +5177,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste: Frosty Blueberry Blast Bottle Capacity: 60ml Nicotine Level: 3mg VG/PG Mix: 70/30 (crafted for velvety clouds and rich taste) Recommended for: Compatible with sub-ohm vaping setups Crafted: Artisanal e-liquid of exceptional quality hailing from Tokyo.",
     seoAnswerCapsule: "Tokyo Iced Blueberry E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-blueberry-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-iced-strawberry-lychee-e-liquid-60ml",
@@ -5203,7 +5203,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Tokyo E-liquid VG/PG Ratio: 70%/30% Volume: 60 ml Nicotine Level: 3mg Flavor: Strawberry, Lychee, Ice.",
     seoAnswerCapsule: "Tokyo Iced Strawberry Lychee E-Liquid 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/tokyo-iced-strawberry-lychee-e-liquid-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-gpp-replacement-pod-cartridge",
@@ -5229,7 +5229,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "3mL E-Liquid Capacity . Incorporated Mesh Coil Structure – Brings out robust flavor and velvety vapor Designed to Prevent Leaks – Reduces e-liquid seepage Effortless Top-Fill Mechanism – Simplifies refills without spills Quick and Secure Magnetic Pod Connection – Ensures easy installation Variety of Coil Options – Catering to both MTL and RDL vaping preferences Clear E-Liquid Indicator Window – En",
     seoAnswerCapsule: "Uwell Caliburn Gpp Replacement Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/uwell-caliburn-gpp-replacement-pod-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "tropx-xplod-by-sams-vape-salt-nic-30ml",
@@ -5255,7 +5255,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product: Frozen Tropx Xplod Quantity: 30ML Blend: Blueberries, Raspberries, Strawberries Nicotine Strength: 30mg, 50mg VG/PG Ratio: 70/30, Customized 80/20, 60/40, 50/50 Container: 30ml PET Plastic For E-Liquid Customization: OEM/ODM services available.",
     seoAnswerCapsule: "Tropx Xplod By Sams Vape Salt Nic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/tropx-xplod-by-sams-vape-salt-nic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-frozen-tropx-xplod-30ml-saltnic",
@@ -5307,7 +5307,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Coils: 0.2 Ohm DTL coil (45-60W) 0.4 Ohm RDL coil (28-38W) 0.6 Ohm RDL coil (20-25W) Cartridge Capacity: 5ml Top Fill (Standard) Pack Contents: Each pack includes 2 cartridges Compatibility: Compatible with products from the VPrime series Quick Links: OXVA VPrime Kit .",
     seoAnswerCapsule: "OXVA Vprime Replacement Pod Cartridges 5Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxva-vprime-replacement-pod-cartridges-5ml.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-vprime-pod-kit-60w-2600mah-battery",
@@ -5333,7 +5333,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Pod Capacity : 2.0 milliliters Battery Capacity : 2600 milliampere-hours (integrated) Charging : USB Type-C (2 amperes) Output Mode : Smart Variable Wattage (5 to 60 watts) lass=&#8221;&#8221;  Airflow Control : Side airflow slider  strong Available Coil Options: 0.2-ohm, 0.4-ohm, 0.6-ohm Compatibility: Oxva VPRIME Cartridges 3ml",
     seoAnswerCapsule: "OXVA Vprime Pod Kit 60W 2600Mah Battery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 125 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/oxva-vprime-pod-kit-60w-2600mah-battery.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-silver-from-uzbekistan",
@@ -5359,7 +5359,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: Terea Silver HeatSticks Product Type: Tobacco HeatSticks designed exclusively for IQOS ILUMA devices Origin: Originating from Uzbekistan Flavor Profile: Delicately balanced and exceptionally smooth | Featuring a subtle and gentle tobacco flavor | Free from added flavors or overpowering aromas Nicotine Content: Moderately dosed Compatibility: Compatible with IQOS ILUMA and IQOS ILUMA",
     seoAnswerCapsule: "IQOS TEREA Silver From Uzbekistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-silver-from-uzbekistan.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-purple-wave-uzbekistan-for-iqos-iluma-device",
@@ -5385,7 +5385,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Terea (Compatible with IQOS Iluma) Variant: Purple Wave Origin: Uzbekistan Flavor Profile: Refreshing blend of menthol and berry notes, predominantly blueberry Type: Heat-not-burn tobacco stick Nicotine Content: Moderate Strength: Medium to strong menthol sensation Taste Notes: Offers a cool, fruity, and invigorating experience Best For: Smokers who savor fruity menthol flavors Compatible D",
     seoAnswerCapsule: "TEREA Purple Wave Uzbekistan For IQOS Iluma Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-purple-wave-uzbekistan-for-iqos-iluma-device.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-green-zing-uzbekistan",
@@ -5411,7 +5411,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name : Zestful Lime Menthol by Terea Green Category : Lime-infused menthol tobacco sticks designed for the IQOS ILUMA device Flavor Profile : Menthol blended with zesty lime or citrus notes Country of Origin : Originated from Uzbekistan Usage : Specifically crafted for use with IQOS ILUMA devices featuring the SMARTCORE INDUCTION SYSTEM™ Pack Size : Typically consists of 20 sticks per pack",
     seoAnswerCapsule: "TEREA Green Zing Uzbekistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-green-zing-uzbekistan.webp",
+    customImageUrl: "",
   },
   {
     id: "smok-nfix-pro-kit-25w-vape-device",
@@ -5437,7 +5437,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Power Output : Variable up to 25 watts Battery Capacity : Inbuilt rechargeable 700mAh battery Screen : 0.69-inch OLED display Pod Capacity : 2ml pod, can be refilled Coil Compatibility : LP1 coil series support Airflow : Customizable airflow mechanism Charging : Rapid Type-C charging Appearance : Sleek, featherweight, and easy to carry.",
     seoAnswerCapsule: "Smok Nfix Pro Kit 25W Vape Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 95 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/smok-nfix-pro-kit-25w-vape-device.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-zero-s-replacement-pods-2ml",
@@ -5463,7 +5463,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Liquid Capacity: 2ml Resistance Options: 1.0Ω coil (pre-installed), 1.2Ω coil (available) Fill System: Top-fill with push-to-fill mechanism Material: Made from PCTG food-grade plastic Compatible with: Vaporesso Zero S, Zero 2, and original Renova Zero devices Mouthpiece: Designed ergonomically for comfort Leak-Proof Technology: Included Packaging: Usually sold in packs containing 2 or 4 pods Desig",
     seoAnswerCapsule: "Vaporesso Zero S Replacement Pods 2Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-zero-s-replacement-pods-2ml.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-black-green-from-indonesia",
@@ -5489,7 +5489,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Refreshing blend of menthol, herbal, and citrus Potency: Moderately potent Suitability: Exclusively for IQOS ILUMA / ILUMA ONE / IQOS ILUMA PRIME (incompatible with older IQOS models) Package Contents: 20 sticks in each pack Innovation: Utilizing Smartcore Induction System™ (no blade heating) Chill Factor: Intense and invigorating menthol experience.",
     seoAnswerCapsule: "IQOS TEREA Black Green From Indonesia is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-black-green-from-indonesia.webp",
+    customImageUrl: "",
   },
   {
     id: "lambda-i9-device-for-terea",
@@ -5515,7 +5515,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Device Type : Heat-Not-Burn (HNB) Tobacco Heating System Temperature Range : Variable (200°C – 300°C) Heating Time : 15 – 20 seconds Usage Time : Up to 6 minutes per session or 16 inhalations (whichever occurs first) Battery Capacity : 3200mAh (Integrated rechargeable lithium battery) Charging Port : USB Type-C Charging Time : Around 2.5 hours Auto-Cleaning Function : Yes – includes a built-in cle",
     seoAnswerCapsule: "Lambda I9 Device For TEREA is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/lambda-i9-device-for-terea.webp",
+    customImageUrl: "",
   },
   {
     id: "juul-2-ruby-menthol-pods",
@@ -5541,7 +5541,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: JUUL2 Pods Ruby Menthol Flavor Profile: Ruby Menthol (a blend of fruity notes with a refreshing menthol finish) Nicotine Strength: 18 mg/mL (1.8%) Pod Capacity: Each pod contains 1.2 mL of e-liquid Pod Type: Pre-filled pods for a closed vaping system Compatibility: Specifically designed for use with the JUUL2 Device (not compatible with the original JUUL) Pack Size: Typically include",
     seoAnswerCapsule: "JUUL 2 Ruby Menthol Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/juul-2-ruby-menthol-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "juul2-polar-menthol-pods",
@@ -5567,7 +5567,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: JUUL 2 Pods &#8211; Polar Menthol Brand: JUUL Model: JUUL 2 Replacement Pods Flavor Profile: Refreshing icy menthol flavor with a cooling finish Pod Capacity: 1.2 ml per pod Puffs per Pod: Up to 600 puffs Nicotine Strength: 18mg/ml Box Contents: 2 pods per box Coil: 1.2 ohms Compatibility: JUUL 2 Pods are compatible with the JUUL 2 Device.",
     seoAnswerCapsule: "Juul2 Polar Menthol Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/juul2-polar-menthol-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "isgo-saltnic-30ml-e-juice-25mg-and-50mg",
@@ -5593,7 +5593,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Manufacturer: ISGO 30mL Unicorn Bottle Cap with Child-Resistant Feature E-liquid with Nicotine Salts Specifically designed for use with Ultra-Low Wattage   Pod Systems Produced in the United Kingdom Nicotine Strengths: 25mg and 50mg",
     seoAnswerCapsule: "Isgo Saltnic 30Ml E-Juice 25Mg And 50Mg is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/isgo-saltnic-30ml-e-juice-25mg-and-50mg.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-blue-by-indonesian",
@@ -5619,7 +5619,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Item Name: IQOS TEREA Blue Place of Origin: Indonesia Flavor Description: Refreshing menthol flavor with a velvety, cooling feel and delicate hints of aroma Nicotine Level: Regular strength (equivalent to standard TEREA varieties) Recommended for Use with: IQOS ILUMA series (featuring Smartcore Induction System – no blades) Packaging: Stylish TEREA packaging – elegant design with hints of blue Cau",
     seoAnswerCapsule: "IQOS TEREA Blue By Indonesian is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-blue-by-indonesian.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-bright-wave-indonesian",
@@ -5645,7 +5645,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: TEREA Bright Wave Category: HeatStick designed for IQOS ILUMA Flavor Description: Features a revitalizing menthol taste accompanied by a velvety, cooling feel and delicate hints of citrus or herbal nuances Source: Importation of this product is common, frequently distributed in Indonesia through parallel importation channels Device Compatibility: Specifically engineered for use with",
     seoAnswerCapsule: "IQOS TEREA Bright Wave Indonesian is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-bright-wave-indonesian.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-green-indonesian",
@@ -5671,7 +5671,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: IQOS TEREA Green (Indonesia) Category: HeatStick (designed for use with IQOS ILUMA devices only) Flavor Description: Menthol with hints of herbal and cooling sensations Nicotine Level: Regular (standard tobacco strength) Market Focus: Indonesia Device Compatibility: Exclusively compatible with IQOS ILUMA devices (Smartcore Induction System – not compatible with previous IQOS models)",
     seoAnswerCapsule: "IQOS TEREA Green Indonesian is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-green-indonesian.webp",
+    customImageUrl: "",
   },
   {
     id: "terea-bronze-by-indonesian",
@@ -5697,7 +5697,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name : TEREA Bronze Blend for IQOS Flavor Profile : Delightful mix of smooth tobacco enhanced by hints of cocoa and dried fruit Strength Level : Medium to robust Aroma Description : Luxuriously rich and inviting, leaving a subtly sweet finish Recommended For : Connoisseurs of refined tobacco flavors seeking a sophisticated twist Device Compatibility : Exclusive for use with the IQOS ILUMA",
     seoAnswerCapsule: "TEREA Bronze By Indonesian is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/terea-bronze-by-indonesian.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-original-tobacco-saltnic-30ml",
@@ -5723,7 +5723,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Tokyo Flavor: Original Tobacco Type: Nicotine Salt (Saltnic) Bottle Size: 30ml Nicotine Strength: Typically offered in 35mg VG/PG Ratio: Generally 50/50 blend (recommended for pod systems) Flavor Profile: Delivers a smooth and full-bodied traditional tobacco flavor with a hint of sweetness Usage: Intended for use with low-wattage devices and pod systems exclusively Origin: Manufactured in M",
     seoAnswerCapsule: "Tokyo Original Tobacco Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/tokyo-original-tobacco-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-dry-tobacco-saltnic-30ml",
@@ -5749,7 +5749,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Description: Robust notes of dry tobacco Container Capacity: 30ml Nicotine Variant: Nicotine Salt Nicotine Levels: Usually found in- 35mg options Balance of VG/PG: 50/50 – Perfect for pod systems Suggested Usage: Recommended for MTL (mouth-to-lung) vaping devices exclusively.",
     seoAnswerCapsule: "Tokyo Dry Tobacco Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/tokyo-dry-tobacco-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "golden-tobacco-by-tokyo-saltnic-30ml",
@@ -5775,7 +5775,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Immerse yourself in the luxurious and bold flavor of Tokyo Golden Tobacco . Presenting in a convenient 30ml bottle, this top-tier e-liquid delivers a velvety and gratifying vaping sensation. Tailored for those in pursuit of a robust tobacco taste without the biting edge, Tokyo Golden Tobacco stands as the go-to selection for avid vaping enthusiasts. Brand: Tokyo E juice Flavors: Tobacco, Caramel R",
     seoAnswerCapsule: "Golden Tobacco By Tokyo Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/golden-tobacco-by-tokyo-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "awt-rainbow-18650-vape-battery",
@@ -5801,7 +5801,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Model: 18650 Brand: AWT (Aweitong) Appearance: Features a vibrant rainbow-colored exterior Battery Type: Rechargeable lithium-ion (Li-ion) Capacity: Typically falls within the range of 2500mAh to 3000mAh (verify specific model) Voltage: Nominal rating of 3.7V Max Discharge Current: Customarily specified between 20A–35A based on the individual model Functionality: Widely utilized in vape mods, flas",
     seoAnswerCapsule: "Awt Rainbow 18650 Vape Battery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/awt-rainbow-18650-vape-battery.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-v2-empty-pod-cartridge-in-the",
@@ -5827,7 +5827,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "E-Liquid Capacity: 2ml Resistance: 1.2Ω MTL Coil (10-12W) 0.6Ω A1 mesh coil (20-25W) 0.8Ω A1 mesh coil (12-16W) Quantity: 3 pieces per pack",
     seoAnswerCapsule: "OXVA Xlim V2 Empty Pod Cartridge In The is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxva-xlim-v2-empty-pod-cartridge-in-the.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-pro-pod-kit-in",
@@ -5853,7 +5853,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Range of Adjustable Wattage: 5 to 30W Capacity for E-Liquid: 2ml Integrated Coils Pod Device for MTL (Mouth-to-Lung) Vaping Enhanced battery power: 1000mAh Uninterrupted use for: 3-days Handy Links: Explore the OXVA Xlim Pro Pod for unparalleled vaping joy. Check out the OXVA Xlim V2 Empty to customize your vaping experience.",
     seoAnswerCapsule: "OXVA Xlim Pro Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/oxva-xlim-pro-pod-kit-in.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-terea-amber-by-uzbekistan",
@@ -5879,7 +5879,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Now available in Uzbekistan, come to IQOS TEREA Amber for a refined tobacco journey. It was developed exclusively for the IQOS ILUMA series , and provides smooth, rich tobacco taste with a hint of woody and nutty aromas. If you prefer the classic balanced flavor, it&#8217;s yours. Without smoke or ash to bother you, the price is worth avoiding addictive substances is our promise to you. Each stick",
     seoAnswerCapsule: "IQOS TEREA Amber By Uzbekistan is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-amber-by-uzbekistan.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-ez-cartridges-3ml-pod",
@@ -5905,7 +5905,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Xlim series pods cartridge replacement. 3ml capacity. Top fill. Built-in mesh coil. Various 4 options: 0.4 / 0.6 / 0.8 / 1.2ohm. Sold in packs of 3pcs. Click Link: OXVA Xlim SQ Pro 2 Pod Kit",
     seoAnswerCapsule: "OXVA Xlim Ez Cartridges 3Ml Pod is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxva-xlim-ez-cartridges-3ml-pod.webp",
+    customImageUrl: "",
   },
   {
     id: "vozol-star-20000-puffs-disposable-vape",
@@ -5931,7 +5931,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Vozol Disposable Model : Star 20000 Puffs Puffs : Up to 15000 &#8211; 20000 Puffs Coil Type : Dual Mesh Coil Display : Color Screen Design : Fully Transparent Design Battery : 650mAh Liquid Capacity : 24ML",
     seoAnswerCapsule: "Vozol Star 20000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-star-20000-puffs-disposable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "tugboat-t12000-puffs-disposable-vape-50mg",
@@ -5957,7 +5957,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "12000puffs Battery Capacity: 600 mAh Charging Port: USB Type-C E-Liquid Capacity: 24 ml Coil: 1.0ohm Nicotine: 50 mg",
     seoAnswerCapsule: "Tugboat T12000 Puffs Disposable Vape 50Mg is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-t12000-puffs-disposable-vape-50mg.webp",
+    customImageUrl: "",
   },
   {
     id: "maskking-cool-mint-disposable-500-puffs-in",
@@ -5983,7 +5983,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Description: Maskking Cool Mint Disposable Pod Vape Puff Capacity: Up to 500 puffs Flavor Profile: Cool Mint flavor delivers a refreshing menthol experience Nicotine Strength: 2% (20mg) Salt Nicotine Battery Type: Integrated and non-rechargeable Activation Method: Draw-activated system, no physical buttons required Design Features: Compact, portable, and user-friendly Suitable For: Novice",
     seoAnswerCapsule: "Maskking Cool Mint Disposable 500 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 20 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/maskking-cool-mint-disposable-500-puffs-in.webp",
+    customImageUrl: "",
   },
   {
     id: "maskking-lush-ice-disposable",
@@ -6009,7 +6009,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor : Watermelon flavor enhanced by a menthol undertone (Lush Ice). Puff Count : Ranging from 500 to 600 puffs (varies depending on the model). Battery : Inclusive of a built-in battery with capacities ranging from 280mAh to 600mAh (non-rechargeable). E-liquid : Contains pre-filled volumes of 2.0ml to 3.5ml of nicotine salt e-liquid. Nicotine Strength : Typically falls within the range of 2% (s",
     seoAnswerCapsule: "Maskking Lush Ice Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 20 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/maskking-lush-ice-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "myle-meta-max-18000-puffs-disposable-in",
@@ -6035,7 +6035,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "CreaTive RewriTe: Voluminous 18 milliliters 50 milligrams of Nicotine 18000 flavorful puffs 850mAh rechargeable powerhouse Innovative LCD Screen showing Battery and Liquid longevity Twin Mesh Coil system State-of-the-art Anti-leak mechanism Type-C High Speed Charging efficiency.",
     seoAnswerCapsule: "MYLE Meta Max 18000 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-meta-max-18000-puffs-disposable-in.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-grape-drank-on-ice-100ml-e-juice",
@@ -6061,7 +6061,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Grape, Confectionery, Grape Soda, Drink Composition: Freebase Nicotine Level: 3mg VG/PG Ratio: 85/15 Volume: 100ml.",
     seoAnswerCapsule: "Ruthless Grape Drank On Ice 100Ml E-Juice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-grape-drank-on-ice-100ml-e-juice.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-grape-drank-e-juice-100ml",
@@ -6087,7 +6087,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Name: Ruthless Grape Drank Volume: 100ml Nicotine Level: 3mg VG/PG Ratio: 70/30 Taste Profile: Blend of grape soda, candy, and cough syrup Container: Chubby Gorilla bottle with child-proof cap Origin: USA Best Suited For: Sub-ohm vaping.",
     seoAnswerCapsule: "Ruthless Grape Drank E-Juice 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-grape-drank-e-juice-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "maskking-grape-paradise-disposable-500-puffs",
@@ -6113,7 +6113,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "BRAND : MK (Maskking) VARIANT : Disposable Pod System USAGE : Simply open and indulge PRODUCT NAME : HIGH GT FLAVOR : Grape Paradise DIMENSIONS : 10.3mm x 18mm x 110.2mm BATTERY : 350mAh CAPACITY : 2.0ml CONTAINS : Glycerin, Propylene Glycol, Flavorings AVAILABLE FLAVORS FROM MK (MASKKING)",
     seoAnswerCapsule: "Maskking Grape Paradise Disposable 500 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 20 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/maskking-grape-paradise-disposable-500-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-blast-berry-salt-nic-30ml-e-liquid-in-duabi",
@@ -6139,7 +6139,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Sam Vapes Elevated Nicotine Potency : Offered in 30mg and 50mg Salt Nicotine. Flavor: Exquisite Blend of Berries VG/PG: Balanced at 50/50 Size: 30 ml",
     seoAnswerCapsule: "Sams Vape Blast Berry Salt Nic 30Ml E-Liquid In Duabi is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/sams-vape-blast-berry-salt-nic-30ml-e-liquid-in-duabi.webp",
+    customImageUrl: "",
   },
   {
     id: "sams-vape-berry-crash-salt-nic-30ml-e-juice-in",
@@ -6191,7 +6191,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Velo Units Per Can: 15 Quantity Per Can: 20 pieces Weight Per Unit: 0.75 grams Nicotine Level: 10 milligrams Flavor: Crispy Peppermint Country Of Origin: Sweden Manufacturer: British American Tobacco Ltd.",
     seoAnswerCapsule: "Velo Crispy Peppermint 10Mg Nicotine Pouches– is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
-    customImageUrl: "/imported/velo-crispy-peppermint-10mg-nicotine-pouches.webp",
+    customImageUrl: "",
 
   },
   {
@@ -6218,7 +6218,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: Velo Powerful Peppermint Nicotine Strength: 10.9 mg per pouch Format: Slim, All-White Nicotine Pouches Flavor: Peppermint &#8211; Strong, refreshing mint flavor with an invigorating kick Pouch Count: Typically 20 pouches per can Usage: Place between gum and upper lip; no need to spit Tobacco-Free: Yes (contains nicotine derived from tobacco, but no actual tobacco) Manufacturer: Briti",
     seoAnswerCapsule: "Velo Mighty Peppermint-10.9Mg Nicotine Pouches is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Nicotine Pouches",
-    customImageUrl: "/imported/velo-mighty-peppermint-10-9mg-nicotine-pouches.webp",
+    customImageUrl: "",
   },
   {
     id: "velo-witty-spearmint-nicotine-pouches-6mg",
@@ -6271,7 +6271,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Iluma I Standard Violet – Key Features Chic Violet Shade : An elegant violet color that enhances with a fashionable and contemporary appearance. Sleek Design : Compact and stylish form factor allows for convenient portability and subtle usage. High-Quality Construction : Crafted with premium materials to provide a smooth and long-lasting finish. Intuitive Operation : Easy-to-use controls designed",
     seoAnswerCapsule: "IQOS Iluma I Standard Violet is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 320 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-standard-violet.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-standard-leaf-green",
@@ -6323,7 +6323,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: IQOS Terea Flavor: dimensions Apricity Country of Manufacture: Indonesia Package Includes: 200 sticks Puffs per Stick: 14 Puffs Nicotine per Stick: 0.5 mg Compatible with: IQOS Iluma device.",
     seoAnswerCapsule: "IQOS TEREA Dimensions Apricity Indonesian is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 115 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "TEREA Sticks",
-    customImageUrl: "/imported/iqos-terea-dimensions-apricity-indonesian.webp",
+    customImageUrl: "",
   },
   {
     id: "al-fakher-crown-bar-15000-puffs-hypermax-disposable",
@@ -6349,7 +6349,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puff Duration: Supports Up To 15000 Puffs. Liquid Volume: 30ml Power Source: 850mAh Rechargeable Battery (Type-C) Nicotine Strength: 6mg (0.6%) Coil Type: 0.6 ohm Mesh Coil",
     seoAnswerCapsule: "Al Fakher Crown Bar 15000 Puffs Hypermax Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/al-fakher-crown-bar-15000-puffs-hypermax-disposable.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-sq-pro-2-pod-kit-in",
@@ -6375,7 +6375,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Rechargeable with USB-C: 1600mAh Battery Capacity Adjustable Wattage Range of 5-30W Supports Direct-to-Lung (DTL), Restricted Direct-to-Lung (RDTL),   Mouth-to-Lung (MTL) Vaping Styles Activated by Drawing Features a 1.09” Touchscreen Display with Various Modes 2ml Pod that is Refillable Allows for Airflow Adjustment between MTL and DTL vaping styles Quick Links: OXVA XLIM Top Fill Pods OXVA X",
     seoAnswerCapsule: "OXVA Xlim Sq Pro 2 Pod Kit In is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/oxva-xlim-sq-pro-2-pod-kit-in.webp",
+    customImageUrl: "",
   },
   {
     id: "uae-uwell-caliburn-g3-pro-koko-pod-kit",
@@ -6401,7 +6401,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Product Name: Uwell Caliburn G3 Pro KOKO Pod Kit Brand: Uwell Battery Capacity: 900mAh (Rechargeable via USB Type-C) E-liquid Capacity: 2.5ml Output Power: Adjustable up to 25W Display: 0.96″ OLED Screen Firing Mechanism: Auto-draw   Button-activated Coil Compatibility: Integrated Mesh Coil (MTL   RDL Options) Material: Durable Aluminum Alloy Pod Filling Type: Top-fill design",
     seoAnswerCapsule: "Uwell Caliburn G3 Pro Koko Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/uae-uwell-caliburn-g3-pro-koko-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vozol-vista-20000-puffs-rechargeable-vape",
@@ -6427,7 +6427,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Vozol Vista 20000 Puffs In Dubai,UAE Packages 1Pcs   10Pcs In A Box buy 10 Pcs Get Free Delivery",
     seoAnswerCapsule: "Vozol Vista 20000 Puffs Rechargeable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/vozol-vista-20000-puffs-rechargeable-vape.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-cuvie-plus-2-0-disposable-vape-9000-puffs",
@@ -6453,7 +6453,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "HQD Cuvie Plus 2.0 Disposable Vape – 9000 Puffs Experience smooth, long-lasting vaping with the HQD Cuvie Plus 2.0. Packed with up to 9000 puffs and powered by a reliable 600mAh battery, it offers bold flavor and convenience in a sleek, disposable design.",
     seoAnswerCapsule: "HQD Cuvie Plus 2.0 Disposable Vape 9000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-cuvie-plus-2-0-disposable-vape-9000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "tugboat-vape-4500-puffs-disposable-in",
@@ -6479,7 +6479,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "10 mL per e-cigarette 5% nicotine by weight Approximately 4500 puffs per device Made with salt nicotine Pre-filled Pre-charged Draw-activation firing mechanism",
     seoAnswerCapsule: "Tugboat Vape 4500 Puffs Disposable is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 25 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/tugboat-vape-4500-puffs-disposable-in.webp",
+    customImageUrl: "",
   },
   {
     id: "lambda-i10-hnb-device",
@@ -6505,7 +6505,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Heating Type: Smart Induction Heating System Adjustable Temperature: 200°C – 300°C Adjustable Smoking Time: 3 – 6 minutes LED Display: Yes (real-time temperature and session data) Battery Capacity: 3200mAh – Long-lasting use",
     seoAnswerCapsule: "Lambda I10 Hnb Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 240 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/lambda-i10-hnb-device.webp",
+    customImageUrl: "",
   },
   {
     id: "crisp-menthol-juul-2-pods",
@@ -6531,7 +6531,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Crisp, icy, and refreshing menthol. Box contains: 2 pods Puffs: 600 puffs per pod Nicotine strength: 18mg/ml Compatible: JUUL 2 Device",
     seoAnswerCapsule: "Crisp Menthol JUUL 2 Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/crisp-menthol-juul-2-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "juul-2-pods-autumn-tobacco-in",
@@ -6557,7 +6557,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: JUUL Flavor: Natural Strip mellow tobacco flavor With a tang of fruity orchard plucking Box contains: 2pods. Puffs: 600puffs per pod. Nicotine strength: 18mg/ml. Compatible: JUUL 2Device. 1-Hour Delivery in Dubai, Ajman, Sharjah! 12 to 24 Hour Delivery in all over UAE! Free Delivery for Orders Over 250AED!",
     seoAnswerCapsule: "JUUL 2 Pods Autumn Tobacco is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 65 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/juul-2-pods-autumn-tobacco-in.webp",
+    customImageUrl: "",
   },
   {
     id: "hayati-pro-ultra-15000-puffs-in",
@@ -6583,7 +6583,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puffs: Upto 15,000 puffs (approximate, based on usage) Battery: Rechargable, usually 650mAh or equivalent Charging: USB  strong Type-C port E-liquid capacity: Large, generally prefilled (see local specs, often More Info around 12ML  /li  Nicotine level: 2 percent nicotine salt (by weight, regular nicotine and disposable devices are available in 2.4 percent). Mesh coil design &#8211; be",
     seoAnswerCapsule: "Hayati Pro Ultra 15000 Puffs is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/hayati-pro-ultra-15000-puffs-in.webp",
+    customImageUrl: "",
   },
   {
     id: "summer-menthol-juul-2-pods",
@@ -6609,7 +6609,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Compatibility: JUUL 2 Device Only Flavor Profile: Refreshing menthol with a subtle summer-inspired twist Nicotine Strength: 18 mg/mL (1.8%) E-Liquid Volume: 1.2 mL per pod Puffs Per Pod: Approximately 200–250 Pod Count: 2 pods per pack",
     seoAnswerCapsule: "Summer Menthol JUUL 2 Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/summer-menthol-juul-2-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "virginia-tobacco-juul-2-pods",
@@ -6635,7 +6635,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor: Grassy, citrusy, or slightly sweet Puffs: 600 puffs per pod Nicotine strength: 18mg/ml Compatible: JUUL 2 Device 🚚 1-Hour Delivery in Dubai, Ajman, Sharjah! 🚚 12 to 24 Hour Delivery in all over UAE",
     seoAnswerCapsule: "Virginia Tobacco JUUL 2 Pods First Delivery is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/virginia-tobacco-juul-2-pods.webp",
+    customImageUrl: "",
   },
   {
     id: "juul-2-starter-kit",
@@ -6661,7 +6661,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Packing Includes: 1x Juul 2 Kit 1x USB Charging Dock 1x Pod Virginia Tobacco 18mg 1x Pod Crisp Menthol 18mg",
     seoAnswerCapsule: "Best JUUL 2 Starter Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/juul-2-starter-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "nasty-juice-60ml-e-liquid",
@@ -6713,7 +6713,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Puffs: 30000 puffs(Normal Mode) 15000 puffs(Boost Mode) Resistant: 1.2Ω Mesh Coil Nicotine: 50mg Battery: 900mAh Charging: Type-C Material: PC Size: 50*90*23mm Weight: 91g",
     seoAnswerCapsule: "Oxbar 30K Magic Maze 2 Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxbar-30k-magic-maze-2.webp",
+    customImageUrl: "",
   },
   {
     id: "tokyo-crazy-fruits-saltnic-30ml",
@@ -6739,7 +6739,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand Name: Tokyo VG/PG Ratio: 50%/50% for a balanced vaping experience. Size: 30ml, providing a substantial amount of e-liquid. Nicotine Strengths: Available in 35mg and 50mg options, catering to various preferences. Flavor Profile: A captivating blend of crazy fruits, delivering a vibrant and bold taste",
     seoAnswerCapsule: "Tokyo Crazy Fruits Saltnic 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/tokyo-crazy-fruits-saltnic-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "iqos-iluma-i-prime",
@@ -6765,7 +6765,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: PMI (Philip Morris International) Charger: USB-C Weight: 171 g (6 oz) Battery: 2380 mAh Consecutive Uses: 2 Charge Time: 2h 15m Heat Temp: 350°C (660°F) Session Time: 6 minutes or 14 puffs",
     seoAnswerCapsule: "IQOS Iluma I Prime Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 380 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "IQOS ILUMA Devices",
-    customImageUrl: "/imported/iqos-iluma-i-prime.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-g4-pod-kit-1300mah",
@@ -6791,7 +6791,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "1300mAh battery (USB-C fast charging) 35W max output Dual Power Modes MTL   RDL vaping Inhale   button activation Adjustable Airflow",
     seoAnswerCapsule: "Uwell Caliburn G4 Pod Kit 1300Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 110 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/uwell-caliburn-g4-pod-kit-1300mah.webp",
+    customImageUrl: "",
   },
   {
     id: "best-vozol-star-12000-puffs",
@@ -6817,7 +6817,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Vozol Series: Star 12000 Shooting Time: 12000 Puffs Nicotine:5% Liquid Tank Capacity: 20 ML Battery: 650mAh Fast charging support (Full Charge in 45 Minutes) Coil: SiLC Technology Additional Features: 30% faster charging, Shake for displays Processing Chip: MCU Chip",
     seoAnswerCapsule: "Best Vozol Star 12000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/best-vozol-star-12000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "white-fox-nicotine-pouches",
@@ -6869,7 +6869,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: FUMMO Puff Capacity: Up to 8000 Puffs E-Liquid Volume: 10ml Battery Capacity: 1400mAh (Non-Rechargeable) Charging: Not Required – Fully Integrated Battery Nicotine Strength: 20MG (2%) Nicotine Salts Coil Technology: Mesh Coil (1.0Ω Resistance)",
     seoAnswerCapsule: "Fummo Magnum 8000 Puffs Disposable Vape 2% is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/fummo-magnum-8000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "voom-cobble-20000-puffs",
@@ -6895,7 +6895,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Build-in-Battery: 600 mAh Charging: Type-C (TYPE-C interface, fast charging, to ensure) Coil Mode: Mesh Coil 1 Mode / Mesh Coil 2 mode E-Liquid Capacity: 16ml Puffs: Approx. 20000 Puffs",
     seoAnswerCapsule: "Voom Cobble 20000 Puffs Disposable All Flavors is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voom-cobble-20000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "elfbar-e-shisha-luxe-30000-puffs",
@@ -6921,7 +6921,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : ELFBAR Puff Count: Up to 30,000 puffs Battery: Rechargeable 850mAh built-in battery (USB Type-C) Nicotine Strength: 2% (20mg/ml) E-liquid Capacity: 20ml (approx.) Draw Activation: Yes (no buttons needed) Airflow Control: Adjustable airflow system",
     seoAnswerCapsule: "ELFBAR E-Shisha Luxe 30000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/elfbar-e-shisha-luxe-30000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-gtx-replacement-coils",
@@ -6947,7 +6947,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand : Vaporesso Product Type : Replacement Coils Coil Material : FeCrAl Alloy / Mesh / Regular Vape Style : DTL   MTL options available Wicking : Tea Fiber Cotton for better flavor absorption",
     seoAnswerCapsule: "Vaporesso Gtx Replacement Coils is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-gtx-replacement-coils.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-x2-pod-vape-kit",
@@ -6973,7 +6973,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Vaporesso Luxe X2 Vape Device 0.6 Ohm Vaporesso Luxe X Pod 0.8 Ohm Vaporesso Luxe X Pod USB-C Charging Cable Reminder Card User Manual Warranty Card",
     seoAnswerCapsule: "Vaporesso Luxe X2 Pod Vape Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-luxe-x2-pod-vape-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-iced-mix-series-salt-30ml",
@@ -6999,7 +6999,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Flavor Profile: Iced Fruit Flavour Brand: VOGD SALTNIC LABS Bottle Size: 30ml Nicotine Level: 25mg, 50mg VG/PG: 50%VG / 50%PG Recommended for use with Pod System Devices",
     seoAnswerCapsule: "Best VGOD Iced Mix Series Salt 30Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/vgod-iced-mix-series-salt-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-luxe-x-pod-cartridge",
@@ -7025,7 +7025,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "2 PCS / Pack Capacity: 5ml Coil Resistance: 0.8 Ω, 0.4 Ω, 0.6Ω, 0.3Ω SSS Leak-resistant Technology Suitable for: Vaporesso LUXE X Pod System Vape Kit",
     seoAnswerCapsule: "Vaporesso Luxe X Pod Cartridge (2Pcs/Pack) is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Accessories",
-    customImageUrl: "/imported/vaporesso-luxe-x-pod-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "pod-salt-big-tasty-cola-with-lime-nic-salt-30ml",
@@ -7077,7 +7077,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "30ml Bottle Available in 20mg Nicotine Salt 50% VG / 50% PG Made in the UK Tamper evident seal",
     seoAnswerCapsule: "Pod Salt Core Salt Nicotine 30Ml 20Mg E-Juice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Salt Nic",
-    customImageUrl: "/imported/pod-salt-core-salt-nicotine-30ml.webp",
+    customImageUrl: "",
   },
   {
     id: "pod-salt-onyx-4000-puffs",
@@ -7103,7 +7103,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Pod Salt Onyx Nicotine Strength: 20mg/ml Puff count (average): 4000puffs Type: Disposable Vape E-liquid: 8.5ml Battery: 1400mAh",
     seoAnswerCapsule: "Pod Salt Onyx 4000 Puffs 20Mg Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/pod-salt-onyx-4000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-itank-replacement-glass-tube-5ml",
@@ -7129,7 +7129,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Designed for Vaporesso iTank   iTank 5.0ml Bubble Glass Pyrex Glass Construction",
     seoAnswerCapsule: "Vaporesso Itank Replacement Glass Tube 5Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 30 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/vaporesso-itank-replacement-glass-tube-5ml.webp",
+    customImageUrl: "",
   },
   {
     id: "geekvape-wenax-q-pod-kit",
@@ -7155,7 +7155,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: GEEKVAPE Model: Wenax Q Pro Dimensions: 119.46 x 26.00 x 17.99mm Battery Capacity: 1200mAh Charging: Type-C, 5V/2A Pod Capacity: TPD   2ml Resistance: 0.6Ω/0.8Ω/1.2Ω/0.4Ω",
     seoAnswerCapsule: "Geekvape Wenax Q Pod Kit 1000Mah is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Mod",
-    customImageUrl: "/imported/geekvape-wenax-q-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-mini-pod-kit",
@@ -7181,7 +7181,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Battery: 1000mAh built-in | Output Power: 11W/16W Charging: Type-C, 1A fast charge | Pod Capacity: 2ml Compatible Pods: XROS series pods Coil Resistance: 1.2Ω Mesh Pod (included), with 0.8Ω Mesh Pod (purchased separately) compatibility Aeration: regulated MTL (Mouth-to-Lung) drawer | Activation: Draw-activated (buttons-free)",
     seoAnswerCapsule: "Vaporesso Xros Mini Pod Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 85 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/vaporesso-xros-mini-pod-kit.webp",
+    customImageUrl: "",
   },
   {
     id: "vgod-salt-nic-30ml-vape-juice",
@@ -7233,7 +7233,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "4pcs/pack Top fill system (remove mouthpiece) or side fill 2/3mL e-liquid capacity E-juice viewing window Magnetic pod connection Corex 2.0: Faster heating and increased flavor Quick Link: VOOPOO Argus Top Fiil Pod Cartridge",
     seoAnswerCapsule: "Vaporesso Xros Replacement Pod (2Ml/3Ml) is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vaporesso-xros-replacement-pod-2ml-3ml-in.webp",
+    customImageUrl: "",
   },
   {
     id: "vaporesso-xros-4-pod-system-kit-in",
@@ -7259,7 +7259,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Vaporesso XROS 4 Pod System Kit which comes in a smaller size with a slimmer build and a larger battery up to 1000mAh for long-lasting use. It features a top-fill design, transparent pods and works with XROS series coils. It provides versatility with MTL   DTL options. Dimensional: 120.80 x 24 x 14mm Weight: 51.5g Battery Capacity: 1000mAh Charging: Type-C, 2A Pod Capacity: 3ml of liquid (TPD",
     seoAnswerCapsule: "Vaporesso Xros 4 Pod System Kit is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Vape Kit",
-    customImageUrl: "/imported/vaporesso-xros-4-pod-system-kit-in.webp",
+    customImageUrl: "",
   },
   {
     id: "hayati-pro-max-4000-puffs",
@@ -7285,7 +7285,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Hayati Model: Pro max Coil Types: Mesh Coil puffs: 4000+ Puffs Count Nicotine: 2% Liquid Capacity: 10ML Battery: 1400 mAh",
     seoAnswerCapsule: "Hayati Pro Max 4000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/hayati-pro-max-4000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "vnsn-quake-14000-puffs",
@@ -7311,7 +7311,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "VNSN QUAKE PRO contains 5% nicotine, packed inside a 24 ml capacity device, that can last up to 14000 puffs, Comes with 650 mAh rechargeable battery and VNSN TECH 2.0 mesh coil, Adjustable airflow (MTL-DTL), Let you personalize your vaping experience according to your preferences. It has a recycleable Type-C port at the bottom of device that ensure you smoke the last drop of the E-juice in tank ev",
     seoAnswerCapsule: "Vnsn Quake 14000 Puffs Disposable Vape is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/vnsn-quake-14000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "hqd-cuvie-slick-6000-puffs",
@@ -7337,7 +7337,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Power Range: 9W Nicotine Strength: 20mg (2%) Puffs Count: Up To 6000 Puffs Battery Capacity: 1400mAh E-Liquid Capacity: 15mL Resistance: 1.0Ω Mesh Coil 1* Devices 1* Manual Size: 118*40*12mm",
     seoAnswerCapsule: "HQD Cuvie Slick 6000 Puffs Disposable Pod Device is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Disposable Vape",
-    customImageUrl: "/imported/hqd-cuvie-slick-6000-puffs.webp",
+    customImageUrl: "",
   },
   {
     id: "cran-apple-juice-ice-by-loaded-120-ml-e-liquid",
@@ -7363,7 +7363,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Cran Apple Juice Ice By Loaded 120 ml E-liquid In Dubai – Icy Apple-Cranberry Perfection If you&#8217;re looking for a vape juice that takes a perfectly good thing and makes it a little better than you&#8217;re going to be pouring over this blend that changes the way that fruit and menthol can mix together so habitually. With a tantalizing combination of succulent apples and tart cranberries and a",
     seoAnswerCapsule: "Cran Apple Juice Ice By Loaded 120 Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/cran-apple-juice-ice-by-loaded-120-ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "cran-apple-juice-by-loaded-120-ml-e-liquid",
@@ -7389,7 +7389,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Buy Cran Apple Juice by Loaded 120mL E-liquid in Dubai If you&#8217;re looking to Buy Cran Apple Juice by Loaded 120mL E-liquid in Dubai , you&#8217;re in for a flavor-packed vaping experience that’s crisp, tangy, and incredibly satisfying. Dubai Cigarette Shop brings you the ultimate fusion of cranberry and apple in a premium 120mL e-liquid bottle that has earned rave reviews across the UAE&#8217;s vaping ",
     seoAnswerCapsule: "Cran Apple Juice By Loaded 120 Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/cran-apple-juice-by-loaded-120-ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "loaded-cookie-butter-120-ml-e-juice",
@@ -7467,7 +7467,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Ruthless Essentials Flavor Name: Scrawberry Skitz Bottle Size: 100ml Nicotine Strengths: 0mg / 3mg / 6mg (varies by seller) Flavor Profile: Sweet strawberry candy with a fruity twist VG/PG Ratio: 70/30 – Ideal for dense clouds   smooth flavor Bottle Type: Chubby Gorilla with child-resistant cap Compatibility: Suitable for sub-ohm devices",
     seoAnswerCapsule: "Scrawberry Skitz By Ruthless Essentials 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/scrawberry-skitz-by-ruthless-essentials-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-essentials-peppermint-blast-on-ice-e-liquid-100ml",
@@ -7493,7 +7493,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Ruthless Essentials Flavor: Peppermint Blast on Ice Size: 100 mL Nicotine Options: 0 mg / 3 mg / 6 mg (varies by retailer) Flavor Profile: Cool, crisp peppermint with a refreshing menthol chill VG/PG Ratio: 70/30 – Optimized for dense clouds and smooth throat feel Bottle Details: Chubby Gorilla bottle with child‑proof cap Best With: Sub‑ohm tanks and high‑wattage mods",
     seoAnswerCapsule: "Ruthless Essentials Peppermint Blast On Ice E-Liquid 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-essentials-peppermint-blast-on-ice-e-liquid-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "maui-pineapple-juice-on-ice-by-ruthless-essentials-100ml",
@@ -7519,7 +7519,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Discover the Unmatched Flavor of Maui Pineapple Juice on Ice by Ruthless Essentials 100mL at Dubai Cigarette Shop Unleash the exhilarating vaping experience with Ruthless Essentials&#8217; iconic creation &#8211; Maui Pineapple Juice on Ice 100mL . As the leading choice in Dubai&#8217;s premium vape market, this fusion of tropical pineapple essence and refreshing menthol allure continues to captivate discer",
     seoAnswerCapsule: "Maui Pineapple Juice On Ice By Ruthless Essentials 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/maui-pineapple-juice-on-ice-by-ruthless-essentials-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-ruthless-essentials-mango-burst-on-ice-e-liquid-100ml-in",
@@ -7545,7 +7545,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Buy Ruthless Essentials Mango Burst on Ice E-Liquid 100mL in the UAE – An In-Depth Flavor Experience by Dubai Cigarette Shop Are you craving a juicy tropical escape with an icy twist? Welcome to our exclusive review of Buy Ruthless Essentials Mango Burst on Ice E-Liquid 100mL in UAE , your next favorite vape juice if you love mango-infused menthol hits. At Dubai Cigarette Shop , we bring premium e-liquids to vaping c",
     seoAnswerCapsule: "Ruthless Essentials Mango Burst On Ice E-Liquid 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/buy-ruthless-essentials-mango-burst-on-ice-e-liquid-100ml-in.webp",
+    customImageUrl: "",
   },
   {
     id: "coconut-by-ruthless-essentials-e-liquid-series-100ml",
@@ -7571,7 +7571,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Buy Coconut by Ruthless Essentials E-Liquid Series 100mL in Dubai Welcome to the tropical oasis of vaping— Coconut by Ruthless Essentials E-Liquid Series 100mL in Dubai . This premium vape juice offers a creamy, exotic coconut flavor that’s smooth on the throat and rich in aroma, perfect for vapers looking for a vacation-in-a-bottle experience. At Dubai Cigarette Shop , we bring you authentic Ruthless produ",
     seoAnswerCapsule: "Coconut By Ruthless Essentials E-Liquid Series 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/coconut-by-ruthless-essentials-e-liquid-series-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "blue-razz-strawzz-by-ruthless-essentials-edition-e-liquid-100ml",
@@ -7597,7 +7597,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Blue Razz Strawzz By Ruthless Essentials Edition E-liquid 100mL – A Full Review by Dubai Cigarette Shop Welcome to the definitive guide on Blue Razz Strawzz By Ruthless Essentials Edition E-liquid 100mL , brought to you exclusively by Dubai Cigarette Shop . If you’re a vaping enthusiast seeking intense flavor, high VG content, and unmatched satisfaction in every puff, this is the premium e-liquid you’ve been waiting ",
     seoAnswerCapsule: "Blue Razz Strawzz By Ruthless Essentials Edition E-Liquid 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/blue-razz-strawzz-by-ruthless-essentials-edition-e-liquid-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "buy-ruthless-essentials-edition-arctic-cherry-lemonade-on-ice-100ml",
@@ -7623,7 +7623,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Buy Ruthless Essentials Edition Arctic Cherry Lemonade on Ice &#8211; 100mL In Dubai Welcome to Dubai Cigarette Shop , your ultimate destination for premium vape products in the UAE. If you&#8217;re searching for a unique and refreshing vaping experience, then Buy Ruthless Essentials Edition Arctic Cherry Lemonade on Ice &#8211; 100mL In Dubai is your perfect pick. With a punch of tart cherries, zesty lemon",
     seoAnswerCapsule: "Ruthless Essentials Edition Arctic Cherry Lemonade On Ice &#8211; 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/buy-ruthless-essentials-edition-arctic-cherry-lemonade-on-ice-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-essentials-edition-apple-elixir-on-ice",
@@ -7649,7 +7649,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Refreshing sweetness of crisp green apple paired with a revitalizing icy finish VG/PG Balance: 70% VG / 30% PG Nicotine Levels: 3mg, 6mg Bottle Capacity: 60ml Category: Freebase E‑Liquid Suited For: Vapers in Dubai looking for a cooling menthol touch in a fruity vape.",
     seoAnswerCapsule: "Ruthless Essentials Edition Apple Elixir On Ice is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-essentials-edition-apple-elixir-on-ice.webp",
+    customImageUrl: "",
   },
   {
     id: "ruthless-essentials-edition-watrmln-lime-rush-e-liquid-100ml",
@@ -7675,7 +7675,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Ruthless Essentials Edition Flavor: Watrmln Lime Rush Size: 100 mL Nicotine Options: 0 mg / 3 mg / 6 mg (varies by retailer) Flavor Profile: Juicy watermelon fused with zesty lime for a refreshing twist VG/PG Ratio: 70/30 – Perfect for thick clouds and smooth taste Bottle Design: Chubby Gorilla bottle equipped with a child‑proof cap Ideal For: Sub‑ohm tanks, RTA/RDAs, and high‑wattage vape",
     seoAnswerCapsule: "Ruthless Essentials Edition Watrmln Lime Rush E-Liquid 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/ruthless-essentials-edition-watrmln-lime-rush-e-liquid-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "strawmelon-ice-by-ruthless-essentials-edition-e-liquid-100ml",
@@ -7701,7 +7701,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Taste Profile: Ripe strawberries and juicy watermelon combined with a chilly menthol finish. VG/PG Ratio: 70% VG / 30% PG (Essentials series) Nicotine Levels: 0 mg, 3 mg, 6 mg (Freebase) | 35 mg, 50 mg (Nicotine Salt) Bottle Size: 100 ml (also available in 60 ml salt nic format, but the Essentials version comes in 100 ml) Variant: Freebase E‑Liquid (with Nic Salt options) Recommended For: Vapers i",
     seoAnswerCapsule: "Strawmelon Ice By Ruthless Essentials Edition E-Liquid 100Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 55 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/strawmelon-ice-by-ruthless-essentials-edition-e-liquid-100ml.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-xlim-v3-top-fill-pod-cartridge",
@@ -7727,7 +7727,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "OXVA Xlim V3 Pods can now be filled from the top, and they are cross-compatible with the entire XLIM range of vapes. These pods from OXVA are perfectly suited to your standard (non-salt) freebase 50/50 (VG50%) recipe e-liquid and Nic Salts. OXVA Xlim V3 Pods Contents 3x Pods Individually foil blister pack sealed (a single box will normally contain one foil pack, but in rare cases when a batch is s",
     seoAnswerCapsule: "OXVA Xlim V3 Top Fill Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxva-xlim-v3-top-fill-pod-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "pablo-nicotine-pouches",
@@ -7779,7 +7779,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "0.9mL magnetic pod 5% or 2% nicotine options Approx. 240 puffs per pod Leak-proof design Colors: Red, White, Blue, Gold",
     seoAnswerCapsule: "MYLE V4 Basic Device Buy is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 70 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-v4-basic-device.webp",
+    customImageUrl: "",
   },
   {
     id: "mega-vape-juice-60ml-e-liquid",
@@ -7805,7 +7805,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Discover Premium Mega Vape Juice 60ML E-Liquid in Dubai at Dubai Cigarette Shop! Welcome to the ultimate destination for vape enthusiasts in the UAE. Dubai Cigarette Shop proudly presents Mega Vape Juice 60ML E-Liquid , a top-tier e-liquid collection that&#8217;s making waves in the vaping community. Whether you&#8217;re a seasoned vaper or transitioning from smoking, Mega Vape Juice 60ML delivers unparalleled flavor",
     seoAnswerCapsule: "Mega Vape Juice 60Ml E-Liquid is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 100 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/mega-vape-juice-60ml-e-liquid.webp",
+    customImageUrl: "",
   },
   {
     id: "dr-vape-bubblegum-kings-60ml",
@@ -7831,7 +7831,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Buy Dr Vape Bubblegum Kings 60mL in Dubai-UAE Are you ready to experience a flavor explosion that takes you back to childhood? Dr Vape Bubblegum Kings 60mL in Dubai-UAE is not just another e-liquid—it’s a bold, sweet, and nostalgic ride into the world of classic bubblegum taste. Whether you’re in Dubai or anywhere across the UAE, this vape juice delivers a satisfying and flavorful vape experience ",
     seoAnswerCapsule: "Dr Vape Bubblegum Kings 60Ml is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "E-Liquid",
-    customImageUrl: "/imported/dr-vape-bubblegum-kings-60ml.webp",
+    customImageUrl: "",
   },
   {
     id: "uwell-caliburn-a3-replacement-pods-in",
@@ -7857,7 +7857,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Pod Capacity: Refillable with a capacity of 2.0 mL Coil Options: Features integrated meshed coils in options of 0.8 Ω or 1.0 Ω Fill System: Equipped with a user-friendly top-fill design and a removable mouthpiece Material: Constructed using durable and safe food-grade PCTG Connection: Utilizes a secure magnetic attachment for the pod Pack Size: Comes in a pack containing 4 pods Compatibility: Comp",
     seoAnswerCapsule: "Uwell Caliburn A3 Replacement Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 45 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/uwell-caliburn-a3-replacement-pods-in.webp",
+    customImageUrl: "",
   },
   {
     id: "oxva-nexlim-pods-cartridge-3pcs-pack",
@@ -7883,7 +7883,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Effortless Refilling with Top-Fill Pods: Easy to refill. Dual Mesh Coils for Superior Flavor and Vapor Production: Richer flavor and more vapor. Generous 4ml Capacity for Prolonged Vaping Sessions: Enjoy longer vaping times. Multi-Resistance Options (0.6Ω, 0.8Ω, 1.2Ω) for Versatile Vaping: Customizable vaping experience. Versatile Vaping Experience Supporting MTL   RDL Styles: Options for diff",
     seoAnswerCapsule: "OXVA Nexlim Pods Cartridge 3Pcs/Pack is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/oxva-nexlim-pods-cartridge-3pcs-pack.webp",
+    customImageUrl: "",
   },
   {
     id: "voopoo-argus-top-fiil-pod-cartridge",
@@ -7909,7 +7909,7 @@ export const MORE_PRODUCTS: Product[] = [
     description: "Brand: Voopoo Unit: 3pcs/pack Capacity: 2ml/ 3ml) (top fill Version) For Voopoo Argus Pod System Kit Quick Links: VOOPOO ARGUS G2 POD KIT",
     seoAnswerCapsule: "Voopoo Argus Top Fiil Pod Cartridge is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 40 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/voopoo-argus-top-fiil-pod-cartridge.webp",
+    customImageUrl: "",
   },
   {
     id: "myle-v5-meta-pods",
@@ -7935,6 +7935,6 @@ export const MORE_PRODUCTS: Product[] = [
     description: "High Puff Capacity: Up to 9000 puffs per pod. Variety of Flavors: 12 unique flavours to choose from. Advanced Technology: Ceramic coil for better flavour and less leakage. User-Friendly: Easy to use with a sleek design. Longer Battery Life: The device supports extended use. Quick Link: MYLE V5 Meta Pod Device If Need Full Box : Contact WhatsApp +971509677031",
     seoAnswerCapsule: "MYLE V5 Meta Pods is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 35 with 45-60 minute WhatsApp express delivery across all Dubai districts.",
     subCategory: "Pod System",
-    customImageUrl: "/imported/myle-v5-meta-pods.webp",
+    customImageUrl: "",
   },
 ];

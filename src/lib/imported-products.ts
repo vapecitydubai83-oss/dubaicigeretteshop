@@ -31,7 +31,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D9B98A",
     description: "The long, slim cigar in the Villiger Premium range, 157 mm of mellow, nutty tobacco under a natural Sumatra type wrapper, from a cigar house trading since 1888. Five cigars to a pack, five packs to a box. Order with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Price: AED 320.00 per box (5 packs of 5 cigars, 25 cigars in ",
     seoAnswerCapsule: "Villiger Premium No 3 Sumatra Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 320 per box with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/villiger-premium-no-3-sumatra.webp",
+    customImageUrl: "",
   },
   {
     id: "villiger-premium-no-7-sumatra",
@@ -58,7 +58,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D9B98A",
     description: "A small Swiss cigar with a natural Sumatra wrapper and a medium, aromatic character, from a cigar house trading since 1888. Five cigars to a pack, five packs to a box, delivered fast across Dubai and the UAE. Order with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Price: AED 250.00 per box (5 packs of 5 cigars, 25 cigars",
     seoAnswerCapsule: "Villiger Premium No 7 Sumatra Cigars is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 250 per box with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/villiger-premium-no-7-sumatra.webp",
+    customImageUrl: "",
   },
   {
     id: "american-spirit-yellow",
@@ -85,7 +85,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#FBE3B0",
     description: "The Yellow variant of Natural American Spirit, an American cigarette brand sold in colour coded packs of 20. A gentler tobacco taste than the Blue pack, with a smooth draw. Genuine stock, delivered fast across Dubai and the UAE. Order with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. American Spirit Yellow is the Yellow ",
     seoAnswerCapsule: "American Spirit Yellow Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/american-spirit-yellow.webp",
+    customImageUrl: "",
   },
   {
     id: "american-spirit-blue",
@@ -112,7 +112,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#FBE3B0",
     description: "The Blue variant of Natural American Spirit, an American cigarette brand sold in colour coded packs of 20. A tobacco forward smoke with a fuller taste than the Yellow pack. Genuine stock, delivered fast across Dubai and the UAE. Order with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. American Spirit Blue cigarettes are t",
     seoAnswerCapsule: "American Spirit Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/american-spirit-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "benson-hedges-special-filter",
@@ -139,7 +139,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#E7D9AE",
     description: "We understand the search for a truly authentic, premium cigarette. You want that familiar taste, the refined smoking experience of a classic British-style cigarette, delivered with discretion and speed. At dubaicigeretteshop.ae, we deliver exactly that. Our online store brings you the iconic Benson & Hedges Special Filter, the gold standard for discerning smokers across the UAE. Whether you are in Dubai, Sharjah, or Abu Dhab",
     seoAnswerCapsule: "Benson & Hedges Special Filter Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 130 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/benson-hedges-special-filter.webp",
+    customImageUrl: "",
   },
   {
     id: "captain-black-dark-crema",
@@ -166,7 +166,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D8C3A5",
     description: "If you are looking to purchase Captain Black Dark Crema Little Cigars in Dubai or the UAE, Dubai Cigarette Shop has you covered. These unique little cigars deliver an aromatic tobacco experience highlighted by a sweet Dark Crema blend. Captain Black Dark Crema Little Cigars merge premium tobacco with a signature Dark Crema essence, enriched by hints of chocolate and roasted coffee. Packaged conveniently with 20 little cigars p",
     seoAnswerCapsule: "Captain Black Dark Crema is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 200 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/captain-black-dark-crema.webp",
+    customImageUrl: "",
   },
   {
     id: "chesterfield-silver",
@@ -193,7 +193,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F0C9C8",
     description: "Buy Chesterfield Silver cigarettes online in Dubai at dubaicigeretteshop.ae. The Chesterfield Tuned Silver XL is a smooth, refined Chesterfield cigarette crafted for smokers who prefer a lighter, well-tuned blend. Whether you know it as Chesterfield Silver, Chesterfield Compact Silver, or Chesterfield Tuned Silver XL, this product delivers a clean, balanced flavor in every smoke. Order Chesterfield Silver online and enjoy fa",
     seoAnswerCapsule: "Chesterfield Silver XL Tuned Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/chesterfield-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-white-slims",
@@ -220,7 +220,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "A premium slim cigarette from the Davidoff brand, a light, refined tobacco blend in an elegant slim format, built for smokers who want a smooth, mild smoking experience with less intensity than a standard king size. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Davidoff white slims cigarettes br",
     seoAnswerCapsule: "Davidoff White Slims Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-white-slims.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-lights",
@@ -247,7 +247,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Welcome to the international marketplace, Dubai Cigarette Shop, your trusted destination to buy authentic Esse Lights cigarettes in Dubai and across the UAE. The Esse Light cigarette is a globally recognized super slim cigarette crafted by KT&G (Korea Tobacco & Ginseng Corporation), the leading South Korean tobacco company. If you have been searching for cigarette super slim in Dubai with fast delivery options or premium super ",
     seoAnswerCapsule: "ESSE Lights Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 90 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-lights.webp",
+    customImageUrl: "",
   },
   {
     id: "mond",
@@ -274,7 +274,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D8B4FE",
     description: "Buy Mond Cigarette online in Dubai UAE — the premium slim, flavored cigarette crafted for a smooth, aromatic smoking experience. Available in Strawberry, Apple. Retail & wholesale orders. Order today. Mond Cigarette has rapidly earned a reputation as one of the most popular and sought-after flavored cigarette brands available to buy in Dubai and across the UAE. Distributed exclusively through Gulbahar Tobacco Interna",
     seoAnswerCapsule: "Mond Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 60 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/mond.webp",
+    customImageUrl: "",
   },
   {
     id: "winston-red-classic",
@@ -301,7 +301,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Winston Red is one of the most recognized full-flavor cigarettes in the global tobacco market — a classic cigarette brand introduced in 1954 by the R.J. Reynolds Tobacco Company in Winston-Salem, North Carolina. Today, produced under Japan Tobacco International (JTI), a subsidiary of Imperial Tobacco Group (ITG), Winston Red cigarettes deliver the authentic, full-bodied American tobacco taste that adult smokers have ",
     seoAnswerCapsule: "Winston Red Classic American Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-red-classic.webp",
+    customImageUrl: "",
   },
   {
     id: "camel-blue",
@@ -328,7 +328,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2D8A0",
     description: "Camel Blue cigarettes, produced by Japan Tobacco International (JTI), cater to individuals who desire a gentler, silkier, and more sophisticated smoking session. Tailored as a less intense option compared to the classic Camel blend, Camel Blue offers a well-rounded taste profile with reduced harshness, making it a go-to for those who appreciate a crisp and uniform draw. Each King Size (84 mm) cigarette is meticulousl",
     seoAnswerCapsule: "Camel Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/camel-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "camel-yellow",
@@ -355,7 +355,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2D8A0",
     description: "Introducing the legendary Camel Yellow Cigarettes, a timeless classic from the renowned Camel range esteemed by those who relish a harmonious tobacco taste with a hint of strength. Crafted for daily indulgence, Camel Yellow guarantees a smooth, gratifying smoking journey that embodies the brand’s rich legacy and unwavering quality benchmarks. Manufactured by JT International, Camel Yellow cigarettes are meticulously ",
     seoAnswerCapsule: "Camel Yellow Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/camel-yellow.webp",
+    customImageUrl: "",
   },
   {
     id: "chesterfield-purple-remix-2",
@@ -382,7 +382,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F0C9C8",
     description: "“Liggett & Myers’ finest blend — now available for online delivery across Dubai & the UAE” Chesterfield cigarettes are one of the world’s most celebrated tobacco brands, originally crafted in Durham, North Carolina, USA. Beloved by smokers for generations, Chesterfield offers a wide range of flavours including Chesterfield Red, Chesterfield Blue, Chesterfield Black, Chesterfield Green (menthol), Chesterfield Purple, ",
     seoAnswerCapsule: "Chesterfield Purple Remix 2 is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/chesterfield-purple-remix-2.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-classic-cigarettes-in",
@@ -409,7 +409,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "For smokers who value quality and sophistication, Davidoff Classic Cigarettes are the ultimate choice. Renowned as a luxurious brand, Davidoff offers a refined flavor and strong aroma, crafted from a special blend of top-tier tobaccos that meet Swiss standards meticulously. Tailored for those who savor a harmonious blend of smoothness and robust aroma, Davidoff Classic tobacco promises a consistent and enjoyable smok",
     seoAnswerCapsule: "Davidoff Classic Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 170 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-classic-cigarettes-in.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-gold",
@@ -436,7 +436,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "A full flavor, regular king size cigarette from the Davidoff brand, built on a premium tobacco blend with a richer, bolder character than Davidoff White. Genuine stock, delivered fast across Dubai and the UAE. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Davidoff Gold cigarettes are the regular king-siz",
     seoAnswerCapsule: "Davidoff Gold Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-gold.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-gold-slims",
@@ -463,7 +463,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "Davidoff Gold Slims cigarettes cater to UAE smokers seeking elegance, balance, and high-quality tobacco. Tailored for those who enjoy a refined smoking experience, these slim cigarettes blend luxury aesthetics with a satisfying taste. Adorned in sophisticated gold packaging, Davidoff Gold Slims appeal to individuals with modern tastes and a touch of understated class. Produced by Davidoff & Cie SA of Switzerland, the",
     seoAnswerCapsule: "Davidoff Gold Slims is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 155 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-gold-slims.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-silver",
@@ -490,7 +490,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "Experience heightened satisfaction with Davidoff Silver Cigarettes, a symbol of unparalleled smoothness and top-tier quality. Tailored for those who relish a gentler, more refined tobacco experience, Davidoff Silver presents a meticulously crafted fusion of light tobacco, subtle aroma, and nuanced flavor. Each drag offers a pristine, sophisticated taste that glides effortlessly down the throat, devoid of any roughnes",
     seoAnswerCapsule: "Davidoff Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-white-cigarettes-in",
@@ -517,7 +517,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "A light, smooth premium tobacco from the Davidoff brand, built for smokers who want a refined, mild draw with the quality the Davidoff name is known for. Genuine stock, delivered fast across Dubai and the UAE. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Davidoff white cigarettes deliver a lighter and s",
     seoAnswerCapsule: "Davidoff White Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-white-cigarettes-in.webp",
+    customImageUrl: "",
   },
   {
     id: "davidoff-white-superslims-in",
@@ -544,7 +544,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#D4AF37",
     description: "The slimmest, most refined cigarette in the Davidoff white range, an ultra slim stick with a light, smooth premium tobacco blend, built for an elegant, low intensity smoking experience. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Davidoff white super slim cigarettes are the slimmest, most refined optio",
     seoAnswerCapsule: "Davidoff White Super Slim Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/davidoff-white-superslims-in.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-blue",
@@ -571,7 +571,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "A lighter, smooth smoking experience from the Dunhill brand, built for smokers who want less intensity than Dunhill Red without losing the tobacco character underneath. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Dunhill Blue cigarettes sit on the lighter end of the Dunhill range, a smooth and",
     seoAnswerCapsule: "Dunhill Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-blue-lights",
@@ -598,7 +598,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "A light cigarette from the esteemed Dunhill brand, built with Dunhill’s Flow Filter for a refined smoking experience with a lighter touch and a smooth flavor throughout. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Dunhill Blue Lights in Dubai offers a lighter, milder alternative within the Dunhill bran",
     seoAnswerCapsule: "Dunhill Blue Lights Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-blue-lights.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-evoke-gold",
@@ -625,7 +625,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "Dunhill Evoke Gold Cigarettes cater to smokers who admire elegance, sophistication, and a refined tobacco experience. Renowned for their smooth character and balanced flavor profile, Dunhill Evoke provides a gentle yet gratifying smoking indulgence suitable for both occasional and regular smokers. Each cigarette contains carefully selected premium tobacco leaves with a light fragrance and mild nature, offering a soph",
     seoAnswerCapsule: "Dunhill Evoke Gold Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-evoke-gold.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-evoke-silver",
@@ -652,7 +652,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "Experience the exceptional smoothness and sophistication of Dunhill Evoke Silver cigarettes, meticulously crafted for those who seek a gentle yet gratifying tobacco blend. With a composition of 1 mg Tar, 0.1 mg Nicotine, and 1 mg Carbon Monoxide, this variant promises a clean, airy, and refined smoking experience—perfect for connoisseurs of premium low-tar cigarettes seeking a mellow draw. Evoke Silver, bearing Dunhi",
     seoAnswerCapsule: "Dunhill Evoke Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-evoke-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-gold",
@@ -679,7 +679,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "A smooth, refined tobacco experience from the Dunhill brand, king size format with a fine cut blend built for smokers who want a softer draw than Dunhill Red without losing tobacco character. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Dunhill Gold cigarettes bring a smooth, refined tobacco ex",
     seoAnswerCapsule: "Dunhill Gold Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-gold.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill",
@@ -706,7 +706,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "A light tobacco option from the Dunhill range, known in the market as Dunhill Silver for its 3 mg tar pack, from the British brand with a history dating back to 1907, still owned and produced by British American Tobacco today. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Dunhill Silver cigarett",
     seoAnswerCapsule: "Dunhill Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 155 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-switch-green",
@@ -733,7 +733,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "A capsule cigarette from the Dunhill switch range, smooth tobacco underneath, a menthol capsule inside the filter for a cooling sensation whenever you want it. Shop Dunhill cigarettes in Dubai and get genuine stock delivered fast. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. The Dunhill Switch Green cig",
     seoAnswerCapsule: "Dunhill Switch Green Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 120 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-switch-green.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-switch",
@@ -760,7 +760,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "The fullest capsule cigarette in the Dunhill switch range, smooth tobacco underneath, a menthol capsule inside the filter, sold in some markets as Dunhill Switch Silver Blue or Dunhill Switch 8mg. Same product, two names. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Dunhill Switch Silver Blue is the ful",
     seoAnswerCapsule: "Dunhill Switch Silver Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 155 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-switch.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-switch-silver-green-cigarettes",
@@ -787,7 +787,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "Dunhill Switch Silver Green is the ultimate choice for smokers who value sophistication, innovation, and a cool menthol experience. Created by Dunhill, a globally renowned luxury cigarette brand, these high-end cigarettes feature a silky tobacco taste enriched with Dunhill’s distinctive switch technology. With a menthol capsule in each stick’s filter, smokers can trigger a refreshing mint blast whenever they crave a ",
     seoAnswerCapsule: "Dunhill Switch Silver Green Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-switch-silver-green-cigarettes.webp",
+    customImageUrl: "",
   },
   {
     id: "dunhill-white",
@@ -814,7 +814,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#8FA8C8",
     description: "The mildest fine cut cigarette in the Dunhill lineup, an ultra light stick built for smokers who want the smallest possible tar and nicotine while staying within the Dunhill brand. Order online with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. The Dunhill white cigarette sits at the very lightest end of the Dunhill range",
     seoAnswerCapsule: "Dunhill White Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 150 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/dunhill-white.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-red",
@@ -841,7 +841,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "The original, full flavor Marlboro, the benchmark every other variant in the range is measured against. Bold American tobacco character, genuine stock, delivered fast anywhere in the UAE. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Marlboro Red is the cigarette most people picture when they he",
     seoAnswerCapsule: "Marlboro Red Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-red.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-gold",
@@ -868,7 +868,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "Looking to buy Marlboro Gold cigarettes in the UAE? dubaicigeretteshop.ae is your trusted online shop for genuine Marlboro Gold at the best price in Dubai, Sharjah, Ajman, Abu Dhabi, and across all emirates. Each carton contains 200 cigarettes (10 packs of 20) crafted by Philip Morris International… Order now for just 200 AED per carton and ultra-fast delivery — within 1–2 hours in Dubai, Ajman, and Sharjah, or within 12 hou",
     seoAnswerCapsule: "Marlboro Gold Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 200 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-gold.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-white-in-dubai-smooth-mild",
@@ -895,7 +895,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "The mildest cigarette in the Marlboro brand, a soft filter and a lighter tobacco pack built for adult smokers who find Silver Blue too full. Genuine Philip Morris stock, delivered fast anywhere in the UAE. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across Abu Dhabi and the rest of the UAE. Cash on delivery available. Adults 18+ only. The Marlboro White cigarette i",
     seoAnswerCapsule: "Marlboro White Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-white-in-dubai-smooth-mild.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-silver-blue",
@@ -922,7 +922,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "A lighter, cleaner tobacco profile from the Marlboro brand, built for smokers who find Marlboro Red too heavy for all day smoking. Genuine stock, delivered fast anywhere in the UAE. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Marlboro Silver Blue cigarettes sit on the lighter, more refined end",
     seoAnswerCapsule: "Marlboro Silver Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 195 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-silver-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-touch",
@@ -949,7 +949,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "The slim format in the Marlboro range, a sleek pack with a lighter, more compact draw, built for adult smokers who want a balanced smoking experience without the bulk of a standard king size cigarette. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across Abu Dhabi and the rest of the UAE. Cash on delivery available. Adults 18+ only. Marlboro Touch cigarettes are manu",
     seoAnswerCapsule: "Marlboro Touch Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-touch.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-vista-double-mix",
@@ -976,7 +976,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "A dual capsule cigarette from the Marlboro Vista shop range, built for smokers who want variety rather than more cooling. Crush the first capsule for menthol, crush the second for a berry forward fusion. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across Abu Dhabi and the rest of the UAE. Cash on delivery available. Adults 18+ only. The Marlboro Double Mix cigarett",
     seoAnswerCapsule: "Marlboro Vista Double Mix Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-vista-double-mix.webp",
+    customImageUrl: "",
   },
   {
     id: "marlboro-vista-double-ice",
@@ -1003,7 +1003,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "A dual capsule cigarette from the Marlboro Vista range, built for smokers who want a customizable cooling experience. Crush one capsule for a fresh menthol taste, crush both for the full icy cool sensation. Order online in Dubai with 1 to 2 hour delivery across Dubai, Ajman and Sharjah. Within 12 hours across Abu Dhabi and the rest of the UAE. Cash on delivery available. Adults 18+ only. Marlboro Vista Double Ice is ",
     seoAnswerCapsule: "Marlboro Vista Double Ice Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-vista-double-ice.webp",
+    customImageUrl: "",
   },
   {
     id: "parliament-platinum-cigarettes-in",
@@ -1030,7 +1030,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7E9CCF",
     description: "Parliament Platinum has earned its place as the go-to choice for Dubai’s discerning adult smokers who prefer an ultra-light experience without sacrificing the unmistakable quality of the Parliament name. Crafted by Philip Morris International and built around Parliament’s iconic Signature Recessed Filter, the Platinum variant delivers the smoothest, most refined draw in the entire Parliament range — and at Dubai Cigarette Shop,",
     seoAnswerCapsule: "Parliament Platinum Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 180 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/parliament-platinum-cigarettes-in.webp",
+    customImageUrl: "",
   },
   {
     id: "parliament-silver-blue",
@@ -1057,7 +1057,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7E9CCF",
     description: "Parliament Silver Blue cigarettes are highly desirable among discerning smokers in the UAE for their delightfully smooth taste, pure tobacco essence, and reduced levels of tar and nicotine. Designed by Philip Morris International, these stylish long cigarettes provide a sophisticated and light smoking venture that caters to aficionados seeking balance, smoothness, and excellence in each inhalation. Featuring Tar 3mg,",
     seoAnswerCapsule: "Parliament Silver Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 180 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/parliament-silver-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "parliament-aqua-blue",
@@ -1084,7 +1084,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7E9CCF",
     description: "Parliament Aqua Blue Cigarettes deliver a sophisticated, mild smoking experience tailored for those who enjoy a smooth draw, well-balanced flavor, and premium tobacco. With its distinctive recessed filter and crisp, light character, Parliament Aqua Blue is a preferred choice among discerning smokers in Dubai, Abu Dhabi, Sharjah, and throughout the Emirates seeking a lighter, more refined cigarette without sacrificing",
     seoAnswerCapsule: "Parliament Aqua Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/parliament-aqua-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "parliament-platinum-blue",
@@ -1111,7 +1111,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7E9CCF",
     description: "Parliament Platinum Blue Cigarettes are recognized for their sophisticated smoothness, pristine tobacco flavors, and distinctive recessed filter tip that elevates each inhalation. Created for aficionados seeking a gentle, silky smoking experience free of harshness, Parliament Platinum Blue offers a refined and harmonious taste suitable for daily enjoyment. The meticulously chosen tobacco blend ensures a mild draw and",
     seoAnswerCapsule: "Parliament Platinum Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 190 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/parliament-platinum-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "winston-blue",
@@ -1138,7 +1138,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Introducing Winston Blue cigarettes, a sought-after choice for light tobacco enthusiasts in the UAE. Known for its smooth, mild, and invigorating draw, Winston Blue is favored by those who appreciate a clean and harmonious flavor profile. Searching for Winston Blue Dubai, Winston Blue UAE, or the best Winston Blue price Dubai online? Look no further than this premium selection, celebrated for its refined taste and un",
     seoAnswerCapsule: "Winston Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "winston-silver",
@@ -1165,7 +1165,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Winston Silver Cigarettes are tailor-made for smokers seeking a gentle, subtle, and sophisticated tobacco experience. Delivering a 6 mg Tar, 0.5 mg Nicotine, and around 7 mg Carbon Monoxide, Winston Silver provides a lighter alternative without compromising on the distinctive Winston essence. Widely favored in Dubai, Abu Dhabi, Sharjah, and Ajman, this version remains a preferred option for smokers desiring an effort",
     seoAnswerCapsule: "Winston Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 135 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "winston-blender",
@@ -1192,7 +1192,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2B8BF",
     description: "Winston Blender Double Click Cigarettes Blend Your Mix cater to smokers seeking a robust, sophisticated, and flavorful smoking experience. Renowned for their high-quality tobacco blend and expert craftsmanship, Winston Blender cigarettes promise unwavering satisfaction from the initial puff to the final drag. Embraced by the residents of the UAE, particularly in Dubai, Abu Dhabi, Sharjah, and Ajman, these cigarettes ",
     seoAnswerCapsule: "Winston Blender Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 145 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/winston-blender.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-black",
@@ -1219,7 +1219,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Esse Black cigarettes are highly esteemed as a top choice for slim cigarette enthusiasts in Dubai and throughout the UAE. Crafted with Korean mastery, Esse Black blends high-quality tobacco with a delightfully subtle flavor—perfect for those seeking a chic cigarette with a gentle, smooth draw. When browsing for cigarettes online, customers frequently seek out Esse Black Dubai, Esse Black UAE, and Buy Esse Black cigar",
     seoAnswerCapsule: "ESSE Black Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 85 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-black.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-menthol",
@@ -1246,7 +1246,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Experience the pure allure of cleanliness and the refined elegance of smoothness with Esse Menthol cigarettes. These ultra-slim gems from Korea are meticulously crafted for those who crave a crisp, cool, and invigorating menthol flavor without any harshness. Boasting a Tar content of 5mg and Nicotine level of 0.5mg, these cigarettes promise a gentle, silky menthol journey, solidifying their status as a top pick among",
     seoAnswerCapsule: "ESSE Menthol Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 85 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-menthol.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-silver",
@@ -1273,7 +1273,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Esse Silver cigarettes UAE are an exquisite option tailored for adult smokers seeking a gentle, refined, and sophisticated smoking experience. Crafted by KT&G, Esse Silver signifies the pinnacle of Korean cigarette craftsmanship, merging cutting-edge tobacco processing techniques with a contemporary super-slim design. Renowned for its immaculate presentation and subtle taste, Esse Silver is widely regarded as a top c",
     seoAnswerCapsule: "ESSE Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 105 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "manchester-double-drive",
@@ -1300,7 +1300,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#A7E3DC",
     description: "Manchester Double Drive Blueberry Mint cigarettes provide an invigorating smoking experience tailored for menthol enthusiasts in the UAE. Featuring a unique double capsule filter, this top-tier Manchester cigarette delivers delightful bursts of mint and blueberry flavors, allowing users to personalize each drag. Whether you crave a gentle menthol sensation or a fruity note, Manchester Double Drive empowers you to tai",
     seoAnswerCapsule: "Manchester Double Drive Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 105 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/manchester-double-drive.webp",
+    customImageUrl: "",
   },
   {
     id: "manchester-aqua-queen",
@@ -1327,7 +1327,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#A7E3DC",
     description: "Introducing Manchester Aqua Queen Cigarettes – a sophisticated smoke tailored for connoisseurs seeking a well-balanced, medium-strength experience. Crafted in London, United Kingdom, this luxurious blend captivates with its subtle menthol fragrance, impeccable finish, and meticulously packed tobacco ensuring a consistent burn and smooth draw. Each cigarette boasts a meticulously crafted filter, promising a gentle inh",
     seoAnswerCapsule: "Manchester Aqua Queen Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 75 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/manchester-aqua-queen.webp",
+    customImageUrl: "",
   },
   {
     id: "west-red",
@@ -1354,7 +1354,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2C9C9",
     description: "Seeking a robust smoking experience? Look no further than West Red Cigarettes Dubai! Embraced by UAE smokers who crave that full-flavor, classic red cigarette, these premium German smokes offer a harmonious blend of strength and smoothness. Elevate your smoking ritual with West Red Cigarettes renowned for their superior quality, refined blends, and unparalleled satisfaction. You can easily purchase West Red Cigarette",
     seoAnswerCapsule: "West Red Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 180 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/west-red.webp",
+    customImageUrl: "",
   },
   {
     id: "west-blue",
@@ -1381,7 +1381,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2C9C9",
     description: "West Blue Cigarettes UAE are favored by smokers seeking a smooth, light, and refined tobacco experience. Renowned for their well-balanced taste and high quality, West Blue King Size Cigarettes provide a low-tar option without sacrificing flavor. Featuring Tar 4mg, Nicotine 0.4mg, and Carbon Monoxide 4mg, West Blue Low Tar Cigarettes are perfect for adult smokers desiring a milder option within the West Cigarettes lin",
     seoAnswerCapsule: "West Blue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/west-blue.webp",
+    customImageUrl: "",
   },
   {
     id: "west-silver",
@@ -1408,7 +1408,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F2C9C9",
     description: "West Silver Cigarettes UAE are favored by smokers seeking a milder, more sophisticated smoking experience. Renowned for their high quality and well-balanced flavor, West Silver Light Cigarettes offer a crisp and satisfying taste with reduced intensity, making them a great choice for daily smokers looking for a lighter option. Crafted from premium tobacco blends, Original West Cigarettes uphold consistent standards th",
     seoAnswerCapsule: "West Silver Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/west-silver.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-change",
@@ -1435,7 +1435,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Enjoy a new wave of delight with ESSE Change Cigarettes LT&G, meticulously crafted by the esteemed KT&G Korea. Tailored for adult smokers aged 18 and above, this premium cigarette promises a harmonious and mild sensation, boasting 4mg of tar and 0.3mg of nicotine for those in pursuit of a lighter smoking encounter without compromising on taste. The game-changer? Introducing the innovative “Pop It Fresh” capsule techn",
     seoAnswerCapsule: "ESSE Change Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 90 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-change.webp",
+    customImageUrl: "",
   },
   {
     id: "esse-gold",
@@ -1462,7 +1462,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#7FD4DF",
     description: "Discover the refined sophistication of Esse Special Gold Cigarettes, a premium Korean-made super-slim cigarette crafted for those who appreciate elegance, smoothness, and balance. Designed with precision and style, Esse Gold offers a truly luxurious smoking experience that blends modern refinement with classic flavor. Each stick is crafted at a 100mm super-slim length, offering a sleek, lightweight feel that enhances",
     seoAnswerCapsule: "ESSE Gold Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 90 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/esse-gold.webp",
+    customImageUrl: "",
   },
   {
     id: "gold-leaf",
@@ -1489,7 +1489,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F4E3B2",
     description: "Buy Gold Leaf Cigarettes online in Dubai - 100% authentic sealed stock at AED 165. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Gold Leaf Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/gold-leaf.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1517,7 +1517,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#BFD8F2",
     description: "Buy L&M Blue Label Cigarettes online in Dubai - 100% authentic sealed stock at AED 175. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "L&M Blue Label Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/lm-blue-label.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1545,7 +1545,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#BFD8F2",
     description: "Buy L&M Red Label Cigarettes online in Dubai - 100% authentic sealed stock at AED 165. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "L&M Red Label Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 165 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/lm-red-label.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1573,7 +1573,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#F5C518",
     description: "Buy Marlboro Edge Slim Cigarettes online in Dubai - 100% authentic sealed stock at AED 210. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Marlboro Edge Slim Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 210 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/marlboro-edge-slim.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1601,7 +1601,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#CBD5E1",
     description: "Buy Platinum Seven Cool Cigarettes online in Dubai - 100% authentic sealed stock at AED 50. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Platinum Seven Cool Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 50 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/platinum-seven-cool.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1629,7 +1629,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#C9A7E8",
     description: "Buy Vogue Bleue Cigarettes online in Dubai - 100% authentic sealed stock at AED 185. Fast 1-2 hour express delivery across Downtown Dubai, Marina, JBR and all Dubai districts via WhatsApp ordering.",
     seoAnswerCapsule: "Vogue Bleue Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/vogue-bleue.webp",
+    customImageUrl: "",
 
   },
   {
@@ -1657,7 +1657,7 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#C9A7E8",
     description: "Experience the invigorating chill of Vogue Frisson Menthe Superslim cigarettes, a high-end Menthol super slim cigarette meticulously crafted for connoisseurs who prioritize sophistication, silkiness, and a pure minty finish. With its iconic slim design, Vogue Super Slim Menthol cigarettes offer a polished and gratifying draw combining crispness with a subtle tobacco essence. Tailored for aficionados of mild menthol c",
     seoAnswerCapsule: "Vogue Frisson Menthe Superslim Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 185 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/vogue-frisson-menthe-superslim.webp",
+    customImageUrl: "",
   },
   {
     id: "vogue-lilas",
@@ -1684,6 +1684,6 @@ export const IMPORTED_PRODUCTS: Product[] = [
     boxSecondaryColor: "#C9A7E8",
     description: "A superslim cigarette with a light, floral tobacco character, popular among smokers across Dubai, Abu Dhabi, Sharjah and Ajman who prefer a slim format and a refined smoking experience. Fastest delivery across the UAE, 1 to 2 hours in Dubai, Ajman and Sharjah. Within 12 hours across the rest of the UAE. Cash on delivery available. Adults 18+ only. Vogue Lilas cigarette is a superslim, light tobacco cigarette known fo",
     seoAnswerCapsule: "Vogue Lilas Cigarettes is available at Dubai Cigarette Shop (dubaicigeretteshop.ae) for AED 175 per carton with 45-60 minute WhatsApp express delivery across all Dubai districts.",
-    customImageUrl: "/imported/vogue-lilas.webp",
+    customImageUrl: "",
   },
 ];

@@ -18,7 +18,6 @@ import {
   PhoneCall,
   ShoppingCart,
   Sparkles,
-  Star,
   Truck,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
@@ -214,13 +213,6 @@ export default function ProductDetailPage() {
             value: product.format,
           },
         ],
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: product.rating.toString(),
-          reviewCount: product.reviewsCount.toString(),
-          bestRating: "5",
-          worstRating: "1",
-        },
         offers: {
           "@type": "Offer",
           url: `https://dubaicigeretteshop.ae/product/${product.id}`,
@@ -424,13 +416,6 @@ export default function ProductDetailPage() {
                     {product.badge}
                   </span>
                 )}
-                <span className="inline-flex items-center gap-1 text-xs font-mono text-amber-500 ml-auto">
-                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  <strong className="text-zinc-900">
-                    {product.rating.toFixed(2)}
-                  </strong>{" "}
-                  ({product.reviewsCount} Dubai reviews)
-                </span>
               </div>
 
               <h1 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
