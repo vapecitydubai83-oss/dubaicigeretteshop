@@ -22,9 +22,10 @@ export async function generateMetadata({
     64
   );
   const description = clip(
-    p.seoAnswerCapsule ||
+    `${p.title}: AED ${p.cartonPrice}${p.category === "cigarettes" ? " a carton" : ""}, delivered in 45–75 min in Dubai & Sharjah. ` +
+    (p.seoAnswerCapsule ||
       p.description ||
-      `${p.title} – AED ${p.cartonPrice}, delivered in 45–75 min across Dubai & Sharjah — courier to all Emirates. Order instantly on WhatsApp.`,
+      "Courier to all Emirates. Order on WhatsApp."),
     160
   );
   const images = productOgImages(p);

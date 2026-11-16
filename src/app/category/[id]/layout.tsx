@@ -46,8 +46,10 @@ export async function generateMetadata({
     return { title: "Category", robots: { index: false, follow: true } };
   }
   const title = clip(seo.title, 64);
-  const description = clip(seo.desc, 160);
   const { products } = await readSeoStore();
+  const prices = products.filter((p) => p.category === id).map((p) => Number(p.cartonPrice)).filter((n) => n > 0);
+  const range = prices.length ? `From AED ${Math.min(...prices)} to AED ${Math.max(...prices)}. ` : "";
+  const description = clip(range + seo.desc, 160);
   const images = productOgImages(products.find((p) => p.category === id));
   return {
     title: { absolute: title },

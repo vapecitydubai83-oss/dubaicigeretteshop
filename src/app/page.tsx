@@ -378,6 +378,12 @@ export default function DubaiCigaretteStorefront() {
         </div>
       </section>
 
+      <nav aria-label="Popular pages" className="max-w-[1280px] mx-auto px-2.5 sm:px-4 pt-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs sm:text-sm font-bold text-[#0A2F42]">
+        <Link href="/delivery" className="underline underline-offset-2">Cigarette delivery in Dubai: areas and times</Link>
+        <Link href="/cigarette-prices-dubai" className="underline underline-offset-2">Cigarette carton prices in Dubai</Link>
+        <Link href="/category/cigarettes" className="underline underline-offset-2">All cigarette brands</Link>
+      </nav>
+
       {/* =====================================================================
           MAIN PRODUCT CATALOG (Immediately Visible on Mobile First Screen!)
          ===================================================================== */}

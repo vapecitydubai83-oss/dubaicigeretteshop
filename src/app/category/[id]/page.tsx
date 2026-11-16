@@ -61,6 +61,8 @@ export default function CategoryPage() {
     return products.filter((p) => p.category === categoryId);
   }, [products, categoryId, meta]);
 
+  const prices = items.map((p) => Number(p.cartonPrice)).filter((n) => n > 0);
+
   const brandSections = useMemo(() => {
     const byBrand = new Map<string, typeof items>();
     for (const p of items) {
@@ -118,6 +120,12 @@ export default function CategoryPage() {
             <p className="text-xs sm:text-sm text-zinc-500 mt-1 max-w-2xl leading-relaxed">
               {meta.blurb}
             </p>
+            {prices.length > 0 && (
+              <p className="text-xs sm:text-sm font-bold text-[#0A2F42] mt-1">
+                {items.length} products, from AED {Math.min(...prices)} to AED {Math.max(...prices)}. Delivered in
+                45–75 min across Dubai &amp; Sharjah.
+              </p>
+            )}
           </div>
           <div className="flex items-center gap-3 text-[11px] font-bold text-zinc-500">
             <span className="inline-flex items-center gap-1">
