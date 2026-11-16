@@ -83,7 +83,7 @@ export default async function AboutPage() {
         <li>
           Areas, times and fees are on the <Link href="/delivery" className="font-bold text-[#0A2F42] underline">delivery page</Link>.
         </li>
-        <li>Unopened items can be returned within 7 days.</li>
+        <li>Unopened items can be returned within 7 days. Returns are free: our rider collects the item from you.</li>
         <li>You check the factory seal when the rider arrives, then pay by cash or card on delivery.</li>
         <li>We sell to adults aged 18 and over only.</li>
       </ul>
