@@ -32,6 +32,7 @@ import {
   KeyRound,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
+import WhatsAppLinkCard from "@/components/admin/whatsapp-link-card";
 import {
   BrandName,
   DUBAI_AREAS,
@@ -748,6 +749,7 @@ export default function AdminDashboardPage() {
            =================================================================== */}
         {activeTab === "whatsapp-social" && (
           <div className="space-y-6">
+            <WhatsAppLinkCard adminApiKey={adminApiKey} />
             {/* WhatsApp Configuration Card */}
             <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 border-b border-zinc-200 pb-3">
