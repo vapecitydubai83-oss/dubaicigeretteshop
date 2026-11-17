@@ -35,12 +35,14 @@ export async function GET(request: NextRequest) {
   if (!call) return NextResponse.json({ configured: false });
   try {
     const s = await call("");
-    const status = String(s.body?.data?.status || (s.ok ? "UNKNOWN" : "UNREACHABLE"));
+    let status = String(s.body?.data?.status || (s.ok ? "UNKNOWN" : "UNREACHABLE"));
     let qr = "";
     if (status === "SCAN_QR") {
       const q = await call("/qr");
       const img = q.body?.base64 || q.body?.data?.base64 || "";
       qr = typeof img === "string" && img.startsWith("data:image/png;base64,") ? img : "";
+      // the gateway drops an unscanned QR after about a minute but its record still says SCAN_QR: offer Connect again
+      if (!qr) status = "STOPPED";
     }
     return NextResponse.json({ configured: true, status, qr, updatedAt: s.body?.data?.updatedAt || null });
   } catch {
