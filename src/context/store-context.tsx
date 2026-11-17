@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { trackWa } from "@/components/wa-click-tracker";
 import {
   ADMIN_SEED,
   AdminUser,
@@ -477,6 +478,7 @@ export function StoreProvider({
       settings.whatsappNumber
     )}?text=${encodeURIComponent(message)}`;
     if (typeof window !== "undefined") {
+      trackWa("checkout");
       window.open(waUrl, "_blank", "noopener,noreferrer");
     }
 
@@ -580,6 +582,7 @@ export function StoreProvider({
       settings.whatsappNumber
     )}?text=${encodeURIComponent(message)}`;
     if (typeof window !== "undefined") {
+      trackWa("checkout");
       window.open(waUrl, "_blank", "noopener,noreferrer");
     }
 

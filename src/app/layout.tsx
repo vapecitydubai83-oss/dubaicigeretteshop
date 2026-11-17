@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/context/store-context";
+import WaClickTracker from "@/components/wa-click-tracker";
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS, type Product } from "@/lib/catalog-data";
 import { clip, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 import { readCatalogStore } from "@/lib/catalog-store";
@@ -120,6 +121,7 @@ export default async function RootLayout({
         className={`${cormorant.variable} ${jakarta.variable} ${jetbrains.variable} font-sans antialiased selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]`}
       >
         <StoreProvider initialStore={await slimStore()}>{children}</StoreProvider>
+        <WaClickTracker />
       </body>
     </html>
   );
