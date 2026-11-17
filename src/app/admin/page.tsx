@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import WhatsAppLinkCard from "@/components/admin/whatsapp-link-card";
+import WhatsAppBotCard from "@/components/admin/whatsapp-bot-card";
 import {
   BrandName,
   DUBAI_AREAS,
@@ -750,6 +751,7 @@ export default function AdminDashboardPage() {
         {activeTab === "whatsapp-social" && (
           <div className="space-y-6">
             <WhatsAppLinkCard adminApiKey={adminApiKey} />
+            <WhatsAppBotCard adminApiKey={adminApiKey} />
             {/* WhatsApp Configuration Card */}
             <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 border-b border-zinc-200 pb-3">
@@ -916,11 +918,11 @@ export default function AdminDashboardPage() {
               <div className="flex items-center justify-between flex-wrap gap-3 border-b border-zinc-200 pb-3">
                 <div>
                   <h3 className="text-lg font-extrabold text-zinc-900">
-                    24/7 WhatsApp Automation Bot &amp; Cloud Webhook
+                    Website chat bot
                   </h3>
                   <p className="text-xs text-zinc-500">
-                    Controls the automated WhatsApp chat concierge on your
-                    website and the `/api/whatsapp/webhook` auto-reply endpoint.
+                    Controls the chat window on the website. Replies on the
+                    shop WhatsApp itself are set in &quot;WhatsApp auto-reply&quot; above.
                   </p>
                 </div>
 
@@ -980,18 +982,6 @@ export default function AdminDashboardPage() {
                       })
                     }
                     className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 font-semibold"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-bold text-zinc-700 mb-1">
-                    Webhook URL (For Meta WhatsApp Cloud API / Kapso / Twilio)
-                  </label>
-                  <input
-                    type="text"
-                    readOnly
-                    value="https://dubaicigeretteshop.ae/api/whatsapp/webhook"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-100 border border-zinc-300 font-mono text-xs text-zinc-600"
                   />
                 </div>
 
