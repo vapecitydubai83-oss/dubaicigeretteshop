@@ -321,6 +321,34 @@ export default function ProductDetailPage() {
 
       {/* MAIN PRODUCT DETAIL STAGE (Fits in First Screen with 1-Click WhatsApp!) */}
       <main className="max-w-[1280px] mx-auto px-3 sm:px-4 py-5 sm:py-8 space-y-10">
+        {/* Phones: price, delivery time and the order button before the big picture (desktop shows them beside it) */}
+        <div className="lg:hidden -mb-6 rounded-2xl bg-white border border-zinc-200 p-3.5 shadow-sm">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="font-extrabold text-zinc-900 leading-snug">{product.title}</p>
+              <p className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-emerald-800">
+                <Clock className="w-3.5 h-3.5" />
+                {settings.expressDeliveryMinutes} delivery in Dubai
+              </p>
+            </div>
+            <div className="text-right shrink-0">
+              <div className="text-2xl font-black font-mono text-[#0A2F42]">د.إ{product.cartonPrice}</div>
+              <div className="text-[11px] text-zinc-500">{pw.one}</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            disabled={!product.inStock}
+            onClick={() =>
+              flavorOk() &&
+              triggerSingleClickWhatsApp(product, "1-carton", deliveryArea, "Express 1-Click", flavor || undefined)
+            }
+            className="mt-3 w-full py-3 rounded-xl bg-[#25D366] text-black font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            <MessageCircle className="w-5 h-5 fill-current" />
+            <span>{product.inStock ? "Order on WhatsApp" : "Out of stock"}</span>
+          </button>
+        </div>
         <div className="bg-white rounded-2xl border border-zinc-200 p-4 sm:p-8 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
           {/* Left 5 Cols: Gold-Framed VAP DXB Product Carton Artwork + Multi-Photo Gallery */}
           <div className="lg:col-span-5 space-y-3">
