@@ -394,7 +394,7 @@ export default function AdminDashboardPage() {
               <Lock className="w-8 h-8 text-[#061B28]" />
             </div>
             <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#F4B143]">
-              DUBAI CIGARETTE SHOP.AE
+              DUBAI CIGERETTE SHOP.AE
             </span>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
               Admin Login
@@ -934,7 +934,7 @@ export default function AdminDashboardPage() {
                       whatsappBot: {
                         ...(settings.whatsappBot || {
                           botName:
-                            "Dubai Cigarette Shop Automated WhatsApp Concierge",
+                            "Dubai Cigerette Shop Automated WhatsApp Concierge",
                           welcomeMessage: "",
                           autoReplyDelayMs: 450,
                           webhookVerifyToken: "vapdxb_uae_verify_2026",
@@ -971,7 +971,7 @@ export default function AdminDashboardPage() {
                     type="text"
                     value={
                       settings.whatsappBot?.botName ||
-                      "Dubai Cigarette Shop Automated WhatsApp Concierge"
+                      "Dubai Cigerette Shop Automated WhatsApp Concierge"
                     }
                     onChange={(e) =>
                       updateSettings({

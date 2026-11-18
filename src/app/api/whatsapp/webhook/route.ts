@@ -112,7 +112,7 @@ async function handle(ev: { event?: string; sessionId?: string; data?: Record<st
 }
 
 export async function GET() {
-  return NextResponse.json({ status: "active", service: "Dubai Cigarette Shop WhatsApp auto-reply" });
+  return NextResponse.json({ status: "active", service: "Dubai Cigerette Shop WhatsApp auto-reply" });
 }
 
 export async function POST(request: NextRequest) {

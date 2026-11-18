@@ -18,7 +18,7 @@ export async function generateMetadata({
     return { title: "Product", robots: { index: false, follow: true } };
   }
   const title = clip(
-    `${p.title} – AED ${p.cartonPrice} | Dubai Cigarette Shop`,
+    `${p.title} – AED ${p.cartonPrice} | Dubai Cigerette Shop`,
     64
   );
   const description = clip(

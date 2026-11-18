@@ -39,7 +39,7 @@ export default async function DeliveryPage() {
     <SeoPage crumbs={[{ name: "Delivery" }]} faqs={faqs} jsonLd={jsonLd}>
       <H1>Cigarette Delivery in Dubai and the UAE</H1>
       <Lead>
-        Dubai Cigarette Shop delivers cigarette cartons, IQOS TEREA, vapes and nicotine pouches to your door. {deliveryFacts(settings)}
+        Dubai Cigerette Shop delivers cigarette cartons, IQOS TEREA, vapes and nicotine pouches to your door. {deliveryFacts(settings)}
       </Lead>
 
       <H2>Delivery times and fees</H2>

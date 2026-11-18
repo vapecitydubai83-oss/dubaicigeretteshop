@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(SITE_BASE_URL),
     title: {
       default: title,
-      template: "%s | Dubai Cigarette Shop",
+      template: "%s | Dubai Cigerette Shop",
     },
     description,
     keywords: (settings.seoKeywords || INITIAL_SETTINGS.seoKeywords)
@@ -63,7 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "en_AE",
       url: SITE_BASE_URL + "/",
-      siteName: "DUBAI CIGARETTE SHOP",
+      siteName: "DUBAI CIGERETTE SHOP",
       title,
       description,
       images,

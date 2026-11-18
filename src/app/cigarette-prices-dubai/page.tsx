@@ -34,7 +34,7 @@ export default async function PricesPage() {
     ? [
         {
           q: "How much is a carton of cigarettes in Dubai?",
-          a: `At Dubai Cigarette Shop a carton costs ${priceRange(cheapest.cartonPrice, dearest.cartonPrice)}, depending on the brand. The lowest priced carton is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
+          a: `At Dubai Cigerette Shop a carton costs ${priceRange(cheapest.cartonPrice, dearest.cartonPrice)}, depending on the brand. The lowest priced carton is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
         },
         {
           q: "What is the cheapest cigarette carton in Dubai?",
@@ -42,7 +42,7 @@ export default async function PricesPage() {
         },
         ...["Marlboro", "Dunhill", "ESSE"].filter(brand).map((n) => ({
           q: `How much is a carton of ${n} in Dubai?`,
-          a: `${n} cartons cost ${priceRange(brand(n)!.min, brand(n)!.max)} at Dubai Cigarette Shop, across ${brand(n)!.products.length} variants.`,
+          a: `${n} cartons cost ${priceRange(brand(n)!.min, brand(n)!.max)} at Dubai Cigerette Shop, across ${brand(n)!.products.length} variants.`,
         })),
         { q: "Which cigarette brands are sold in Dubai?", a: `We stock ${brands.length} cigarette brands: ${brands.map((b) => b.name).join(", ")}.` },
         { q: "How is a carton delivered in Dubai?", a: deliveryFacts(settings) },
@@ -68,7 +68,7 @@ export default async function PricesPage() {
       <H1>Cigarette Prices in Dubai</H1>
       <Lead>
         {cheapest
-          ? `A carton of cigarettes (10 packs, 200 sticks) costs ${priceRange(cheapest.cartonPrice, dearest.cartonPrice)} at Dubai Cigarette Shop. This list covers ${cigs.length} cartons from ${brands.length} brands and is read from our live catalog, so the prices are the ones you pay today, ${today()}.`
+          ? `A carton of cigarettes (10 packs, 200 sticks) costs ${priceRange(cheapest.cartonPrice, dearest.cartonPrice)} at Dubai Cigerette Shop. This list covers ${cigs.length} cartons from ${brands.length} brands and is read from our live catalog, so the prices are the ones you pay today, ${today()}.`
           : "No cigarette cartons are listed right now."}
       </Lead>
 

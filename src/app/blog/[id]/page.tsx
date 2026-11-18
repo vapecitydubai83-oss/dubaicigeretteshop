@@ -39,8 +39,8 @@ export default async function BlogPostPage({ params }: Props) {
       headline: post.title,
       description: post.description,
       datePublished: post.published,
-      author: { "@type": "Organization", name: "Dubai Cigarette Shop" },
-      publisher: { "@type": "Organization", name: "Dubai Cigarette Shop", url: SITE_BASE_URL },
+      author: { "@type": "Organization", name: "Dubai Cigerette Shop" },
+      publisher: { "@type": "Organization", name: "Dubai Cigerette Shop", url: SITE_BASE_URL },
       mainEntityOfPage: url,
     },
     {

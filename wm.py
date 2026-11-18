@@ -43,7 +43,7 @@ def add_wm(pil):
     rot = lay.rotate(-28, expand=True, resample=Image.BICUBIC)
     ov.alpha_composite(rot, (int(w/2-rot.width/2), int(h*0.62)))
     fs2 = max(9, int(w*0.026)); f2 = ImageFont.truetype(FONT, fs2)
-    t2 = 'DUBAI CIGARETTE SHOP.AE'; tw2 = d.textlength(t2, font=f2)
+    t2 = 'DUBAI CIGERETTE SHOP.AE'; tw2 = d.textlength(t2, font=f2)
     pad = int(fs2*0.7); bx, by = w-tw2-pad*3, h-fs2-pad*2.4
     d.rounded_rectangle([bx,by,bx+tw2+pad*2,by+fs2+pad*1.6], radius=fs2, fill=(6,24,35,205))
     d.text((bx+pad, by+pad*0.5), t2, font=f2, fill=(244,177,67,235))

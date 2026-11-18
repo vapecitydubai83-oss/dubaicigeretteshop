@@ -43,7 +43,7 @@ export function AgeGateModal() {
           </div>
 
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">
-            Dubai Cigarette Shop Concierge
+            Dubai Cigerette Shop Concierge
           </h2>
 
           <p className="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">

@@ -8,13 +8,13 @@ import { readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 export const dynamic = "force-dynamic"; // contact details and counts come from live settings and catalog
 
 const description =
-  "Who runs Dubai Cigarette Shop, what we sell, how to contact us on WhatsApp, phone or email, our delivery areas, returns and 18+ policy.";
+  "Who runs Dubai Cigerette Shop, what we sell, how to contact us on WhatsApp, phone or email, our delivery areas, returns and 18+ policy.";
 
 export const metadata: Metadata = {
   title: "About Us & Contact",
   description,
   alternates: { canonical: "/about" },
-  openGraph: { type: "website", title: "About Dubai Cigarette Shop", description, url: "/about" },
+  openGraph: { type: "website", title: "About Dubai Cigerette Shop", description, url: "/about" },
 };
 
 export default async function AboutPage() {
@@ -25,15 +25,15 @@ export default async function AboutPage() {
     .map(([id, label]) => ({ id, label, n: products.filter((p) => p.category === id).length }))
     .filter((c) => c.n > 0);
   const jsonLd = [
-    { "@type": "AboutPage", url: `${SITE_BASE_URL}/about`, name: "About Dubai Cigarette Shop", about: { "@id": `${SITE_BASE_URL}/#organization` } },
-    { "@type": "ContactPage", url: `${SITE_BASE_URL}/about#contact`, name: "Contact Dubai Cigarette Shop" },
+    { "@type": "AboutPage", url: `${SITE_BASE_URL}/about`, name: "About Dubai Cigerette Shop", about: { "@id": `${SITE_BASE_URL}/#organization` } },
+    { "@type": "ContactPage", url: `${SITE_BASE_URL}/about#contact`, name: "Contact Dubai Cigerette Shop" },
   ];
 
   return (
     <SeoPage crumbs={[{ name: "About and contact" }]} jsonLd={jsonLd}>
-      <H1>About Dubai Cigarette Shop</H1>
+      <H1>About Dubai Cigerette Shop</H1>
       <Lead>
-        Dubai Cigarette Shop (dubaicigeretteshop.ae) is an online tobacco shop in Dubai. We list {products.length} products from{" "}
+        Dubai Cigerette Shop (dubaicigeretteshop.ae) is an online tobacco shop in Dubai. We list {products.length} products from{" "}
         {brands.length} brands and take orders on WhatsApp, day and night. {deliveryFacts(settings)}
       </Lead>
 

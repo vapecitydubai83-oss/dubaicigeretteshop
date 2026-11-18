@@ -45,9 +45,9 @@ export function WhatsAppAutomationBot() {
 
   const botConfig = settings.whatsappBot || {
     enabled: true,
-    botName: "Dubai Cigarette Shop Automated WhatsApp Concierge",
+    botName: "Dubai Cigerette Shop Automated WhatsApp Concierge",
     welcomeMessage:
-      "Marhaba! Welcome to Dubai Cigarette Shop (+971 55 302 0429). I can help you order Cigarette Cartons or secondary Vape/Terea items in 30 seconds!",
+      "Marhaba! Welcome to Dubai Cigerette Shop (+971 55 302 0429). I can help you order Cigarette Cartons or secondary Vape/Terea items in 30 seconds!",
     autoReplyDelayMs: 450,
     webhookVerifyToken: "vapdxb_uae_verify_2026",
     cloudApiAccessToken: "",

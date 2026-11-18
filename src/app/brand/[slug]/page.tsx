@@ -59,8 +59,8 @@ export default async function BrandPage({ params }: Props) {
       q: `How much ${plural ? "are" : "is"} ${name} in Dubai?`,
       a:
         list.length === 1
-          ? `${cheapest.title} costs ${aed(cheapest.cartonPrice)} per ${unit} at Dubai Cigarette Shop.`
-          : `${name} ${plural ? "cost" : "costs"} ${priceRange(brand.min, brand.max)} per ${unit} at Dubai Cigarette Shop. The lowest priced is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
+          ? `${cheapest.title} costs ${aed(cheapest.cartonPrice)} per ${unit} at Dubai Cigerette Shop.`
+          : `${name} ${plural ? "cost" : "costs"} ${priceRange(brand.min, brand.max)} per ${unit} at Dubai Cigerette Shop. The lowest priced is ${cheapest.title} at ${aed(cheapest.cartonPrice)} and the highest is ${dearest.title} at ${aed(dearest.cartonPrice)}.`,
     },
     {
       q: `Which ${name} products can I order in Dubai?`,
@@ -102,7 +102,7 @@ export default async function BrandPage({ params }: Props) {
     >
       <H1>{name} in Dubai: Prices and Delivery</H1>
       <Lead>
-        Dubai Cigarette Shop lists {list.length} {name} {list.length === 1 ? "product" : "products"}, priced{" "}
+        Dubai Cigerette Shop lists {list.length} {name} {list.length === 1 ? "product" : "products"}, priced{" "}
         {list.length === 1 ? `at ${aed(brand.min)}` : `from ${priceRange(brand.min, brand.max)}`} per {unit}. {delivery}
       </Lead>
 

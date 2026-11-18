@@ -106,7 +106,7 @@ export function DubaiCigaretteLogo({ compact = false }: { compact?: boolean }) {
             DUBAI
           </span>
           <span className="font-sans text-[11px] sm:text-xl font-black tracking-tight text-[#D9901A]">
-            CIGARETTE
+            CIGERETTE
           </span>
           <span className="inline-block px-1 sm:px-1.5 py-0.5 rounded bg-[#0A2F42] text-[#F4B143] text-[7px] sm:text-[9px] font-mono font-bold uppercase tracking-wider">
             SHOP.AE
@@ -1053,7 +1053,7 @@ export function StoreFooter() {
           {/* Col 1: Brand & About */}
           <div className="md:col-span-5 space-y-3">
             <div className="text-2xl font-black tracking-tight">
-              DUBAI<span className="text-[#F4B143]"> CIGARETTE</span> SHOP
+              DUBAI<span className="text-[#F4B143]"> CIGERETTE</span> SHOP
             </div>
             <div className="text-[11px] font-mono text-[#F4B143]">
               Official Domain: https://dubaicigeretteshop.ae

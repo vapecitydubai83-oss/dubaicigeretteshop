@@ -104,13 +104,13 @@ export function ProductPackArt({
             {/* Bottom Amber Pedestal Strip (matches VAP DXB card bottom) */}
             <div className="absolute bottom-0 inset-x-0 h-8 bg-[#F4B143]" />
 
-            {/* Top Mini Dubai Cigarette Shop Emblem */}
+            {/* Top Mini Dubai Cigerette Shop Emblem */}
             <div className="relative z-10 flex items-center gap-1">
               <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-[#0A2F42] text-[#F4B143] text-[7px] font-black">
                 DC
               </span>
               <span className="text-[9px] font-extrabold tracking-tight text-[#0A2F42]">
-                DUBAI<span className="text-[#F4B143]">CIGARETTE</span>
+                DUBAI<span className="text-[#F4B143]">CIGERETTE</span>
               </span>
             </div>
 

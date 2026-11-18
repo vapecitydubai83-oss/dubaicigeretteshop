@@ -8,7 +8,7 @@ const P: BotProduct[] = [
   { id: "dunhill-blue", title: "Dunhill Blue", brand: "Dunhill", category: "cigarettes", format: "Carton", cartonPrice: 150, inStock: false },
   { id: "velo-mint", title: "VELO Freezing Mint", brand: "VELO", category: "nicotine-pouches", format: "Can", cartonPrice: 35, inStock: true },
 ];
-const S = { storeName: "Dubai Cigarette Shop", expressDeliveryMinutes: "45–75 min", freeDeliveryThreshold: 300, standardDeliveryFee: 20 };
+const S = { storeName: "Dubai Cigerette Shop", expressDeliveryMinutes: "45–75 min", freeDeliveryThreshold: 300, standardDeliveryFee: 20 };
 
 // exact product: its own prices and link, nothing else
 let r = botReply("price of marlboro gold?", "TEXT", P, S, false);
