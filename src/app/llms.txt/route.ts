@@ -4,6 +4,7 @@ import {
   Product,
 } from "@/lib/catalog-data";
 import { readCatalogStore } from "@/lib/catalog-store";
+import { DELIVERY_AREAS } from "@/lib/delivery-areas";
 
 export const dynamic = "force-dynamic";
 
@@ -69,6 +70,7 @@ ${sections.join("\n\n")}
 - Homepage: https://dubaicigeretteshop.ae/
 - Cigarette prices in Dubai (live carton price list): https://dubaicigeretteshop.ae/cigarette-prices-dubai
 - Delivery areas, times and fees: https://dubaicigeretteshop.ae/delivery
+${DELIVERY_AREAS.map((a) => `- Delivery to ${a.name}: https://dubaicigeretteshop.ae/delivery/${a.slug}`).join("\n")}
 - About and contact: https://dubaicigeretteshop.ae/about
 - Buying guides: https://dubaicigeretteshop.ae/blog
 - Brand pages (prices per brand): https://dubaicigeretteshop.ae/brand/marlboro , /brand/dunhill , /brand/esse , /brand/davidoff , /brand/iqos-terea

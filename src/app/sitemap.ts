@@ -5,6 +5,7 @@ import { INITIAL_PRODUCTS, Product } from "@/lib/catalog-data";
 import { listPosts, postPath } from "@/lib/blog";
 import { brandGroups } from "@/lib/brands";
 import { readSeoStore } from "@/lib/seo-meta";
+import { DELIVERY_AREAS } from "@/lib/delivery-areas";
 
 export const dynamic = "force-dynamic";
 
@@ -69,7 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     ...categoryUrls,
-    ...["/cigarette-prices-dubai", "/delivery", "/about"].map((p) => ({
+    ...["/cigarette-prices-dubai", "/delivery", "/about", ...DELIVERY_AREAS.map((a) => `/delivery/${a.slug}`)].map((p) => ({
       url: baseUrl + p,
       lastModified: new Date(),
       changeFrequency: "daily" as const,

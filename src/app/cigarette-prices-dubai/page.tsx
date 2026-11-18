@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CartonPriceTable } from "@/components/carton-price-table";
 import { deliveryFacts, H1, H2, Lead, SeoPage, type Faq } from "@/components/seo-page";
 import { aed, brandGroups, priceRange } from "@/lib/brands";
 import { readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
@@ -84,39 +85,7 @@ export default async function PricesPage() {
       </ul>
 
       <H2>Full carton price list</H2>
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
-        <table className="w-full text-sm">
-          <caption className="sr-only">Cigarette carton prices in Dubai by brand, {today()}</caption>
-          <thead className="bg-[#0A2F42] text-white text-left text-xs uppercase tracking-wide">
-            <tr>
-              <th scope="col" className="p-3">Brand</th>
-              <th scope="col" className="p-3">Cigarette</th>
-              <th scope="col" className="p-3">Strength</th>
-              <th scope="col" className="p-3 whitespace-nowrap">1 carton</th>
-              <th scope="col" className="p-3 whitespace-nowrap">5 cartons</th>
-              <th scope="col" className="p-3">Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-            {brands.flatMap((b) =>
-              b.products.map((p) => (
-                <tr key={p.id} className="border-t border-zinc-100">
-                  <td className="p-3">
-                    <Link href={`/brand/${b.slug}`} className="text-zinc-700 underline">{b.name}</Link>
-                  </td>
-                  <td className="p-3">
-                    <Link href={`/product/${p.id}`} className="font-bold text-[#0A2F42] underline">{p.title}</Link>
-                  </td>
-                  <td className="p-3 text-zinc-600">{p.strength}</td>
-                  <td className="p-3 font-bold whitespace-nowrap">{aed(p.cartonPrice)}</td>
-                  <td className="p-3 whitespace-nowrap">{aed(p.fiveCartonPrice)}</td>
-                  <td className="p-3">{p.inStock ? "In stock" : "Out of stock"}</td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+      <CartonPriceTable brands={brands} caption={`Cigarette carton prices in Dubai by brand, ${today()}`} />
       <p className="mt-3 text-xs text-zinc-500">
         Prices are this shop&apos;s delivery prices in UAE dirhams. Airport duty free and supermarket prices differ.
       </p>

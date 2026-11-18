@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { deliveryFacts, H1, H2, Lead, SeoPage } from "@/components/seo-page";
 import { CATEGORY_LABEL } from "@/lib/brands";
-import { DUBAI_AREAS, formatWhatsAppNumberForLink } from "@/lib/catalog-data";
+import { formatWhatsAppNumberForLink } from "@/lib/catalog-data";
+import { areaTime, DELIVERY_AREAS, SHARJAH_AJMAN_TIME } from "@/lib/delivery-areas";
 import { readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 
 export const dynamic = "force-dynamic"; // delivery time and fees come from live settings
@@ -61,7 +62,7 @@ export default async function DeliveryPage() {
             <tr className="border-t border-zinc-100">
               <td className="p-3 font-bold text-[#0A2F42]">Sharjah and Ajman</td>
               <td className="p-3">Express rider</td>
-              <td className="p-3">60–75 Mins</td>
+              <td className="p-3">{SHARJAH_AJMAN_TIME}</td>
             </tr>
             <tr className="border-t border-zinc-100">
               <td className="p-3 font-bold text-[#0A2F42]">Abu Dhabi, Al Ain, RAK, Fujairah, UAQ</td>
@@ -78,9 +79,14 @@ export default async function DeliveryPage() {
 
       <H2>Areas we deliver to</H2>
       <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-zinc-700">
-        {DUBAI_AREAS.map((a) => (
-          <li key={a} className="rounded-xl bg-white border border-zinc-200 px-4 py-2.5">{a}</li>
+        {DELIVERY_AREAS.map((a) => (
+          <li key={a.slug}>
+            <Link href={`/delivery/${a.slug}`} className="block rounded-xl bg-white border border-zinc-200 px-4 py-2.5 font-bold text-[#0A2F42] hover:border-[#0A2F42]/50">
+              {a.name} <span className="font-normal text-zinc-500">· {areaTime(a, settings.expressDeliveryMinutes)}</span>
+            </Link>
+          </li>
         ))}
+        <li className="rounded-xl bg-white border border-zinc-200 px-4 py-2.5">Abu Dhabi, Al Ain, RAK, Fujairah and UAQ · courier, next day</li>
       </ul>
 
       <H2>How to order</H2>
