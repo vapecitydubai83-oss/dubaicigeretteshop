@@ -519,7 +519,8 @@ export function StoreHeader({
                     {totalCartItems}
                   </span>
                 </div>
-                <span className="text-[11px] font-mono font-extrabold text-[#0A2F42] pl-0.5">
+                {/* the amount does not fit next to the logo on the smallest phones (320 px): icon + count only */}
+                <span className="hidden min-[360px]:inline text-[11px] font-mono font-extrabold text-[#0A2F42] pl-0.5">
                   د.إ{totalCartAmount.toFixed(0)}
                 </span>
               </div>
