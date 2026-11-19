@@ -124,13 +124,15 @@ export function packWords(p: Pick<Product, "format">) {
       };
 }
 
-// Shop-window order (owner 2026-11-13: cigarettes are the main focus). Categories in this order, the
-// best-known cigarette brands first, and in-stock products ahead of sold-out ones.
-const CATEGORY_ORDER = ["cigarettes", "iqos-terea", "vapes", "e-liquid", "nicotine-pouches", "accessories", "hookah-shisha"];
+// Shop-window order (owner 2026-11-13: cigarettes are the main focus; client 2026-11-19 brand series).
+// Categories in this order, brands in BRAND_ORDER, in-stock products ahead of sold-out ones.
+const CATEGORY_ORDER = ["cigarettes", "iqos-terea", "hookah-shisha", "vapes", "nicotine-pouches", "e-liquid", "accessories"];
+// Shop's own brand series (client 2026-11-19), then the brands it did not list.
 export const BRAND_ORDER = [
-  "Marlboro", "Dunhill", "Davidoff", "Parliament", "Winston", "ESSE", "L&M", "Camel", "Vogue", "West",
-  "Manchester", "Chesterfield", "American Spirit", "Benson & Hedges", "Gold Leaf", "Platinum Seven", "Mond",
-  "Captain Black", "Villiger",
+  "Marlboro", "Dunhill", "Davidoff", "ESSE", "Winston", "Parliament", "L&M", "Vogue", "West", "Mond",
+  "Manchester", "Platinum Seven", "Camel", "IQOS TEREA", "Al Fakher Shisha", "ELFBAR & HQD", "Disposable Vapes",
+  "Vozol", "Fummo", "Geek Bar", "VELO & White Fox", "Pablo",
+  "Chesterfield", "American Spirit", "Benson & Hedges", "Gold Leaf", "Captain Black", "Villiger",
 ];
 const rank = (list: string[], v: string) => (list.indexOf(v) + 1 || list.length + 1);
 export const brandRank = (brand: string) => rank(BRAND_ORDER, brand);
@@ -275,13 +277,13 @@ export const INITIAL_NAV_MENU: NavMenuItem[] = [
   { id: "nav-davidoff", label: "DAVIDOFF", filterType: "brand", filterValue: "Davidoff" },
   { id: "nav-esse", label: "ESSE", filterType: "brand", filterValue: "ESSE" },
   { id: "nav-winston", label: "WINSTON", filterType: "brand", filterValue: "Winston" },
-  { id: "nav-camel", label: "CAMEL", filterType: "brand", filterValue: "Camel" },
   { id: "nav-manchester", label: "MANCHESTER", filterType: "brand", filterValue: "Manchester" },
+  { id: "nav-camel", label: "CAMEL", filterType: "brand", filterValue: "Camel" },
   { id: "nav-iqos", label: "IQOS & TEREA", filterType: "category", filterValue: "iqos-terea" },
-  { id: "nav-vapes", label: "VAPES", filterType: "category", filterValue: "vapes" },
-  { id: "nav-eliquid", label: "E-LIQUID", filterType: "category", filterValue: "e-liquid" },
-  { id: "nav-pouches", label: "NICOTINE POUCHES", filterType: "category", filterValue: "nicotine-pouches" },
   { id: "nav-hookah", label: "HOOKAH & SHISHA", filterType: "category", filterValue: "hookah-shisha" },
+  { id: "nav-vapes", label: "VAPES", filterType: "category", filterValue: "vapes" },
+  { id: "nav-pouches", label: "NICOTINE POUCHES", filterType: "category", filterValue: "nicotine-pouches" },
+  { id: "nav-eliquid", label: "E-LIQUID", filterType: "category", filterValue: "e-liquid" },
   { id: "nav-accessories", label: "ACCESSORIES", filterType: "category", filterValue: "accessories" },
 ];
 

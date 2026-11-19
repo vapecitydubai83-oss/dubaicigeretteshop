@@ -7,6 +7,7 @@ import { useStore } from "@/context/store-context";
 import {
   BrandName,
   brandRank,
+  BRAND_ORDER,
   CategoryId,
   DUBAI_AREAS,
   formatWhatsAppNumberForLink,
@@ -156,7 +157,8 @@ export default function DubaiCigaretteStorefront() {
       .filter((b) => !knownBrands.has(b))
       .map((b) => ({ brand: b, heading: `${b} Collection` }));
 
-    return [...definitions.sort((a, b) => brandRank(a.brand) - brandRank(b.brand)), ...extras]
+    return [...definitions, ...extras]
+      .sort((a, b) => brandRank(a.brand) - brandRank(b.brand))
       .map((def) => ({
         ...def,
         items: filteredProducts.filter(
@@ -178,10 +180,10 @@ export default function DubaiCigaretteStorefront() {
     const cats: { id: Exclude<CategoryId, "all">; heading: string }[] = [
       { id: "cigarettes", heading: "Cigarettes" },
       { id: "iqos-terea", heading: "IQOS & TEREA" },
-      { id: "vapes", heading: "Vapes & Disposables" },
-      { id: "e-liquid", heading: "E-Liquids" },
-      { id: "nicotine-pouches", heading: "Nicotine Pouches" },
       { id: "hookah-shisha", heading: "Hookah & Shisha" },
+      { id: "vapes", heading: "Vapes & Disposables" },
+      { id: "nicotine-pouches", heading: "Nicotine Pouches" },
+      { id: "e-liquid", heading: "E-Liquids" },
       { id: "accessories", heading: "Accessories & Lighters" },
     ];
     return cats
@@ -202,14 +204,9 @@ export default function DubaiCigaretteStorefront() {
       .filter((c) => c.items.length > 0);
   }, [brandSections]);
 
-  // Brand quick-filter pills — computed from the live catalog, cigarette majors first
+  // Brand quick-filter pills — computed from the live catalog, in the shop's brand series order
   const pillBrands: ("All" | BrandName)[] = useMemo(() => {
-    const order = [
-      "Marlboro", "Dunhill", "Davidoff", "ESSE", "Winston", "Parliament",
-      "Vogue", "West", "Camel", "Manchester", "Chesterfield", "L&M",
-      "American Spirit", "Benson & Hedges", "Gold Leaf", "Platinum Seven",
-      "Mond", "Villiger", "Captain Black",
-    ];
+    const order: string[] = BRAND_ORDER;
     const present = new Set(products.map((p) => p.brand));
     const ordered = order.filter((b) =>
       present.has(b as BrandName)
