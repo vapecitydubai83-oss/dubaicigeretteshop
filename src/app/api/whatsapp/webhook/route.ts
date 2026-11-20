@@ -66,6 +66,7 @@ async function handle(ev: { event?: string; sessionId?: string; data?: Record<st
   const now = Date.now();
 
   if (ev.event === "message.sent" || d.key?.fromMe) {
+    if (text.includes("dubaicigeretteshop.ae/review/")) return; // automatic review request, not staff typing
     // the bot's own replies come back here too; anything else was typed by staff: the bot steps back
     await update((s) => {
       const c = s.chats[jid];

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { clip, productOgImages, readSeoStore, SITE_BASE_URL } from "@/lib/seo-meta";
 import { ServerProductProvider } from "@/context/server-product";
 import { sameProductId } from "@/lib/product-id";
+import { approvedReviews } from "@/lib/reviews-store";
 
 export const dynamic = "force-dynamic";
 
@@ -61,6 +62,8 @@ export default async function ProductLayout({
   const product = products.find((x) => sameProductId(x.id, id)) ?? null;
   if (!product) notFound(); // deleted/unknown product = real 404 (Google: soft 404)
   return (
-    <ServerProductProvider product={product}>{children}</ServerProductProvider>
+    <ServerProductProvider product={product} reviews={await approvedReviews(product.id)}>
+      {children}
+    </ServerProductProvider>
   );
 }

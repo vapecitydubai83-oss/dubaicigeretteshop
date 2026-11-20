@@ -21,7 +21,7 @@ import {
   Truck,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
-import { useServerProduct } from "@/context/server-product";
+import { useServerProduct, useServerReviews } from "@/context/server-product";
 import { sameProductId } from "@/lib/product-id";
 import { DUBAI_AREAS, formatWhatsAppNumberForLink, packWords } from "@/lib/catalog-data";
 import { ProductPackArt } from "@/components/product-pack-art";
@@ -43,6 +43,11 @@ export default function ProductDetailPage() {
   } = useStore();
 
   const serverProduct = useServerProduct();
+  const reviews = useServerReviews();
+  const rating = {
+    count: reviews.length,
+    average: reviews.length ? Math.round((reviews.reduce((n, r) => n + r.rating, 0) / reviews.length) * 10) / 10 : 0,
+  };
   // shortcut: the server copy wins until reload, so an admin edit in this tab shows after a refresh.
   const product = useMemo(
     () =>
@@ -175,6 +180,25 @@ export default function ProductDetailPage() {
         sku: product.sku,
         mpn: product.sku,
         description: answerCapsule,
+        // verified-buyer reviews, approved by staff (owner 2026-11-20); no markup until there is one
+        ...(rating.count > 0
+          ? {
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: rating.average,
+                reviewCount: rating.count,
+                bestRating: 5,
+                worstRating: 1,
+              },
+              review: reviews.slice(0, 10).map((r) => ({
+                "@type": "Review",
+                author: { "@type": "Person", name: r.name },
+                datePublished: r.createdAt.slice(0, 10),
+                reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+                ...(r.text ? { reviewBody: r.text } : {}),
+              })),
+            }
+          : {}),
         ...(allPhotos.length > 0
           ? {
               image: allPhotos.map((u) =>
@@ -840,6 +864,31 @@ export default function ProductDetailPage() {
             ))}
           </div>
         </section>
+
+        {reviews.length > 0 && (
+          <section className="mt-10 bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm" aria-labelledby="reviews-h">
+            <h2 id="reviews-h" className="text-xl font-extrabold">
+              Customer reviews of {product.title}
+            </h2>
+            <p className="text-sm text-zinc-600 mt-1">
+              <span className="text-[#F4B143] font-bold">★ {rating.average.toFixed(1)}</span> out of 5 from {rating.count}{" "}
+              {rating.count === 1 ? "review" : "reviews"}. Only customers whose order was delivered can review.
+            </p>
+            <ul className="mt-4 divide-y divide-zinc-100">
+              {reviews.slice(0, 20).map((r) => (
+                <li key={r.id} className="py-3">
+                  <p className="text-sm">
+                    <span className="text-[#F4B143]" aria-label={`${r.rating} of 5 stars`}>{"★".repeat(r.rating)}</span>
+                    <span className="text-zinc-300" aria-hidden="true">{"★".repeat(5 - r.rating)}</span>{" "}
+                    <span className="font-bold">{r.name}</span>{" "}
+                    <span className="text-xs text-zinc-500">· Verified buyer · {new Date(r.createdAt).toLocaleDateString("en-GB")}</span>
+                  </p>
+                  {r.text && <p className="text-sm text-zinc-700 mt-1 whitespace-pre-line break-words">{r.text}</p>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
 
       <StoreFooter />

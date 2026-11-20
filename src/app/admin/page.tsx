@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import WhatsAppLinkCard from "@/components/admin/whatsapp-link-card";
+import ReviewsCard from "@/components/admin/reviews-card";
 import WhatsAppBotCard from "@/components/admin/whatsapp-bot-card";
 import {
   BrandName,
@@ -2549,6 +2550,7 @@ export default function AdminDashboardPage() {
            =================================================================== */}
         {activeTab === "orders" && (
           <div className="space-y-5">
+            <ReviewsCard adminApiKey={adminApiKey} />
             {/* Top Order Controls: Search + Status Filter Pills + Add Manual Order + Customer Track Link */}
             <div className="bg-white rounded-2xl border border-zinc-200 p-5 shadow-sm space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -2884,6 +2886,21 @@ export default function AdminDashboardPage() {
                       <MessageCircle className="w-3.5 h-3.5 fill-current" />
                       <span>Send Tracking on WhatsApp</span>
                     </a>
+
+                    {order.status === "Delivered" && order.reviewUrl && (
+                      <a
+                        href={`https://wa.me/${formatWhatsAppNumberForLink(
+                          order.customerPhone
+                        )}?text=${encodeURIComponent(
+                          `Hi ${order.customerName}, thank you for your order #${order.id} from ${settings.storeName}. How was it? Please rate it here (takes 20 seconds): ${order.reviewUrl}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-2 rounded-xl bg-[#F4B143] text-black font-extrabold text-xs inline-flex items-center gap-1.5"
+                      >
+                        <span>Ask for review</span>
+                      </a>
+                    )}
 
                     <button
                       type="button"

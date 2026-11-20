@@ -637,8 +637,8 @@ export function StoreProvider({
   };
 
   const syncOrder = (payload: Record<string, unknown>) => {
-    if (!adminApiKey) return;
-    fetch("/api/orders", {
+    if (!adminApiKey) return Promise.resolve();
+    return fetch("/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -652,7 +652,15 @@ export function StoreProvider({
     setOrders((prev) =>
       prev.map((o) => (o.id === orderId ? { ...o, status } : o))
     );
-    syncOrder({ action: "status", id: orderId, status });
+    const sent = syncOrder({ action: "status", id: orderId, status });
+    // a Delivered order gets its review link from the server: reload so "Ask for review" shows at once
+    if (status === "Delivered" && adminApiKey) {
+      sent
+        .then(() => fetch("/api/orders", { headers: { "x-admin-key": adminApiKey } }))
+        .then((r) => (r && r.ok ? r.json() : null))
+        .then((d) => { if (Array.isArray(d?.orders)) setOrders(d.orders); })
+        .catch(() => {});
+    }
   };
 
   const createManualOrder = (payload: {

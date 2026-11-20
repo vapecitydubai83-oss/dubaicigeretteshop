@@ -191,6 +191,7 @@ export interface WhatsAppOrder {
   total: number;
   status: "New WhatsApp Lead" | "Confirmed" | "Out for Delivery" | "Delivered" | "Cancelled";
   source: "Express 1-Click" | "Multi-Item Cart" | "Hero Quick-Order";
+  reviewUrl?: string; // admin only: signed review link, set on Delivered orders
 }
 
 export interface Lead {

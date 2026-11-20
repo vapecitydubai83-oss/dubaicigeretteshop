@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
 import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
-import { INITIAL_ORDERS, Lead, OrderItem, WhatsAppOrder } from "@/lib/catalog-data";
+import { formatWhatsAppNumberForLink, INITIAL_ORDERS, Lead, OrderItem, WhatsAppOrder } from "@/lib/catalog-data";
+import { reviewToken } from "@/lib/reviews";
+import { reviewSecret, SITE } from "@/lib/reviews-store";
 
 // Orders and leads live in the persistent uploads volume so orders placed
 // by customers on any device show up in the admin panel.
@@ -54,6 +56,28 @@ function notifyShop(order: WhatsAppOrder) {
       .then((r) => { if (!r.ok) console.error("Order alert not sent:", r.status); })
       .catch((e) => console.error("Order alert failed:", e?.message || e));
   }
+}
+
+const reviewUrl = (orderId: string) => `${SITE}/review/${reviewToken(reviewSecret(), orderId)}`;
+
+// Owner 2026-11-20: after delivery the customer gets a WhatsApp asking for a review (verified buyers only).
+// Sent from the shop's own linked session; skipped when the gateway or a real customer number is missing.
+function askForReview(order: WhatsAppOrder) {
+  const { WA_NOTIFY_URL: url, WA_NOTIFY_KEY: key, WA_NOTIFY_SESSION: session } = process.env;
+  const digits = (order.customerPhone || "").replace(/\D/g, "");
+  if (!url || !key || !session || digits.length < 9 || !reviewSecret()) return;
+  const n = formatWhatsAppNumberForLink(order.customerPhone);
+  const first = flat(order.customerName).split(" ")[0];
+  const text = `Hi${first && !/guest/i.test(first) ? ` ${first}` : ""}, thank you for your order #${flat(order.id)} from Dubai Cigerette Shop. ` +
+    `How was it? Please rate it here (takes 20 seconds): ${reviewUrl(order.id)}`;
+  fetch(`${url.replace(/\/$/, "")}/api/messages/${encodeURIComponent(session)}/${encodeURIComponent(`${n}@s.whatsapp.net`)}/send`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-API-Key": key },
+    body: JSON.stringify({ message: { text } }),
+    signal: AbortSignal.timeout(8000),
+  })
+    .then((r) => { if (!r.ok) console.error("Review request not sent:", r.status); })
+    .catch((e) => console.error("Review request failed:", e?.message || e));
 }
 
 // Per-IP rate limit on public order creation: max 15 orders per 10 minutes.
@@ -153,7 +177,11 @@ function mergeLead(leads: Lead[], order: WhatsAppOrder): Lead[] {
 export async function GET(request: NextRequest) {
   const store = await readStore();
   if (authorized(request)) {
-    return NextResponse.json(store);
+    // staff get each delivered order's review link (to send by hand while the shop WhatsApp is not linked)
+    return NextResponse.json({
+      ...store,
+      orders: store.orders.map((o) => (o.status === "Delivered" && reviewSecret() ? { ...o, reviewUrl: reviewUrl(o.id) } : o)),
+    });
   }
   const { searchParams } = new URL(request.url);
   const id = (searchParams.get("id") || "").trim().replace(/^#/, "").toUpperCase();
@@ -264,9 +292,11 @@ export async function POST(request: NextRequest) {
   }
 
   if (body.action === "status" && body.id && body.status) {
+    const before = store.orders.find((o) => o.id === body.id);
     store.orders = store.orders.map((o) =>
       o.id === body.id ? { ...o, status: body.status! } : o
     );
+    if (before && before.status !== "Delivered" && body.status === "Delivered") askForReview(before);
   } else if (body.action === "deleteOrder" && body.id) {
     store.orders = store.orders.filter((o) => o.id !== body.id);
   } else if (body.action === "deleteLead" && body.id) {
