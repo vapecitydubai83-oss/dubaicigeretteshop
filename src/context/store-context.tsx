@@ -176,7 +176,8 @@ export function StoreProvider({
 
       const savedUsers = localStorage.getItem(STORAGE_KEYS.USERS);
       const session = sessionStorage.getItem(STORAGE_KEYS.SESSION);
-      const sess = session ? JSON.parse(session) : null;
+      // no server key = nothing the panel does reaches the server (WhatsApp card stuck on "Checking…"): sign in again
+      const sess = session && localStorage.getItem(STORAGE_KEYS.ADMINKEY) ? JSON.parse(session) : null;
       if (savedUsers) {
         const parsed: AdminUser[] = JSON.parse(savedUsers);
         setAdminUsers(parsed);
@@ -838,32 +839,16 @@ export function StoreProvider({
         if (data?.key) void refreshAdminUsers(data.key);
         return { ok: true };
       }
-      // The server owns the seeded admin account ("u-admin"), so its 401/429
-      // rejection must not be bypassed by local default credentials. Staff
-      // accounts are server-side too; the local check below only remains as
-      // an offline fallback.
-      if (res.status === 401 || res.status === 429) {
-        const errData = await res.json().catch(() => ({}));
-        serverError =
-          errData?.error || "Incorrect username or password. Please try again.";
-      }
+      // Server login only: the old browser-only fallback signed managers in without the
+      // server key, so their edits and the WhatsApp card never reached the server.
+      const errData = await res.json().catch(() => ({}));
+      serverError =
+        errData?.error || "Incorrect username or password. Please try again.";
     } catch {}
-
-    const u = adminUsers.find(
-      (x) => x.username.toLowerCase() === username.trim().toLowerCase()
-    );
-    if (serverError && (!u || u.id === "u-admin"))
-      return { ok: false, error: serverError };
-    if (!u) return { ok: false, error: "No account found with that username." };
-    const h = await hashPassword(password);
-    if (h !== u.passwordHash)
-      return {
-        ok: false,
-        error: serverError || "Incorrect password. Please try again.",
-      };
-    setCurrentUser(u);
-    saveSession(u);
-    return { ok: true };
+    return {
+      ok: false,
+      error: serverError || "Could not reach the website server. Check the internet and try again.",
+    };
   };
 
   const adminLogout = () => {
