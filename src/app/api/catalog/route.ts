@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
   const store = await readCatalogStore();
 
   if (body.action === "upsert" && body.product?.id) {
-    const p = body.product;
+    const p = { ...body.product, updatedAt: new Date().toISOString() };
     store.products[p.id] = p;
     store.deleted = store.deleted.filter((id) => id !== p.id);
   } else if (body.action === "delete" && body.id) {

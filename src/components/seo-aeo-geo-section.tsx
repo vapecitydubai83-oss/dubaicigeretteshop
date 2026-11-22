@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
 import { DUBAI_AREAS, formatWhatsAppNumberForLink } from "@/lib/catalog-data";
-import { DELIVERY_TIME, RETURN_POLICY } from "@/lib/offer-schema";
 
 export function SeoAeoGeoSection({
   isLightTheme = true,
@@ -97,68 +96,13 @@ export function SeoAeoGeoSection({
         "@type": "ItemList",
         name: "Cigarette Cartons & Heated Tobacco in Dubai",
         numberOfItems: products.length,
+        // Summary list (name + link only): each product page carries its own full Product markup. The full copy
+        // here made the homepage ~600 KB heavier for crawlers without adding anything.
         itemListElement: products.map((p, idx) => ({
           "@type": "ListItem",
           position: idx + 1,
-          item: {
-            "@type": "Product",
-            sku: p.sku,
-            mpn: p.sku,
-            name: `${p.title} (${p.format})`,
-            description: p.description,
-            brand: {
-              "@type": "Brand",
-              name: p.brand,
-            },
-            category: p.category,
-            additionalProperty: [
-              {
-                "@type": "PropertyValue",
-                name: "Tar Content",
-                value: p.tar,
-              },
-              {
-                "@type": "PropertyValue",
-                name: "Nicotine Content",
-                value: p.nicotine,
-              },
-              {
-                "@type": "PropertyValue",
-                name: "Origin",
-                value: p.origin,
-              },
-            ],
-            image: [p.customImageUrl, ...(p.galleryImages ?? [])]
-              .filter((u): u is string => !!u && !!u.trim())
-              .slice(0, 3)
-              .map((u) => (u.startsWith("http") ? u : `https://dubaicigeretteshop.ae${u.startsWith("/") ? u : `/${u}`}`)),
-            offers: {
-              "@type": "Offer",
-              priceCurrency: "AED",
-              price: p.cartonPrice.toFixed(2),
-              availability: p.inStock
-                ? "https://schema.org/InStock"
-                : "https://schema.org/OutOfStock",
-              itemCondition: "https://schema.org/NewCondition",
-              seller: {
-                "@id": "https://dubaicigeretteshop.ae/#organization",
-              },
-              shippingDetails: {
-                "@type": "OfferShippingDetails",
-                shippingRate: {
-                  "@type": "MonetaryAmount",
-                  value: p.cartonPrice >= settings.freeDeliveryThreshold ? "0.00" : settings.standardDeliveryFee.toFixed(2),
-                  currency: "AED",
-                },
-                shippingDestination: {
-                  "@type": "DefinedRegion",
-                  addressCountry: "AE",
-                },
-                deliveryTime: DELIVERY_TIME,
-              },
-              hasMerchantReturnPolicy: RETURN_POLICY,
-            },
-          },
+          url: `https://dubaicigeretteshop.ae/product/${p.id}`,
+          name: p.title,
         })),
       },
       {

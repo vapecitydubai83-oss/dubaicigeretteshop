@@ -102,6 +102,7 @@ export interface Product {
   galleryImages?: string[];
   flavorOptions?: string[]; // flavours the customer picks from; photo i (main, then gallery) shows flavour i
   seoAnswerCapsule?: string;
+  updatedAt?: string; // ISO, stamped by the server on every admin save (sitemap lastmod)
 }
 
 /**
