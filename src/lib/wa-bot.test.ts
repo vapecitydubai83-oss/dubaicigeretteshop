@@ -1,6 +1,6 @@
 // Run: node src/lib/wa-bot.test.ts   (Node 22.6+ strips the types itself)
 import assert from "node:assert/strict";
-import { botReply, findArea, lineTotal, matchProducts, PIN, replyOk, type BotProduct, type BotResult } from "./wa-bot.ts";
+import { answerOk, botReply, factsFor, findArea, isQuestion, lineTotal, matchProducts, PIN, replyOk, stepPrompt, type BotProduct, type BotResult } from "./wa-bot.ts";
 
 const P: BotProduct[] = [
   { id: "marlboro-gold", title: "Marlboro Gold", brand: "Marlboro", category: "cigarettes", format: "Carton", cartonPrice: 190, fiveCartonPrice: 925, inStock: true },
@@ -163,3 +163,48 @@ r = say(botReply("marlboro", "TEXT", P, S, false), "hmm not sure");
 assert.match(r.reply, /Which one would you like/);
 assert.equal(r.understood, false);
 console.log("wa-bot: website chat checks passed");
+
+// PLAN 74r: a word typed on a list narrows it; questions are spotted; AI answers may only use the facts' numbers
+{
+  const V: BotProduct[] = [...P,
+    { id: "mv-ice", title: "Marlboro Vista Double Ice Cigarettes", brand: "Marlboro", category: "cigarettes", cartonPrice: 210, inStock: true, strength: "Medium", flavor: "Menthol" },
+    { id: "mv-mix", title: "Marlboro Vista Double Mix Cigarettes", brand: "Marlboro", category: "cigarettes", cartonPrice: 210, inStock: true },
+  ];
+  let m = botReply("marlboro", "TEXT", V, S, false);
+  m = botReply("vista", "TEXT", V, S, true, m.state);
+  assert.deepEqual(m.state?.options, ["mv-ice", "mv-mix"]);
+  assert.match(m.reply, /Here they are/);
+  m = botReply("ice", "TEXT", V, S, true, m.state);
+  assert.equal(m.state?.step, "qty");
+  assert.equal(m.state?.pick, "mv-ice");
+  assert.match(stepPrompt(m.state, V)[0], /How many \*Marlboro Vista Double Ice Cigarettes\*/);
+  assert.equal(isQuestion("which one is stronger"), true);
+  assert.equal(isQuestion("2 marlboro gold"), false);
+  const f = factsFor("vista double ice", null, V, S);
+  assert.match(f, /Marlboro Vista Double Ice Cigarettes: AED 210 a carton \| strength Medium \| flavour Menthol/);
+  assert.match(f, /Marlboro Gold: AED 190/); // cheaper ones of the same kind, for "something cheaper?"
+  assert.equal(answerOk("Vista Double Ice is menthol, AED 210 a carton.", f), true);
+  assert.equal(answerOk("Vista Double Ice is AED 199 today!", f), false);
+  assert.equal(answerOk("See www.example.com", f), false);
+}
+console.log("wa-bot: understanding checks passed");
+
+// PLAN 74r trial fixes: the whole product name in a sentence, an address that says "deliver"
+{
+  const V: BotProduct[] = [...P,
+    { id: "dh-sw", title: "Dunhill Switch Blue Cigarettes", brand: "Dunhill", category: "cigarettes", cartonPrice: 120, inStock: true },
+    { id: "dh-bl", title: "Dunhill Blue Lights Cigarettes", brand: "Dunhill", category: "cigarettes", cartonPrice: 165, inStock: true },
+    { id: "dh-b", title: "Dunhill Blue Cigarettes", brand: "Dunhill", category: "cigarettes", cartonPrice: 145, inStock: true },
+  ];
+  let m = botReply("i want 3 cartons of the blue dunhill", "TEXT", V, S, true);
+  assert.equal(m.state?.cart?.[0]?.title, "Dunhill Blue Cigarettes");
+  assert.equal(m.state?.cart?.[0]?.qty, 3);
+  assert.equal(botReply("dunhill blue lights", "TEXT", V, S, true).state?.pick, "dh-bl"); // the longer name wins
+  m = botReply("marlboro", "TEXT", V, S, false);
+  const r = botReply("deliver to my place in jlt cluster d", "TEXT", V, S, true, m.state);
+  assert.equal(r.state?.step, "product");
+  assert.equal(r.state?.area, "jlt cluster d");
+  assert.match(r.reply, /Which one would you like/);
+  assert.equal(botReply("how long to jlt?", "TEXT", V, S, true).intent, "delivery");
+}
+console.log("wa-bot: trial fix checks passed");

@@ -2,7 +2,7 @@
 // The AI never decides facts: understand() only turns a messy message into a command the rule bot knows,
 // and humanize() rewords the rule bot's draft, which replyOk() checks before anything is sent.
 // Off (returns null) without SHOMOY_AI_KEY, on any error, or after 12 s: the rule bot's text is used then.
-import { replyOk } from "@/lib/wa-bot";
+import { answerOk, replyOk } from "@/lib/wa-bot";
 
 async function chat(messages: { role: string; content: string }[], maxTokens: number): Promise<string | null> {
   const key = process.env.SHOMOY_AI_KEY;
@@ -35,30 +35,45 @@ const WAITING: Record<string, string> = {
   more: "1 to add another product, or 0 / done to finish",
   area: "the delivery area or address",
   name: "the customer's name for the rider",
+  phone: "the customer's WhatsApp number",
   confirm: "yes to place the order, edit, or cancel",
 };
 
-// The customer's words -> one short command for the rule bot, or null.
-export async function understand(text: string, step: string | undefined, lastBot: string): Promise<string | null> {
+// What the customer means (PLAN 74r): an action for the rule bot ({command}), an answer to their question
+// from the catalog facts ({answer}, checked by answerOk), or null when unsure.
+export async function interpret(
+  text: string, step: string | undefined, lastBot: string, recent: string[], facts: string,
+): Promise<{ command?: string; answer?: string } | null> {
   const sys = [
-    "You read WhatsApp messages sent to a cigarette shop in Dubai and turn each into ONE short English command for the shop's order bot.",
-    LEGIT, 'If you are unsure, answer {"command":"unclear"}.',
-    'Answer with JSON only, like {"command":"2 marlboro gold"}.',
-    "Possible commands: a quantity and product name (\"2 marlboro gold\"), a product or brand name, \"menu\" (wants to see products or prices),",
-    "\"agent\" (wants a person, has a complaint or a question the bot cannot answer), \"cancel\", \"yes\" (agrees or confirms), \"done\" (no more items),",
-    "\"delivery\" (asks about delivery time or fee), a delivery area or address, a person's name, a number (a choice from the bot's last menu), or \"unclear\".",
+    "You are the order assistant of a cigarette shop in Dubai, reading a customer's chat message. Work out what they really mean, using the chat so far.",
+    LEGIT,
+    'Answer with JSON only, exactly one of:',
+    '{"command":"..."} when they want the bot to DO something. Commands the bot knows: a number (their choice from the bot\'s last numbered list),',
+    '  "<quantity> <exact product title from FACTS>" (e.g. "2 Marlboro Gold Cigarettes"), an exact product title, a brand name, "menu",',
+    '  "yes" (confirms), "done" (no more items), "cancel", "edit", "agent" (wants a person or complains), a delivery address, a person\'s name, a phone number.',
+    '{"answer":"..."} when they ASK something (which is stronger/lighter/cheaper, the difference between products, a suggestion, stock, delivery, payment).',
+    "  Answer like a helpful shop assistant in 1-3 short sentences, in the customer's language. Use ONLY the FACTS: name products by their exact title with",
+    "  their price from FACTS (the exact price of the product asked about, never a range). If the FACTS do not answer it, say our team can confirm and they can reply *agent*. Never invent numbers, health claims or promises.",
+    '{"command":"unclear"} if you really cannot tell.',
     `The bot is now waiting for: ${WAITING[step || ""] || "anything (no order open)"}.`,
-    "Understand any language (English, Arabic, Hindi, Urdu, Bangla, Tagalog, Russian...) and typos. Write product, brand and place names in English letters (دنهل -> dunhill, मार्लबोरो -> marlboro). Never add prices or products the customer did not name.",
+    "Understand any language (English, Arabic, Hindi, Urdu, Bangla, Tagalog, Russian...), slang and typos. In commands write names in English letters (دنهل -> dunhill).",
   ].join("\n");
   const out = await chat([
     { role: "system", content: sys },
-    { role: "user", content: `Bot's last message:\n${lastBot.slice(0, 600)}\n\nCustomer's message:\n${text.slice(0, 400)}` },
-  ], 60);
+    { role: "user", content: `FACTS:\n${facts}\n\nChat so far:\n${recent.join("\n").slice(-700)}\n\nBot's last message:\n${lastBot.slice(0, 700)}\n\nCustomer's message:\n${text.slice(0, 400)}` },
+  ], 350);
   const m = out?.match(/\{[\s\S]*\}/);
   if (!m) return null;
   try {
-    const c = String(JSON.parse(m[0]).command || "").trim().slice(0, 80);
-    return c && c.toLowerCase() !== "unclear" && c !== text.trim() ? c : null;
+    const j = JSON.parse(m[0]);
+    const answer = typeof j.answer === "string" ? j.answer.trim() : "";
+    if (answer) {
+      if (answerOk(answer, facts)) return { answer };
+      console.error("wa-ai answer rejected by the fact check");
+      return null;
+    }
+    const c = String(j.command || "").trim().slice(0, 80);
+    return c && c.toLowerCase() !== "unclear" && c !== text.trim() ? { command: c } : null;
   } catch { return null; }
 }
 

@@ -12,6 +12,13 @@ export interface BotProduct {
   cartonPrice: number | string;
   fiveCartonPrice?: number | string;
   inStock?: boolean;
+  // facts the AI may quote when a customer asks (PLAN 74r)
+  strength?: string;
+  flavor?: string;
+  tar?: string;
+  nicotine?: string;
+  origin?: string;
+  subCategory?: string;
 }
 
 export interface BotSettings {
@@ -252,6 +259,21 @@ export function botReply(
       if (orderable(p) && st.want) return botReply(String(st.want), "TEXT", products, s, true, { ...st, step: "qty", pick: p!.id, options: undefined, want: undefined }, last, ch);
       if (orderable(p)) return askQty(p!);
     }
+    if (st.step === "product" && isNaN(n) && q) {
+      // a word typed on a list narrows it: "vista" on the Marlboro list -> the Vista ones
+      const list = opt.map((id) => products.find((p) => p.id === id)).filter(orderable) as BotProduct[];
+      const tw = (p: BotProduct) => norm(p.title).split(" ");
+      const words = q.split(" ").filter((w) => w.length >= 3 && list.some((p) => tw(p).some((t) => t.startsWith(w))));
+      const hit = words.length ? list.filter((p) => words.every((w) => tw(p).some((t) => t.startsWith(w)))) : [];
+      if (hit.length === 1) {
+        if (st.want) return botReply(String(st.want), "TEXT", products, s, true, { ...st, step: "qty", pick: hit[0].id, options: undefined, want: undefined }, last, ch);
+        return askQty(hit[0]);
+      }
+      if (hit.length > 1 && hit.length < list.length) {
+        const m = productMenu(hit);
+        return out("product", ["Here they are. Which one would you like? Reply with its number:", ...m.lines], { ...st, options: m.options }, { productIds: m.options });
+      }
+    }
     if (st.step === "qty" && qty) {
       const p = products.find((x) => x.id === st.pick);
       const k = Number(qty[1]);
@@ -331,13 +353,27 @@ export function botReply(
     return out("product", ["I found these. Which one would you like? Reply with its number:", ...m.lines],
       { step: "product", options: m.options, ...base, area: area || st?.area, want: wantOf(items) }, { productIds: m.options });
   }
-  if (brand) return brandItems(brand, items, wantOf(items));
-  if (has(q, ["delivery", "deliver", "how long", "time", "shipping", "courier", "fee", "free"]) || /how (long|much time)/.test(q)) {
-    return out("delivery", [deliveryLine(s), "Payment: cash or card on delivery.", ORDER_ASK], st);
+  if (brand) {
+    // "3 cartons of the blue dunhill": the product whose whole name (less "cigarettes") is in the message
+    const qw = q.split(" ");
+    const core = (p: BotProduct) => norm(p.title).split(" ").filter((w) => !/^cigarettes?$/.test(w));
+    const tight = items.filter((p) => orderable(p) && core(p).every((w) => qw.includes(w))).sort((a, b) => core(b).length - core(a).length)[0];
+    if (tight) {
+      const k = wantOf([tight]);
+      if (k) return botReply(String(k), "TEXT", products, s, true, { step: "qty", pick: tight.id, ...base, area: area || st?.area }, last, ch);
+      return askQty(tight, area || st?.area);
+    }
+    return brandItems(brand, items, wantOf(items));
+  }
+  // "deliver to my place in jlt" is an address, "how long to jlt?" a question
+  if ((!area || isQuestion(text)) && (has(q, ["delivery", "deliver", "how long", "time", "shipping", "courier", "fee", "free"]) || /how (long|much time)/.test(q))) {
+    return out("delivery", [deliveryLine(s), "Payment: cash or card on delivery.", ...stepPrompt(st, products, ch)], st);
   }
   if (area) {
-    const full = text.trim().replace(/[*_~`]/g, "").replace(/\s+/g, " ").slice(0, 100); // keep the building too
+    const full = text.trim().replace(/[*_~`]/g, "").replace(/\s+/g, " ") // keep the building too, drop "deliver to my place in"
+      .replace(/^(please )?(deliver|delivery|send it|send|bring it|bring) (to|at) (my (place|home|house|flat|office|room|building) (in|at) )?/i, "").slice(0, 100);
     if (cart.length && st) return next({ ...st, area: full });
+    if (st?.step === "product" || st?.step === "qty") return out("order", [`📍 Yes, we deliver to ${title(area)}!`, ...stepPrompt(st, products, ch)], { ...st, area: full });
     if (st) return out("order", [`📍 Yes, we deliver to ${title(area)}! What would you like? Type a product name, or reply *menu* for the list.`], { ...st, area: full });
     return brands("order", [`📍 Yes, we deliver to ${title(area)}. What would you like? Reply with a number:`], { area: full });
   }
@@ -347,16 +383,7 @@ export function botReply(
   const asked = has(q, PRICE_WORDS);
   if (st && !asked && hadReplyBefore) {
     // not understood inside an order: ask the current question again (the AI layer tries the message first)
-    const opt = st.options || [];
-    const again = (lines: string[]) => out("cart", lines, st, { understood: false });
-    if (st.step === "product") {
-      const list = opt.map((id) => products.find((p) => p.id === id)).filter(orderable) as BotProduct[];
-      if (list.length) return again(["Which one would you like? Reply with its number:", ...productMenu(list).lines]);
-    }
-    if (st.step === "qty") return again(["How many would you like? Just reply with a number, for example *2*."]);
-    if (st.step === "more") return again(["Would you like anything else? Reply *1* to add another product, or *0* to finish."]);
-    if (st.step === "confirm") return again(["Shall I place it? Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*."]);
-    return again(["Which brand would you like? Type a product name like *Marlboro Gold*, or reply *menu* to see the list again."]);
+    return out("cart", stepPrompt(st, products, ch), st, { understood: false });
   }
   if (asked || hadReplyBefore) {
     return brands("brands", ["Cigarette prices today. Reply with a number to order:"], {}, { understood: asked });
@@ -367,6 +394,70 @@ export function botReply(
     "",
     "What would you like? Reply with a number:",
   ], {}, { understood: !q || greet });
+}
+
+// The question the chat is waiting on, asked again (after a not-understood message or an AI answer).
+export function stepPrompt(st: OrderState | null, products: BotProduct[], ch: "wa" | "web" = "wa"): string[] {
+  if (!st) return [ORDER_ASK];
+  if (st.step === "product") {
+    const list = (st.options || []).map((id) => products.find((p) => p.id === id)).filter(orderable) as BotProduct[];
+    if (list.length) return ["Which one would you like? Reply with its number:", ...productMenu(list).lines];
+  }
+  if (st.step === "qty") {
+    const p = products.find((x) => x.id === st.pick);
+    return [`How many${p ? ` *${p.title}*` : ""} would you like? Just reply with a number, for example *2*.`];
+  }
+  if (st.step === "more") return ["Would you like anything else? Reply *1* to add another product, or *0* to finish."];
+  if (st.step === "area") return [ch === "web" ? "Where should we deliver? Type your area and building." : "Where should we deliver? Type your area or send your 📍 location pin."];
+  if (st.step === "name") return ["What name should the rider ask for?"];
+  if (st.step === "phone") return ["What is your WhatsApp number?"];
+  if (st.step === "confirm") return ["Shall I place it? Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*."];
+  return ["Which brand would you like? Type a product name like *Marlboro Gold*, or reply *menu* to see the list again."];
+}
+
+// A real question, not an instruction: the AI answers it from the catalog facts first (PLAN 74r).
+export function isQuestion(text: string): boolean {
+  const q = norm(text);
+  return /\?/.test(text) || has(q, ["which", "what", "why", "difference", "different", "cheaper", "cheapest", "stronger", "strongest",
+    "lighter", "lightest", "smoother", "best", "recommend", "suggest", "similar", "compare", "vs", "original", "fresh", "taste", "flavour", "flavor"]);
+}
+
+// The catalog facts the AI may use for this message: the list on screen, the cart, the products named,
+// and cheaper ones of the same kind. Nothing outside these lines may appear as a number in its answer.
+export function factsFor(text: string, st: OrderState | null, products: BotProduct[], s: BotSettings): string {
+  const byId = (id: string) => products.find((p) => p.id === id);
+  const named = matchProducts(text, products);
+  const pool: BotProduct[] = [
+    ...(st?.options || []).map(byId), ...(st?.cart || []).map((i) => byId(i.productId)), st?.pick ? byId(st.pick) : undefined,
+    ...named.items.slice(0, 10),
+  ].filter(Boolean) as BotProduct[];
+  const anchor = named.items[0] || pool[0];
+  if (anchor) {
+    pool.push(...products.filter((p) => orderable(p) && p.category === anchor.category && num(p.cartonPrice) < num(anchor.cartonPrice))
+      .sort((a, b) => num(b.cartonPrice) - num(a.cartonPrice)).slice(0, 8));
+  }
+  const seen = new Set<string>();
+  const lines = pool.filter((p) => !seen.has(p.id) && seen.add(p.id)).slice(0, 25).map((p) => [
+    `- ${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}${num(p.fiveCartonPrice) > 0 ? `, 5 for ${aed(p.fiveCartonPrice)}` : ""}`,
+    p.strength && `strength ${p.strength}`, p.flavor && `flavour ${p.flavor}`, p.subCategory,
+    p.tar && p.tar !== "N/A" && `tar ${p.tar}`, p.nicotine && p.nicotine !== "N/A" && `nicotine ${p.nicotine}`,
+    p.origin && `made in ${p.origin}`, p.inStock === false ? "OUT OF STOCK" : "in stock",
+  ].filter(Boolean).join(" | "));
+  // nothing named in English letters (Arabic, Hindi, typos): every in-stock product, one short line each
+  const all = products.filter(orderable).map((p) => `- ${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}`);
+  return [
+    "Products:", ...(lines.length ? lines : all),
+    "Shop:", `- ${deliveryLine(s).replace("🛵 ", "")}`, "- Payment: cash or card on delivery.", "- Adults 18+ only.",
+  ].join("\n");
+}
+
+// Gate for an AI answer to a question: every number and link must come from the facts it was given.
+export function answerOk(answer: string, facts: string): boolean {
+  const a = answer.trim();
+  if (!a || a.length > 900) return false;
+  const nums = new Set(facts.match(/\d+(\.\d+)?/g) || []);
+  if ((a.match(/\d+(\.\d+)?/g) || []).some((x) => !nums.has(x))) return false;
+  return !/https?:\/\/|www\./i.test(a);
 }
 
 // Gate for an AI-worded reply (PLAN 74p): the AI may change the wording, never the facts. Every menu,

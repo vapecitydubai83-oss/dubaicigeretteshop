@@ -2,8 +2,8 @@
 // rule bot -> AI reading if not understood -> save a confirmed order -> AI wording (fact-checked).
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
 import { readCatalogStore } from "@/lib/catalog-store";
-import { botReply, type BotResult, type LastOrder, type OrderState, type PlacedOrder } from "@/lib/wa-bot";
-import { humanize, understand } from "@/lib/wa-ai";
+import { botReply, factsFor, isQuestion, stepPrompt, type BotResult, type LastOrder, type OrderState, type PlacedOrder } from "@/lib/wa-bot";
+import { humanize, interpret } from "@/lib/wa-ai";
 
 export async function liveCatalog() {
   const store = await readCatalogStore();
@@ -70,10 +70,21 @@ export async function runTurn(a: TurnInput): Promise<{ r: BotResult; reply: stri
   const { products, settings } = await liveCatalog();
   const run = (t: string, type: string) => botReply(t, type, products, settings, a.hadBot, a.state, a.last, a.ch);
   let r = run(a.text, a.type);
-  if (!r.understood && a.text) {
-    const cmd = await understand(a.text, a.state?.step, a.lastBot);
-    if (cmd) {
-      const r2 = run(cmd, "TEXT");
+  let answered = "";
+  // the rules miss it, or it is a real question (the rules only match words): the AI reads what is meant
+  if (a.text && (!r.understood || (isQuestion(a.text) && !r.order && r.intent !== "human"))) {
+    const it = await interpret(a.text, a.state?.step, a.lastBot, a.recent, factsFor(a.text, a.state, products, settings));
+    if (it?.answer) {
+      // answer the question, then the order carries on: "do you have marlboro gold?" keeps the rule's next step
+      // (how many?), "something cheaper than gold?" stays where the chat was
+      const compare = /cheap|similar|like|differ|strong|light|smooth|best|recommend|suggest|\bvs\b|compar|alternative|other/i.test(a.text);
+      // an answer that suggests several products ("menthol ones?") must not pick one of them
+      const several = products.filter((p) => it.answer!.toLowerCase().includes(p.title.toLowerCase().replace(/ cigarettes?$/, ""))).length > 1;
+      const keep = r.understood && !compare && !several ? r.state : a.state;
+      answered = [it.answer, "", ...stepPrompt(keep, products, a.ch)].join("\n");
+      r = { ...r, state: keep, order: undefined, handover: false, reply: answered };
+    } else if (it?.command) {
+      const r2 = run(it.command, "TEXT");
       if (r2.understood) r = r2;
     }
   }
@@ -90,6 +101,6 @@ export async function runTurn(a: TurnInput): Promise<{ r: BotResult; reply: stri
   }
   // a bare "hi" gets the welcome as written (the AI only doubled its question); "how are you?" gets a human answer
   const bareHi = r.intent === "welcome" && a.text.trim().split(/ +/).length <= 2;
-  if (!bareHi) reply = (await humanize(a.text || `[${a.type.toLowerCase()}]`, reply, a.recent)) || reply;
+  if (!bareHi && !answered) reply =(await humanize(a.text || `[${a.type.toLowerCase()}]`, reply, a.recent)) || reply;
   return { r, reply: reply.replace("{ORDER}", orderId), orderId };
 }
