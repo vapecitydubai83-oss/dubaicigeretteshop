@@ -40,7 +40,7 @@ function notifyShop(order: WhatsAppOrder) {
     ...order.items.map(
       (i) => `• ${i.quantity} × ${flat(i.title)}${i.flavor ? ` — ${flat(i.flavor)}` : ""} (${i.packTier === "5-cartons" ? "5-bundle price" : "single price"}) — AED ${i.unitPrice * i.quantity}`
     ),
-    `Total: *AED ${order.total}* (delivery AED ${order.deliveryFee}) — prices as sent by the customer's browser, check before confirming`,
+    `Total: *AED ${order.total}* (delivery AED ${order.deliveryFee}) ${order.source === "WhatsApp Bot" ? "— live catalog prices, chosen in the WhatsApp chat" : "— prices as sent by the customer's browser, check before confirming"}`,
     `Customer: ${flat(order.customerName)} · ${flat(order.customerPhone)}`,
     `Area: ${flat(order.deliveryArea)}`,
     `Note: ${flat(order.addressNote)}`,
@@ -275,7 +275,8 @@ export async function POST(request: NextRequest) {
       total: subtotal + deliveryFee,
       status: authorized(request) && raw.status ? raw.status : "New WhatsApp Lead",
       source:
-        raw.source === "Multi-Item Cart" || raw.source === "Hero Quick-Order"
+        raw.source === "Multi-Item Cart" || raw.source === "Hero Quick-Order" ||
+        (raw.source === "WhatsApp Bot" && authorized(request))
           ? raw.source
           : "Express 1-Click",
     };

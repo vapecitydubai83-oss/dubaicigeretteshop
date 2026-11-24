@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "crypto";
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
 import { readCatalogStore } from "@/lib/catalog-store";
-import { botReply } from "@/lib/wa-bot";
+import { botReply, type BotResult, type PlacedOrder } from "@/lib/wa-bot";
+import { humanize, understand } from "@/lib/wa-ai";
 import { addMsg, chatOf, update } from "@/lib/wa-bot-store";
 
 // WhatsApp auto-replies for the shop number. The WhatsApp gateway (WA-AKG, session WA_NOTIFY_SESSION)
@@ -10,9 +11,14 @@ import { addMsg, chatOf, update } from "@/lib/wa-bot-store";
 // The bot answers prices/stock/delivery from the live catalog; orders, location pins and "talk to a person"
 // alert the shop and pause the bot in that chat. A message staff type on the phone also pauses it.
 const PAUSE_MS = 60 * 60 * 1000;
-const MIN_GAP_MS = 20 * 1000; // at most one bot reply per chat every 20 s
+const MIN_GAP_MS = 4 * 1000; // at most one bot reply per chat every 4 s (20 s dropped real quick follow-ups)
 const DAY_MAX = 15; // bot replies per chat per day
 const HOUR_MAX = 200; // bot replies per hour, all chats
+// while an order is open (PLAN 74p) the customer answers menus quickly: a short gap and a higher daily cap
+const ORDER_GAP_MS = 3 * 1000;
+const ORDER_DAY_MAX = 60;
+const ORDER_TTL_MS = 6 * 3600 * 1000; // an order left open this long starts again
+const chains = new Map<string, Promise<unknown>>(); // one message at a time per chat, so order steps keep their order
 const sentTimes: number[] = [];
 
 function verify(raw: string, header: string | null): boolean {
@@ -52,6 +58,46 @@ async function send(jid: string, text: string) {
 }
 
 const flat = (s: string) => s.replace(/\s+/g, " ").slice(0, 300);
+
+// Save a confirmed chat order through the site's own orders API (same checks, admin panel, lead + staff alert).
+async function saveOrder(o: PlacedOrder, phone: string, chatName: string): Promise<string | null> {
+  const items = o.cart.flatMap((i) => {
+    const bundles = i.five > 0 ? Math.floor(i.qty / 5) : 0;
+    const rest = i.qty - bundles * 5;
+    const base = { productId: i.productId, title: i.title, brand: i.brand };
+    return [
+      ...(bundles ? [{ ...base, packTier: "5-cartons", quantity: bundles, unitPrice: i.five }] : []),
+      ...(rest ? [{ ...base, packTier: "1-carton", quantity: rest, unitPrice: i.carton }] : []),
+    ];
+  });
+  const order = {
+    id: `WA-${Math.floor(1000 + Math.random() * 9000)}`,
+    customerName: o.name || chatName || "WhatsApp customer",
+    customerPhone: phone ? `+${phone}` : "WhatsApp chat (number hidden)",
+    deliveryArea: o.area,
+    addressNote: (o.area.startsWith("📍") ? "Location pin sent in the WhatsApp chat. " : "") +
+      (o.feeLater ? "Courier fee to confirm with the customer. " : "") + "Ordered in the WhatsApp chat.",
+    paymentMethod: "Cash on Delivery",
+    items,
+    deliveryFee: o.deliveryFee,
+    source: "WhatsApp Bot",
+  };
+  try {
+    const r = await fetch(`http://127.0.0.1:${process.env.PORT || 3000}/api/orders`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-key": process.env.ADMIN_API_KEY || "" },
+      body: JSON.stringify({ action: "create", order }),
+      signal: AbortSignal.timeout(15000),
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.id) { console.error("wa-bot order not saved:", r.status); return null; }
+    return String(j.id);
+  } catch (e) {
+    console.error("wa-bot order not saved:", (e as Error)?.message || e);
+    return null;
+  }
+}
+
 const phoneOf = (jid: string) => (jid.endsWith("@s.whatsapp.net") ? jid.split("@")[0] : "");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -75,33 +121,69 @@ async function handle(ev: { event?: string; sessionId?: string; data?: Record<st
       addMsg(c, "staff", text || `[${String(d.type || "message").toLowerCase()}]`, now);
       c.pausedUntil = now + PAUSE_MS;
       c.needsPerson = false;
+      c.order = undefined; // staff took over: the bot's open order is theirs now
     });
     return;
   }
   if (ev.event !== "message.received") return;
 
   const type = String(d.type || "TEXT");
-  const plan = await update(async (s) => {
+  // step 1 (short, under the store lock): record the message, apply the limits, read the chat's order
+  const plan = await update((s) => {
     const c = chatOf(s, jid, String(d.pushName || ""));
     const hadBot = c.msgs.some((m) => m.from === "bot");
+    const lastBot = [...c.msgs].reverse().find((m) => m.from === "bot")?.text || "";
+    const recent = c.msgs.slice(-6).map((m) => `${m.from}: ${m.text.slice(0, 200)}`);
     addMsg(c, "customer", text || `[${type.toLowerCase()}]`, now);
     if (!s.enabled || c.pausedUntil > now) return null;
+    if (c.order && now - c.order.at > ORDER_TTL_MS) c.order = undefined;
     const day = new Date(now + 4 * 3600 * 1000).toISOString().slice(0, 10); // Dubai day
     if (c.botDay !== day) { c.botDay = day; c.botCount = 0; }
     while (sentTimes.length && sentTimes[0] < now - 3600 * 1000) sentTimes.shift();
-    if (now - c.lastBotAt < MIN_GAP_MS || c.botCount >= DAY_MAX || sentTimes.length >= HOUR_MAX) return null;
-    const { products, settings } = await liveCatalog();
-    const r = botReply(text, type, products, settings, hadBot);
+    const gap = c.order ? ORDER_GAP_MS : MIN_GAP_MS;
+    const dayMax = c.order ? ORDER_DAY_MAX : DAY_MAX;
+    if (now - c.lastBotAt < gap || c.botCount >= dayMax || sentTimes.length >= HOUR_MAX) return null;
     c.lastBotAt = now;
     c.botCount += 1;
     sentTimes.push(now);
-    addMsg(c, "bot", r.reply, now); // saved before sending, so its echo is not taken for staff
-    if (r.handover) { c.pausedUntil = now + PAUSE_MS; c.needsPerson = true; }
-    return { r, name: c.name };
+    return { name: c.name, hadBot, lastBot, recent, state: c.order || null, last: c.last || null };
   });
   if (!plan) return;
-  await send(jid, plan.r.reply);
-  if (plan.r.handover) {
+
+  // step 2 (no lock: AI and saving can take seconds): rule bot -> AI reading if not understood -> order -> AI wording
+  const { products, settings } = await liveCatalog();
+  const run = (t: string) => botReply(t, type, products, settings, plan.hadBot, plan.state, plan.last);
+  let r: BotResult = run(text);
+  if (!r.understood && text) {
+    const cmd = await understand(text, plan.state?.step, plan.lastBot);
+    if (cmd) {
+      const r2 = botReply(cmd, "TEXT", products, settings, plan.hadBot, plan.state, plan.last);
+      if (r2.understood) r = r2;
+    }
+  }
+  let reply = r.reply;
+  let orderId = "";
+  if (r.order) {
+    orderId = (await saveOrder(r.order, phoneOf(jid), plan.name)) || "";
+    if (!orderId) {
+      r = { ...r, handover: true, state: plan.state };
+      reply = "Sorry, I could not save your order just now. A team member will take it from here in a few minutes. 🙏";
+    }
+  }
+  // the welcome is already written to be friendly; the AI only doubled its question
+  if (r.intent !== "welcome") reply = (await humanize(text || `[${type.toLowerCase()}]`, reply, plan.recent)) || reply;
+  reply = reply.replace("{ORDER}", orderId);
+
+  // step 3: save the new state and the reply before sending, so its echo is not taken for staff
+  await update((s) => {
+    const c = chatOf(s, jid);
+    c.order = r.state ? { ...r.state, at: Date.now() } : undefined;
+    if (r.order && orderId) c.last = { cart: r.order.cart, area: r.order.area, name: r.order.name };
+    addMsg(c, "bot", reply, Date.now());
+    if (r.handover) { c.pausedUntil = Date.now() + PAUSE_MS; c.needsPerson = true; }
+  });
+  await send(jid, reply);
+  if (r.handover) {
     const who = phoneOf(jid) ? `+${phoneOf(jid)} (wa.me/${phoneOf(jid)})` : "a customer (number hidden by WhatsApp)";
     const alert = [
       `🙋 *Customer needs a person*: ${flat(plan.name || "no name")} · ${who}`,
@@ -124,6 +206,10 @@ export async function POST(request: NextRequest) {
   let ev;
   try { ev = JSON.parse(raw); } catch { return NextResponse.json({ error: "Bad JSON" }, { status: 400 }); }
   // the gateway waits only 10 s: answer now, reply in the background
-  handle(ev).catch((e) => console.error("wa-bot error:", e?.message || e));
+  const jid = String(ev?.data?.key?.remoteJid || "");
+  const prev = chains.get(jid) || Promise.resolve();
+  const job = prev.then(() => handle(ev)).catch((e) => console.error("wa-bot error:", e?.message || e));
+  chains.set(jid, job);
+  job.finally(() => { if (chains.get(jid) === job) chains.delete(jid); });
   return NextResponse.json({ ok: true });
 }

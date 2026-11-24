@@ -1,5 +1,6 @@
 import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
+import type { LastOrder, OrderState } from "@/lib/wa-bot";
 
 // WhatsApp auto-reply state: on/off switch + the last messages of each chat (for the admin panel and
 // so the bot knows whether it already greeted). One Node process: every change goes through `update`.
@@ -19,6 +20,8 @@ export interface Chat {
   botDay: string;
   botCount: number;
   lastBotAt: number;
+  order?: OrderState & { at: number }; // open WhatsApp order (PLAN 74p)
+  last?: LastOrder; // last placed order, for "same again"
 }
 export interface BotStore { enabled: boolean; chats: Record<string, Chat> }
 
