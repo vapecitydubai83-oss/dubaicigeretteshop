@@ -133,3 +133,33 @@ console.log("wa-bot: all checks passed");
   assert.equal(replyOk("*Dunhill* in stock. Reply with a number:\n*1* Dunhill Blue: AED 145 a carton", "اختر رقم 😊\n*1* Dunhill Blue: AED 145 a carton"), true); // translated
 }
 console.log("wa-bot: AI gate checks passed");
+
+// website chat: no pin, asks for the WhatsApp number (UAE local form made international), sends people to Live WA
+{
+  const web = (r: BotResult | null, text: string) => botReply(text, "TEXT", P, S, !!r, r?.state ?? null, null, "web");
+  let w = web(null, "2 marlboro gold");
+  w = web(w, "0");
+  assert.match(w.reply, /area and building/);
+  w = web(web(w, "Marina Gate 2"), "Ali");
+  assert.equal(w.state?.step, "phone");
+  assert.match(web(w, "12").reply, /valid mobile number/);
+  w = web(w, "050 123 4567");
+  assert.equal(w.state?.step, "confirm");
+  assert.match(w.reply, /Phone: \+971501234567/);
+  const done = web(w, "yes");
+  assert.equal(done.order?.phone, "971501234567");
+  assert.match(done.reply, /confirm it on WhatsApp/);
+  assert.match(web(null, "talk to a person").reply, /Live WA/);
+}
+// a question about ordering gets a yes + the menu; a quantity typed with a brand is kept until the pick
+assert.match(botReply("can i order here?", "TEXT", P, S, true).reply, /Yes, you can order right here/);
+r = botReply("2 marlboro", "TEXT", P, S, false);
+assert.equal(r.state?.want, 2);
+r = say(r, "2");
+assert.equal(r.state?.step, "more");
+assert.equal(r.state?.cart[0].qty, 2);
+// not understood mid-order: the question is asked again, not "sorry"
+r = say(botReply("marlboro", "TEXT", P, S, false), "hmm not sure");
+assert.match(r.reply, /Which one would you like/);
+assert.equal(r.understood, false);
+console.log("wa-bot: website chat checks passed");

@@ -24,14 +24,16 @@ export interface BotSettings {
 
 export interface CartItem { productId: string; title: string; brand: string; qty: number; carton: number; five: number; unit: string }
 export interface OrderState {
-  step: "brand" | "product" | "qty" | "more" | "area" | "name" | "confirm";
+  step: "brand" | "product" | "qty" | "more" | "area" | "name" | "phone" | "confirm";
   options?: string[]; // what the numbers of the last menu mean: brand names (step brand) or product ids (step product)
   pick?: string; // product id waiting for its quantity
+  want?: number; // quantity typed with a brand ("2 dunhill blue"), used once the exact product is picked
   cart: CartItem[];
   area?: string;
   name?: string;
+  phone?: string; // website chat only: the visitor's WhatsApp number
 }
-export interface PlacedOrder { cart: CartItem[]; area: string; name: string; subtotal: number; deliveryFee: number; feeLater: boolean; total: number }
+export interface PlacedOrder { cart: CartItem[]; area: string; name: string; phone?: string; subtotal: number; deliveryFee: number; feeLater: boolean; total: number }
 export interface LastOrder { cart: CartItem[]; area: string; name: string }
 
 export type Intent = "welcome" | "brands" | "product" | "brand" | "delivery" | "human" | "order" | "media" | "thanks" | "cart" | "cancel";
@@ -164,10 +166,12 @@ const PRICE_WORDS = ["price", "prices", "rate", "brands", "brand", "cigarettes",
 
 export function botReply(
   text: string, type: string, products: BotProduct[], s: BotSettings, hadReplyBefore: boolean,
-  st: OrderState | null = null, last: LastOrder | null = null,
+  st: OrderState | null = null, last: LastOrder | null = null, ch: "wa" | "web" = "wa",
 ): BotResult {
   const q = norm(text);
   const cart = st?.cart || [];
+  const web = ch === "web"; // website chat: no location pin, asks for a phone number, no staff inside the chat
+  const base = { cart, area: st?.area, name: st?.name, phone: st?.phone };
   const out = (intent: Intent, lines: string[], state: OrderState | null, x: Partial<BotResult> = {}): BotResult => ({
     intent, reply: lines.join("\n"), handover: false, productIds: [], state, understood: true, ...x,
   });
@@ -175,26 +179,28 @@ export function botReply(
   const brands = (intent: Intent, head: string[], keep: Partial<OrderState> = {}, x: Partial<BotResult> = {}) => {
     const m = brandMenu(products);
     return out(intent, [...head, ...m.lines, "", "Other brands, pouches or vapes: just type the name.", `All prices: ${SITE}/cigarette-prices-dubai`],
-      { step: "brand", options: m.options, cart, area: st?.area, name: st?.name, ...keep }, x);
+      { step: "brand", options: m.options, ...base, ...keep }, x);
   };
-  const brandItems = (b: string, list: BotProduct[]) => {
+  const brandItems = (b: string, list: BotProduct[], want?: number) => {
     const m = productMenu(list);
     if (!m.options.length) return out("brand", [`*${b}* is out of stock right now. A team member can suggest a similar one.`], st, { handover: true });
-    return out("brand", [`*${b}* in stock. Reply with a number:`, ...m.lines],
-      { step: "product", options: m.options, cart, area: st?.area, name: st?.name }, { productIds: m.options });
+    return out("brand", [`*${b}* in stock. Which one would you like? Reply with its number:`, ...m.lines],
+      { step: "product", options: m.options, ...base, want }, { productIds: m.options });
   };
   const askQty = (p: BotProduct, area = st?.area) => {
     const five = num(p.fiveCartonPrice);
     return out("product", [
       `*${p.title}*: ${aed(p.cartonPrice)} a ${unit(p)}${five > 0 ? `, 5 ${unit(p)}s ${aed(five)}` : ""}.`,
       `How many ${unit(p)}s? Reply with a number, for example *1* or *5*.`,
-    ], { step: "qty", pick: p.id, cart, area, name: st?.name }, { productIds: [p.id] });
+    ], { step: "qty", pick: p.id, ...base, area }, { productIds: [p.id] });
   };
   // after the cart changes: ask what is still missing, else show the summary
   const next = (o: OrderState, head: string[] = []): BotResult => {
     if (!o.cart.length) return brands("cart", [...head, "What would you like? Reply with a number:"], o);
-    if (!o.area) return out("cart", [...head, "Where should we deliver? Type your area (for example *Dubai Marina*) or send your 📍 location pin."], { ...o, step: "area" });
+    if (!o.area) return out("cart", [...head, web ? "Where should we deliver? Type your area and building (for example *Marina Gate 2, Dubai Marina*)." :
+      "Where should we deliver? Type your area (for example *Dubai Marina*) or send your 📍 location pin."], { ...o, step: "area" });
     if (!o.name) return out("cart", [...head, "What name should the rider ask for?"], { ...o, step: "name" });
+    if (web && !o.phone) return out("cart", [...head, "What is your WhatsApp number? Our team confirms the order and the rider calls you on it."], { ...o, step: "phone" });
     const t = totals(o.cart, o.area, s);
     return out("cart", [
       ...head,
@@ -204,6 +210,7 @@ export function botReply(
         `Delivery to ${o.area === PIN ? "your location" : title(o.area)}: ${t.deliveryFee ? aed(t.deliveryFee) : "free"}`,
       `*Total: AED ${t.total}*${t.feeLater ? " + courier fee" : ""}, cash or card on delivery.`,
       `Name: ${o.name}`,
+      ...(o.phone ? [`Phone: +${o.phone}`] : []),
       "",
       "Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*.",
     ], { ...o, step: "confirm", options: undefined, pick: undefined });
@@ -220,7 +227,7 @@ export function botReply(
     ], st);
   }
   if (has(q, ["human", "agent", "person", "staff", "call me", "call", "manager", "operator"]) || /talk to (a )?(person|someone|human)/.test(q)) {
-    return out("human", ["Sure, a team member will reply to you here shortly. 🙏"], st, { handover: true });
+    return out("human", [web ? "Sure! Tap *Live WA* below to chat with our team on WhatsApp. 🙏" : "Sure, a team member will reply to you here shortly. 🙏"], st, { handover: true });
   }
   if (st && has(q, ["cancel", "stop", "clear", "reset"]) && q.split(" ").length <= 3) {
     return out("cancel", ["Order cancelled. Reply *menu* any time to start again."], null);
@@ -228,7 +235,7 @@ export function botReply(
   if (last?.cart.length && /\b(same (again|order|as (last|before))|reorder|repeat( my)?( last)? order|order again)\b/.test(q)) {
     const again = refresh(last.cart, products);
     if (!again.length) return brands("cart", ["Sorry, the items of your last order are out of stock right now. Reply with a number:"]);
-    return next({ step: "confirm", cart: again, area: last.area, name: last.name }, ["Sure, the same as last time:"]);
+    return next({ step: "confirm", cart: again, area: last.area, name: last.name, phone: st?.phone }, ["Sure, the same as last time:"]);
   }
   if (MENU.includes(q)) return brands("brands", ["What would you like? Reply with a number:"]);
 
@@ -241,6 +248,8 @@ export function botReply(
     if (st.step === "brand" && n >= 1 && n <= opt.length) return brandItems(opt[n - 1], products.filter((p) => p.brand === opt[n - 1]));
     if (st.step === "product" && n >= 1 && n <= opt.length) {
       const p = products.find((x) => x.id === opt[n - 1]);
+      // "2 dunhill blue" showed a list: the 2 is kept and used once the exact one is picked
+      if (orderable(p) && st.want) return botReply(String(st.want), "TEXT", products, s, true, { ...st, step: "qty", pick: p!.id, options: undefined, want: undefined }, last, ch);
       if (orderable(p)) return askQty(p!);
     }
     if (st.step === "qty" && qty) {
@@ -264,19 +273,26 @@ export function botReply(
     if (st.step === "name" && q && isNaN(n) && !namesProduct && text.trim().length <= 60) {
       return next({ ...st, name: text.trim().replace(/[*_~`]/g, "").replace(/\s+/g, " ") });
     }
+    if (st.step === "phone" && q && !namesProduct) {
+      let d = text.replace(/\D/g, "");
+      if (d.startsWith("00")) d = d.slice(2);
+      if (/^05\d{8}$/.test(d)) d = "971" + d.slice(1); // UAE mobile typed locally
+      if (d.length < 9 || d.length > 15) return out("cart", ["Please send a valid mobile number, for example *050 123 4567*."], st);
+      return next({ ...st, phone: d });
+    }
     if (st.step === "confirm" && cart.length) {
       if (YES.includes(q) || YES.includes(text.trim())) {
         const t = totals(cart, st.area || "", s);
         return out("order", [
           "✅ Thank you! Your order *#{ORDER}* is placed.",
-          `A team member will confirm it here shortly. Delivery takes about ${minutes(s)}${t.feeLater ? " in Dubai & Sharjah; other Emirates go by courier" : ""}.`,
+          `A team member will confirm it ${web ? "on WhatsApp" : "here"} shortly. Delivery takes about ${minutes(s)}${t.feeLater ? " in Dubai & Sharjah; other Emirates go by courier" : ""}.`,
           "Payment: cash or card on delivery. Adults 18+ only: the rider may ask for ID.",
-        ], null, { order: { cart, area: st.area || "", name: st.name || "", ...t } });
+        ], null, { order: { cart, area: st.area || "", name: st.name || "", phone: st.phone, ...t } });
       }
       if (has(q, ["edit", "change", "modify"])) return brands("cart", ["OK, let's pick the items again. Reply with a number:"], { cart: [] });
       if (has(q, ["no"])) return out("cancel", ["Order cancelled. Reply *menu* any time to start again."], null);
     }
-    if (!isNaN(n) && st.step !== "area" && st.step !== "name") {
+    if (!isNaN(n) && st.step !== "area" && st.step !== "name" && st.step !== "phone") {
       const hint = st.step === "qty" ? "Please reply with how many, for example *2*." :
         st.step === "more" ? "Reply *1* to add another product, or *0* to finish." :
         st.step === "confirm" ? "Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*." :
@@ -296,33 +312,51 @@ export function botReply(
   const greet = has(q.split(" ").slice(0, 2).join(" "), ["hi", "hello", "hey", "salam", "salaam", "assalamualaikum", "assalamu alaikum", "marhaba", "good morning", "good evening"]);
   if (greet && !st && !brand && !items.length && !area && q.split(" ").length <= 4) hadReplyBefore = false; // a fresh "hi" gets the welcome again
 
+  // "2 marlboro gold" / "2 dibba marlboro gold bhej do": a lone number that is not part of a product name
+  const lone = Number((q.match(/(?:^| )(\d{1,2})(?= |$)/) || [])[1] || 0);
+  const wantOf = (list: BotProduct[]) =>
+    lone >= 1 && lone <= 50 && !list.some((p) => norm(p.title).split(" ").includes(String(lone))) ? lone : undefined;
   if (exact && (items.length === 1 || area)) {
     const p = items[0];
     if (!orderable(p)) {
       return out("product", [`*${p.title}* is out of stock right now. A team member can suggest a similar one.`], st, { handover: true, productIds: [p.id] });
     }
-    // "2 marlboro gold" / "2 dibba marlboro gold bhej do": a lone number that is not part of the product name
-    const k = Number((q.match(/(?:^| )(\d{1,2})(?= |$)/) || [])[1] || 0) * (norm(p.title).split(" ").some((w) => /^\d+$/.test(w)) ? 0 : 1);
-    if (k >= 1 && k <= 50) return botReply(String(k), "TEXT", products, s, true, { step: "qty", pick: p.id, cart, area: area || st?.area, name: st?.name }, last);
+    const k = wantOf([p]);
+    if (k) return botReply(String(k), "TEXT", products, s, true, { step: "qty", pick: p.id, ...base, area: area || st?.area }, last, ch);
     return askQty(p, area || st?.area);
   }
   if (exact && items.length <= 3) {
     const m = productMenu(items);
     if (!m.options.length) return out("product", ["Those are out of stock right now. A team member can suggest a similar one."], st, { handover: true });
-    return out("product", ["I found these. Reply with a number:", ...m.lines],
-      { step: "product", options: m.options, cart, area: area || st?.area, name: st?.name }, { productIds: m.options });
+    return out("product", ["I found these. Which one would you like? Reply with its number:", ...m.lines],
+      { step: "product", options: m.options, ...base, area: area || st?.area, want: wantOf(items) }, { productIds: m.options });
   }
-  if (brand) return brandItems(brand, items);
+  if (brand) return brandItems(brand, items, wantOf(items));
   if (has(q, ["delivery", "deliver", "how long", "time", "shipping", "courier", "fee", "free"]) || /how (long|much time)/.test(q)) {
     return out("delivery", [deliveryLine(s), "Payment: cash or card on delivery.", ORDER_ASK], st);
   }
   if (area) {
-    if (cart.length && st) return next({ ...st, area });
-    return brands("order", [`📍 Yes, we deliver to ${title(area)}. What would you like? Reply with a number:`], { area });
+    const full = text.trim().replace(/[*_~`]/g, "").replace(/\s+/g, " ").slice(0, 100); // keep the building too
+    if (cart.length && st) return next({ ...st, area: full });
+    if (st) return out("order", [`📍 Yes, we deliver to ${title(area)}! What would you like? Type a product name, or reply *menu* for the list.`], { ...st, area: full });
+    return brands("order", [`📍 Yes, we deliver to ${title(area)}. What would you like? Reply with a number:`], { area: full });
+  }
+  if (has(q, ["order", "buy", "purchase", "can i get", "i want", "i need"])) {
+    return brands("brands", ["Yes, you can order right here! What would you like? Reply with a number:"]);
   }
   const asked = has(q, PRICE_WORDS);
   if (st && !asked && hadReplyBefore) {
-    return out("cart", ["Sorry, I did not get that. Reply *menu* to see the list, *agent* for a person, or *cancel*."], st, { understood: false });
+    // not understood inside an order: ask the current question again (the AI layer tries the message first)
+    const opt = st.options || [];
+    const again = (lines: string[]) => out("cart", lines, st, { understood: false });
+    if (st.step === "product") {
+      const list = opt.map((id) => products.find((p) => p.id === id)).filter(orderable) as BotProduct[];
+      if (list.length) return again(["Which one would you like? Reply with its number:", ...productMenu(list).lines]);
+    }
+    if (st.step === "qty") return again(["How many would you like? Just reply with a number, for example *2*."]);
+    if (st.step === "more") return again(["Would you like anything else? Reply *1* to add another product, or *0* to finish."]);
+    if (st.step === "confirm") return again(["Shall I place it? Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*."]);
+    return again(["Which brand would you like? Type a product name like *Marlboro Gold*, or reply *menu* to see the list again."]);
   }
   if (asked || hadReplyBefore) {
     return brands("brands", ["Cigarette prices today. Reply with a number to order:"], {}, { understood: asked });
@@ -343,7 +377,7 @@ export function replyOk(draft: string, ai: string): boolean {
   if (!a || a.length > draft.length * 1.6 + 200) return false;
   const lines = new Set(a.split("\n").map((l) => l.trim()));
   for (const l of draft.split("\n").map((x) => x.trim())) {
-    if ((/^(\*\d+\*|•|🧾|Name:|Delivery to|\*Total)/.test(l) || /AED|https?:\/\//.test(l)) && !lines.has(l)) return false;
+    if ((/^(\*\d+\*|•|🧾|Name:|Phone:|Delivery to|\*Total)/.test(l) || /AED|https?:\/\//.test(l)) && !lines.has(l)) return false;
   }
   const nums = new Set(draft.match(/\d+/g) || []);
   if ((a.match(/\d+/g) || []).some((x) => !nums.has(x))) return false;

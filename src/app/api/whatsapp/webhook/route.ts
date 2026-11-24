@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "crypto";
-import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
-import { readCatalogStore } from "@/lib/catalog-store";
-import { botReply, type BotResult, type PlacedOrder } from "@/lib/wa-bot";
-import { humanize, understand } from "@/lib/wa-ai";
+import { runTurn } from "@/lib/bot-turn";
 import { addMsg, chatOf, update } from "@/lib/wa-bot-store";
 
 // WhatsApp auto-replies for the shop number. The WhatsApp gateway (WA-AKG, session WA_NOTIFY_SESSION)
@@ -29,18 +26,6 @@ function verify(raw: string, header: string | null): boolean {
   return a.length === b.length && timingSafeEqual(a, b);
 }
 
-async function liveCatalog() {
-  const store = await readCatalogStore();
-  const deleted = new Set(store.deleted || []);
-  const over = store.products || {};
-  const base = new Set(INITIAL_PRODUCTS.map((p) => p.id));
-  const products: Product[] = [
-    ...Object.values(over).filter((p) => !base.has(p.id)),
-    ...INITIAL_PRODUCTS.map((p) => over[p.id] ?? p),
-  ].filter((p) => p?.id && !deleted.has(p.id));
-  return { products, settings: { ...INITIAL_SETTINGS, ...(store.settings || {}) } };
-}
-
 const shopNumbers = () =>
   (process.env.WA_NOTIFY_TO || "").split(",").map((x) => x.replace(/\D/g, "")).filter((x) => x.length >= 9);
 
@@ -58,45 +43,6 @@ async function send(jid: string, text: string) {
 }
 
 const flat = (s: string) => s.replace(/\s+/g, " ").slice(0, 300);
-
-// Save a confirmed chat order through the site's own orders API (same checks, admin panel, lead + staff alert).
-async function saveOrder(o: PlacedOrder, phone: string, chatName: string): Promise<string | null> {
-  const items = o.cart.flatMap((i) => {
-    const bundles = i.five > 0 ? Math.floor(i.qty / 5) : 0;
-    const rest = i.qty - bundles * 5;
-    const base = { productId: i.productId, title: i.title, brand: i.brand };
-    return [
-      ...(bundles ? [{ ...base, packTier: "5-cartons", quantity: bundles, unitPrice: i.five }] : []),
-      ...(rest ? [{ ...base, packTier: "1-carton", quantity: rest, unitPrice: i.carton }] : []),
-    ];
-  });
-  const order = {
-    id: `WA-${Math.floor(1000 + Math.random() * 9000)}`,
-    customerName: o.name || chatName || "WhatsApp customer",
-    customerPhone: phone ? `+${phone}` : "WhatsApp chat (number hidden)",
-    deliveryArea: o.area,
-    addressNote: (o.area.startsWith("📍") ? "Location pin sent in the WhatsApp chat. " : "") +
-      (o.feeLater ? "Courier fee to confirm with the customer. " : "") + "Ordered in the WhatsApp chat.",
-    paymentMethod: "Cash on Delivery",
-    items,
-    deliveryFee: o.deliveryFee,
-    source: "WhatsApp Bot",
-  };
-  try {
-    const r = await fetch(`http://127.0.0.1:${process.env.PORT || 3000}/api/orders`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-admin-key": process.env.ADMIN_API_KEY || "" },
-      body: JSON.stringify({ action: "create", order }),
-      signal: AbortSignal.timeout(15000),
-    });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok || !j.id) { console.error("wa-bot order not saved:", r.status); return null; }
-    return String(j.id);
-  } catch (e) {
-    console.error("wa-bot order not saved:", (e as Error)?.message || e);
-    return null;
-  }
-}
 
 const phoneOf = (jid: string) => (jid.endsWith("@s.whatsapp.net") ? jid.split("@")[0] : "");
 
@@ -150,29 +96,11 @@ async function handle(ev: { event?: string; sessionId?: string; data?: Record<st
   });
   if (!plan) return;
 
-  // step 2 (no lock: AI and saving can take seconds): rule bot -> AI reading if not understood -> order -> AI wording
-  const { products, settings } = await liveCatalog();
-  const run = (t: string) => botReply(t, type, products, settings, plan.hadBot, plan.state, plan.last);
-  let r: BotResult = run(text);
-  if (!r.understood && text) {
-    const cmd = await understand(text, plan.state?.step, plan.lastBot);
-    if (cmd) {
-      const r2 = botReply(cmd, "TEXT", products, settings, plan.hadBot, plan.state, plan.last);
-      if (r2.understood) r = r2;
-    }
-  }
-  let reply = r.reply;
-  let orderId = "";
-  if (r.order) {
-    orderId = (await saveOrder(r.order, phoneOf(jid), plan.name)) || "";
-    if (!orderId) {
-      r = { ...r, handover: true, state: plan.state };
-      reply = "Sorry, I could not save your order just now. A team member will take it from here in a few minutes. 🙏";
-    }
-  }
-  // the welcome is already written to be friendly; the AI only doubled its question
-  if (r.intent !== "welcome") reply = (await humanize(text || `[${type.toLowerCase()}]`, reply, plan.recent)) || reply;
-  reply = reply.replace("{ORDER}", orderId);
+  // step 2 (no lock: AI and saving can take seconds)
+  const { r, reply, orderId } = await runTurn({
+    text, type, ch: "wa", state: plan.state, last: plan.last, hadBot: plan.hadBot,
+    lastBot: plan.lastBot, recent: plan.recent, phone: phoneOf(jid), name: plan.name,
+  });
 
   // step 3: save the new state and the reply before sending, so its echo is not taken for staff
   await update((s) => {
