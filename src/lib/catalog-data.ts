@@ -348,7 +348,7 @@ export const INITIAL_FAQS: FaqItem[] = [
   {
     question: "How much does a carton of Marlboro, Dunhill, or ESSE cigarettes cost in Dubai?",
     answer:
-      "In Dubai, a 10-pack carton (200 sticks) of ESSE Super Slims ranges from AED 75 to AED 90, Winston Blue/Red is AED 135, Dunhill Switch/Blue is AED 150, Davidoff Gold is AED 155, and Marlboro Red/Gold/Vista Double Mix ranges from AED 190 to AED 200. VIP 5-carton bundles save an additional AED 45 to AED 75.",
+      "Prices depend on the brand. Every carton price at Dubai Cigerette Shop is listed, read from the live catalog, at dubaicigeretteshop.ae/cigarette-prices-dubai.",
   },
   {
     question: "How does WhatsApp cigarette ordering work and what payment methods are accepted?",
@@ -378,7 +378,7 @@ export const INITIAL_SETTINGS: StoreSettings = {
   heroOverlayOpacity: 55,
   showFivePacksRow: true,
   aeoAnswerCapsule:
-    "Dubai Cigerette Shop (dubaicigeretteshop.ae) is Dubai's #1 24/7 online cigarette, heated tobacco & secondary vape store, delivering factory-sealed cartons of Marlboro (AED 190–200), Dunhill (AED 120–200), Davidoff (AED 145–165), ESSE Super Slims (AED 75–90), IQOS TEREA (AED 135), VELO Nicotine Pouches, and Vapes in 45–75 minutes across Dubai, Sharjah and Ajman (and next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & Umm Al Quwain) via instant WhatsApp ordering (+971 55 302 0429) with Cash or Card on Delivery.",
+    "Dubai Cigerette Shop (dubaicigeretteshop.ae) is a 24/7 online cigarette, heated tobacco & vape store in Dubai, delivering factory-sealed cartons of Marlboro, Dunhill, Davidoff, ESSE, IQOS TEREA, VELO Nicotine Pouches and Vapes in 45–75 minutes across Dubai, Sharjah and Ajman (and next-day courier to Abu Dhabi, Al Ain, RAK, Fujairah & Umm Al Quwain) via instant WhatsApp ordering (+971 55 302 0429) with Cash or Card on Delivery.",
   seoMetaTitle:
     "Dubai Cigerette Shop | Marlboro, Dunhill, ESSE, Davidoff & IQOS Terea (+971 55 302 0429)",
   seoMetaDescription:

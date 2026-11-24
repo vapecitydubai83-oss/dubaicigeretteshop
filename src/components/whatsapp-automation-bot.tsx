@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
+import { brandGroups, priceRange } from "@/lib/brands";
 import {
   DUBAI_AREAS,
   formatWhatsAppNumberForLink,
@@ -100,7 +101,12 @@ export function WhatsAppAutomationBot() {
 
     if (q.includes("price") || q.includes("how much") || q.includes("cost") || q.includes("menu")) {
       return {
-        text: `Here is our 2026 Dubai Carton Price Summary:\n• ESSE Super Slims: AED 75 – 90\n• Winston / IQOS Terea: AED 135\n• Dunhill Switch / Blue: AED 150\n• Davidoff Gold: AED 155\n• Marlboro Gold / Red / Vista: AED 190 – 200\n• Parliament Night Blue: AED 225\n• Secondary Vapes & E-Liquids: AED 45 – 115`,
+        // Read from the live catalog (the old fixed list drifted from real prices).
+        text: `Carton prices today (cheapest to dearest per brand):\n${brandGroups(products.filter((p) => p.category === "cigarettes" && p.inStock))
+          .sort((a, b) => a.min - b.min)
+          .slice(0, 8)
+          .map((g) => `• ${g.name}: ${priceRange(g.min, g.max)}`)
+          .join("\n")}\n\nFull list: dubaicigeretteshop.ae/cigarette-prices-dubai`,
       };
     }
 

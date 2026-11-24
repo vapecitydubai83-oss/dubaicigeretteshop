@@ -232,7 +232,7 @@ export function SeoAeoGeoSection({
               {range}
             </div>
             <p className="text-xs opacity-70 mt-1">
-              Up to 28% savings vs. single retail convenience packs, plus VIP 5-carton bulk discounts.
+              Every price on the site is read from our live catalog, so it is the price you pay today.
             </p>
           </div>
 
