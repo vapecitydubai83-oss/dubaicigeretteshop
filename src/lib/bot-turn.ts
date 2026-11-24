@@ -2,8 +2,9 @@
 // rule bot -> AI reading if not understood -> save a confirmed order -> AI wording (fact-checked).
 import { INITIAL_PRODUCTS, INITIAL_SETTINGS, Product } from "@/lib/catalog-data";
 import { readCatalogStore } from "@/lib/catalog-store";
-import { botReply, factsFor, isQuestion, stepPrompt, type BotResult, type LastOrder, type OrderState, type PlacedOrder } from "@/lib/wa-bot";
-import { humanize, interpret } from "@/lib/wa-ai";
+import { botReply, factsFor, findArea, isQuestion, lineTotal, matchProducts, missingStep, phoneDigits, stepPrompt, type BotResult, type BotSettings, type LastOrder, type OrderState, type PlacedOrder } from "@/lib/wa-bot";
+import { applyAgent, parseAgent } from "@/lib/chat-agent";
+import { converse, humanize, interpret } from "@/lib/wa-ai";
 
 export async function liveCatalog() {
   const store = await readCatalogStore();
@@ -66,13 +67,66 @@ export interface TurnInput {
   phone: string; name: string; // WhatsApp: the chat's number and push name
 }
 
+async function agentTurn(a: TurnInput, products: Product[], settings: BotSettings): Promise<BotResult | null> {
+  const web = a.ch === "web";
+  const st = a.state;
+  // products named now; only if none, the ones from the last messages ("which is cheaper?")
+  const query = matchProducts(a.text, products).items.length ? a.text : `${a.text} ${a.recent.slice(-4).join(" ")}`;
+  const facts = factsFor(query, st, products, settings, true);
+  const cart = st?.cart || [];
+  const order = [
+    cart.length ? cart.map((i) => `- [${i.productId}] ${i.qty} × ${i.title}: AED ${lineTotal(i)}`).join("\n") : "- cart empty",
+    `- delivery address: ${st?.area || "not given"}`, `- name: ${st?.name || "not given"}`,
+    ...(web ? [`- WhatsApp number: ${st?.phone ? "+" + st.phone : "not given"}`] : []),
+    st?.step === "confirm" ? "- the order summary is on screen: waiting for their yes" : "",
+    // "same again": their previous order, so the AI can add it back (prices come from today's catalog)
+    a.last?.cart?.length ? `- their previous order (for "same again"): ${a.last.cart.map((i) => `[${i.productId}] ${i.qty} × ${i.title}`).join(", ")}, to ${a.last.area}, name ${a.last.name}` : "",
+  ].filter(Boolean).join("\n");
+  const need = { brand: "what they want (product + quantity)", area: "delivery address", name: "name for the rider", phone: "WhatsApp number", confirm: "their yes to place the order" } as Record<string, string>;
+  const missing = need[missingStep({ step: "brand", ...(st || {}), cart }, web)] || "nothing";
+  const allowed = [facts, a.text, a.recent.join(" "), a.lastBot].join(" ");
+  // what the word-matching bot reads as an exact product + quantity ("1 marlboro red"), as a hint for a retry
+  const rule = botReply(a.text, "TEXT", products, settings, true, st, a.last, a.ch).state?.cart || [];
+  const ruleAdds = rule.filter((i) => !cart.some((c) => c.productId === i.productId && c.qty === i.qty));
+  let problem = "";
+  for (let i = 0; i < 2; i++) { // one retry, told what was wrong
+    const g = parseAgent(await converse(a.text, order, missing, web, a.lastBot, a.recent, facts, problem));
+    if (!g) return null;
+    // waiting for a name and they sent one or two words: that is the name ("Imran"), not a question
+    const bare = a.text.trim();
+    if (i === 0 && missing === need.name && /^\p{L}[\p{L} .'-]{1,29}$/u.test(bare) && bare.split(/\s+/).length <= 3 &&
+        !/^(yes|no|ok|okay|haan|han|nahi|sure|done|cancel|thanks?|hi|hello|نعم|لا)$/i.test(bare) && !g.actions.some((x) => x.do === "name")) {
+      problem = `they just gave their name "${bare}": save it with a name action and move on`;
+      continue;
+    }
+    if (i === 0 && ruleAdds.length && !g.actions.some((x) => x.do === "qty")) {
+      problem = `the message already gives the quantity: ${ruleAdds.map((x) => `${x.qty} × ${x.title} [${x.productId}]`).join(", ")}. Add it with a qty action instead of asking how many`;
+      continue;
+    }
+    // backstop: an area we know ("jlt", "al nahda") given while the address is missing is always saved
+    const known = findArea(a.text);
+    if (known && !st?.area && a.text.trim().split(/\s+/).length <= 6 && !g.actions.some((x) => x.do === "area" || x.do === "qty"))
+      g.actions.push({ do: "area", value: a.text });
+    // and a message that is only a phone number is the number
+    if (web && /^[\d\s+()-]{9,20}$/.test(a.text.trim()) && phoneDigits(a.text) && !g.actions.some((x) => x.do === "phone"))
+      g.actions.push({ do: "phone", value: a.text });
+    const r = applyAgent(st, g.actions, g.reply, products, settings, web, allowed);
+    if (typeof r !== "string") return r;
+    problem = r;
+    console.error("chat agent answer rejected:", r);
+  }
+  return null;
+}
+
 export async function runTurn(a: TurnInput): Promise<{ r: BotResult; reply: string; orderId: string }> {
   const { products, settings } = await liveCatalog();
   const run = (t: string, type: string) => botReply(t, type, products, settings, a.hadBot, a.state, a.last, a.ch);
-  let r = run(a.text, a.type);
-  let answered = "";
+  // PLAN 74s: the AI leads the chat; the rule bot below answers only when the AI is off, down or fails a check
+  const led = process.env.CHAT_AGENT !== "0" && a.type === "TEXT" && a.text.trim() ? await agentTurn(a, products, settings) : null;
+  let r = led || run(a.text, a.type);
+  let answered = led ? r.reply : "";
   // the rules miss it, or it is a real question (the rules only match words): the AI reads what is meant
-  if (a.text && (!r.understood || (isQuestion(a.text) && !r.order && r.intent !== "human"))) {
+  if (!led && a.text && (!r.understood || (isQuestion(a.text) && !r.order && r.intent !== "human"))) {
     const it = await interpret(a.text, a.state?.step, a.lastBot, a.recent, factsFor(a.text, a.state, products, settings));
     if (it?.answer) {
       // answer the question, then the order carries on: "do you have marlboro gold?" keeps the rule's next step

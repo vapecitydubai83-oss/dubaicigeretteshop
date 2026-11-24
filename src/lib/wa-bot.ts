@@ -153,6 +153,45 @@ export function totals(cart: CartItem[], area: string, s: BotSettings) {
   return { subtotal, deliveryFee, feeLater, total: subtotal + deliveryFee };
 }
 
+export const cartItem = (p: BotProduct, qty: number): CartItem =>
+  ({ productId: p.id, title: p.title, brand: p.brand, qty, carton: num(p.cartonPrice), five: num(p.fiveCartonPrice), unit: unit(p) });
+
+// "050 123 4567" / "+971 50..." / "0097150..." -> 97150...; "" when it is not a phone number
+export function phoneDigits(text: string): string {
+  let d = text.replace(/\D/g, "");
+  if (d.startsWith("00")) d = d.slice(2);
+  if (/^05\d{8}$/.test(d)) d = "971" + d.slice(1); // UAE mobile typed locally
+  return d.length >= 9 && d.length <= 15 ? d : "";
+}
+
+// what the order still needs, in the order we ask for it
+export function missingStep(o: OrderState, web: boolean): OrderState["step"] {
+  return !o.cart.length ? "brand" : !o.area ? "area" : !o.name ? "name" : web && !o.phone ? "phone" : "confirm";
+}
+
+// the order summary and the "placed" message are always written by code, never by the AI
+export function summaryLines(o: OrderState, s: BotSettings): string[] {
+  const t = totals(o.cart, o.area || "", s);
+  return [
+    "🧾 *Your order*",
+    ...o.cart.map(cartLine),
+    t.feeLater ? `Delivery to ${title(o.area || "")}: courier fee confirmed by our team` :
+      `Delivery to ${o.area === PIN ? "your location" : title(o.area || "")}: ${t.deliveryFee ? aed(t.deliveryFee) : "free"}`,
+    `*Total: AED ${t.total}*${t.feeLater ? " + courier fee" : ""}, cash or card on delivery.`,
+    `Name: ${o.name}`,
+    ...(o.phone ? [`Phone: +${o.phone}`] : []),
+  ];
+}
+
+export function placedLines(o: OrderState, s: BotSettings, web: boolean): string[] {
+  const t = totals(o.cart, o.area || "", s);
+  return [
+    "✅ Thank you! Your order *#{ORDER}* is placed.",
+    `A team member will confirm it ${web ? "on WhatsApp" : "here"} shortly. Delivery takes about ${minutes(s)}${t.feeLater ? " in Dubai & Sharjah; other Emirates go by courier" : ""}.`,
+    "Payment: cash or card on delivery. Adults 18+ only: the rider may ask for ID.",
+  ];
+}
+
 const cartLine = (i: CartItem) =>
   `• ${i.qty} × ${i.title}: AED ${lineTotal(i)}${i.five > 0 && i.qty >= 5 ? ` (5-${i.unit} price)` : ""}`;
 
@@ -208,16 +247,9 @@ export function botReply(
       "Where should we deliver? Type your area (for example *Dubai Marina*) or send your 📍 location pin."], { ...o, step: "area" });
     if (!o.name) return out("cart", [...head, "What name should the rider ask for?"], { ...o, step: "name" });
     if (web && !o.phone) return out("cart", [...head, "What is your WhatsApp number? Our team confirms the order and the rider calls you on it."], { ...o, step: "phone" });
-    const t = totals(o.cart, o.area, s);
     return out("cart", [
       ...head,
-      "🧾 *Your order*",
-      ...o.cart.map(cartLine),
-      t.feeLater ? `Delivery to ${title(o.area)}: courier fee confirmed by our team` :
-        `Delivery to ${o.area === PIN ? "your location" : title(o.area)}: ${t.deliveryFee ? aed(t.deliveryFee) : "free"}`,
-      `*Total: AED ${t.total}*${t.feeLater ? " + courier fee" : ""}, cash or card on delivery.`,
-      `Name: ${o.name}`,
-      ...(o.phone ? [`Phone: +${o.phone}`] : []),
+      ...summaryLines(o, s),
       "",
       "Reply *YES* to place the order, *EDIT* to change it, or *CANCEL*.",
     ], { ...o, step: "confirm", options: undefined, pick: undefined });
@@ -279,7 +311,7 @@ export function botReply(
       const k = Number(qty[1]);
       if (!orderable(p)) return brands("cart", ["Sorry, that one just went out of stock. Reply with a number:"]);
       if (k < 1 || k > 50) return out("cart", ["Please reply with a number from 1 to 50 (for more, reply *agent*)."], st);
-      const item: CartItem = { productId: p!.id, title: p!.title, brand: p!.brand, qty: k, carton: num(p!.cartonPrice), five: num(p!.fiveCartonPrice), unit: unit(p!) };
+      const item = cartItem(p!, k);
       const nc = [...cart.filter((i) => i.productId !== p!.id), item];
       return out("cart", [
         `✅ Added ${units(k, item.unit)} of *${p!.title}*: AED ${lineTotal(item)}.`,
@@ -296,20 +328,14 @@ export function botReply(
       return next({ ...st, name: text.trim().replace(/[*_~`]/g, "").replace(/\s+/g, " ") });
     }
     if (st.step === "phone" && q && !namesProduct) {
-      let d = text.replace(/\D/g, "");
-      if (d.startsWith("00")) d = d.slice(2);
-      if (/^05\d{8}$/.test(d)) d = "971" + d.slice(1); // UAE mobile typed locally
-      if (d.length < 9 || d.length > 15) return out("cart", ["Please send a valid mobile number, for example *050 123 4567*."], st);
+      const d = phoneDigits(text);
+      if (!d) return out("cart", ["Please send a valid mobile number, for example *050 123 4567*."], st);
       return next({ ...st, phone: d });
     }
     if (st.step === "confirm" && cart.length) {
       if (YES.includes(q) || YES.includes(text.trim())) {
         const t = totals(cart, st.area || "", s);
-        return out("order", [
-          "✅ Thank you! Your order *#{ORDER}* is placed.",
-          `A team member will confirm it ${web ? "on WhatsApp" : "here"} shortly. Delivery takes about ${minutes(s)}${t.feeLater ? " in Dubai & Sharjah; other Emirates go by courier" : ""}.`,
-          "Payment: cash or card on delivery. Adults 18+ only: the rider may ask for ID.",
-        ], null, { order: { cart, area: st.area || "", name: st.name || "", phone: st.phone, ...t } });
+        return out("order", placedLines(st, s, web), null, { order: { cart, area: st.area || "", name: st.name || "", phone: st.phone, ...t } });
       }
       if (has(q, ["edit", "change", "modify"])) return brands("cart", ["OK, let's pick the items again. Reply with a number:"], { cart: [] });
       if (has(q, ["no"])) return out("cancel", ["Order cancelled. Reply *menu* any time to start again."], null);
@@ -424,7 +450,8 @@ export function isQuestion(text: string): boolean {
 
 // The catalog facts the AI may use for this message: the list on screen, the cart, the products named,
 // and cheaper ones of the same kind. Nothing outside these lines may appear as a number in its answer.
-export function factsFor(text: string, st: OrderState | null, products: BotProduct[], s: BotSettings): string {
+export function factsFor(text: string, st: OrderState | null, products: BotProduct[], s: BotSettings, ids = false): string {
+  const tag = (p: BotProduct) => (ids ? `[${p.id}] ` : "");
   const byId = (id: string) => products.find((p) => p.id === id);
   const named = matchProducts(text, products);
   const pool: BotProduct[] = [
@@ -438,13 +465,26 @@ export function factsFor(text: string, st: OrderState | null, products: BotProdu
   }
   const seen = new Set<string>();
   const lines = pool.filter((p) => !seen.has(p.id) && seen.add(p.id)).slice(0, 25).map((p) => [
-    `- ${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}${num(p.fiveCartonPrice) > 0 ? `, 5 for ${aed(p.fiveCartonPrice)}` : ""}`,
+    `- ${tag(p)}${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}${num(p.fiveCartonPrice) > 0 ? `, 5 for ${aed(p.fiveCartonPrice)}` : ""}`,
     p.strength && `strength ${p.strength}`, p.flavor && `flavour ${p.flavor}`, p.subCategory,
     p.tar && p.tar !== "N/A" && `tar ${p.tar}`, p.nicotine && p.nicotine !== "N/A" && `nicotine ${p.nicotine}`,
     p.origin && `made in ${p.origin}`, p.inStock === false ? "OUT OF STOCK" : "in stock",
   ].filter(Boolean).join(" | "));
   // nothing named in English letters (Arabic, Hindi, typos): every in-stock product, one short line each
-  const all = products.filter(orderable).map((p) => `- ${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}`);
+  const all = products.filter(orderable).map((p) => `- ${tag(p)}${p.title}: ${aed(p.cartonPrice)} a ${unit(p)}`);
+  // AI-led chat (ids): the whole cigarette range every time (~73 lines), so "strongest", "camel?" or
+  // "what do you have" are answered from the real list; other kinds only when named
+  const cigs = products.filter((p) => orderable(p) && p.category === "cigarettes").map((p) =>
+    `- ${tag(p)}${p.title}: ${aed(p.cartonPrice)}${p.strength ? ` | ${p.strength}` : ""}${p.tar && p.tar !== "N/A" ? ` | tar ${p.tar}` : ""}${p.nicotine && p.nicotine !== "N/A" ? ` | nicotine ${p.nicotine}` : ""}`);
+  const other = [...new Set(products.filter((p) => orderable(p) && p.category !== "cigarettes").map((p) => p.category))];
+  if (ids) {
+    return [
+      ...(lines.length ? ["Products the customer is talking about:", ...lines] : []),
+      "All cigarettes in stock (price per carton | strength | tar | nicotine):", ...cigs,
+      ...(other.length ? [`Also sold (ask which one they want, then their names and prices appear here): ${other.join(", ")}.`] : []),
+      "Shop:", `- ${deliveryLine(s).replace("🛵 ", "")}`, "- Payment: cash or card on delivery.", "- Adults 18+ only.",
+    ].join("\n");
+  }
   return [
     "Products:", ...(lines.length ? lines : all),
     "Shop:", `- ${deliveryLine(s).replace("🛵 ", "")}`, "- Payment: cash or card on delivery.", "- Adults 18+ only.",

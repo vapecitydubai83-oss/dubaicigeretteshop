@@ -4,7 +4,7 @@
 // Off (returns null) without SHOMOY_AI_KEY, on any error, or after 12 s: the rule bot's text is used then.
 import { answerOk, replyOk } from "@/lib/wa-bot";
 
-async function chat(messages: { role: string; content: string }[], maxTokens: number): Promise<string | null> {
+async function chat(messages: { role: string; content: string }[], maxTokens: number, ms = 12000): Promise<string | null> {
   const key = process.env.SHOMOY_AI_KEY;
   if (!key) return null;
   const url = (process.env.SHOMOY_AI_URL || "https://voice.shomoy.io").replace(/\/$/, "");
@@ -14,7 +14,7 @@ async function chat(messages: { role: string; content: string }[], maxTokens: nu
       // a real User-Agent: Cloudflare blocks default library agents
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}`, "User-Agent": "dubai-shop-bot/1.0" },
       body: JSON.stringify({ messages, max_tokens: maxTokens, temperature: 0.4 }),
-      signal: AbortSignal.timeout(12000),
+      signal: AbortSignal.timeout(ms),
     });
     if (!r.ok) { console.error("wa-ai refused:", r.status); return null; }
     const j = await r.json();
@@ -75,6 +75,55 @@ export async function interpret(
     const c = String(j.command || "").trim().slice(0, 80);
     return c && c.toLowerCase() !== "unclear" && c !== text.trim() ? { command: c } : null;
   } catch { return null; }
+}
+
+// AI-led chat (PLAN 74s): the AI answers like a shop assistant and lists the order actions it wants;
+// chat-agent.ts checks and applies them. Returns the raw model text (parseAgent reads it) or null.
+export async function converse(
+  text: string, order: string, missing: string, web: boolean, lastBot: string, recent: string[], facts: string, problem = "",
+): Promise<string | null> {
+  const sys = [
+    "You are the friendly sales assistant of Dubai Cigerette Shop (cigarettes and tobacco, delivery in Dubai & Sharjah, courier to the other Emirates).",
+    LEGIT,
+    "If asked whether you are a bot or a person, say honestly you are the shop's AI assistant and a team member can join any time.",
+    "Chat like a real person texting: short (1-3 sentences), warm, natural, one question at a time, in the customer's language and style",
+    "(English, Hinglish, Arabic, Urdu, Bangla, Tagalog... reply in what they wrote). At most one emoji. No numbered menus, no bullet lists, no *bold* command words.",
+    "When suggesting products, name at most 4, each with its price from FACTS. Use ONLY the FACTS for products, prices, stock, strength and delivery;",
+    "never invent prices, discounts, delivery times or promises. If FACTS do not answer it, say a team member will confirm.",
+    "Make no claims about products being genuine, original or licensed, and never say our prices are the best or lowest.",
+    "Your job: help them choose and collect the order: products + quantity, delivery area/building, name for the rider" + (web ? ", and their WhatsApp number" : "") + ".",
+    "Ask for what is missing one thing at a time, after answering their question.",
+    "Never guess: a brand alone (\"marlboro\") or a word like \"gold\" is not a product, ask which one (name up to 4 from FACTS with prices);",
+    "\"a few\" or \"some\" is not a quantity, ask how many. A number with a product IS the quantity (\"1 marlboro red\" = 1 carton). Only add a product they clearly chose.",
+    "SAVE EVERYTHING THEY GIVE, in the same answer, even while something else is unclear: any address or area (even just \"jlt\" or \"البرشاء\": that is enough,",
+    "the rider calls for the rest; never insist on more detail), any name, any phone number. CURRENT ORDER is the truth: what is not there was not saved yet.",
+    "Every change you mention (add, remove, change a quantity) MUST have its action in the same answer; to remove use qty 0.",
+    "\"Same again\" / \"same as last time\": add their previous order from CURRENT ORDER with qty actions, plus its address and name.",
+    "Never write the order summary or the total and never say the order is placed, confirmed or on its way: the system shows the summary below your",
+    "message once everything is in, asks them to confirm, and places the order. When the last detail comes in, reply only like \"Thanks! Here is your order:\"",
+    "(never \"all set\", \"ready\", \"on the way\", \"في الطريق\" or \"جاهز\" before the order is placed).",
+    web ? "This is the website chat. ONLY when they ask for a person: tell them to tap the Live WA button below to reach our team on WhatsApp (and send the agent action)." : "",
+    "Mainly we sell cigarettes by the carton; vapes, IQOS Terea, e-liquid, pouches and shisha too, only when they ask for those.",
+    'Example: customer "2 marlboro gold and 1 red to jlt, Ali" -> {"reply":"Thanks Ali! 2 Gold and 1 Red to JLT.","actions":[{"do":"qty","id":"marlboro-gold","qty":2},{"do":"qty","id":"marlboro-red","qty":1},{"do":"area","value":"jlt"},{"do":"name","value":"Ali"}]} (use the real ids from FACTS).',
+    "",
+    'Answer with JSON only: {"reply":"<your message>","actions":[...]} with zero or more actions:',
+    '  {"do":"qty","id":"<product id from FACTS, in [brackets]>","qty":<final number of cartons/packs of it, 0 = remove>}',
+    '  {"do":"area","value":"<delivery address as they wrote it>"}  {"do":"name","value":"<name, in English letters>"}' + (web ? '  {"do":"phone","value":"<their number>"}' : ""),
+    '  {"do":"place"} only when the summary was shown and they clearly say yes / confirm / go ahead.',
+    '  {"do":"cancel"} when they cancel the order.  {"do":"agent"} when they want a person, complain, or ask something only staff can handle.',
+    "Use exact ids from FACTS. Do not add an action for something they did not ask for.",
+  ].join("\n");
+  return chat([
+    { role: "system", content: sys },
+    {
+      role: "user", content: [
+        `FACTS:\n${facts}`, `CURRENT ORDER:\n${order}`, `STILL NEEDED: ${missing}`,
+        `CHAT SO FAR:\n${recent.join("\n").slice(-1200)}`, `YOUR LAST MESSAGE:\n${lastBot.slice(0, 600)}`,
+        `CUSTOMER NOW:\n${text.slice(0, 500)}`,
+        ...(problem ? [`YOUR PREVIOUS ANSWER WAS REJECTED: ${problem}. Answer again, fixed.`] : []),
+      ].join("\n\n"),
+    },
+  ], 450, 25000); // free Groq keys back off on 429s: give the main chat call time
 }
 
 // The rule bot's draft -> the same message in a warm, human voice and the customer's language; null = send the draft.
