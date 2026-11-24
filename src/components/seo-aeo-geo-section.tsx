@@ -15,6 +15,7 @@ import {
   Table2,
 } from "lucide-react";
 import { useStore } from "@/context/store-context";
+import { shopPriceRange } from "@/lib/brands";
 import { DUBAI_AREAS, formatWhatsAppNumberForLink } from "@/lib/catalog-data";
 
 export function SeoAeoGeoSection({
@@ -24,6 +25,8 @@ export function SeoAeoGeoSection({
 }) {
   const { products, settings, triggerSingleClickWhatsApp } = useStore();
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
+
+  const range = shopPriceRange(products);
 
   // Build Rich JSON-LD Schema.org @graph for Google Search, Google AI Overviews, ChatGPT Shopping, Perplexity & Claude
   const schemaGraph = {
@@ -36,7 +39,7 @@ export function SeoAeoGeoSection({
         url: "https://dubaicigeretteshop.ae",
         telephone: `+${settings.whatsappNumber}`,
         email: settings.supportEmail,
-        priceRange: "AED 75 - AED 225",
+        priceRange: range,
         currenciesAccepted: "AED",
         paymentAccepted: "Cash on Delivery, Card on Delivery, Apple Pay",
         openingHours: "Mo-Su 00:00-23:59",
@@ -226,7 +229,7 @@ export function SeoAeoGeoSection({
               03 • Price Transparency
             </div>
             <div className="text-lg font-extrabold mt-1">
-              AED 75 – AED 225
+              {range}
             </div>
             <p className="text-xs opacity-70 mt-1">
               Up to 28% savings vs. single retail convenience packs, plus VIP 5-carton bulk discounts.

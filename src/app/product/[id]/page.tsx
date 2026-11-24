@@ -1,6 +1,6 @@
 "use client";
 
-import { brandSlug, hasBrandPage } from "@/lib/brands";
+import { brandSlug, hasBrandPage, shopPriceRange } from "@/lib/brands";
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -286,7 +286,7 @@ export default function ProductDetailPage() {
         url: "https://dubaicigeretteshop.ae",
         telephone: `+${settings.whatsappNumber}`,
         email: settings.supportEmail,
-        priceRange: "AED 75 - AED 225",
+        priceRange: shopPriceRange(products),
         currenciesAccepted: "AED",
         paymentAccepted: "Cash on Delivery, Card on Delivery, Apple Pay",
         address: {

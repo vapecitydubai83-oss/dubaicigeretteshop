@@ -57,3 +57,9 @@ export const aed = (n: number) => `AED ${Number.isInteger(n) ? n : n.toFixed(2)}
 
 /** "AED 150" or "AED 120 to AED 200". */
 export const priceRange = (min: number, max: number) => (min === max ? aed(min) : `${aed(min)} to ${aed(max)}`);
+
+/** Cheapest and dearest in-stock price in the live catalog (was a fixed "AED 75 - AED 225" that went stale). */
+export function shopPriceRange(products: Pick<Product, "cartonPrice" | "inStock">[]) {
+  const p = products.filter((x) => x.inStock && Number(x.cartonPrice) > 0).map((x) => Number(x.cartonPrice));
+  return p.length ? priceRange(Math.min(...p), Math.max(...p)) : undefined;
+}
