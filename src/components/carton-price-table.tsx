@@ -5,7 +5,7 @@ import { aed, type BrandGroup } from "@/lib/brands";
 export function CartonPriceTable({ brands, caption }: { brands: BrandGroup[]; caption: string }) {
   return (
     <div className="mt-4 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
-      <table className="w-full text-sm">
+      <table className="w-full text-sm text-zinc-800">{/* the site's default text colour is near-white */}
         <caption className="sr-only">{caption}</caption>
         <thead className="bg-[#0A2F42] text-white text-left text-xs uppercase tracking-wide">
           <tr>
