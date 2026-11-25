@@ -1,5 +1,6 @@
 "use client";
 
+import { GUIDES } from "@/lib/guides";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -1101,6 +1102,13 @@ export function StoreFooter() {
                   Delivery Areas &amp; Times
                 </Link>
               </li>
+              {GUIDES.map((g) => (
+                <li key={g.slug}>
+                  <Link href={`/${g.slug}`} className="hover:text-[#F4B143]">
+                    {g.title.split(":")[0]}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/about" className="hover:text-[#F4B143]">
                   About &amp; Contact

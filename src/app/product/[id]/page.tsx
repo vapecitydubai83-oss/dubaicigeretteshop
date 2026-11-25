@@ -126,7 +126,7 @@ export default function ProductDetailPage() {
   // Generate Product-Specific AEO Answer Capsule
   const answerCapsule =
     product.seoAnswerCapsule ||
-    `Buy authentic ${product.title} (${product.brand}) online in Dubai for AED ${product.cartonPrice}.00 per factory-sealed ${pw.noun} (${product.format}) or AED ${product.fiveCartonPrice}.00 for a 5-${pw.noun} VIP bundle. Specifications: ${product.tar} tar, ${product.nicotine} nicotine, ${product.flavor} profile (${product.origin}). Order with 1-Click on WhatsApp (+${settings.whatsappNumber}) for ${settings.expressDeliveryMinutes} express delivery across Downtown Dubai, Dubai Marina, JBR, and Palm Jumeirah with Cash or Card on Delivery.`;
+    `Buy authentic ${product.title} (${product.brand}) online in Dubai for AED ${product.cartonPrice}.00 per factory-sealed ${pw.noun} (${product.format}) or AED ${product.fiveCartonPrice}.00 for a 5-${pw.noun} VIP bundle. Specifications: ${product.tar} tar, ${product.nicotine} nicotine, ${product.flavor} profile (${product.origin}). Order with 1-Click on WhatsApp (+${settings.whatsappNumber.replace(/^\+/, "")}) for ${settings.expressDeliveryMinutes} express delivery across Downtown Dubai, Dubai Marina, JBR, and Palm Jumeirah with Cash or Card on Delivery.`;
 
   // Product-specific FAQs for AEO & GEO
   const productFaqs = [
@@ -284,7 +284,7 @@ export default function ProductDetailPage() {
         "@id": "https://dubaicigeretteshop.ae/#organization",
         name: settings.storeName,
         url: "https://dubaicigeretteshop.ae",
-        telephone: `+${settings.whatsappNumber}`,
+        telephone: `+${settings.whatsappNumber.replace(/^\+/, "")}`,
         email: settings.supportEmail,
         priceRange: shopPriceRange(products),
         currenciesAccepted: "AED",

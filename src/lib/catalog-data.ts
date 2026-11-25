@@ -265,6 +265,7 @@ export interface StoreSettings {
   whatsappGreetingTemplate: string;
   whatsappFloatButtonLabel: string;
   socialLinks: SocialLinks;
+  profileLinks?: string[]; // Google Business Profile and directory listings, for schema sameAs (set via the catalog API)
   navMenuItems: NavMenuItem[];
   footerAboutText: string;
   storeAddressText: string;
@@ -389,13 +390,14 @@ export const INITIAL_SETTINGS: StoreSettings = {
   whatsappGreetingTemplate:
     "Hello *{storeName}* (+971 55 302 0429)! I would like to place an Express Order:",
   whatsappFloatButtonLabel: "1-Click WhatsApp Order",
+  // no placeholder profiles: only real pages the shop owns (they also become schema sameAs)
   socialLinks: {
-    facebook: "https://facebook.com/dubaicigeretteshop",
-    twitter: "https://x.com/dubaicigshop",
-    instagram: "https://instagram.com/dubaicigeretteshop",
-    youtube: "https://youtube.com/@dubaicigeretteshop",
-    pinterest: "https://pinterest.com/dubaicigeretteshop",
-    tiktok: "https://tiktok.com/@dubaicigeretteshop",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    youtube: "",
+    pinterest: "",
+    tiktok: "",
   },
   navMenuItems: INITIAL_NAV_MENU,
   footerAboutText:

@@ -21,7 +21,13 @@ export const metadata: Metadata = {
 export default async function DeliveryPage() {
   const { settings } = await readSeoStore();
   const wa = `https://wa.me/${formatWhatsAppNumberForLink(settings.whatsappNumber)}`;
-  const faqs = settings.faqs.map((f) => ({ q: f.question, a: f.answer }));
+  // answers for the delivery searches the shop shows up for in Search Console ("near me", "same day", "tobacco delivery")
+  const faqs = [
+    { q: "Is there cigarette delivery near me in Dubai?", a: `Yes, if you are in Dubai, Sharjah or Ajman. Send your area or a location pin on WhatsApp and a rider brings the order in ${settings.expressDeliveryMinutes.replace(/\s*mins?$/i, " minutes")} in Dubai (${SHARJAH_AJMAN_TIME} in Sharjah and Ajman).` },
+    { q: "Do you deliver tobacco the same day?", a: "Yes. Orders in Dubai, Sharjah and Ajman are delivered the same day by an express rider. Abu Dhabi, Al Ain, Ras Al Khaimah, Fujairah and Umm Al Quwain get a courier the next day." },
+    { q: "What can I order for delivery?", a: "Cigarette cartons, IQOS TEREA sticks, disposable vapes, e-liquids, nicotine pouches and shisha tobacco, all from the same WhatsApp chat. Adults 18 and over only." },
+    ...settings.faqs.map((f) => ({ q: f.question, a: f.answer })),
+  ];
   const jsonLd = [
     {
       "@type": "Service",
@@ -45,7 +51,7 @@ export default async function DeliveryPage() {
 
       <H2>Delivery times and fees</H2>
       <div className="mt-4 overflow-x-auto rounded-2xl border border-zinc-200 bg-white">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-zinc-800">
           <thead className="bg-[#0A2F42] text-white text-left text-xs uppercase tracking-wide">
             <tr>
               <th scope="col" className="p-3">Where</th>
