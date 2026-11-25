@@ -35,7 +35,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "menthol-cigarettes-dubai",
     title: "Menthol Cigarettes in Dubai: Capsule and Menthol Cartons",
-    description: "Menthol and capsule cigarette cartons delivered in Dubai: ESSE Menthol, Dunhill Switch, Marlboro Ice and more, with live carton prices.",
+    description: "Menthol and capsule cigarette cartons delivered in Dubai: ESSE Menthol, Dunhill Switch, Marlboro Double Ice and more, with live carton prices.",
     pick: (c) => c.filter(isMenthol).sort(byPrice),
     lead: (l) => `We stock ${l.length} menthol and capsule cigarette cartons, priced ${range(l)} a carton. Capsule packs (like Dunhill Switch or ESSE Change) start as regular tobacco and turn menthol when you click the filter.`,
     faqs: (l) => [
