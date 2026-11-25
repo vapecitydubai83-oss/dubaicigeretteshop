@@ -259,10 +259,8 @@ export function StoreProvider({
   useEffect(() => {
     if (!hydrated) return;
     try {
+      // no document.title here: it gave every page the homepage title after load (each page sets its own on the server)
       localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
-      if (typeof document !== "undefined" && settings.seoMetaTitle) {
-        document.title = settings.seoMetaTitle;
-      }
     } catch {}
   }, [settings, hydrated]);
 
